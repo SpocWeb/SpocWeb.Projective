@@ -1,0 +1,37 @@
+﻿[*.cs]
+
+# S4136: Method overloads should be grouped together
+dotnet_diagnostic.S4136.severity = suggestion
+
+# IDE0055: Fix formatting
+dotnet_diagnostic.IDE0055.severity = suggestion
+
+# IDE0060: Remove unused parameter
+dotnet_diagnostic.IDE0060.severity = warning
+
+# S2346: Flags enumerations zero-value members should be named "None"
+dotnet_diagnostic.S2346.severity = silent
+
+# S125: Sections of code should not be commented out
+dotnet_diagnostic.S125.severity = silent
+
+# S3358: Ternary operators should not be nested
+dotnet_diagnostic.S3358.severity = suggestion
+
+# S927: Parameter names should match base declaration and other partial definitions
+dotnet_diagnostic.S927.severity = suggestion
+
+# S2743: Static fields should not be used in generic types
+dotnet_diagnostic.S2743.severity = suggestion
+
+# CA1834: Consider using 'StringBuilder.Append(char)' when applicable
+dotnet_diagnostic.CA1834.severity = suggestion
+
+# S4035: Classes implementing "IEquatable<T>" should be sealed
+dotnet_diagnostic.S4035.severity = suggestion
+
+# S1264: A "while" loop should be used instead of a "for" loop
+dotnet_diagnostic.S1264.severity = silent
+
+# S1135: Track uses of "TODO" tags
+dotnet_diagnostic.S1135.severity = suggestion

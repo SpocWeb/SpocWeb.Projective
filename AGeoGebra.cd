@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="org.SpocWeb.root.data.maths.pga.Pga2D" Collapsed="true">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAEAQAAAgCkACgAEBggiCogUI0IYIEBgEKCBAEQ=</HashCode>
+      <FileName>pga\Pga2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.AGeoGebra8&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="org.SpocWeb.root.data.maths.pga.AGeoGebra&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="1.162" />
+        <Point X="6.875" Y="1.162" />
+        <Point X="6.875" Y="1.846" />
+        <Point X="7.25" Y="1.846" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAgCATAAiAAAAAQBAAAAAAIAACAAAAAACAA=</HashCode>
+      <FileName>ga\AGeoGebra8.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.AGeoGebra16&lt;T&gt;" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="org.SpocWeb.root.data.maths.pga.AGeoGebra&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="1.162" />
+        <Point X="9.125" Y="1.162" />
+        <Point X="9.125" Y="1.846" />
+        <Point X="9.5" Y="1.846" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAgCATAAiAAAAAQBAAAAAAIAACAAAAAACAA=</HashCode>
+      <FileName>ga\AGeoGebra16.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.AGeoGebra2&lt;T&gt;" Collapsed="true">
+    <Position X="2.75" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="org.SpocWeb.root.data.maths.pga.AGeoGebra&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="1.162" />
+        <Point X="2.375" Y="1.162" />
+        <Point X="2.375" Y="1.798" />
+        <Point X="2.75" Y="1.798" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAgCATAAiAAAAAQBAAAAAAIAACAAAAAACAA=</HashCode>
+      <FileName>ga\AGeoGebra2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.AGeoGebra32&lt;T&gt;" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="org.SpocWeb.root.data.maths.pga.AGeoGebra&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="1.162" />
+        <Point X="11.375" Y="1.162" />
+        <Point X="11.375" Y="1.846" />
+        <Point X="11.75" Y="1.846" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAgCATAAiAAAAAQBAAAAAAIAACAAAAAACAA=</HashCode>
+      <FileName>ga\AGeoGebra32.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.AGeoGebra4&lt;T&gt;" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="org.SpocWeb.root.data.maths.pga.AGeoGebra&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="1.162" />
+        <Point X="4.625" Y="1.162" />
+        <Point X="4.625" Y="1.846" />
+        <Point X="5" Y="1.846" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAgCATAAiAAAAAQBAAAAAAIAACAAAAAACAA=</HashCode>
+      <FileName>ga\AGeoGebra4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R001" Collapsed="true">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAQAAAACkACgAABAgCKoAUAEIAAEAAAYCAAAQ=</HashCode>
+      <FileName>ga\R001.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R010" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <InheritanceLine Type="org.SpocWeb.root.data.maths.pga.ga.AGeoGebra2&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="3.5" Y="2.191" />
+        <Point X="3.5" Y="2.711" />
+        <Point X="2.375" Y="2.711" />
+        <Point X="2.375" Y="3.346" />
+        <Point X="2" Y="3.346" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAQAAAACkACgAABAgAKoAUAEIQAEAAAaCAAAQ=</HashCode>
+      <FileName>ga\R010.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R100" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="org.SpocWeb.root.data.maths.pga.ga.AGeoGebra2&lt;T&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="2.191" />
+        <Point X="3.5" Y="2.688" />
+        <Point X="2" Y="2.688" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAQAAAACkACgAABAgAKoAUAEIAQEAAAYCAAAQ=</HashCode>
+      <FileName>ga\R100.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R200" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAQAAAACkACgAABAgAKoAUIEIAAEAAEYCAAAQ=</HashCode>
+      <FileName>ga\R200.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R300" Collapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAQAAAACkACgAABAgACoAUIkIAAEAAEIDAAAQ=</HashCode>
+      <FileName>ga\R300.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R410" Collapsed="true">
+    <Position X="11.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAgAQAAAACkACgAABwgAC4CUI0IAAEAAEIDAAEc=</HashCode>
+      <FileName>ga\R410.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.R311" Collapsed="true">
+    <Position X="13.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAAAQAAAACkACgAABggCCoAUI0M4AEAAEIDAAAQ=</HashCode>
+      <FileName>pga\R311.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R310" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAAAQAAAACkACgAABggACoAUI0IAAEAAEIDAAAQ=</HashCode>
+      <FileName>ga\R310.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.Pga3D" Collapsed="true">
+    <Position X="10.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAQAAAgCkACgAAFAgCCpgUIkMcAEIA0IDBAQQ=</HashCode>
+      <FileName>pga\Pga3D.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.1" />
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.AGeoGebra&lt;T&gt;">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="Conjugate" Hidden="true" />
+      <Method Name="Create" Hidden="true" />
+      <Method Name="Dot" Hidden="true" />
+      <Method Name="Dual" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="GetEnumerator" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="ICanMerge&lt;T, IReadOnlyList&lt;float&gt;&gt;.Plus" Hidden="true" />
+      <Method Name="IEnumerable.GetEnumerator" Hidden="true" />
+      <Method Name="Involute" Hidden="true" />
+      <Method Name="IsEqualTo" Hidden="true" />
+      <Method Name="IsZero" Hidden="true" />
+      <Method Name="Join" Hidden="true" />
+      <Method Name="Meet" Hidden="true" />
+      <Method Name="MeetR" Hidden="true" />
+      <Method Name="Minus" Hidden="true" />
+      <Method Name="MinusR" Hidden="true" />
+      <Method Name="Neg" Hidden="true" />
+      <Method Name="Norm" Hidden="true" />
+      <Method Name="Normalized" Hidden="true" />
+      <Method Name="NormI" Hidden="true" />
+      <Method Name="operator -" Hidden="true" />
+      <Method Name="operator !" Hidden="true" />
+      <Method Name="operator &amp;" Hidden="true" />
+      <Method Name="operator *" Hidden="true" />
+      <Method Name="operator ^" Hidden="true" />
+      <Method Name="operator |" Hidden="true" />
+      <Method Name="operator ~" Hidden="true" />
+      <Method Name="operator +" Hidden="true" />
+      <Method Name="Plus" Hidden="true" />
+      <Method Name="Pred" Hidden="true" />
+      <Method Name="Reverted" Hidden="true" />
+      <Method Name="SqRt" Hidden="true" />
+      <Method Name="Succ" Hidden="true" />
+      <Method Name="Times" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="ValueHash" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAACBMAQAgCQDgE6BECAAwBKIYQAMIGECAAARAAACA=</HashCode>
+      <FileName>AGeoGebra.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R011" Collapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAQAAAACgAAAAAAAgCCIAQAkIQAAAAEACAAAA=</HashCode>
+      <FileName>ga\R011.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.SpocWeb.root.data.maths.pga.ga.R110" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAQAAAACgAAAAAAAggCIAQIEIQAAAAEACAAAA=</HashCode>
+      <FileName>ga\R110.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,292 @@
+﻿Motion with Geometric Algebra	
+This article introduces the reader to the subject of kinematics rendered with geometric algebra. We apply our recently learned skills concerning geometric algebras and explore the concepts of motion along with a few related topics.
+
+The purpose of this article is entirely educational. If the reader works to comprehend the content and also works the problems, they will come away with a better understanding of kinematics and how related problems can be solved with geometric algebras. These problems include the flights of cannonballs, baseballs, juggling pins, and any other object where our primary interest is its motion.
+
+The reader will understand... 
+* what is meant by location and change of location
+* how to represent locations and location rates.
+* the concept of isotropy and some of its implications.
+
+Introduction	
+
+This chapter builds upon introductory material from past articles. The reader is encouraged to look through the concepts and make a good attempt to learn them all as they will be assumed in this and future chapters. The material is found in the reference section at the end. Some of the material covered here can be understood without a complete understanding of the introductory concepts, but the examples will be hard to follow and the path will seem obscure.
+
+Geometric algebras encode many of our basic expectations from geometry in an algebraic manner. With them, we can represent line, plane and volume segments and many of the things we do with them. In order to do this, we defined three basic operations in which components from our algebras participate.
+
+* Scalar multiplication - Scaling of an object by some number from our number line
+* Addition - Piecewise combining of identical geometric objects
+* Multiplication - The real powerhouse that separates geometric algebras from vector spaces.
+With these basic operations, we were able to define algebraic operations for the geometric concepts of reflection and rotation. Both were defined without the geometric meaning of 'angle', so we can use them to give algebraic meaning to the term. We also introduced an operation named 'reversion' that effectively corrects for our tendency to write equations with a left to right bias. We hinted that it would get used later.
+
+We held off defining angles in great detail, though, until we needed them to link inner and outer products with the notion of projection. With these products and the operations of reflection and rotation, special combinations of regular addition and multiplication were shown to reproduce of the concepts we need to solve geometric problems.
+
+The last thing discussed and demonstrated throughout the introduction was the concept of representation freedom. Geometric algebras encode the rules of geometry for our use in problem solving, but the rendering of those problems into particular representations or reference frames should be delayed as long as possible. This is done to ensure the encoding of the representation do not get confused with those of the higher geometry.
+
+The following list summarizes the operations in a convenient way.
+
+|Reflection	|Two-sided 'Sandwich' product of the object with a line segment and its inverse. The line segment is the part of a mirror plane most parallel to the object's orientation.	|
+|Rotation	|Two reflections involving different line segments or a two-sided product of the object with a plane segment and its inverse. The plane segment is the rotation equator.	|
+|Inner product	|The natural follow-on to the notion of projection. It typically produces lower ranked objects from its two inputs. Inner products with scalars vanish.	|
+|Outer product	|The equivalent of the exterior product that typically creates higher ranked objects from its two inputs. Outer products with pseudo-scalars vanish.	|
+|Dual operation	|A one-sided operation that swaps low ranked objects for their equivalent high ranked objects. Scalars turn into pseudo-scalars. Other ranks do similar things.	|
+|Reversion operation	|A recipe that swaps the order of all products effectively making equations that are read from left to right look as if they were read from right to left.	|
+
+Other operations will be crafted for use in later chapters, but the ones from the list above provide the reader with a good starting point.
+
+____________________________________
+
+Section 1: Location	
+In order to describe motion, we must start with a good foundation that describes position. Beginning physics students are taught this lesson largely through recipes learned during problem solving attempts. 
+
+	Position	
+
+Position is best described as a relationship between objects. Pick an object to fill the role of 'reference.' All other objects have a position relative to the reference if the position relationship (a translation) can be applied sensibly. From geometry, we have a few expectations for this relationship that we will list out below.
+
+* Positions must have a sense of orientation.
+* Positions must have a sense of order, though they need not be well-ordered.
+In practice, the second condition is easily managed through the definition of distance and its numeric equivalent. In the past, it was managed though the notion of geometric equivalence. The modern approach brings with it the powerful tools of algebra, so we will stick with it.
+
+The first condition is more difficult to represent. In the past it was managed through a collection of angles, but the approach proved to be unwieldy. The early explorations involving quaternions and vectors were attempts to provide a better way. Most students are now taught a simplified vector approach even if it isn't called such by name. The older, many-angle method is still in there, it's just buried a bit behind the formalism.
+
+With our geometric algebras, we can meet both expectations with little trouble. We also encounter unexpected things that require us to think carefully about the possibility that there are other expectations we forgot to write down. To show this, we outline a scenario for use in later examples.
+
+		Scenario: Bug in a room	
+Imagine yourself in a room shaped like a rectangular box. In one of the lower corners is a small rubber ball. At some other location is a common housefly. Located on the wall, ceiling, or floor is a small hunting spider of a type that does not make webs. We use the ball in the corner as a reference object and the house fly as the object in motion for which a description is desired. Both you and the spider want to be able to describe the motion, though probably for different reasons.
+
+In our ball we will stick three pins such that the line segments they imitate do not all lie in the same plane. The lengths of the pins are chosen to be the same to make things simpler. We also make the line segments mutually perpendicular, but it isn't strictly necessary to do so.
+
+We finish by describing the size of the room relative to the lengths of the pins. It is 132 by 120 pins for the floor lengths and 96 pins for the height to the ceiling.
+
+We will also imagine a line segment connecting the fly to the ball. Inner products involving this line segment with the three we defined with pins produce a set with three scalars in it. We can use these scalars or the line segment to the fly interchangeably to point out where the fly is. These scalars function as coordinates.
+
+		Technical Note	
+
+If we ever work in a space where a basis line segment isn't its own multiplicative inverse [ei-1 ↔ ei implies ei2 = e] then we have to be a bit more careful. When this assumption breaks, we must keep track of the difference between covariant and contravariant coordinates, but we won't delve into this issue here.
+
+Example 1: Suppose the fly is at the middle of the room half way to the ceiling. Find the scalars.
+
+First, let us orient our ball such that the pins point along the width, length and height of the room. This helps simplify our effort a bit.
+
+Second, let us pick the pin pointing at the ceiling (height) as the one representing e3, the pin pointing along the width as e2 and the one pointing along the length as e1.
+
+If the fly is in the middle of the room, the line segment connecting the rubber ball to it will have projections along each of the three reference line segments. These projections will reach half way along each of the distances for length, width, and height, so the scalars must be {76e, 60e, 48e} and the line segment to the fly is P = 76e1 + 60e2 + 48e3.
+
+At this point, most introductions to kinematics begin to describe motion in terms of functions of the coordinates and time. We won't do that yet because we have an opportunity to go a bit further and lump topics usually introduced later into our effort. One such topic is orientation. Most students are taught to describe orientation and rotation rates after working with linear motion and Mechanics for a while. We turn things around here because there is an opportunity even at this basic level to shed light on some useful insights. To do so, remain aware that the two expectations we used to get this far said nothing about having to use line segments to describe location. We made that choice.
+
+		Orientation	
+
+Orientation is best described as a relationship between reference frames associated with objects. Pick one object as the starting reference and all other objects have an orientation relative to it if the orientation relationship (a rotation) can be applied sensibly. From geometry, we have a few expectations for this relationship that are listed below.
+
+Orientations must themselves have a sense of orientation.
+Orientations must have a sense of order, though they need not be well-ordered.
+In practice, the second condition is managed through the definition of rotational distance usually named 'angle' and its numeric equivalent. The first condition is managed much like it was for position. Segments with orientation are built into geometric algebras, so we won't concern ourselves much with expectation one.
+
+In order to describe the orientation of the fly, we need to define another set of line segments to define the fly's reference frame. Imagine three line segments drawn from the center of the fly with one going forward to a point in front, the second going in the relative up direction, and the third going to the right. Up for the fly might not match up with your sense of up since the fly might be upside-down or banking at times.
+
+With these line segments for the fly, we can perform a similar set of inner products between them and the first three associated with the reference ball. The end result is a set with nine scalars. However, since this approach produces a result with only three independent pieces of information out of the nine we calculate, the information we want about the fly's orientation is over described. Perhaps it would be simpler to start a better way with a better approach.
+
+The basis plane segments also come in threes for R(3,0). Instead of describing the orientation of the fly with line segments, we could use plane segments that describe how to rotate the reference line segments to get the set for the fly. Some combination of three basis planes will produce a plane that may be used in a rotation operator to do just that. It is this plane we will use to describe the orientation of the fly since we can derive the three independent scalars mentioned in the previous recipe. Inner products between the rotation plane and three basis planes we can define from the pins produce a set with three scalars. The fact that these scalars describe the orientation of the fly is best seen with examples.
+
+Example 2: Suppose the fly is oriented in the same sense as the pings in the ball. Find the scalars.
+
+In this case the plane segment associated with the fly should be zero since no rotation is needed. The inner products produce three zero sized scalars as a result.
+
+Example 3: Suppose the fly is oriented such that its forward direction is your up direction and its up direction is your backward direction. [90-degree rotation from forward to up direction.] Find the scalars.
+
+Let us start with a listing of the relationships between your line segments and the ones the fly uses. The line the fly calls e1 is the one you call e1. The line the fly calls e2 is the one you call e3. The last line e3 is the one you call -e2.
+
+The rotation plane that switches between your reference and the one used by the fly is (π/2) e23. The inner products are zero for two planes and -(π/2)e for your e23.
+
+Example 4: Suppose the fly is oriented such that its forward direction is two thirds of the way from example one to example two. [60-degree rotation from forward to up direction.] Find the scalars.
+
+Let us start with a listing of the relationships between your plane segments and the ones the fly uses.
+
+Fly's e1 → Your e1
+Fly's e2 → Your [cos(60)e2 + sin(60)e3]
+Fly's e3 → Your [-sin(60)e2+cos(60)e3]
+
+The rotation plane that switches between your reference and the one used by the fly is (π/3) e23, so the scalar set is { 0 e, 0 e, -(π/3)e}
+
+From these examples, we see that we could just as easily use the rotation plane or the three scalars to describe the orientation of the fly. This is the same choice we had between the line segment and three scalars for describing the position of the fly. In the future, we will stick to the geometric objects and avoid descriptions using sets of scalars with the understanding that the scalars are how things are actually measured when we are faced with experimental necessity.
+
+		Technical Note	
+
+A curious connection exists between the two types of location mentioned so far that we will elaborate later. For now, know that the rotation plane used to describe orientation feeds a rotation operator. The line segment used for position feeds a translation operator that we have yet to discuss.
+
+The algebra R(3,0) contains eight pieces of geometry of which we have made use of six to describe the position and orientation of the fly. There is more we could do using the last two pieces, so let's not let them go to waste.
+
+		Volume	
+A simpler aspect of the fly we could describe is the volume it occupies. If the fly could inhale and exhale or change size after it eats something, its volume would vary with time and we could use a volume segment to describe it. An insect with an exoskeleton might not be the best object for our scenario at this point, but a bird would work. Never the less, this doesn't stop us from building the concept.
+
+Volume may also be described as a relationship between two objects. One object is chosen as the reference and all others are measured against it. From geometry, we can state a similar set of expectations for volumes in three-dimensional spaces.
+
+		Volumes must have a sense of orientation.	
+Volumes must have a sense of order that is well ordered.
+In practice, both conditions are managed by treating volumes like real numbers. A sense of positive and negative is enough to give them orientation and make them well ordered. For this simple arrangement, both expectations are really saying the same thing.
+
+We might not care to describe the volume of the fly and include it with our other types of location, but the hunting spider that shares the room would care. In order to catch the fly, the spider might choose to pounce on it from above by dropping from the ceiling. The size of the fly would matter a great deal to the spider's strategy since a larger fly would allow some near misses to produce a meal.
+
+In order to describe the volume of the fly, we add a volume segment to the set of reference objects we based upon the pins in the ball. The volume segment we use for the size of the fly can be paired with the reference one in an inner product to produce a single scalar. We could use the scalar or the volume segment interchangeably for the description of the size of the fly. We make use of the volume segment instead for the same reason we kept to the geometric versions of position and orientation.
+
+	Time	
+
+The last piece of geometry from R(3,0) we have yet to use is the scalar segment. To this piece we will assign our concept of time and try to define it very carefully. Since few physics textbooks go into much detail about the meaning of 'Newtonian' time, the reader is encouraged to take care in absorbing this material. Time is best understood with a working definition, so more examples are in order.
+
+Suppose you observe the fly and write down the line, plane, and volume segments you intend to use as a set to identify its location. You could do this more than once and build a collection of locations. The difference between any two sets would give you the change in location of the fly no matter whether the change was one of position, orientation, or size. Each one of your sets in the collection could be labeled in some sense to help you keep them identified.
+
+It is the label we write to identify locations that we will use to define 'time.' There are a couple of expectations we have for this label listed below.
+
+It must be possible to order time labels in the well ordered sense.
+For each time label, objects must have a unique location.
+An easy set of labels to use that meets the first expectation may be chosen from the real number line. Numbers can be ordered by the less-than relationship. They are well ordered because any finite set of them has a 'least' member. Numbers may be infinite, but we only use a finite number of them in practice.
+
+Expectation two may seem obvious to some readers, but don't be fooled into not questioning it. Modern physics experiments have shown that this expectation is not met by reality in at least two ways. For basic kinematics and a Newtonian perspective on our world, though, it is enough. Since scalars behave like real number in most respects, we will use our last piece of geometry to represent time.
+
+We now have an expanded description of the location of an object capable of supporting its position, orientation, volume, and time label. To do this, we put each type of geometry from R(3,0) to work. Lumping all these pieces together and calling them 'Location' may seem a little strange, but it is no more than a pedagogical rebellion to do so since we tend to keep the parts distinct in our minds even while we use this notation to provide compact shorthand.
+
+Section 2: Motion	
+
+With our description of location, we can proceed to a description of motion. We have most of what we need, so with a couple of definitions, we will have the foundation for kinematics and be able to solve problems with our technique.
+
+Motion occurs when an object changes its location over some finite amount of time. In order to avoid infinite speeds, we require the time elapsed to be non-zero when the change of location is non-zero. Let L be our symbol for the location of the fly. Note that L is multi ranked since it describes four distinct things. We represent a change in location with the symbol dL. The elapsed time that occurs over dL is represented as dt where t is the scalar part of L.
+
+Definition: Velocity (V) is the ratio of dL to dt as dt becomes very small.
+[V = dL/dt.]
+
+		Technical Note	
+
+The ratio in the definition above is really a derivative of the location with respect to time. Proper definitions go into a lot more detail and the curious reader is encouraged to get and read a good calculus book. We will gloss over the details here and assume that the ratio exists when we need it to exist.
+
+Because L is multi ranked, V is also multi ranked. The part of velocity describing position change has the same rank as the position within L. The same holds true for orientation and the others. An interesting thing to note is that the scalar part of V is always 1e since it is the ratio of dt with itself.
+
+Definition: Acceleration (A) is the ratio of dV to dt as dt becomes very small.
+[A = dV/dt.]
+
+Because V is multi ranked, A is also multi ranked. The part of acceleration describing changes of the position change has the same rank as the position change within V. The same holds true for orientation and the others. An interesting thing to note is that the scalar part of A is always 0e since the scalar part of V is an unchanging constant.
+
+A few examples demonstrate these definitions more clearly in the working sense.
+
+Example 5: If A for the fly vanishes for all its ranks, what is implied for V and L?
+
+If A vanishes, we know that dV/dt does also. The only way for that to happen over all possible times is for dV to vanish. That happens when V is a constant we will name V0. Note that V0 may be a constant, but it is still multi ranked.
+
+V = V0
+
+If this is true then dL/dt = V0. This works out if L = average of (V0 * t) over the time elapsed in dt. This works out to an expression like the following.
+
+L = V0 * t + L0
+
+whereL0 is V0 * t0 which happens to be the value of V0 * t at the start of the averaging.
+
+This shows that V is constant and L is easily predictable once you know where the fly starts. All one needs to know is V0 and the time on the clock. If the spider could tell time, it should have no trouble catching a non-accelerating fly.
+
+Since both V0 and L0 are multi ranked, our two equations each express four distinct things. The one for V describes the velocity of the clock, position, orientation, and volume of the fly. The one for L describes the location for the clock, position, orientation, and volume of the fly. Both show that the clock steadily ticks, the position steadily moves along a straight line, the orientation steadily swivels around some defining plane, and the volume steadily grows or shrinks. We might expect the part of V0 governing volume change for the fly to be zero or some tiny number while the parts for position and orientation might be relatively large. In practice, we may break these two equations out into eight to get at all the parts, but it really isn't needed here.
+
+Example 6: If A for the fly is a non-zero constant, what is implied for V and L?
+
+We know from how A is defined that its scalar part must always vanish even if the other ranks do not. This fact means the scalar part of A leads to the same behavior for the scalar parts of V and L that we saw in the previous example. The ticking of the clock is the same in both cases, as we would expect it to be.
+
+For A to be constant and non-zero in the other ranks we can write the following.
+
+A = A0
+
+We must also have dV/dt = A0. This works out if V = average of (A0 * t) over the time elapsed dt. This works out to an expression like the following.
+
+V = A0 * t + V0
+
+where V0 is the value of (A0 * t) at the start of the average.
+
+If one follows through to L one gets the following expression.
+
+L = 1/2A0 * t2 + V0 * t + L0
+
+This works because L = average of ((A0 * t + V0)*t) over the time elapsed dt.
+
+This shows that V is a steadily changing object. If one knows A0 and V0 one can calculate the new velocity for the fly by knowing how to tell time. Knowing the location of the fly becomes a little trickier, but not impossibly so since the velocity changes are easy to predict.
+
+Children learn to cope with something close to this kind of situation when they learn to catch a ball thrown to them. The child does not have to tell time with great precision as long as they know roughly when a ball is going to arrive nearby. Jugglers learn to cope with both the position and orientation pieces of motion when they must catch the correct end of a bowling pin, knife or flaming torch. Perhaps someone, somewhere will learn to juggle something that also changes size.
+
+More complicated scenarios for the time dependence of A lead to more complicated equations to solve for V and L. This kind of complexity leads to more demand for knowledge of calculus from the reader. Imagine an acceleration that had a functional dependence on the velocity as well as the time. Drag forces in fluids like air or water work this way and lead to different sets of equations for our three objects. We will avoid this complexity for now, though, since we aren't assuming the reader knows that much calculus.
+
+Section 3: Isotropy	
+
+The last subject we will explore in this chapter is one we glossed over a bit when we described location. It isn't terribly important to those who simply want to solve motion problems, but it becomes quite meaningful to anyone who asks why we set things up the way we did. It also matters to those who already know kinematics as it is generally taught with smaller, disconnected vector spaces for position and orientation.
+
+The subject we address is the issue of the passive symmetry we expect in how our algebra is used to describe the physical world. This subject is much deeper than we will explore here, but a good start will be made to introduce the reader. We refer specifically to how one chooses to represent objects. Our choices are free in many respects.
+
+From our own experiences, we might expect that we could make a few variations in our earlier examples without changing the actual motion we observe. In example one we were careful to name particular pins. Most would expect that we could have shuffled the names without changing anything real we can observe. In examples two through four, we were careful to name particular line segments for the fly's reference frame. Had we shuffled the labels, we would have produced the same set of scalars but in a different order. Few would expect the observable motion to change.
+
+To better describe the kind of transformations we expect to have no affect on our physics laws, we need to describe the location object L from a slightly different perspective. We will generalize the recipes we created to find the parts of L and show that they are really all parts of the same thing below.
+
+Instead of using just one R(3,0) algebra anchored at the rubber ball, imagine there is a second one anchored with the fly and a third one anchored with the spider. The location L of the fly can now be interpreted as a description for how to move objects in the starting algebra to get them lined up in the fly's algebra.
+
+The position part of L explains how to move the ball to where the fly is.
+The orientation part of L explains how to rotate the ball to line up the pins with the directions used by the fly.
+The volume part of L explains how to inflate or deflate the ball to match up with the size of the fly.
+The scalar part of L describes the time offset between your clock and the one used by the fly.
+Since the spider is located at some other point in the room, the location L it uses for the fly will be different from the one you use. Therefore, the things the spider must do to match its algebra with that of the fly are different as they should be.
+
+If you were to follow the recipe described by your L for the fly, your algebra (reference frame) would move to match up with the fly. You would not be altering the fly at all during this transformation, so we can describe the transformation as 'passive.' An 'active' transformation would be something that actually affected the fly. Passive transformations do alter the way we describe motion, but if they don't alter the form of the equations of motion, the observable physics remains unaltered.
+
+The reshuffling of line segment labels can be done via rotations and reflections. These two operations are usually considered as acceptable to include among the passive transformations we expect to leave the equations of motion unaltered. We have other operations available to us compared to those who use the older approach of smaller, disconnected vector spaces, though. We have to decide whether to include the dual and reversion operations and others while determining the related implications.
+
+Example 7: Suppose the spider used a different algebra from yours such that your scalar was its volume segment and visa versa. Also suppose that your line segments were its plane segments and visa versa. Would this difference change the equations of motion from example five?
+
+The transformation between objects in your algebra and similar ones in the spider's algebra is the dual operation used in the passive sense. Both of you would have the same information embedded in your A, V, and L but the parts would be stored in different ranks.
+
+In example five, we assumed that A vanished for all ranks. This fact led us to the conclusion that V was constant for all ranks and L varied linearly with respect to time for all ranks. The first two statements are obviously unaffected if we shuffle the ranks around. It isn't so obvious the statement concerning L isn't affected because time was identified as its scalar part.
+
+To the spider, time is still written as the scalar part of L. Whether you think this part is a volume segment or not is irrelevant to the spider. Since volume segments meet the same expectations we required of a time label, it shouldn't matter to you that the spider represents it this way. As long as the spider is using an object that meets the expectations we have of a time label, L should be unaffected by the dual operation too. All we have to do is be careful to use the correct entry for time in the equation for L and we can conclude that this change makes no difference to the equations of motion. You could have used the spider's inside-out algebra and observed the same equations for A, V, and L.
+
+Example 8: Suppose the spider used a different algebra from yours such that your positive plane segments were its negative plane segments and visa versa. Also suppose that your positive volume segment was its negative volume segment and visa versa. Would this difference change the equations of motion from example five?
+
+The transformation between objects in your algebra and similar ones in the spider's algebra is the reversion operation. Both of you would have the same information embedded in your A, V, and L but the parts would be flipped around for a couple of the ranks.
+
+In example five, we assumed that A vanishes for all ranks. Whether the plane and volume segments are flipped with respect to their signs won't matter for A as a result.
+
+The fact that V is a constant isn't altered either. The spider will use a slightly different constant than you will. Velocities have a sense of orientation just as locations do, so this difference is irrelevant because the magnitudes of both are identical.
+
+Finally, the fact that L is linear with respect to time is unaltered by the sign changes. Both of you use different initial velocities and positions, but those differences are canceled by the differences in the underlying algebras. The form of the location equation is the same for both you and the spider.
+
+There are other operations besides the ones we described in the introductory chapter that swap components of L between ranks. In general, it is possible to find a transformation that swaps any single basis segment for a combination of all of them. A reasonable question to ask then is whether passive versions of these transformations leave the equations of motion unaltered. We should also ask whether they should leave these equations unaltered.
+
+The primary consequence of accepting all these transformations into the family of passive transforms that leave the equations of motion unaltered is that we should never attribute special meaning to any one object being of any one rank. We chose to write position as a line segment, but we could just as easily have written it using the plane segments. We chose to write orientation as a plane segment describing the rotation equator. We could have written it as a line segment describing the rotation axis as many do. This consequence forces us into a kind of dimensional democracy where we must abandon our bias for certain ranks. It also forces us to admit that any expression that does not have all ranks represented is probably incomplete. Imagine a position line segment where we forgot to add the e3 component. Leaving off a whole rank would be a similar mistake.
+
+We could stick with only using reflection and rotations among the allowable passive transformations. Doing so ensures the ranks of our objects won't mix. However, we have already shown one rank altering transformation shouldn't be a problem. Instead, we shall assume that all the possible passive transformations are allowed until some experiment proves otherwise.
+
+		Technical Note	
+
+This decision will hold for this and other chapters unless we specifically state otherwise. This means that the equivalent vector space we are using is eight dimensional and full mixing is allowed unless there is physical evidence giving preference to some of the directions for certain objects over others.
+
+The question of which transformation to include in the passive transform family becomes much more important later, but we will save that subject for another time. It would take us in the direction of stating properties for which we expect to find conservation and continuity laws. When the symmetries pass to the active transformations, real physical insight may occur.
+
+Summary	
+
+In this chapter, location was described in a manner that encompassed position, orientation, volume, and time. Examples for how this approach works were given. Our location object was also shown to devolve to more standard techniques if one wishes to keep the ranks within it separate.
+
+Motion was also described through definitions for velocity and acceleration. Basic examples involving constant and zero acceleration were given and the equations of motion derived.
+
+We finished the section with a discussion of the kinds of isotropy we expected for the representation of our objects. A small set of transforms in the passive transformation family give us results typically found in other texts, but we found other examples that should probably be included too. We finished by deciding to allow all passive transforms that can mix object ranks unless there was compelling physical evidence for not doing it. It is at this point that we broke with traditional approaches to kinematics and mechanics in a significant way and that will be demonstrated in the later chapters.
+
+	Problems for Kinematics	
+
+1: Suppose the fly in our scenario lands on the ceiling in the exact middle and hangs there upside-down looking at the rubber ball while it rests. Describe the parts of L that can be specified.
+
+2: Suppose the spider is on the ceiling in the far corner opposite the ball and looking at the fly. Describe the parts of L it uses for the fly.
+
+3: If you observe the fly at 10e + 70e1 + 120e2 + 80e3 + &pi/2 e23 + 1/64 e123, describe the value for L the spider would find for the fly if the spider were located where it was in problem two.
+
+4: Suppose the fly in problem one drops to the floor and smoothly spins as it does such that it just barely swings around to land on its feet facing the ball before reaching the floor. If it takes five seconds to make the fall, describe the V you would observe using the initial and final positions of the fly.
+
+5: If A was a non-vanishing constant for its first rank and vanished for all other ranks, describe the motion an object would make.
+
+6: If A was always of constant magnitude and perpendicular to V for its first rank and vanished for all other ranks, describe the motion an object would make.
+
+7: If A was always equal to some negative constant times V for all its non-scalar ranks, describe the motion an object would make.
+
+8:Describe the passive transformation that is implied in problems one and two between your algebra and that of the spider.
+
+9: If the spider decided it wanted to use a clock that ticked backwards, would it change the equations of motion we found in example five? Explain how you come to your conclusion.
+
+10: Suppose the spider climbs to the ceiling and walks across it until it is almost above the fly. The spider intends to drop on the fly from above. Explain how a minimal 'drop-time' strategy increases the odds the fly will catch the fly. Include all parts of L in your approach since the fly certainly will in order to get away.

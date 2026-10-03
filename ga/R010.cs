@@ -1,0 +1,244 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+
+namespace org.SpocWeb.root.maths.pga.ga;
+
+/// <summary> Real + Imaginary Complex Number Algebra with (<see cref="E1"/> = <see cref="I"/>)�=-1: Rotation only </summary>
+/// <remarks>
+/// This is isomorphic to the even subalgebra of <see cref="R200"/>.
+/// 
+/// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-05-24T15:36:37Z
+/// digest: 13ac15a49f743a6ffbcde863a4fa1d6f07a74708c550a84572e2315be436e433
+/// tags: [code/clifford_algebra, code/complex_math]
+/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+/// facets: {layer: domain, status: stable, complexity: 2}
+/// </code>
+/// </example>
+public class R010 : AGeoGebra2<R010>
+{
+	/// <summary> basis names for debug and print output </summary>
+	public static string[] _Basis = { "","i" };
+	/// <inheritdoc />
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-05-24T15:36:37Z
+	/// digest: a5994f6a714f629b603fb9f06fd798b84e11b88cb796c044f93b42fd776480c5
+	/// </code>
+	/// </example>
+	public override IReadOnlyList<string> Basis => _Basis;
+
+	/// <inheritdoc />
+	public override R010 Self() => this;
+
+	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-17T05:58:36Z
+	/// digest: a5994f6a714f629b603fb9f06fd798b84e11b88cb796c044f93b42fd776480c5
+	/// tags: [code/enum, code/clifford_algebra]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 1}
+	/// </code>
+	/// </example>
+	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	public enum Base : sbyte
+	{
+		/// <summary> [0] Scalar Part </summary>
+		_1_,
+
+		/// <summary> [1] AKA e1; imaginary Part i� = -1 </summary>
+		i,
+
+		/// <summary> No Component; signals both the End of Components and 0-Elements in the Cayley Tables below </summary>
+		_0,// = sbyte.MinValue
+	}
+
+	#region basis blades
+	public static R010 E1 = new(1, 1);
+	public static R010 I = E1;
+	public static R010 _1_ = new(1f, 0);
+
+	/// <summary>Gets the _ Blades.<br/>
+	/// Gets the blades.</summary>
+	static readonly R010[] _Blades = {_1_,I};
+	/// <summary>Gets the blades.</summary>
+	public static readonly R010[] Blades = _Blades;
+	#endregion basis blades
+
+
+	#region Cayley Tables for different Products in R0, 1, 0
+
+	/// <summary>Gets the _ Product Outer.</summary>
+	static readonly Base[][] _ProductOuter = {
+		new[] {Base._1_, Base.i},
+		new[] {Base.i, Base._0},
+	};
+
+	/// <summary>Gets the product Outer.</summary>
+	public static readonly IReadOnlyList<IReadOnlyList<Base>> ProductOuter = _ProductOuter;
+
+	/// <summary>Gets the _ Product Geometric.</summary>
+	static readonly Base[][] _ProductGeometric = {
+		new[] {Base._1_, Base.i},
+		new[] {Base.i, ~Base._1_},
+	};
+
+	/// <summary>Gets the product Geometric.</summary>
+	public static readonly IReadOnlyList<IReadOnlyList<Base>> ProductGeometric = _ProductGeometric;
+
+	/// <summary>Gets the _ Product Dot.</summary>
+	static readonly Base[][] _ProductDot = {
+		new[] {Base._1_, Base.i}, 
+		new[] {Base.i, ~Base._1_},
+	};
+
+	/// <summary>Gets the product Dot.</summary>
+	public static readonly IReadOnlyList<IReadOnlyList<Base>> ProductDot = _ProductDot;
+
+	/// <summary>Gets the _ Products.<br/>
+	/// Gets the products.</summary>
+	static readonly Base[][][] _Products = { _ProductGeometric, _ProductDot, _ProductOuter};
+	/// <summary>Gets the products.</summary>
+	public static readonly IReadOnlyList<IReadOnlyList<IReadOnlyList<Base>>> Products = _Products;
+
+	#endregion Cayley Tables for different Products in R0,1,0
+
+	/// <summary> Creates a new <see cref="R010"/> complex number multivector from the given component array. </summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	public static R010 New(params float[] f) => New((IReadOnlyList<float>) f);
+	/// <inheritdoc cref="New(float[])"/>
+	public static R010 New(IReadOnlyList<float> f) => new(f);
+	/// <inheritdoc cref="New(float[])"/>
+	public static R010 New(double f = 0, int idx = 0) => new(f, idx);
+	/// <inheritdoc cref="New(float[])"/>
+	public static R010 New(double f = 0, Base idx = 0) => new(f, idx);
+
+	/// <inheritdoc />
+	public override R010 Create(IReadOnlyList<float> values) => new(values);
+	/// <inheritdoc cref="Create(IReadOnlyList{float})"/>
+	public override R010 Create(IList<float> values) => new((IReadOnlyList<float>)values);
+	/// <inheritdoc />
+	protected override R010 Create_(float[] values) => new(values);
+
+	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	public float this[Base idx] => _C[(int) idx];
+
+	/// <summary>Initializes a new instance of <see cref="R010"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
+	/// Initializes a new instance of <see cref="R010"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	public R010(double f = 0, Base idx = 0) : base(f, (int)idx) {}
+	/// <summary>Initializes a new instance of <see cref="R010"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	public R010(double f = 0, int idx = 0) : base(f, idx) {}
+	/// <summary>Initializes a new instance of <see cref="R010"/> with the specified <paramref name="c"/>.</summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	public R010(Complex c) : base(new []{ (float)c.Real, (float)c.Imaginary}) {}
+
+	/// <summary> Unchecked private Constructor for Speed </summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	R010(float[] f) : base(f) {}
+
+	/// <summary> Checked Constructor with Copy </summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	public R010(IReadOnlyList<float> values) : base(values) {}
+
+	/// <summary> Euclidean norm. (strict positive). </summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	public override double NormSqr() => _C.NormSqr2R010();
+
+	/// <summary> Ideal norm. (signed) </summary>
+	///
+	/// <example>
+	/// <code language="yaml">
+	/// tags: [code/clifford_algebra, code/complex_math]
+	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
+	/// facets: {layer: domain, status: stable, complexity: 2}
+	/// </code>
+	/// </example>
+	public override double NormI() => this[1] != 0 ? this[1] : Norm();
+
+	/// <inheritdoc />
+	public override R010 Dual() => new(_C.Dual2C());
+
+	/// <inheritdoc />
+	public override R010 Dot(IReadOnlyList<float> that) => new(_C.Dot2R010C(that));
+	/// <inheritdoc />
+	public override R010 Join(IReadOnlyList<float> that) => new(_C.Join2(that));
+	/// <inheritdoc />
+	public override R010 Meet(IReadOnlyList<float> that) => new(_C.Meet2(that));
+	/// <inheritdoc />
+	public override R010 MeetR(IReadOnlyList<float> that) => new(that.Meet2(_C));
+	/// <inheritdoc />
+	public override R010 TimesR(IReadOnlyList<float> that) => new(that.Times2R010C(_C));
+	/// <inheritdoc />
+	public override R010 Times(IReadOnlyList<float> that) => new(_C.Times2R010C(that));
+
+	/// <inheritdoc />
+	protected override double[][] Coefficients() => throw new NotSupportedException();
+}
+

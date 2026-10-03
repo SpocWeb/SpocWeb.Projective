@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		
+		<EnableDefaultItems>true</EnableDefaultItems>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="_Resources\**\*" Exclude="**\*.vrn;**\*.vrn.zip">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>net48;net10.0</TargetFrameworks>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\org.SpocWeb.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>org.SpocWeb.root.maths.pga</RootNamespace>
+    <LangVersion>latest</LangVersion><!--8.0 with Classes, except Interfaces Default Implementations!-->
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefineConstants>TRACE;STD20 NUNIT DOTNET4 INPUTS NET_4_5 HAVE_ASYNC HAVE_LINQ HAVE_BIG_INTEGER HAVE_DYNAMIC HAVE_ICLONEABLE HAVE_VARIANT_TYPE_PARAMETERS HAVE_COMPONENT_MODEL HAVE_ICONVERTIBLE HAVE_BINARY_EXCEPTION_SERIALIZATION HAVE_INOTIFY_COLLECTION_CHANGED HAVE_INOTIFY_PROPERTY_CHANGING HAVE_DATE_TIME_OFFSET HAVE_TYPE_DESCRIPTOR HAVE_DB_NULL_TYPE_CODE HAVE_HASH_SET HAVE_NO_FAST_REVERSE HAVE_XML_DOCUMENT HAVE_XLINQ HAS_CUSTOM_DOUBLE_PARSE HAVE_EXPRESSIONS  DOTNET5</DefineConstants>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+    <StartupObject></StartupObject>
+    <AssemblyName>maths.pga</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net48|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <WarningsNotAsErrors>CS0618</WarningsNotAsErrors><!--Obsolete Number.IsZero/IsApprox calls without Tolerance: to be replaced explicitly, see ReadMe-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\org.SpocWeb.snk" Link="org.SpocWeb.snk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\CompanyInfo.cs" Link="Properties\CompanyInfo.cs" />
+    <Compile Include="..\..\GlobalUsings.cs" Link="Properties\GlobalUsings.cs" />
+    <Using Include="NUnit.Framework" />
+    <Using Include="NUnit.Framework.Legacy" />
+    <Using Include="org.SpocWeb.root.data.web" />
+    <Compile Include="..\..\SolutionInfo.sdk.cs" Link="Properties\SolutionInfo.sdk.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_linked\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpocWeb.IMaths\SpocWeb.IMaths.csproj" />
+    <ProjectReference Include="..\SpocWeb.Url\SpocWeb.Url.csproj" />
+    <ProjectReference Include="..\SpocWeb.Interfaces\SpocWeb.interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>

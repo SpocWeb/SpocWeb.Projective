@@ -1,0 +1,221 @@
+﻿Plane-Based Geometric Algebra PGA
+A Guided Tour
+Leo Dorst
+University of Amsterdam
+Version 1.15– July 6, 2020
+
+Planes are the primitive elements for the constructions of objects and operators in Euclidean geometry. Triangulated meshes are built from them, and reflections in multiple planes are a mathematically pure way to construct Euclidean motions.
+
+A geometric algebra based on planes is therefore a natural choice to unify objects and operators for Euclidean geometry. The usual claims of ‘completeness’ of the GA approach leads us to hope that it might contain, in a single framework, all representations ever designed for Euclidean geometry - including normal vectors, directions as points at infinity, Pl¨ucker coordinates for lines, quaternions as 3D rotations around the origin, and dual quaternions for rigid body motions; and even spinors.
+
+This text provides a guided tour to this algebra of planes PGA. It indeed shows how all such computationally efficient methods are incorporated and related. We will see how the PGA elements naturally group into blocks of four coordinates in an implementation, and how this more complete understanding of the embedding suggests some handy choices to avoid extraneous computations. In the unified PGA framework, one never switches between efficient representations for subtasks, and this obviously saves any time spent on data conversions.
+Relative to other treatments of PGA, this text is rather light on the mathematics. Where you see careful derivations, they involve the aspects of orientation and magnitude. These features have been neglected by authors focussing on the mathematical beauty of the projective nature of the algebra.
+But since orientation and magnitude are very relevant for practical usage, we must incorporate them into the framework.
+
+I started this text as a replacement for Chapter 11 of the 2007 book ‘Geometric Algebra for Computer Science’, written at a time when PGA was underappreciated. At 100 pages, it has become rather more; but I do assume some familiarity with the standard geometric algebra of the chapters that came before. Even if you are totally new to GA, you will still get the main gist of the power of PGA, and that may motivate you to study the basics of general GA. Welcome to the future!
+
+Please refer to this chapter as: 
+Leo Dorst
+A Guided Tour to the Plane-Based Geometric Algebra PGA
+2020, version 1.15
+Available at http://www.geometricalgebra.net
+and http://bivector.net/PGA4CS.html.
+
+1 A Minimal Algebra for Euclidean Motions	
+
+	1.1 PGA: One More Dimension Suffices	
+	
+While the 3D vector space model R3 (of Chapter 10 in [1]) can nicely model directions, it is considered to be inadequate for use in 3D computer graphics. The reason is primarily a desire to treat points and vectors as different objects; after all, they are transformed differently by translations. Instead, graphics uses an extension of linear algebra known as ‘homogeneous coordinates’, which is often described as augmenting a 3-dimensional vector v with coordinates (v1, v2, v3) > to a 4-vector (v1, v2, v3, 1)>. This extension helps to discriminate point location vectors from direction vectors, and makes nonlinear operations such as translations and projective transformations implementable as linear mappings.
+This ‘homogeneous model’ can be described in terms of a geometric algebra of one more dimension, with an explicit extra basis vector. That is how we did it in the first edition of our book [1], in its Chapter 11. 
+Then we went on to show the shortcomings of this model: for while translations become linear, they do not become rotors. That means that the great advantage of geometric algebra, namely ‘structure preservation of universally applicable operators’, fails in this model. 
+We then went on to Conformal Geometric Algebra (CGA), turning translations into rotors by going up 2 dimensions (rather than just 1 as in the homogeneous model) in our representational space. That worked as desired.
+The conformal model is indeed useful, and its inclusion of spheres and circles as primitives truly makes it feel like a natural Euclidean geometry. But as has been remarked many times, we get too much: going up 2 dimensions in this manner actually lands us in a space in which the rotors are conformal transformations, rather than merely the Euclidean motions we were looking for. Viewing the 3D rigid body motions with their six degrees of freedom (dof) as special rotors in a space that allows 10-dof rotors gives implementational and computational issues. It works, but one would have hoped to do Euclidean geometry of flat offset elements like lines and planes with less.
+And indeed, one can. Parallel to the development of CGA, Charles Gunn proposed that an algebra that he denoted R*{v 3,0,1} could have the rigid body motions precisely as its rotors, and that it should be the natural algebra for Euclidean geometry. Its useful structure had earlier been exposed by Selig [2] as the Clifford algebra of points, lines and planes. Gunn called it PGA, for Projective Geometric Algebra. That name is somewhat unfortunate, since it suggests to me that it is the algebra that can generate projective transformations by rotors; whereas in fact the ‘projective’ refers to the homogeneous representation it acts on. However, as we will see, PGA is the geometric algebra of (hyper)planes; so if we read PGA as ‘Plane-Based Geometric Algebra’, the moniker is fine.1
+To represent translations as rotors, one needs null vectors (i.e., vectors squaring to zero, which make exponentiation produce linear terms). In CGA, there are two null vectors, and they combine to make the pseudoscalar invertible. In PGA, with only one null vector, the pseudoscalar is a null blade, and not invertible. It was the unconventional nature of duality in PGA that hampered its acceptance by the GA community (which had collectively jumped onto CGA by 2007). Rather than division by the pseudoscalar, Gunn introduced a J-map between R*{v d,0,1} (where the vectors represent hyperplanes) and its dual space R{v d,0,1} (where the vectors represent points). It seemed that one needed both those spaces to make things work; and then one effectively had the same number of basis elements as the CGA model of Rd+1,1, which dualizes more conveniently and has its round primitives like spheres and circles.
+Anyhow, Gunn’s message was not heard. His admonition that we confused ‘duality’ and ‘polarity’ (a metric form of duality) was considered too mathematically prissy, and viewed in the same vein as the unfortunate tradition of considering ‘linear algebra without metrics’ as the fundamental representation, with metrics as an afterthought (which has made our everyday metric applications of LA needlessly involved, since we almost always have a metric anyway).
+We will now develop PGA R{v d,0,1} immediately as an algebra of planes.
+When this is done from the start, there is no real need to see it as dual to anything (just as CGA, an algebra of spheres, does not have a dual star in its notation Rd+1,1). PGA can stand on its own, mostly.
+
+1 I myself dissuaded Charles early on from calling it EGA, for Euclidean Geometric
+Algebra, when I did not yet fully understand what it did. That might not have been a bad name, after all. Sorry Charles...
+
+	1.2 How to Choose a Geometric Algebra?	
+
+For those who are new to geometric algebra, let me briefly summarize the
+organizational principle behind the choice of a geometric algebra for a class of geometry problems. It is: choose the smallest algebra in which your symmetries (the set of transformations under which your objects move) become orthogonal transformations. The reason behind this insistence on orthogonality is that geometric algebra has a particularly efficient way to represent orthogonal transformations (as versors, aka rotors or spinors), which provides automatically covariant combinations of primitives and operators (and that saves a lot of code). There are several routes to achieving this versor representation.
+• One can observe an important conserved quantity, such as Euclidean distance, and choose the inner product of the representational space accordingly. Since orthogonal transformations preserve the inner product, they make up your invariant motions.
+For Euclidean geometry, this leads to CGA (Conformal Geometric Algebra), as explained in Chapters 13-16 of [1]; points are represented by null vectors since they have zero distance to themselves. And for 3D projective geometry it leads to R{v 3,3,} see [3], the geometric algebra of lines.
+• One can start from Cartan-Dieudonn´e’s theorem, which states that in n-D space all orthogonal transformations can be made by at most n reflections. Set up the representative space such that the reflecting elements are its vectors.
+This is the recipe that for Euclidean geometry leads to PGA, using reflections in (hyper)planes to generate all Euclidean motions. In this manner, one can also construct an algebra for conformal geometry, by taking spherical inversion as one’s reflection - again, CGA results.
+• A third method which has been followed starts from geometric primitives in coordinate form, and basically assigns a dimension to each coordinate, with a metric that makes the coordinate algebra come out right. This tends to lead to high-dimensional algebras like R{v 9,6} for 3D quadrics [4], and the versors then generate a host of superfluous symmetries beyond the ones of interest.
+I am yet to be convinced of this approach by a controlled example with a clearly relevant set of versors.
+PGA is an algebra in which the vectors represent Euclidean planes, and it therefore describes Euclidean geometry according to the second principle above. In 3D, four planes are enough to encode any Euclidean motion. Thus we expect a 4-dimensional basis for the PGA of 3D Euclidean space. We will see how the elements that represent a quadruple reflection act exactly as unit dual quaternions (which are currently the most sophisticated way to encode Euclidean motions in computer graphics), and that our embedding implements them most efficiently. As we will show, we can arrange the PGA representation of all primitives and basic motions of 3D geometry naturally in block of 4 coordinates which are processed identically, and thus align well with GPU architecture (glance ahead at Table 5).
+Usually, ‘projective’ or ‘homogeneous’ is interpreted as ‘modulo a scale factor’ – a bad habit inherited from projective geometry in mathematics. If instead we are slightly more strict and interpret our elements as ‘identical modulo a positive scale factor’, we obtain an oriented geometry that enables consistent encoding of the sides of planes, the propagation direction of rays, oriented distances, etc. Doing so will refine the original presentation of PGA. But in many instances in this text, we will also find useful geometrical meaning in the value of the weighting factors themselves, often as a numerical indication of how non-degenerate a geometric situation is (the more orthogonal a line intersects a plane, the more stable the intersection point is under small perturbations, etc.).
+There is more to Euclidean geometry than moving point sets around. PGA tells us all – if we listen.
+
+	1.3 Playing with PGA	
+Because PGA turns out to be a subalgebra of CGA [5] (with the null vector in the extra dimension e directly corresponding to ∞), you can use the free GAviewer software provided with [1] to visualize it. After downloading the library to generate the book figures (from the book website: www.geometricalgebra.net/figures.html), just type in ‘init(2)’ as first command to start up the CGA model (with appropriate basis vectors and visualization). You may want to add a line ‘e = ni; ’ to allow you to use
+the notation of the present text. Just never use any expressions involving the
+‘no’ basis vector in their definition. That is an element of CGA which PGA does not have, and omitting it will reduce the primitives to flat subspaces.
+Since GAviewer draws such flat subspaces whether they have been specified ‘directly’ or ‘dually’ (and the latter corresponds to PGA), not only does it compute your results, but it also draws them automatically. That is how we generated many of the figures in this replacement chapter.
+However, that GAviewer software is 15 years old by now. You may also use more modern computational and visualization alternatives such as the JavaScript tool ganja.js (though currently, that does not yet indicate the orientation of elements).
+
+2 Meet the Primitives of PGA	
+
+Let us first simply use Euclidean direction vectors to denote the location x of a point relative to the origin, and define a plane with unit normal vector n, at an oriented distance δ from the origin. The equation of this plane is x · n = δ. (1)
+
+The idea behind homogeneous coordinates is to rewrite this equation in terms of an inner product for a vector x ≡ [x >, 1]> in a space of one more dimension.
+Let us denote the basis vector for this extra orthogonal dimension by , then x = x + . We could then (naively) assume a Euclidean metric in this extended space, and represent the plane with its n and δ parameters as [n >, −δ] >, i.e., as a vector n = n−δ. That would rewrite the equations into the homogeneous form x · n = 0. (2)
+
+There is a zero on the right-hand side, so any multiple of x or n would represent the same plane. (That is the reason behind the mathematical term ‘homogeneous’ for this representational trick.)
+The Euclidean metric assumption is not really required to obtain this functionality. One could also denote a point representative as a column vector, and the plane representative as a row vector, and employ a matrix product
+
+n1 n2 · · · −δ
+
+
+
+
+
+
+x1
+x2
+.
+.
+.
+1
+
+
+
+
+
+=
+
+0
+
+. (3)
+This is in fact a non-metric approach, with the plane being a 1-form n acting
+on the 1-vector x (as a mathematician might phrase it). But of course the
+concept of a normal (i.e., perpendicular) vector to characterize the direction
+of a plane is convenient, so the Euclidean parts of x and n (i.e., x and n) do
+feel metric. It is the extra dimension  for the point that is really awkward
+to consider as part of a Euclidean metric. For instance, one should not take
+the inner product of two point representatives, which would involve a term
+ ·  that is ungeometrical. Perhaps it should be zero – but that would make
+the metric no longer Euclidean.
+
+· e e1 e2 e3
+e 0 0 0 0
+e1 0 1 0 0
+e2 0 0 1 0
+e3 0 0 0 1
+Table 1: The inner product in PGA.
+
+	2.1 PGA: Planes as Vectors	
+To set up PGA we focus on the representation of Euclidean planes as basic,
+rather than of Euclidean points. (The reason for focusing on the representation of Euclidean planes is that we are going to represent Euclidean motions
+as reflections in planes, as we stated in the introduction, and it is handy to
+have our reflectors be vectors.) Given a plane with unit normal vector n at
+directed distance δ from the origin (measured in the direction n, so δn is a
+location on the plane), we pick as the homogeneous representative the vector
+n = n + δ e. (4)
+We purposely choose a positive sign for the e-term to avoid awkward signs
+later. (Note that this basis vector e for the plane representation is not necessarily equal to the basis vector  in the point representation.)
+To have such a hyperplane as a vector, we clearly need to set up a space of
+d+1 dimensions. First there are the d Euclidean normal directions, which we
+may characterize by the d basis vectors ei of an orthonormal basis. Moreover,
+this basis is augmented with an extra orthogonal basis vector we denote as
+e. We pick a metric for this space in which ei · ej = δij , and in which ei · e = 0. 
+And we choose e · e = 0, so e is a null vector. These relationships are summarized in the inner product table (Table 1).
+With this metric, the squared norm knk
+2 = n · n of a vector representing
+a hyperplane is identical to the squared norm knk
+2 = n · n of its Euclidean
+normal vector. Therefore a hyperplane having a unit normal vector squares
+to 1.
+normalized (hyper)plane : n = n + δe, with n ∈ R
+d and n
+2 = n
+2 = 1. (5)
+Our convention will be to denote the Euclidean elements (from the algebra
+12
+of directions of Chapter 10 of [1]) in bold font, and elements in the (d + 1)-
+dimensional representation algebra by math italic.
+The dot product between two hyperplanes also has a straightforward geometric interpretation, similar to the dot product between Euclidean direction
+vectors
+n · m = n · m = knk kmk cos(φ). (6)
+So independent of their locations, the dot product of the hyperplanes provides
+information on the magnitude of the mutual angle φ between their normals
+(though not on its sign, which would require also knowing the value of n∧m).
+Some degenerate cases of the hyperplane representation n = n + δe may
+improve our understanding.
+• A purely Euclidean hyperplane n = n passes through the origin. Since
+the origin should have no special geometric significance, this may not
+seem a sensible special case. However, hand computations and proofs
+around the origin are more easily done (fewer terms!), and the translational invariance of our framework (to be introduced later) will then
+make them valid anywhere.
+• The purely Euclidean hyperplanes ei are the coordinate hyperplanes,
+perpendicular to the corresponding coordinate directions. These have
+no special geometric significance, but they will permit us to establish
+relationships with more classical coordinate-based representations.
+• The purely non-Euclidean (hyper)plane n = δe can be seen as a (hyper)plane in which the distance to the origin outweighs any directional
+aspects. It is orthogonal to all Euclidean (hyper)planes: e·(n+δe) = 0;
+and it cannot be normalized, since e · e = 0.
+As we will see, in 3D this plane e contains all vanishing points, i.e., the
+points in which parallel lines meet. The vanishing points will act as
+pure directions in Euclidean space.
+In projective geometry, e is called the ideal plane, or the improper
+plane. Since it is made up of vanishing points, we propose calling it
+the vanishing plane (in attempt to make it sound more useful and less
+obscure). You can imagine it as the ‘celestial sphere’ at infinity, with
+the vanishing points as its stars.
+13
+• You have probably noticed that this is all similar to the usual homogeneous coordinates, where a point of the form [d
+>, 0]> is treated as a
+direction, and [0
+>, δ]
+> as a (hyper)plane at infinity. As we will see, the
+novelty of PGA lies in the combination of the planar elements, rather
+than in their representation.
+In almost all of the remainder of this text, we revert to the 3D terminology
+of planes, lines and points for convenience of discussion. But we will occasionally lift our results to d dimensions (with their hyperplanes) to display
+the general results for future reference, and sometimes descend to 2D (whose
+hyperplanes are lines) when the results are pleasantly simple there, or differ
+in sign (for good reasons!).
+2.2 Intersecting Planes: 3D Lines as 2-blades
+The outer product of two planes in 3D represents the line they have in common. The basic reason behind this is the identity (e.g., from Chapter 3 of
+[1])
+x · (m ∧ n) = (x · m) n − (x · n) m, (7)
+which implies that a dot product with a (non-zero) 2-blade2
+is zero if and
+only if the dot product with each of the constituents is zero.
+So if we can set up our algebra such that ‘x · n = 0’ means that ‘a
+point represented by x is on a plane represented by n’, then the algebraic
+inheritance relationships are just right to make the 2-blade m ∧ n be the
+representative of their intersection, i.e., their common line. There is not
+even a need to spell out how we do this explicitly (by specifying precisely
+how we represent points) for this to be true. The inheritance property eq.(7)
+of the outer product is sufficient justification. Therefore we dodge this issue
+of point representation for now; we get back to it later in section 2.5. Having
+planes is sufficient to define lines (and even points, as we will see).
+When we use the outer product as our meet operation, we should be aware
+of its somewhat unusual nature. The meet is a piecewise-linear algebraic
+abstraction of the intersection operation, see Chapter 4 of [1]. Since it must
+change sign as planes move from having a positive angle to a negative angle,
+the meet of coincident planes is zero. It is therefore not a blade representation
+2A k-blade is an element that can be written as the outer product of k vectors; it represents a k-dimensional oriented and weighted subspace of the homogeneous representational
+space.
+14
+of the actual intersection of the point sets (whereas the meet of a plane with
+itself is zero, the intersection would have been the plane itself). But the
+linearity properties of the meet will make it much easier to incorporate the
+essence of intersection into the algebra. When the meet is zero, there is a
+degeneracy among its arguments, which you can resolve in a factored-out
+subspace (see Chapter 5 of [1]).
+Since we plan to use the meet of planes p1 ∧p2 as our line representation,
+let us look at it in more detail, to confirm that it contains the relevant
+characterizations of the line, in terms of direction and position.
+line in planes p1 and p2 : 
+L = p1 ∧ p2
+= (n1 + δ1e) ∧ (n2 + δ2e)
+= n1 ∧ n2 + e ∧ (δ1n2 − δ2n1)
+= n1 ∧ n2 + e ∧
