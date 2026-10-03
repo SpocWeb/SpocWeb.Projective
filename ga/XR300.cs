@@ -413,7 +413,7 @@ public static class XR300
 		a[7] * b};
 
 	/// <summary>Gets the rANDOM.</summary>
-	static readonly Random RANDOM = new();
+	static readonly Random RANDOM = new(PgaTolerance.TestSeed); //fixed Seed: reproducible Test-Cases
 
 	/// <summary> Generates 99 random <see cref="R300"/> multivectors for use as test inputs. </summary>
 	///

@@ -181,7 +181,7 @@ public static partial class XR310
 	#endregion Test Pairs for all Products
 
 	/// <summary>Gets the rANDOM.</summary>
-	static readonly Random RANDOM = new();
+	static readonly Random RANDOM = new(PgaTolerance.TestSeed); //fixed Seed: reproducible Test-Cases
 	/// <summary> Generates 99 random <see cref="R310"/> multivectors for use as test inputs. </summary>
 	///
 	/// <example>

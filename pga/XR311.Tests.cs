@@ -170,7 +170,7 @@ public static partial class XR311
 	}
 
 	/// <summary>Shared random number generator for property-based test data.</summary>
-	static readonly Random RANDOM = new();
+	static readonly Random RANDOM = new(PgaTolerance.TestSeed); //fixed Seed: reproducible Test-Cases
 
 	/// <summary> Generates 99 random <see cref="R311"/> multi-vectors with uniformly distributed components for property-based tests. </summary>
 	///

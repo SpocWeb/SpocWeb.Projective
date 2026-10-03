@@ -13,4 +13,7 @@ public static class PgaTolerance {
 	/// <summary> For <see cref="double"/> Components; the library's default for Calculations with doubles. </summary>
 	public const double Double = 1e-9;
 
+	/// <summary> Fixed Seed for the random Test-Inputs, so that Failures are reproducible. </summary>
+	public const int TestSeed = 20261003;
+
 }
