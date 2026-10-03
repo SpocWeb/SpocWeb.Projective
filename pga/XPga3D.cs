@@ -342,7 +342,7 @@ public static partial class XPga3D
 	/// facets: {layer: test, status: buggy, complexity: 1}
 	/// </code>
 	/// </example>
-	[Ignore("Sqrt not properly implemented")]
+	[Ignore("Sqrt not properly implemented", Until = "2027-01-01")]
 	[TestCaseSource(typeof(Pga3D), nameof(Pga3D.Blades))]
 	public static void TestSqRt(Pga3D v) {
 		var sqRt = v.SqRt();
