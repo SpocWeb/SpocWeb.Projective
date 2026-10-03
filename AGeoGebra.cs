@@ -542,7 +542,7 @@ public abstract class AGeoGebra<T> : IGeoGebra<T,float>, IExpression<T>, IReadOn
 	/// facets: {layer: domain, status: stable, complexity: 4}
 	/// </code>
 	/// </example>
-	public bool IsZero() => this.All(c => c.IsZero());
+	public bool IsZero() => this.All(c => c.IsSmallerThanAbs(PgaTolerance.Float));
 
 	/// <summary> True when all Components are within <paramref name="absAccuracy"/> of 0. </summary>
 	public bool IsZero(double absAccuracy) => this.All(c => Math.Abs(c) <= absAccuracy);
@@ -591,7 +591,7 @@ public abstract class AGeoGebra<T> : IGeoGebra<T,float>, IExpression<T>, IReadOn
 	/// facets: {layer: domain, status: stable, complexity: 4}
 	/// </code>
 	/// </example>
-	public virtual double NormI() => this[1].IsZero() ? Count > 15 && this[15].IsZero() ? Norm() : this[15] : this[1];
+	public virtual double NormI() => this[1].IsSmallerThanAbs(PgaTolerance.Float) ? Count > 15 && this[15].IsSmallerThanAbs(PgaTolerance.Float) ? Norm() : this[15] : this[1];
 
 	/// <summary> AKA Sign, Direction; normalized this element; not for ideal (pure) Vectors. </summary>
 	///
@@ -702,7 +702,7 @@ public abstract class AGeoGebra<T> : IGeoGebra<T,float>, IExpression<T>, IReadOn
 		//Works for real and Points, but not for  
 		var denom = 2 * (1 + this[0]);
 		var factor = 1 / (float) Math.Sqrt(denom);
-		if (!this[4].IsZero()) {
+		if (!this[4].IsSmallerThanAbs(PgaTolerance.Float)) {
 			factor *= 1 - this[4] / denom;
 		}
 		return Create_(Succ().Times(factor));
@@ -1105,7 +1105,7 @@ public abstract class AGeoGebra<T> : IGeoGebra<T,float>, IExpression<T>, IReadOn
 	protected T RcpVector() {
 		var ret = Conjugate(); //TODO: do inversion symbolically and then simplify!
 		var normSqr = NormSqr(); //that should yield the same result. 
-		if (normSqr.IsOne() || normSqr.IsZero()) { // || normSqr.IsMinusOne()) {
+		if (normSqr.IsOne() || normSqr.IsSmallerThanAbs(PgaTolerance.Double)) { // || normSqr.IsMinusOne()) {
 			return ret;
 		}
 

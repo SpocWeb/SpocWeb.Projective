@@ -246,9 +246,9 @@ public readonly struct Motor3P : //IGeoGebra<Pga3DTrafo, float>,
 	public bool IsEqualTo(Motor3P that) => Equals(that);
 
 	/// <inheritdoc cref="Equals(object)"/>
-	public bool Equals(Motor3P other) => _1_.IsApprox(other._1_)
-		&& TransX.Equals(other.TransX) && TransY.IsApprox(other.TransY) && TransZ.IsApprox(other.TransZ)
-		&& RotZ.IsApprox(other.RotZ) && RotY.IsApprox(other.RotY) && RotX.IsApprox(other.RotX) && I.IsApprox(other.I);
+	public bool Equals(Motor3P other) => _1_.IsApprox(other._1_, PgaTolerance.Float)
+		&& TransX.Equals(other.TransX) && TransY.IsApprox(other.TransY, PgaTolerance.Float) && TransZ.IsApprox(other.TransZ, PgaTolerance.Float)
+		&& RotZ.IsApprox(other.RotZ, PgaTolerance.Float) && RotY.IsApprox(other.RotY, PgaTolerance.Float) && RotX.IsApprox(other.RotX, PgaTolerance.Float) && I.IsApprox(other.I, PgaTolerance.Float);
 
 	/// <summary> Scales all components of this motor by the given scalar <paramref name="factor"/>. </summary>
 	///

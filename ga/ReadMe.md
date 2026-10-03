@@ -107,11 +107,11 @@ digest:
       digest: "d72aabf90b0c22ada63794c12dc48074cd02fe6cda312bd64e723690058b03cb"
   folders: {}
 related:
-  - path: ../_Matthias/Code/NET/_std/pga
+  - path: ../_Matthias/Code/NET/_SpocWeb.Root/_std/SpocWeb.Projective
     shared-tags: [code/geometric_algebra]
-  - path: ../_Matthias/Code/NET/_std/pga/pga
+  - path: ../_Matthias/Code/NET/_SpocWeb.Root/_std/SpocWeb.Projective/pga
     shared-tags: [code/geometric_algebra]
-  - path: ../_Matthias/Code/NET/_std/pga/typed
+  - path: ../_Matthias/Code/NET/_SpocWeb.Root/_std/SpocWeb.Projective/typed
     shared-tags: [code/geometric_algebra]
 dv_has_:
   sub_:

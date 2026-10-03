@@ -601,7 +601,7 @@ public class Pga2D : AGeoGebra8<Pga2D>
 		get {
 			Types ret = 0; //Typ.All;
 			for (int j = _C.Length; --j >= 0;) {
-				if (_C[j].IsZero()) {
+				if (_C[j].IsSmallerThanAbs(PgaTolerance.Float)) {
 					continue;
 				}
 

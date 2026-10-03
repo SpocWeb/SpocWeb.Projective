@@ -518,7 +518,7 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		get {
 			Types ret = 0; //Typ.All;
 			for (int i = _C.Length; --i >= 0;) {
-				if (_C[i].IsZero()) {
+				if (_C[i].IsSmallerThanAbs(PgaTolerance.Float)) {
 					continue;
 				}
 
@@ -1633,7 +1633,7 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		//return Extract(Point.X, Point.Y, Point.Z);
 		var ret = new[] {this[Points.X], this[Points.Y], this[Points.Z]};
 		var norm = this[Points.Origin];
-		if (norm.IsZero() || norm.IsOne()) {
+		if (norm.IsSmallerThanAbs(PgaTolerance.Float) || norm.IsOne()) {
 			return ret;
 		}
 		for (int i = ret.Length; --i >= 0; i--) {

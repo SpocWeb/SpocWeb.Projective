@@ -190,7 +190,7 @@ public static partial class XPga3D
 		var r = p.Reverted();
 		var d = r.Components;
 		_ = d.ShouldBe((Pga3D.Bases)(1 << (int)b));
-		return r.Single(v => !v.IsZero());
+		return r.Single(v => !v.IsSmallerThanAbs(PgaTolerance.Float));
 	}
 
 	/// <summary> Demonstrates the <see cref="Pga3D.Involute"/> Operation on <see cref="Pga3D.Base"/> Components </summary>
@@ -232,7 +232,7 @@ public static partial class XPga3D
 		var d = p.Involute();
 		var c = d.Components;
 		_ = c.ShouldBe((Pga3D.Bases)(1 << (int)b));
-		return d.Single(v => !v.IsZero());
+		return d.Single(v => !v.IsSmallerThanAbs(PgaTolerance.Float));
 	}
 
 	/// <summary> Demonstrates the Signs of the <see cref="Pga3D.Conjugate"/> Operation on <see cref="Pga3D.Base"/> Components </summary>
@@ -273,7 +273,7 @@ public static partial class XPga3D
 		var p = b.AsPga3D();
 		var d = p.Conjugate();
 		_ = d.Components.ShouldBe((Pga3D.Bases)(1 << (int)b));
-		return d.Single(v => !v.IsZero());
+		return d.Single(v => !v.IsSmallerThanAbs(PgaTolerance.Float));
 	}
 
 	/// <summary> Returns all values of the <see cref="Pga3D.Base"/> enum as an array for use as NUnit test-case sources. </summary>
@@ -366,7 +366,7 @@ public static partial class XPga3D
 		var rot = Pga3D.Make.Rotor((float) Math.PI / 2, (Pga3D)Pga3D.Planes.YZ * (Pga3D)Pga3D.Planes.ZX);
 
 		var rotNorm = rot.NormSqr();
-		rotNorm.ShouldBeApprox(1);
+		rotNorm.ShouldBeApprox(1, PgaTolerance.Double);
 
 		var id = rot * ~rot;
 		_ = id.ShouldBe(Pga3D._1_);

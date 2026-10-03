@@ -118,9 +118,9 @@ public class Reflector3P : IEquatable<Reflector3P>, //AGeoGebra16<Pga3D>,
 	public bool IsEqualTo(Reflector3P that) => Equals(that);
 
 	/// <inheritdoc cref="Equals(object)"/>
-	public bool Equals(Reflector3P other) => Sky.IsApprox(other.Sky)
-		&& X.Equals(other.X) && Y.IsApprox(other.Y) && Z.IsApprox(other.Z)
-		&& XY.IsApprox(other.XY) && ZX.IsApprox(other.ZX) && YZ.IsApprox(other.YZ) && W.IsApprox(other.W);
+	public bool Equals(Reflector3P other) => Sky.IsApprox(other.Sky, PgaTolerance.Float)
+		&& X.Equals(other.X) && Y.IsApprox(other.Y, PgaTolerance.Float) && Z.IsApprox(other.Z, PgaTolerance.Float)
+		&& XY.IsApprox(other.XY, PgaTolerance.Float) && ZX.IsApprox(other.ZX, PgaTolerance.Float) && YZ.IsApprox(other.YZ, PgaTolerance.Float) && W.IsApprox(other.W, PgaTolerance.Float);
 
 	/// <summary>Separator string inserted between component values when writing to a text stream.</summary>
 	public static string Infix = ", ";

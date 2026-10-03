@@ -586,7 +586,7 @@ public class Pga2Dbl : AGeoGebra8Dbl<Pga2Dbl>
 		get {
 			Types ret = 0; //Typ.All;
 			for (int j = _C.Length; --j >= 0;) {
-				if (_C[j].IsZero()) {
+				if (_C[j].IsSmallerThanAbs(PgaTolerance.Double)) {
 					continue;
 				}
 

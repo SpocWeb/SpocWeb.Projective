@@ -26,6 +26,7 @@
     <DefineConstants>TRACE;STD20 NUNIT DOTNET4 INPUTS NET_4_5 HAVE_ASYNC HAVE_LINQ HAVE_BIG_INTEGER HAVE_DYNAMIC HAVE_ICLONEABLE HAVE_VARIANT_TYPE_PARAMETERS HAVE_COMPONENT_MODEL HAVE_ICONVERTIBLE HAVE_BINARY_EXCEPTION_SERIALIZATION HAVE_INOTIFY_COLLECTION_CHANGED HAVE_INOTIFY_PROPERTY_CHANGING HAVE_DATE_TIME_OFFSET HAVE_TYPE_DESCRIPTOR HAVE_DB_NULL_TYPE_CODE HAVE_HASH_SET HAVE_NO_FAST_REVERSE HAVE_XML_DOCUMENT HAVE_XLINQ HAS_CUSTOM_DOUBLE_PARSE HAVE_EXPRESSIONS  DOTNET5</DefineConstants>
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
+    <GenerateProgramFile>false</GenerateProgramFile><!--Program.Main exists; Test.Sdk would add a second entry point-->
     <StartupObject></StartupObject>
     <AssemblyName>maths.pga</AssemblyName>
   </PropertyGroup>
@@ -34,7 +35,6 @@
     <WarningLevel>5</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <WarningsNotAsErrors>CS0618</WarningsNotAsErrors><!--Obsolete Number.IsZero/IsApprox calls without Tolerance: to be replaced explicitly, see ReadMe-->
   </PropertyGroup>
 
   <ItemGroup>
@@ -52,6 +52,11 @@
 
   <ItemGroup>
     <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
   </ItemGroup>
 
   <ItemGroup>
