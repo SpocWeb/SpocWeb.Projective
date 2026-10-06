@@ -63,6 +63,16 @@
     <!-- PgaGui is its own WPF project (moved from _core/pga, 2026-10-06) -->
     <Compile Remove="PgaGui\**" />
     <EmbeddedResource Remove="PgaGui\**" />
+    <!-- typed: generic Point2D..4D/Segment2D/3D moved in from SpocWeb.Maths (math migration phase 2b, 2026-10-06), excluded;
+         Point2Dbl duplicates XPoint2Dbl members compiled here (CS0121 in Shape2D) - compare and merge or delete in a later MECE pass -->
+    <Compile Remove="typed\Point2D.T.cs" />
+    <Compile Remove="typed\Point2Dbl.cs" />
+    <Compile Remove="typed\Point3D.T.cs" />
+    <Compile Remove="typed\Point3Dbl.T.cs" />
+    <Compile Remove="typed\Point4D.T.cs" />
+    <Compile Remove="typed\Point4Dbl.T.cs" />
+    <Compile Remove="typed\Segment2D.cs" />
+    <Compile Remove="typed\Segment3D.cs" />
     <None Remove="PgaGui\**" />
     <Page Remove="PgaGui\**" />
   </ItemGroup>
