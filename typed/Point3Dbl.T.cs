@@ -9,7 +9,6 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// structs are faster, because allocated on the Stack, but only up to 24 Bytes (3 doubles). 
 /// Names are consistent with <see cref="System.Numerics.Vector3"/> but uses double Precision
 /// </remarks>
-[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3Dbl.T.cs")]
 [DocState(Pass = 2, MTime = "2026-07-29T18:02:50Z", Digest = "647cafde8fecafbec8f23304d0d232f2e71d0fd2acb85ebacb75fd7a54caec52", Stale = false, Path = "Interfaces/Vectors/Point3Dbl.T.cs", Since = "2026-08-23")]
 public readonly struct Point3Dbl<T> : IEquatable<Point3Dbl<T>>, IReadOnlyList<double> {
 

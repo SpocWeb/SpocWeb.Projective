@@ -8,7 +8,6 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// 
 /// structs are faster, because allocated on the Stack, but only up to 24 Bytes (3 doubles). 
 /// </remarks>
-[ReplacedBy("../IGraphs/Interfaces/Vectors/Point4Dbl.T.cs")]
 [DocState(Pass = 2, MTime = "2026-07-29T18:02:50Z", Digest = "44704a11085368b4b112624e4b249c2f6a6d68d05d7169dc76667470672638b2", Stale = false, Path = "Interfaces/Vectors/Point4Dbl.T.cs", Since = "2026-08-23")]
 public readonly struct Point4Dbl<T> : IEquatable<Point4Dbl<T>>, IReadOnlyList<double> {
 

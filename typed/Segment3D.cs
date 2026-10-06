@@ -9,7 +9,6 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// Unlike <see cref="Interval{T}"/> this does NOT sort its Arguments,
 /// so you can have a negative <see cref="Length"/>. 
 /// </remarks>
-[ReplacedBy("../IGraphs/Interfaces/Vectors/Segment3D.cs")]
 [DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "53bff2f088bf143c850f2c1efd78d8e9ca34953655252c51b78449eb7cca6d08", Stale = false, Path = "Interfaces/Vectors/Segment3D.cs", Since = "2026-08-23")]
 public readonly struct Segment3D<T> : ISlice<Point3D<T>, Vector3D<T>> {
 

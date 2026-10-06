@@ -94,7 +94,6 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 	public double Norm => NormSqr.SqRt();
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public override string ToString() => "(" + X + ';' + Y + ';' + Z + ')';
 
 	/// <summary> Creates a point from an <see cref="IVector3D"/> interface value. </summary>
@@ -178,7 +177,6 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 	};
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 	/// <inheritdoc />
 	public IEnumerator<double> GetEnumerator() {
@@ -196,11 +194,9 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 	/// facets: {layer: structures, status: buggy, complexity: 3}
 	/// </code>
 	/// </example>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public override int GetHashCode() => X.GetHashCode() ^ Y.GetHashCode() ^ Z.GetHashCode();
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public IPoint3D<T> Plus<V>(V addend) where V : IVector3D<IPoint3D<T>, T> => Plus((IVector3D<IVector3D<T>, T>) addend);
 	/// <inheritdoc />
 	public Point3D<T> Plus(Vector3D<T> that) => new(X + that.X, Y + that.Y, Z + that.Z);
@@ -209,7 +205,6 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 		=> new(addend.X + X, addend.Y + Y, addend.Z + Z);
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public IPoint3D<T> Minus<P>(P subtrahend) where P : IVector3D<IPoint3D<T>, T> => Minus((IVector3D<IPoint3D<T>, T>)subtrahend);
 	/// <inheritdoc />
 	public Vector3D<T> Minus(Point3D<T> that) => new(X - that.X, Y - that.Y, Z - that.Z);
@@ -218,14 +213,12 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 		=> new(X - subtrahend.X, Y - subtrahend.Y, Z - subtrahend.Z);
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public IPoint3D<T> MinusR<P>(P minuend) where P : IVector3D<IPoint3D<T>, T> => MinusR((IVector3D<IPoint3D<T>, T>) minuend);
 	/// <inheritdoc />
 	public Point3D<T> MinusR(IVector3D<IPoint3D<T>, T> minuend)
 		=> new(minuend.X - X, minuend.Y - Y, minuend.Z - Z);
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public override bool Equals(object? that) {
 		if (that is Point3D<T> point3D) {
 			return Equals(point3D);
@@ -268,18 +261,15 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 	//public static bool operator !=(IVector3D<T> self, Position3D<T> that) => !that.Equals(self);
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public IPoint3D<T> Neg() => throw new NotImplementedException();
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public bool IsEqualTo<S>(S that) where S : IVector3D<IPoint3D<T>, T> => throw new NotImplementedException();
 
 	/// <inheritdoc />
 	public bool IsZero(double absAccuracy) => X.IsZero(absAccuracy) && Y.IsZero(absAccuracy) && Z.IsZero(absAccuracy);
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point3D.T.cs")]
 	public int ValueHash() => throw new NotImplementedException();
 }
 

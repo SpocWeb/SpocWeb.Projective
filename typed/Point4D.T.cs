@@ -19,7 +19,6 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// }
 /// </code></example>
 /// <see cref="NaturalLang.NumbersAsWords.TupleList"/>
-[ReplacedBy("../IGraphs/Interfaces/Vectors/Point4D.T.cs")]
 [DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "673c2a69ab4629804804f86c3c07aa1802962fd34bd69cc0670e04ecc98686e6", Stale = false, Path = "Interfaces/Vectors/Point4D.T.cs", Since = "2026-08-23")]
 public class Point4DList<T> : List<Point4D<T>> {
 	/// <summary> Appends a new point with the given coordinates. </summary>
@@ -65,7 +64,6 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 	public double Norm => NormSqr.SqRt();
 
 	/// <summary> Determines whether this point's coordinates approximately equal <paramref name="other"/>'s. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point4D.T.cs")]
 	public bool Equals(IVector4D other) => this.IsApprox(other);
 	/// <inheritdoc />
 	public bool Equals(Point4D<T> other) => this.IsApprox(other);
@@ -74,7 +72,6 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 	public bool Equals(IPoint4D<T>? other) => this.IsApprox(other);
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point4D.T.cs")]
 	public override string ToString() => "(" + X + ';' + Y + ';' + Z + ';' + W + ')';
 
 	/// <summary> Creates a point from an <see cref="IVector4D"/> interface value. </summary>
@@ -143,7 +140,6 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 	};
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point4D.T.cs")]
 	IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 	/// <inheritdoc />
 	public IEnumerator<double> GetEnumerator() {
@@ -154,7 +150,6 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 	}
 
 	/// <summary> TODO: Does NOT math the Behavior of <see cref="Equals(Point4D{T})"/> </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point4D.T.cs")]
 	public override int GetHashCode() => X.GetHashCode() ^ Y.GetHashCode() ^ Z.GetHashCode();
 
 	/// <inheritdoc />

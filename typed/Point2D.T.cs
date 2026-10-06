@@ -162,7 +162,6 @@ public static class XPoint2DList {
 /// Structs are faster, because allocated on the Stack, but only up to 24 Bytes (3 doubles resp 6 ints or float). 
 /// Names are consistent with <see cref="Vector2"/> but uses double Precision
 /// </remarks>
-[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2D.T.cs")]
 [DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "d64395aefaebccf87c37fd2c9d8dd6c7d9cddf462d6bbc15daf5fa5bf0388b20", Stale = false, Path = "Interfaces/Vectors/Point2D.T.cs", Since = "2026-08-23")]
 public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, IComparable<Point2D<T>> {
 	// <summary> An Array would be even more flexible, but incurs Heap and Access Overhead </summary>

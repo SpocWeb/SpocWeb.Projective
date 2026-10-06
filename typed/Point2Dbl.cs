@@ -55,7 +55,6 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 	/// <summary> The origin (0,0) </summary>
 	public static readonly Size2Dbl Zero = new();
 	/// <summary> <see langword="true"/> when both components are within <see cref="ACCURACY"/> of zero. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public bool IsZero() => Math.Abs(Length) < ACCURACY && Math.Abs(Width) < ACCURACY;
 
 	/// <summary> The Unit X Position (1,0) </summary>
@@ -79,7 +78,6 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 	public Size2Dbl(Vector2 vector) { Length = vector.X; Width = vector.Y; }
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	IEnumerator<double> IEnumerable<double>.GetEnumerator() {
 		yield return Length;
 		yield return Width;
@@ -148,38 +146,29 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 	#endregion operators
 
 	/// <summary> Converts to a single-precision <see cref="Vector2"/>. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Vector2 AsVector2() => new((float) Length, (float) Width);
 
 	/// <summary> Component-wise addition. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Size2Dbl Plus(Size2Dbl s) => new(Length + s.Length, Width + s.Width);
 	/// <summary> Component-wise subtraction. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Size2Dbl Minus(Size2Dbl s) => new(Length - s.Length, Width - s.Width);
 
 	/// <summary> Scalar multiplication. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Size2Dbl Times(double f) => new(Length * f, Width * f);
 	/// <summary> Scalar division. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Size2Dbl Divide(double f) => new(Length / f, Width / f);
 
 	/// <summary> Additive inverse (negation). </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Size2Dbl Minus() => new(-Length, -Width);
 	/// <summary> Complex conjugate (same as negation for a real 2D vector). </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Size2Dbl Cjg() => Minus();
 
 	#region Equality members
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public override bool Equals(object? that) => that is Size2Dbl other && Equals(other);
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public override int GetHashCode() => (Length.GetHashCode() << 1) ^ Width.GetHashCode();
 
 	/// <summary> <see langword="true"/> when <paramref name="that"/> is within <see cref="ACCURACY"/> of this vector. </summary>
@@ -188,7 +177,6 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 	public bool Equals(Size2Dbl that) => that.IsCloseTo(this);
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public override string ToString() => GetType().Name
 	                                     + ": " + nameof(Length) + " = " + Length.ToString(CultureInfo.InvariantCulture)
 	                                     + "; " + nameof(Width) + " = " + Width.ToString(CultureInfo.InvariantCulture);
@@ -199,13 +187,11 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 	[Pure] public
 		bool IsNaN => double.IsNaN(Length) || double.IsNaN(Width);
 	/// <summary> <see langword="true"/> when the distance to <paramref name="that"/> is within <paramref name="relAccuracySqr"/> (relative, squared). </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	[Pure] [MethodImpl(MethodImplOptions.AggressiveInlining)] public
 		bool IsCloseTo(Size2Dbl that, double relAccuracySqr)
 		=> IsCloseToOrNaN(that, relAccuracySqr) && !IsNaN && !that.IsNaN;
 
 	/// <summary> Like <see cref="IsCloseTo(Size2Dbl,double)"/> but returns <see langword="true"/> when either operand is NaN. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	[Pure] [MethodImpl(MethodImplOptions.AggressiveInlining)] public
 		bool IsCloseToOrNaN(Size2Dbl that, double relAccuracySqr)
 		=> Minus(that).NormSqr <= (NormSqr + that.NormSqr) * relAccuracySqr;
@@ -218,7 +204,6 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 		bool IsInfinite => double.IsInfinity(Length) || double.IsInfinity(Width);
 
 	/// <summary> <see langword="true"/> when this is within default accuracy of <paramref name="y"/>. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	[Pure] [MethodImpl(MethodImplOptions.AggressiveInlining)] public
 		bool IsCloseTo(Vector2 y) => IsCloseToOrNaN(y) && !IsNaN && !y.IsNaN();
 
@@ -233,7 +218,6 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 		=> Minus(b).NormSqr <= (NormSqr + b.LengthSquared()) * relAccuracySqr;
 
 	/// <summary> Like <see cref="IsCloseTo(Vector2)"/> using default accuracy, but returns <see langword="true"/> when either operand is NaN. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	[Pure] [MethodImpl(MethodImplOptions.AggressiveInlining)] public
 		bool IsCloseToOrNaN(Vector2 b)
 		=> Minus(b).NormSqr <= (NormSqr + b.LengthSquared()) * XDouble.RelAccuracySqr;
@@ -249,7 +233,6 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 /// digest: 8fd461b1ea8a329ac42ce8da44eedb8622e33262c8b75778d545b7a6c770ba43
 /// </code>
 /// </example>
-[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 public static class XSize2Dbl {
 
 	/// <summary> Scalar multiplication (commutative scalar on left). </summary>
@@ -338,7 +321,6 @@ public readonly struct Point2Dbl : IPoint2D {
 	public bool Equals(IPoint2D? that) => that?.IsCloseTo(this) == true;
 
 	/// <inheritdoc />
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	IEnumerator<double> IEnumerable<double>.GetEnumerator() {
 		yield return X;
 		yield return Y;
@@ -381,10 +363,8 @@ public readonly struct Point2Dbl : IPoint2D {
 		};
 
 	/// <summary> Returns the point reflected through the origin. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Point2Dbl Minus() => new(-X, -Y);
 	/// <summary> Returns the displacement vector from <paramref name="point"/> to this. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Size2Dbl Minus(Point2Dbl point) => new(X - point.X, Y - point.Y);
 	/// <summary> Returns the displacement vector from <paramref name="p2"/> to this. </summary>
 	public IVector2D Minus(IPoint2D p2) => new Size2Dbl(X - p2.X, Y - p2.Y);
@@ -392,7 +372,6 @@ public readonly struct Point2Dbl : IPoint2D {
 	/// <summary> Translates this point by subtracting <paramref name="size"/>. </summary>
 	public Point2Dbl Minus(Size2Dbl size) => new(X - size.Length, Y - size.Width);
 	/// <summary> Translates this point by adding <paramref name="size"/>. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Point2Dbl Plus(Size2Dbl size) => new(X + size.Length, Y + size.Width);
 
 	/// <summary> Translates this point by subtracting a single-precision vector. </summary>
@@ -421,20 +400,17 @@ public readonly struct Point2Dbl : IPoint2D {
 	public static Point2Dbl operator +(Vector2 s, Point2Dbl p) => p.Plus(s);
 
 	/// <summary> Reinterprets this point as a displacement vector from the origin. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public Size2Dbl AsSize2D() => new(X, Y);
 
 	/// <summary> <see langword="true"/> when either coordinate is NaN. </summary>
 	[Pure] public
 		bool IsNaN => double.IsNaN(X) || double.IsNaN(Y);
 	/// <summary> <see langword="true"/> when the distance to <paramref name="that"/> is within <paramref name="relAccuracySqr"/> (relative, squared). </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	[Pure] [MethodImpl(MethodImplOptions.AggressiveInlining)] public
 		bool IsCloseTo(Point2Dbl that, double relAccuracySqr)
 		=> IsCloseToOrNaN(that, relAccuracySqr) && !IsNaN && !that.IsNaN;
 
 	/// <summary> Like <see cref="IsCloseTo(Point2Dbl,double)"/> but returns <see langword="true"/> when either operand is NaN. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	[Pure] [MethodImpl(MethodImplOptions.AggressiveInlining)] public
 		bool IsCloseToOrNaN(Point2Dbl that, double relAccuracySqr)
 		=> Minus(that).NormSqr <= (NormSqr + that.NormSqr) * relAccuracySqr;
@@ -447,7 +423,6 @@ public readonly struct Point2Dbl : IPoint2D {
 		bool IsInfinite => double.IsInfinity(X) || double.IsInfinity(Y);
 
 	/// <summary> <see langword="true"/> when this is within default accuracy of <paramref name="y"/>. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	[Pure] [MethodImpl(MethodImplOptions.AggressiveInlining)] public
 		bool IsCloseTo(Vector2 y) => IsCloseToOrNaN(y) && !IsNaN && !y.IsNaN();
 
@@ -462,7 +437,6 @@ public readonly struct Point2Dbl : IPoint2D {
 		=> Minus(b).NormSqr <= (NormSqr + b.LengthSquared()) * relAccuracySqr;
 
 	/// <summary> Like <see cref="IsCloseTo(Vector2)"/> using default accuracy, but returns <see langword="true"/> when either operand is NaN. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	[Pure] [MethodImpl(MethodImplOptions.AggressiveInlining)] public
 		bool IsCloseToOrNaN(Vector2 b)
 		=> Minus(b).NormSqr <= (NormSqr + b.LengthSquared()) * XDouble.RelAccuracySqr;
@@ -478,7 +452,6 @@ public readonly struct Point2Dbl : IPoint2D {
 /// digest: 808f9374941495308286bf85e83b76f00c6c2bb40d0819ff9ec7ec05abe100aa
 /// </code>
 /// </example>
-[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 public readonly struct Rect2Dbl {
 
 	#region Conceptually and Computationally higher Abstractions
@@ -526,7 +499,6 @@ public static class XPoint2Dbl {
 	public static double Accuracy = 1e-9;
 
 	/// <summary> <see langword="true"/> when the distance between <paramref name="arg1"/> and <paramref name="arg2"/> is within <see cref="Accuracy"/>. </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public static bool IsCloseTo(this Point2Dbl arg1, Point2Dbl arg2) => arg1.IsCloseTo(arg2, Accuracy);
 
 	///// <summary> Rotates and Scales this by <paramref name="rightScaleRot"/> </summary>
@@ -539,7 +511,6 @@ public static class XPoint2Dbl {
 	//	(rightTranslate.Y * scaleRot.Real + scaleRot.Imaginary * rightTranslate.X));
 
 	/// <summary> Rotates and Scales the <paramref name="vector"/> by <paramref name="scaleRot"/> </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public static Size2Dbl Times(this Vector2 vector, Complex scaleRot) => new(
 		vector.X * scaleRot.Real + scaleRot.Imaginary * vector.Y,
 		vector.Y * scaleRot.Real - scaleRot.Imaginary * vector.X);
@@ -552,7 +523,6 @@ public static class XPoint2Dbl {
 		vector.X * scaleRot.Real - scaleRot.Imaginary * vector.Y,
 		vector.Y * scaleRot.Real + scaleRot.Imaginary * vector.X);
 
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	static Segment2D<T> ClosestBruteForce<T>(IReadOnlyList<Point2D<T>> points) {
 		int n = points.Count;
 		var result = Enumerable.Range(0, n-1)
@@ -590,11 +560,9 @@ public static class XPoint2Dbl {
 	}
 
 	/// <summary> Searches for the closest Pair in <paramref name="points"/> </summary>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public static Segment2D<T> ClosestPair<T>(this IReadOnlyList<Point2D<T>> points)
 		=> ClosestRecursively(points.OrderBy(p => p.X).ToList());
 
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	static Segment2D<T> ClosestRecursively<T>(this IReadOnlyList<Point2D<T>> pointsByX) {
 		int count = pointsByX.Count;
 		if (count <= 4) {
@@ -649,7 +617,6 @@ public static class XPoint2Dbl {
 	/// However, as only sorts in the X direction,
 	/// it degenerates into an N^2 algorithm if all the points have the same X.
 	/// </remarks>
-	[ReplacedBy("../IGraphs/Interfaces/Vectors/Point2Dbl.cs")]
 	public static Segment2D<T> Closest<T>(this List<Point2D<T>> points) {
 		int count = points.Count;
 		points.Sort((lhs, rhs) => lhs.X.CompareTo(rhs.X));

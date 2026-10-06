@@ -10,7 +10,6 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// so you can have a negative <see cref="Length"/>.
 /// <see cref="Data.geo.Geo.Segment"/> redefined as a class. 
 /// </remarks>
-[ReplacedBy("../IGraphs/Interfaces/Vectors/Segment2D.cs")]
 [DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "32dcee966363ed20493b2639f02f04941524441f5e55a739eea0957ad63a4bf6", Stale = false, Path = "Interfaces/Vectors/Segment2D.cs", Since = "2026-08-23")]
 public readonly struct Segment2D<T> : ISlice<Point2D<T>, Vector2D<T>> {
 
