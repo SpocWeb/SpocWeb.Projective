@@ -91,4 +91,10 @@
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
+  <!-- auto:auto-excluded:begin (exclude-until-green; regenerate, do not hand-edit) -->
+  <ItemGroup>
+    <Compile Remove="typed\PerspectiveTransformTests.cs" />
+  </ItemGroup>
+  <!-- auto:auto-excluded:end -->
+
 </Project>

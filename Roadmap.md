@@ -16,3 +16,10 @@
 Note: all eight counterparts live in `typed/` and are excluded from compilation (see csproj). The Point2Dbl overlap with the
 compiled XPoint2Dbl members (CS0121) is recorded, not resolved here. Deleted IGraphs files are the provenance targets of the
 removed `[ReplacedBy]` attributes; they remain in the IGraphs git history. No `.vrn` sidecars existed.
+
+## Moved in from NET/_std/IGraphs (decision 22, 2026-10-06)
+
+| Source | Now | State | Note |
+|---|---|---|---|
+| `_std/IGraphs/Interfaces/Converters/PerspectiveTransform.cs` | `typed/PerspectiveTransform.cs` | compiles | 4x4 perspective/homography quad transform (ZXing-style); replaces legacy twin _std/IMathsImpl/Interfaces |
+| `_std/IGraphs/Interfaces/Converters/PerspectiveTransformTests.cs` | `typed/PerspectiveTransformTests.cs` | excluded (1 errors, port later) | tests of PerspectiveTransform; replaces legacy twin _std/IMathsImpl/Interfaces |
