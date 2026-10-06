@@ -22,10 +22,20 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// </remarks>
 ///
 /// <seealso cref="Segment2D">Segment2D: Returned by a method.</seealso>
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "322008dd702ded147496b9e7abe1209f63cc2d8a6462b05b895cfa7c93fce2ec", Stale = false, Path = "Interfaces/Vectors/Point2D.T.cs", Since = "2026-08-23")]
+[Facets(Layer = "domain", Status = "legacy", Complexity = 2)]
+[Tags("code/computational_geometry", "code/extension_method")]
+[System.ComponentModel.Description("Closest-pair algorithms and utility extensions for Point2D lists.")]
+[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "322008dd702ded147496b9e7abe1209f63cc2d8a6462b05b895cfa7c93fce2ec", Stale = false, Path = "typed/Point2D.T.cs", Since = "2026-08-23")]
+[Concept("Mathematics\\Geometry.md")]
+[Concept("closest_pair")]
 public static class XPoint2DList {
 
 	/// <summary> Finds the closest pair of <paramref name="points"/> by checking all O(n²) pairs. </summary>
+	[Facets(Layer = "domain", Status = "legacy", Complexity = 2)]
+	[Tags("code/computational_geometry", "code/extension_method")]
+	[System.ComponentModel.Description("Finds the closest pair of points by checking all O(n²) pairs.")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("closest_pair")]
 	static Segment2D<T> ClosestBruteForce<T>(IReadOnlyList<Point2D<T>> points) {
 			int n = points.Count;
 			var result = Enumerable.Range(0, n-1)
@@ -63,10 +73,20 @@ public static class XPoint2DList {
 		}
 
 	/// <summary> Searches for the closest Pair in <paramref name="points"/> </summary>
+	[Facets(Layer = "domain", Status = "legacy", Complexity = 2)]
+	[Tags("code/computational_geometry", "code/extension_method")]
+	[System.ComponentModel.Description("Searches for the closest Pair in points")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("closest_pair")]
 	public static Segment2D<T> ClosestPair<T>(this IReadOnlyList<Point2D<T>> points) 
 		=> ClosestRecursively(points.OrderBy(p => p.X).ToList());
 
 	/// <summary> Divide-and-conquer closest-pair search over <paramref name="pointsByX"/> (already sorted by X). </summary>
+	[Facets(Layer = "domain", Status = "legacy", Complexity = 3)]
+	[Tags("code/computational_geometry", "code/divide_and_conquer")]
+	[System.ComponentModel.Description("Divide-and-conquer closest-pair search over pointsByX (already sorted by X).")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("closest_pair")]
 	static Segment2D<T> ClosestRecursively<T>(IReadOnlyList<Point2D<T>> pointsByX) {
 			int count = pointsByX.Count;
 			if (count <= 4) {
@@ -121,6 +141,11 @@ public static class XPoint2DList {
 	/// However, as only sorts in the X direction,
 	/// it degenerates into an N^2 algorithm if all the points have the same X.
 	/// </remarks>
+	[Facets(Layer = "domain", Status = "legacy", Complexity = 2)]
+	[Tags("code/computational_geometry", "code/extension_method")]
+	[System.ComponentModel.Description("Finds the closest Pair by sorting points")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("closest_pair")]
 	public static Segment2D<T> Closest<T>(List<Point2D<T>> points) {
 			int count = points.Count;
 			points.Sort((lhs, rhs) => lhs.X.CompareTo(rhs.X));
@@ -162,7 +187,12 @@ public static class XPoint2DList {
 /// Structs are faster, because allocated on the Stack, but only up to 24 Bytes (3 doubles resp 6 ints or float). 
 /// Names are consistent with <see cref="Vector2"/> but uses double Precision
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "d64395aefaebccf87c37fd2c9d8dd6c7d9cddf462d6bbc15daf5fa5bf0388b20", Stale = false, Path = "Interfaces/Vectors/Point2D.T.cs", Since = "2026-08-23")]
+[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+[Tags("code/value_object", "code/geometry")]
+[System.ComponentModel.Description("AKA Position2D; Immutable, lightweight, double-Precision, typed Position2D to avoid accidental Type Mix in Arithmetic")]
+[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "d64395aefaebccf87c37fd2c9d8dd6c7d9cddf462d6bbc15daf5fa5bf0388b20", Stale = false, Path = "typed/Point2D.T.cs", Since = "2026-08-23")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
+[Concept("typed_geometric_primitives")]
 public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, IComparable<Point2D<T>> {
 	// <summary> An Array would be even more flexible, but incurs Heap and Access Overhead </summary>
 	//double[] _arr = new double[2];
@@ -191,23 +221,53 @@ public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, ICompar
 
 	// ReSharper disable PossiblyImpureMethodCallOnReadonlyVariable
 	/// <summary> Squared Euclidean norm: X²+Y². </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Squared Euclidean norm: X²+Y².")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double NormSqr => Vector.LengthSquared();
 
 	/// <summary> L1 (Manhattan) norm: |X|+|Y|. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("L1 (Manhattan) norm: |X|+|Y|.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double NormAbs => Math.Abs(Vector.X) + Math.Abs(Vector.Y);
 
 	/// <summary> Euclidean length: √(X²+Y²). </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Euclidean length: √(X²+Y²).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double Norm => Vector.Length();
 
 	// ReSharper restore PossiblyImpureMethodCallOnReadonlyVariable
 	
 	/// <summary> Constructs a point from double-precision coordinates (cast to <see cref="float"/>). </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Constructs a point from double-precision coordinates (cast to float).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point2D(double x, double y) => Vector = new Vector2((float)x, (float)y);
 
 	/// <summary> Constructs a point from single-precision coordinates. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Constructs a point from single-precision coordinates.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point2D(float x, float y) => Vector = new Vector2(x, y);
 
 	/// <summary> Constructs a point from an existing <see cref="Vector2"/>. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Constructs a point from an existing Vector2.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point2D(Vector2 vector) => Vector = vector;
 
 	/// <summary> No Scaling, no Negation, only Subtraction and Addition of Vectors </summary>
@@ -223,15 +283,35 @@ public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, ICompar
 	public static Vector2D<T> operator -(Point2D<T> self, Point2D<T> that) => new(self.Vector - that.Vector);
 
 	/// <summary> Returns this point displaced by <paramref name="that"/>. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Returns this point displaced by that.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point2D<T> Plus(Vector2D<T> that) => new(Vector + that.Vector);
 
 	/// <summary> Returns the displacement vector from <paramref name="that"/> to this point. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Returns the displacement vector from that to this point.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Vector2D<T> Minus(Point2D<T> that) => new(Vector - that.Vector);
 
 	/// <summary>Gets the number of elements.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public int Count => 2;
 
 	/// <summary> Returns the X component for index 0 and the Y component for index 1. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Returns the X component for index 0 and the Y component for index 1.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double this[int index]
 	=> index switch {
 	0 => Vector.X
@@ -252,9 +332,19 @@ public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, ICompar
 	public override string ToString() => Vector.ToString();
 
 	/// <summary> TODO: Does NOT math the Behavior of <see cref="Equals(Point2D{T})"/> </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("TODO: Does NOT math the Behavior of Equals(Point2D)")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public override int GetHashCode() => Vector.GetHashCode();
 
 	/// <summary> Returns <see langword="true"/> when both components are within floating-point tolerance or both are NaN. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Returns when both components are within floating-point tolerance or both are NaN.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public bool Equals(Point2D<T> that) => Vector.IsCloseToOrNaN(that.Vector);
 
 	/// <inheritdoc cref="Equals(Point2D{T})"/>
@@ -284,17 +374,15 @@ public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, ICompar
 
 	/// <summary> Arbitrary in multi-dimensional Spaces </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-05-24T15:40:29Z
-	/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-	/// </code>
-	/// </example>
 	/// <remarks>
 	/// <see cref="XEnumerator.CompareTo{T}(System.Collections.Generic.IEnumerable{T},System.Collections.Generic.IEnumerable{T},System.Func{T,T,int}?)"/>
 	/// does the same in a Loop.
 	/// </remarks>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Arbitrary in multi-dimensional Spaces")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public int CompareTo(Point2D<T> that) => Vector.CompareTo(that.Vector);
 
 	}
@@ -304,7 +392,12 @@ public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, ICompar
 /// This implicit Structure is quite common and saves looking up Vectors.
 /// 2/3 of Transforms are saved by reusing the previous 2 Points. 
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "Interfaces/Vectors/Point2D.T.cs", Since = "2026-08-23")]
+[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+[Tags("code/data_structure", "code/geometry")]
+[System.ComponentModel.Description("A List of Points to be interpreted as a List of Triangles connected to each other")]
+[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "typed/Point2D.T.cs", Since = "2026-08-23")]
+[Concept("Mathematics\\Geometry.md")]
+[Concept("triangle_strip")]
 
 public class TriangleStrip2D<T> : Point2DList<T>;
 
@@ -324,8 +417,18 @@ public class TriangleStrip2D<T> : Point2DList<T>;
 /// }
 /// </code></example>
 /// <see cref="NaturalLang.NumbersAsWords.TupleList"/>
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "029a6ebc8bd5266a11be2baf88b28afd53068c3e82e278a87aceb60894824ae0", Stale = false, Path = "Interfaces/Vectors/Point2D.T.cs", Since = "2026-08-23")]
+[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+[Tags("code/data_structure", "code/geometry")]
+[System.ComponentModel.Description("Allows for comfortable Declaration of ordered Lists and Polygons")]
+[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "029a6ebc8bd5266a11be2baf88b28afd53068c3e82e278a87aceb60894824ae0", Stale = false, Path = "typed/Point2D.T.cs", Since = "2026-08-23")]
+[Concept("Mathematics\\Geometry.md")]
+[Concept("polygon")]
 public class Point2DList<T> : List<Point2D<T>> {
 	/// <summary> Adds a new <see cref="Point2D{T}"/> constructed from <paramref name="x"/> and <paramref name="y"/>. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/data_structure", "code/geometry")]
+	[System.ComponentModel.Description("Adds a new Point2D constructed from x and y.")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("polygon")]
 	public void Add(double x, double y) => Add(new Point2D<T>(x, y));
 }

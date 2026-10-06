@@ -7,10 +7,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 38 | <see cref="QuadrilateralToQuadrilateral"/> | Returns a perspective transform mapping the source quadrilateral (x0–x3, y0–y3) to the destination quadrilateral (x0P–x3P, y0P–y3P). |
-	/// | 47 | <see cref="TransformPoints"/> | Transforms an array of alternating x, y coordinates in-place using this perspective transform. |
-	/// | 80 | <see cref="SquareToQuadrilateral"/> | Returns a perspective transform mapping the unit square to the quadrilateral defined by the four corner points. |
-	/// | 107 | <see cref="QuadrilateralToSquare"/> | Returns a perspective transform mapping the quadrilateral defined by the four corner points to the unit square, via the adjoint of the inverse. |
+	/// | 60 | <see cref="QuadrilateralToQuadrilateral"/> | Returns a perspective transform mapping the source quadrilateral (x0–x3, y0–y3) to the destination quadrilateral (x0P–x3P, y0P–y3P). |
+	/// | 74 | <see cref="TransformPoints"/> | Transforms an array of alternating x, y coordinates in-place using this perspective transform. |
+	/// | 117 | <see cref="SquareToQuadrilateral"/> | Returns a perspective transform mapping the unit square to the quadrilateral defined by the four corner points. |
+	/// | 149 | <see cref="QuadrilateralToSquare"/> | Returns a perspective transform mapping the quadrilateral defined by the four corner points to the unit square, via the adjoint of the inverse. |
 	///
 	/// ## Collaborators
 	///
@@ -19,17 +19,12 @@ namespace org.SpocWeb.root.interfaces.converters {
 	/// | <see cref="PerspectiveTransform"/> | Returned by a method. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-05-24T15:36:44Z
-	/// digest: 7514c9931478b175bf6b01507a2f841d0e26761ae96af29da2b9e7465c511f8c
-	/// tags: [code/perspective_transform, code/computational_geometry]
-	/// concepts: [Mathematics\Geometry.md]
-	/// facets: {layer: graphics, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-05-24T15:36:44Z", Digest = "7514c9931478b175bf6b01507a2f841d0e26761ae96af29da2b9e7465c511f8c", Stale = false, Path = "typed/PerspectiveTransform.cs", Since = "2026-10-06")]
+	[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+	[Tags("code/perspective_transform", "code/computational_geometry")]
+	[System.ComponentModel.Description("Given four source and four destination points, it will compute the transformation implied between them.")]
 	[Replaces("../IMathsImpl/Interfaces/Converters/PerspectiveTransform.cs")]
+	[Concept("Mathematics\\Geometry.md")]
 	public sealed class PerspectiveTransform {
 
 		readonly float A11;
@@ -44,13 +39,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary>Initializes a new instance of <see cref="PerspectiveTransform"/> with the specified <paramref name="a11"/>, <paramref name="a21"/>, <paramref name="a31"/>, <paramref name="a12"/>, <paramref name="a22"/>, <paramref name="a32"/>, <paramref name="a13"/>, <paramref name="a23"/> and <paramref name="a33"/>.</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/perspective_transform, code/computational_geometry]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: graphics, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+		[Tags("code/perspective_transform", "code/computational_geometry")]
+		[System.ComponentModel.Description("Initializes a new instance of PerspectiveTransform with the specified a11, a21, a31, a12, a22, a32, a13, a23 and a33.")]
+		[Concept("Mathematics\\Geometry.md")]
 		PerspectiveTransform(float a11, float a21, float a31, float a12, float a22, float a32, float a13, float a23, float a33) {
 			A11 = a11;
 			A12 = a12;
@@ -65,13 +57,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary> Returns a perspective transform mapping the source quadrilateral (x0–x3, y0–y3) to the destination quadrilateral (x0P–x3P, y0P–y3P). </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/perspective_transform, code/computational_geometry]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: graphics, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+		[Tags("code/perspective_transform", "code/computational_geometry")]
+		[System.ComponentModel.Description("Returns a perspective transform mapping the source quadrilateral (x0–x3, y0–y3) to the destination quadrilateral (x0P–x3P, y0P–y3P).")]
+		[Concept("Mathematics\\Geometry.md")]
 		public static PerspectiveTransform QuadrilateralToQuadrilateral(float x0, float y0, float x1, float y1, float x2,
 			float y2, float x3, float y3, float x0P, float y0P, float x1P, float y1P, float x2P, float y2P, float x3P,
 			float y3P) {
@@ -82,13 +71,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary> Transforms an array of alternating x, y coordinates in-place using this perspective transform. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/perspective_transform, code/computational_geometry]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: graphics, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+		[Tags("code/perspective_transform", "code/computational_geometry")]
+		[System.ComponentModel.Description("Transforms an array of alternating x, y coordinates in-place using this perspective transform.")]
+		[Concept("Mathematics\\Geometry.md")]
 		public void TransformPoints(float[] points) {
 			var a11 = A11;
 			var a12 = A12;
@@ -111,13 +97,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary>Convenience method, not optimized for performance. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/perspective_transform, code/computational_geometry]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: graphics, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+		[Tags("code/perspective_transform", "code/computational_geometry")]
+		[System.ComponentModel.Description("Convenience method, not optimized for performance.")]
+		[Concept("Mathematics\\Geometry.md")]
 		public void TransformPoints(float[] xValues, float[] yValues) {
 			var n = xValues.Length;
 			for (var i = 0; i < n; i++) {
@@ -131,13 +114,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary> Returns a perspective transform mapping the unit square to the quadrilateral defined by the four corner points. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/perspective_transform, code/computational_geometry]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: graphics, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+		[Tags("code/perspective_transform", "code/computational_geometry")]
+		[System.ComponentModel.Description("Returns a perspective transform mapping the unit square to the quadrilateral defined by the four corner points.")]
+		[Concept("Mathematics\\Geometry.md")]
 		public static PerspectiveTransform SquareToQuadrilateral(float x0, float y0,
 			float x1, float y1,
 			float x2, float y2,
@@ -166,13 +146,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary> Returns a perspective transform mapping the quadrilateral defined by the four corner points to the unit square, via the adjoint of the inverse. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/perspective_transform, code/computational_geometry]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: graphics, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+		[Tags("code/perspective_transform", "code/computational_geometry")]
+		[System.ComponentModel.Description("Returns a perspective transform mapping the quadrilateral defined by the four corner points to the unit square, via the adjoint of the inverse.")]
+		[Concept("Mathematics\\Geometry.md")]
 		public static PerspectiveTransform QuadrilateralToSquare(float x0, float y0, float x1, float y1, float x2, float y2,
 			float x3, float y3)
 			// Here, the adjoint serves as the inverse:
@@ -181,13 +158,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 		// Adjoint is the transpose of the co-factor matrix:
 		/// <summary> Returns a new <see cref="PerspectiveTransform"/> that is the adjoint (transpose of the cofactor matrix) of this transform — equivalent to the inverse up to scaling. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/perspective_transform, code/computational_geometry]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: graphics, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+		[Tags("code/perspective_transform", "code/computational_geometry")]
+		[System.ComponentModel.Description("Returns a new PerspectiveTransform that is the adjoint (transpose of the cofactor matrix) of this transform — equivalent to the inverse up to scaling.")]
+		[Concept("Mathematics\\Geometry.md")]
 		internal PerspectiveTransform BuildAdjoint() => new
 		(A22 * A33 - A23 * A32,
 			A23 * A31 - A21 * A33,
@@ -201,13 +175,10 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary> Returns the matrix product of this transform and <paramref name="other"/>, combining both perspective mappings. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/perspective_transform, code/computational_geometry]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: graphics, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
+		[Tags("code/perspective_transform", "code/computational_geometry")]
+		[System.ComponentModel.Description("Returns the matrix product of this transform and other, combining both perspective mappings.")]
+		[Concept("Mathematics\\Geometry.md")]
 		internal PerspectiveTransform Times(PerspectiveTransform other) => new
 		(A11 * other.A11 + A21 * other.A12 + A31 * other.A13,
 			A11 * other.A21 + A21 * other.A22 + A31 * other.A23,

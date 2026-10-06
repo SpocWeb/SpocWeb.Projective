@@ -11,16 +11,11 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// structs are faster, because allocated on the Stack, but only up to 24 Bytes (3 doubles). 
 /// Names are consistent with <see cref="Vector3"/> but uses double Precision
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-09-22T07:27:58Z
-/// digest: 78b866b6c545ceb7063f5a9fb1b0220dc01de3a05a8b7e1490237ab551516c44
-/// tags: [code/value_object, code/vector_math]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: structures, status: buggy, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-09-22T07:27:58Z", Digest = "78b866b6c545ceb7063f5a9fb1b0220dc01de3a05a8b7e1490237ab551516c44", Stale = false, Path = "typed/Point3D.T.cs", Since = "2026-10-06")]
+[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+[Tags("code/value_object", "code/vector_math")]
+[System.ComponentModel.Description("Typed Position3D Vector3D to avoid accidental Type Mix")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 
 	/// <summary> Uses the hardware-accelerated <see cref="Vector3"/> Type </summary>
@@ -32,65 +27,47 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 
 	/// <summary>Gets the x.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the x.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double X => Vector.X;
 	/// <summary>Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Y => Vector.Y;
 	/// <summary>Gets the z.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Z => Vector.Z;
 
 	/// <summary>Gets the norm Sqr.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm Sqr.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormSqr => X * X + Y * Y + Z * Z;
 
 	/// <summary>Gets the norm Abs.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm Abs.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormAbs => Math.Abs(X) + Math.Abs(Y) + Math.Abs(Z);
 	/// <summary>Gets the norm.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Norm => NormSqr.SqRt();
 
 	/// <inheritdoc />
@@ -98,43 +75,31 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 
 	/// <summary> Creates a point from an <see cref="IVector3D"/> interface value. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Creates a point from an IVector3D interface value.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D(IVector3D vector) => Vector = new Vector3((float) vector.X, (float) vector.Y, (float) vector.Z);
 	/// <summary> Creates a point from double-precision coordinates. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Creates a point from double-precision coordinates.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D(double x, double y, double z) => Vector = new Vector3((float) x, (float) y, (float) z);
 	/// <summary> Creates a point from single-precision coordinates. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Creates a point from single-precision coordinates.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D(float x, float y, float z) => Vector = new Vector3(x, y, z);
 	/// <summary> Creates a point wrapping an existing <see cref="Vector3"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Creates a point wrapping an existing Vector3.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D(Vector3 vector) => Vector = vector;
 
 	/// <summary> Translates <paramref name="self"/> by <paramref name="that"/>. </summary>
@@ -151,24 +116,18 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 
 	/// <summary>Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public int Count => 2;
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double this[int index] => index switch {
 		0 => X
 		, 1 => Y
@@ -187,13 +146,10 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 
 	/// <summary> TODO: Does NOT math the Behavior of <see cref="Equals(Point3D{T})"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: structures, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("TODO: Does NOT math the Behavior of Equals(Point3D)")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public override int GetHashCode() => X.GetHashCode() ^ Y.GetHashCode() ^ Z.GetHashCode();
 
 	/// <inheritdoc />
@@ -297,16 +253,11 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 /// 0-0-0
 ///
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-09-22T07:27:58Z
-/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-/// tags: [code/collection, code/computational_geometry]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: stable, complexity: 1}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-09-22T07:27:58Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "typed/Point3D.T.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+[Tags("code/collection", "code/computational_geometry")]
+[System.ComponentModel.Description("A List of Points to be interpreted as a List of Triangles connected to each other")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public class TriangleStrip3D<T> : Point3DList<T>;
 
 /// <summary> Allows for comfortable Declaration of ordered Lists and Polygons </summary>
@@ -315,7 +266,7 @@ public class TriangleStrip3D<T> : Point3DList<T>;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 214 | <see cref="Add"/> | Adds x to this instance. |
+/// | 287 | <see cref="Add"/> | Adds x to this instance. |
 /// </remarks>
 /// <example><code lang="C#">
 /// new Point3DList{
@@ -325,15 +276,18 @@ public class TriangleStrip3D<T> : Point3DList<T>;
 /// }
 /// </code></example>
 /// <see cref="NaturalLang.NumbersAsWords.TupleList"/>
+[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+[Tags("code/data_structure", "code/geometry")]
+[System.ComponentModel.Description("Allows for comfortable Declaration of ordered Lists and Polygons")]
+[Concept("Mathematics\\Geometry.md")]
+[Concept("polygon")]
 public class Point3DList<T> : List<Point3D<T>> {
 	/// <summary>Adds <paramref name="x"/> to this instance.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/collection, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/data_structure", "code/geometry")]
+	[System.ComponentModel.Description("Adds x to this instance.")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("polygon")]
 	public void Add(double x, double y, double z) => Add(new Point3D<T>(x, y, z));
 }

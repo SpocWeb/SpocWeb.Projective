@@ -9,7 +9,7 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 16 | <see cref="Add"/> | Appends a new point with the given coordinates. |
+/// | 30 | <see cref="Add"/> | Appends a new point with the given coordinates. |
 /// </remarks>
 /// <example><code lang="C#">
 /// new Point4DList{
@@ -19,9 +19,19 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// }
 /// </code></example>
 /// <see cref="NaturalLang.NumbersAsWords.TupleList"/>
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "673c2a69ab4629804804f86c3c07aa1802962fd34bd69cc0670e04ecc98686e6", Stale = false, Path = "Interfaces/Vectors/Point4D.T.cs", Since = "2026-08-23")]
+[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+[Tags("code/data_structure", "code/geometry")]
+[System.ComponentModel.Description("Allows for comfortable Declaration of ordered Lists and Polygons")]
+[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "673c2a69ab4629804804f86c3c07aa1802962fd34bd69cc0670e04ecc98686e6", Stale = false, Path = "typed/Point4D.T.cs", Since = "2026-08-23")]
+[Concept("Mathematics\\Geometry.md")]
+[Concept("polygon")]
 public class Point4DList<T> : List<Point4D<T>> {
 	/// <summary> Appends a new point with the given coordinates. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/data_structure", "code/geometry")]
+	[System.ComponentModel.Description("Appends a new point with the given coordinates.")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("polygon")]
 	public void Add(double x, double y, double z, double w) => Add(new Point4D<T>(x, y, z, w));
 }
 
@@ -35,7 +45,12 @@ public class Point4DList<T> : List<Point4D<T>> {
 /// </remarks>
 /// <inheritdoc cref="IPoint4D{V}"/>
 /// <inheritdoc cref="IEquatable{T}"/>
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "89cc566cff2e454ccb3318cffe214c4e3bc618f4f6f666ec066f3c7022455a38", Stale = false, Path = "Interfaces/Vectors/Point4D.T.cs", Since = "2026-08-23")]
+[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+[Tags("code/value_object", "code/geometry")]
+[System.ComponentModel.Description("Typed Position3D Vector4D to avoid accidental Type Mix")]
+[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "89cc566cff2e454ccb3318cffe214c4e3bc618f4f6f666ec066f3c7022455a38", Stale = false, Path = "typed/Point4D.T.cs", Since = "2026-08-23")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
+[Concept("typed_geometric_primitives")]
 public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoint4D
 {
 	/// <summary> Uses the hardware-accelerated <see cref="Vector4"/> Type </summary>
@@ -47,23 +62,63 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 	public static Point4D<T> MAX_VALUE = new(float.MaxValue, float.MaxValue, float.MaxValue, float.MaxValue);
 
 	/// <summary>Gets the w.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double W => V.W;
 	/// <summary>Gets the x.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the x.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double X => V.X;
 	/// <summary>Gets the y.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double Y => V.Y;
 	/// <summary>Gets the z.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double Z => V.Z;
 
 	/// <summary>Gets the norm Abs.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the norm Abs.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double NormAbs => V.NormAbs();
 	/// <summary>Gets the norm Sqr.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the norm Sqr.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double NormSqr => V.NormSqr();
 
 	/// <summary>Gets the norm.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double Norm => NormSqr.SqRt();
 
 	/// <summary> Determines whether this point's coordinates approximately equal <paramref name="other"/>'s. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Determines whether this point's coordinates approximately equal other's.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public bool Equals(IVector4D other) => this.IsApprox(other);
 	/// <inheritdoc />
 	public bool Equals(Point4D<T> other) => this.IsApprox(other);
@@ -75,12 +130,32 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 	public override string ToString() => "(" + X + ';' + Y + ';' + Z + ';' + W + ')';
 
 	/// <summary> Creates a point from an <see cref="IVector4D"/> interface value. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Creates a point from an IVector4D interface value.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point4D(IVector4D vector) => V = new Vector4((float) vector.X, (float) vector.Y, (float) vector.Z, (float) vector.W);
 	/// <summary> Creates a point from double-precision coordinates. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Creates a point from double-precision coordinates.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point4D(double x, double y, double z, double w) => V = new Vector4((float) x, (float) y, (float) z, (float) w);
 	/// <summary> Creates a point from single-precision coordinates. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Creates a point from single-precision coordinates.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point4D(float x, float y, float z, float w) => V = new Vector4(x, y, z, w);
 	/// <summary> Creates a point wrapping an existing <see cref="Vector4"/>. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Creates a point wrapping an existing Vector4.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point4D(Vector4 vector) => V = vector;
 
 	/// <summary> Translates <paramref name="self"/> by <paramref name="that"/>. </summary>
@@ -104,10 +179,25 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 		=> new(self.X - that.X, self.Y - that.Y, self.Z - that.Z, self.W - that.W);
 
 	/// <summary> Returns this point translated by <paramref name="addend"/>. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Returns this point translated by addend.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Point4D<T> Plus(Vector4D<T> addend) => new(V + addend.V);
 	/// <summary> Returns the displacement vector from <paramref name="subtrahend"/> to this point. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Returns the displacement vector from subtrahend to this point.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Vector4D<T> Minus(Point4D<T> subtrahend) => new(V - subtrahend.V);
 	/// <summary> Returns the displacement vector from this point to <paramref name="minuend"/>. </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Returns the displacement vector from this point to minuend.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public Vector4D<T> MinusR(Point4D<T> minuend) => new(minuend.V - V);
 
 #pragma warning disable 8633
@@ -128,9 +218,19 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 #pragma warning restore 8633
 
 	/// <summary>Gets the number of elements.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public int Count => 2;
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public double this[int index] => index switch {
 		0 => X
 		, 1 => Y
@@ -150,6 +250,11 @@ public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoin
 	}
 
 	/// <summary> TODO: Does NOT math the Behavior of <see cref="Equals(Point4D{T})"/> </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("TODO: Does NOT math the Behavior of Equals(Point4D)")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	[Concept("typed_geometric_primitives")]
 	public override int GetHashCode() => X.GetHashCode() ^ Y.GetHashCode() ^ Z.GetHashCode();
 
 	/// <inheritdoc />

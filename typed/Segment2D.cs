@@ -10,33 +10,73 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// so you can have a negative <see cref="Length"/>.
 /// <see cref="Data.geo.Geo.Segment"/> redefined as a class. 
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "32dcee966363ed20493b2639f02f04941524441f5e55a739eea0957ad63a4bf6", Stale = false, Path = "Interfaces/Vectors/Segment2D.cs", Since = "2026-08-23")]
+[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+[Tags("code/value_object", "code/geometry")]
+[System.ComponentModel.Description("AKA Slice2D; Lightweight passive 2D segment Pair (Offset/Length resp Start/End or StartPos/StoppPos).")]
+[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "32dcee966363ed20493b2639f02f04941524441f5e55a739eea0957ad63a4bf6", Stale = false, Path = "typed/Segment2D.cs", Since = "2026-08-23")]
+[Concept("Mathematics\\Geometry.md")]
+[Concept("line_segment")]
 public readonly struct Segment2D<T> : ISlice<Point2D<T>, Vector2D<T>> {
 
 	/// <summary>Gets the offset.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the offset.")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public Point2D<T> Offset => StartPos;
 
 	/// <summary> AKA Start, AKA LeftPos </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("AKA Start, AKA LeftPos")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public Point2D<T> StartPos { get; }
 
 	/// <summary> AKA End, AKA RightPos </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("AKA End, AKA RightPos")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public Point2D<T> StoppPos { get; }
 
 	/// <summary>Gets the full.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Gets the full.")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public IInterval<Point2D<T>> Full => FULL;
 	/// <summary>Gets the fULL.</summary>
 	public static readonly Segment2D<T> FULL = new(Point2D<T>.MIN_VALUE, Point2D<T>.MAX_VALUE);
 
 	/// <summary> AKA Width; AKA Size </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("AKA Width; AKA Size")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public Vector2D<T> Length => StoppPos - StartPos; //{ get; }
 
 	/// <summary>Initializes a new instance of <see cref="Segment2D"/> with the specified <paramref name="leftPos"/> and <paramref name="rightPos"/>.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Initializes a new instance of Segment2D with the specified leftPos and rightPos.")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public Segment2D(Point2D<T> leftPos, Point2D<T> rightPos) {
 			StartPos = leftPos;
 			StoppPos = rightPos;
 		}
 
 	/// <summary>Initializes a new instance of <see cref="Segment2D"/> with the specified <paramref name="leftPos"/> and <paramref name="length"/>.</summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("Initializes a new instance of Segment2D with the specified leftPos and length.")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public Segment2D(Point2D<T> leftPos, Vector2D<T> length) {
 			StartPos = leftPos;
 			StoppPos = leftPos + length;
@@ -54,9 +94,19 @@ public readonly struct Segment2D<T> : ISlice<Point2D<T>, Vector2D<T>> {
 	public override int GetHashCode() => StoppPos.GetHashCode() ^ (StartPos.GetHashCode() << 16);
 
 	/// <summary> <returns> 0 also for the Edge Cases</returns> </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("0 also for the Edge Cases")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public int CompareTo(Point2D<T> that) => this.CompareSum(that);
 
 	/// <summary>9 Cases: -4..4 </summary>
+	[Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
+	[Tags("code/value_object", "code/geometry")]
+	[System.ComponentModel.Description("9 Cases: -4..4")]
+	[Concept("Mathematics\\Geometry.md")]
+	[Concept("line_segment")]
 	public int CompareTo(IRange<Point2D<T>>? that) 
 		=> CompareTo(that.StartPos) + CompareTo(that.StoppPos);
 

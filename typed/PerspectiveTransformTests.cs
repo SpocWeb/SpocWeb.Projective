@@ -6,18 +6,13 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 	/// <summary>Tests for perspective Transform.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-05-24T15:36:44Z
-	/// digest: 6f686ec058aa3dc35be3850080da6e59cbe0776086956601411936c395219ef8
-	/// tags: [code/unit_test, code/perspective_transform]
-	/// concepts: [Mathematics\Geometry.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-05-24T15:36:44Z", Digest = "6f686ec058aa3dc35be3850080da6e59cbe0776086956601411936c395219ef8", Stale = false, Path = "typed/PerspectiveTransformTests.cs", Since = "2026-10-06")]
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/perspective_transform")]
+	[System.ComponentModel.Description("Tests for perspective Transform.")]
 	[Replaces("../IMathsImpl/Interfaces/Converters/PerspectiveTransformTests.cs")]
 	[TestFixture]
+	[Concept("Mathematics\\Geometry.md")]
 	public static class PerspectiveTransformTests {
 
 		/// <summary>Specifies the constant ePSILON.</summary>
@@ -25,13 +20,11 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary>Test-Helper asserting that <paramref name="pt"/> transforms the Point (<paramref name="sourceX"/>, <paramref name="sourceY"/>) to (<paramref name="expectedX"/>, <paramref name="expectedY"/>) within <see cref="EPSILON"/>.</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/unit_test, code/perspective_transform]
-		/// concepts: [perspective_transform, Mathematics\Geometry.md]
-		/// facets: {layer: test, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+		[Tags("code/unit_test", "code/perspective_transform")]
+		[System.ComponentModel.Description("Test-Helper asserting that pt transforms the Point (sourceX, sourceY) to (expectedX, expectedY) within EPSILON.")]
+		[Concept("perspective_transform")]
+		[Concept("Mathematics\\Geometry.md")]
 		static void AssertPointEquals(float expectedX,
 			float expectedY,
 			float sourceX,
@@ -45,14 +38,11 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary>Test Quadrilateral To Quadrilateral.</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/unit_test, code/perspective_transform]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: test, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+		[Tags("code/unit_test", "code/perspective_transform")]
+		[System.ComponentModel.Description("Test Quadrilateral To Quadrilateral.")]
 		[Test]
+		[Concept("Mathematics\\Geometry.md")]
 		public static void TestQuadrilateralToQuadrilateral() {
 			var pt = PerspectiveTransform.QuadrilateralToQuadrilateral
 			(
@@ -68,14 +58,11 @@ namespace org.SpocWeb.root.interfaces.converters {
 
 		/// <summary>Test Square To Quadrilateral.</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/unit_test, code/perspective_transform]
-		/// concepts: [Mathematics\Geometry.md]
-		/// facets: {layer: test, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+		[Tags("code/unit_test", "code/perspective_transform")]
+		[System.ComponentModel.Description("Test Square To Quadrilateral.")]
 		[Test]
+		[Concept("Mathematics\\Geometry.md")]
 		public static void TestSquareToQuadrilateral() {
 			var pt = PerspectiveTransform.SquareToQuadrilateral
 			(

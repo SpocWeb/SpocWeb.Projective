@@ -15,12 +15,51 @@ digest:
     BiVector4D:
       mtime: "2026-10-06T11:08:57Z"
       digest: "4978d999b4b3565a5438537eb827da872f660631229a6a947112b63cb9420a40"
+    PerspectiveTransform:
+      mtime: "2026-10-06T19:01:29Z"
+      digest: "7514c9931478b175bf6b01507a2f841d0e26761ae96af29da2b9e7465c511f8c"
+    PerspectiveTransformTests:
+      mtime: "2026-10-06T19:01:29Z"
+      digest: "6f686ec058aa3dc35be3850080da6e59cbe0776086956601411936c395219ef8"
     Point2D:
-      mtime: "2026-10-06T11:08:58Z"
-      digest: "45dfe294652032a800df2d168f03696930a308929023ab7840b7fe2600cd2cc3"
+      mtime: "2026-10-06T19:01:30Z"
+      digest: "a66fe89b9b20cfd5a3ce51b2ac7a1908b61137f695b5f0f85a2488c42d6e75b4"
+    Point2Dbl:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "4544b5ef6486423ecd53884dcc011092bc354cf75cd595d6a742704503592e33"
+    Point2DList:
+      mtime: "2026-10-06T19:01:30Z"
+      digest: "029a6ebc8bd5266a11be2baf88b28afd53068c3e82e278a87aceb60894824ae0"
     Point3D:
-      mtime: "2026-10-06T11:08:58Z"
-      digest: "c67006e522c51fe4e192ebb384ff0ccbb3bd097f6ab08a0b6913bdcd1ff768a6"
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "8f0a324c2f1150a91667b59501145b4a744d00d5654023d2081ca65c1c7b7e88"
+    Point3Dbl:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "461c50db8dbfefa494d623f1cb1f2efc09984f7290d3133d5c7a68a5d340da5c"
+    Point3DList:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "58c9303ca71f9a5e025e3a8b6ef409c49f98dbdfe82cfc23e5e5137071be9a58"
+    Point4D:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "4205bf9219dd75c82ff04f01938e7130ad7a447b1b44bde7a0b3f8bc5288051a"
+    Point4Dbl:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "2d4704fd701caa11bbef67d3fd8e84f6636d0697dbc991739aff735c4d632ae9"
+    Point4DList:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "673c2a69ab4629804804f86c3c07aa1802962fd34bd69cc0670e04ecc98686e6"
+    Rect2Dbl:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "808f9374941495308286bf85e83b76f00c6c2bb40d0819ff9ec7ec05abe100aa"
+    Segment2D:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "32dcee966363ed20493b2639f02f04941524441f5e55a739eea0957ad63a4bf6"
+    Segment3D:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "53bff2f088bf143c850f2c1efd78d8e9ca34953655252c51b78449eb7cca6d08"
+    Size2Dbl:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "ff37cfb8701b4c95e960b1c4b31a492faf79b321c1c12064ac0b0dcc4c84ab1c"
     TriVector4D:
       mtime: "2026-10-06T10:57:20Z"
       digest: "83369c305b449318903d911cf21a38ebe40afebff113f3d007cdeda63275bf46"
@@ -39,6 +78,15 @@ digest:
     XBiVector4D:
       mtime: "2026-10-06T11:08:57Z"
       digest: "8431e0f46cb89ce6da929586f5f67cdf43f49a973307705fdbbd137c8ce272e9"
+    XPoint2Dbl:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "7e4fa29226f76a97516c1b395958f6c948f99769087d42d63b0075274bd27436"
+    XPoint2DList:
+      mtime: "2026-10-06T19:01:30Z"
+      digest: "619ca7c653a4674f9c76776683be59142735caac4210ed11c1e8c79ecbda8047"
+    XSize2Dbl:
+      mtime: "2026-10-06T19:01:31Z"
+      digest: "8fd461b1ea8a329ac42ce8da44eedb8622e33262c8b75778d545b7a6c770ba43"
     XVector2:
       mtime: "2026-08-09T13:51:45Z"
       digest: "9b1e17dd8d922bb8cd498f75da9fc1f5ba40d88d35129375aba5cb50b26bfb1a"
@@ -110,19 +158,37 @@ plain vectors, encoding the PGA grade structure directly in the C# type system.
 
 ## Classes
 
-| Class | Responsibility |
-|---|---|
-| [BiVector3D](BiVector3D.cs) | three floating-point components named x, y, and z of the Cross-Product |
-| [XBiVector3D](BiVector3D.cs) | Extension methods for BiVector3D and related vector types. |
-| [XBiVector4D](BiVector4D.cs) | Static factory methods constructing BiVector4D lines via wedge products of homogeneous 3D points and direction vectors. |
-| [BiVector4D](BiVector4D.cs) | Represents a line in 3D projective space via six Plücker coordinates: a Direction (vector part) and a Moment (bivector part). |
-| [Point2D](Point2D.cs) | Vector2-backed immutable 2D affine point with homogeneous W = 1, supporting addition/subtraction with Vector2D and wedge products that produce lines. |
-| [Point3D](Point3D.cs) | 3D Point accelerated by Vector3 |
-| [TriVector4D](TriVector4D.cs) | 4D tri-vector having floating-point components x, y, z, and w. |
-| [XVector2](Vector2D.cs) | Provides extension methods for Complex. |
-| [Vector2D](Vector2D.cs) | Vector2-backed struct impl. up to IVector4D |
-| [Vector3D](Vector3D.cs) | Vector3-backed immutable 3D direction vector that implements IVector4D with W = 0, supporting rotations, projection, rejection, and standard arithmetic. |
-| [Vector4D](Vector4D.cs) | single-precision Point-/Place-Vector in 3D, used for (Position-)Vectors in homogeneous Coordinates |
+| Class | Responsibility | Key Collaborators |
+|---|---|---|
+| [BiVector3D](BiVector3D.cs) | three floating-point components named x, y, and z of the Cross-Product |  |
+| [XBiVector3D](BiVector3D.cs) | Extension methods for BiVector3D and related vector types. |  |
+| [XBiVector4D](BiVector4D.cs) | Static factory methods constructing BiVector4D lines via wedge products of homogeneous 3D points and direction vectors. |  |
+| [BiVector4D](BiVector4D.cs) | Represents a line in 3D projective space via six Plücker coordinates: a Direction (vector part) and a Moment (bivector part). |  |
+| [PerspectiveTransform](PerspectiveTransform.cs) | Given four source and four destination points, it will compute the transformation implied between them. |  |
+| [PerspectiveTransformTests](PerspectiveTransformTests.cs) | Tests for perspective Transform. |  |
+| [Point2D](Point2D.cs) | Vector2-backed immutable 2D affine point with homogeneous W = 1, supporting addition/subtraction with Vector2D and wedge products that produce lines. / AKA Position2D; Immutable, lightweight, double-Precision, typed Position2D to avoid accidental Type Mix in Arithmetic |  |
+| [XPoint2DList](Point2D.T.cs) | Closest-pair algorithms and utility extensions for Point2D lists. | `Segment2D` |
+| [TriangleStrip2D](Point2D.T.cs) | A List of Points to be interpreted as a List of Triangles connected to each other |  |
+| [Point2DList](Point2D.T.cs) | Allows for comfortable Declaration of ordered Lists and Polygons |  |
+| [Size2Dbl](Point2Dbl.cs) | AKA Vector2Dbl; 2D double-Precision, Platform-neutral Pendant to Size; this is a Vector like the hardware-accelerated Vector |  |
+| [XSize2Dbl](Point2Dbl.cs) | Extension Methods with Size2Dbl |  |
+| [Point2Dbl](Point2Dbl.cs) | Immutable, lightweight, single-Precision Pendant to System.Drawing.Point and Vector2 |  |
+| [Rect2Dbl](Point2Dbl.cs) | Platform-neutral Pendant to System.Drawing.Rectangle |  |
+| [XPoint2Dbl](Point2Dbl.cs) | Extension methods for Point2Dbl and related 2D types. |  |
+| [Point3D](Point3D.cs) | 3D Point accelerated by Vector3 / Typed Position3D Vector3D to avoid accidental Type Mix |  |
+| [TriangleStrip3D](Point3D.T.cs) | A List of Points to be interpreted as a List of Triangles connected to each other |  |
+| [Point3DList](Point3D.T.cs) | Allows for comfortable Declaration of ordered Lists and Polygons |  |
+| [Point3Dbl](Point3Dbl.T.cs) | AKA Position/Location; Typed, double-precision Position3D Vector3D to avoid accidental Type Mix |  |
+| [Point4DList](Point4D.T.cs) | Allows for comfortable Declaration of ordered Lists and Polygons |  |
+| [Point4D](Point4D.T.cs) | Typed Position3D Vector4D to avoid accidental Type Mix |  |
+| [Point4Dbl](Point4Dbl.T.cs) | Typed Position2D Vector2D to avoid accidental Type Mix |  |
+| [Segment2D](Segment2D.cs) | AKA Slice2D; Lightweight passive 2D segment Pair (Offset/Length resp Start/End or StartPos/StoppPos). |  |
+| [Segment3D](Segment3D.cs) | Lightweight passive Space segment (Offset/Length pair). |  |
+| [TriVector4D](TriVector4D.cs) | 4D tri-vector having floating-point components x, y, z, and w. |  |
+| [XVector2](Vector2D.cs) | Provides extension methods for Complex. |  |
+| [Vector2D](Vector2D.cs) | Vector2-backed struct impl. up to IVector4D |  |
+| [Vector3D](Vector3D.cs) | Vector3-backed immutable 3D direction vector that implements IVector4D with W = 0, supporting rotations, projection, rejection, and standard arithmetic. |  |
+| [Vector4D](Vector4D.cs) | single-precision Point-/Place-Vector in 3D, used for (Position-)Vectors in homogeneous Coordinates |  |
 
 ## Relationships
 
