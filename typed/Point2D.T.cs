@@ -305,7 +305,6 @@ public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, ICompar
 /// 2/3 of Transforms are saved by reusing the previous 2 Points. 
 /// </remarks>
 [DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "Interfaces/Vectors/Point2D.T.cs", Since = "2026-08-23")]
-[Replaces("../IGraphs/Interfaces/Vectors/Vector2D.cs")]
 
 public class TriangleStrip2D<T> : Point2DList<T>;
 

@@ -307,7 +307,6 @@ public readonly struct Point3D<T> : IPoint3D<T>, IEquatable<Point3D<T>?> {
 /// facets: {layer: domain, status: stable, complexity: 1}
 /// </code>
 /// </example>
-[Replaces("../IGraphs/Interfaces/Vectors/Vector2D.cs")]
 public class TriangleStrip3D<T> : Point3DList<T>;
 
 /// <summary> Allows for comfortable Declaration of ordered Lists and Polygons </summary>
