@@ -127,8 +127,8 @@ dv_has_:
         partial: 1
       complexity_:
         "1": 14
-        "2": 21
-        "3": 8
+        "2": 20
+        "3": 9
     tag_:
       code_:
         clifford_algebra: 29
@@ -139,8 +139,8 @@ dv_has_:
         typed_wrapper: 2
         abstract_base: 7
         dual_numbers: 2
-        split_complex: 1
         enum: 9
+        split_complex: 1
     concept_:
       physics_simulation: 10
       "Mathematics\\Geometry\\Geometric_Algebra.md": 33
@@ -152,8 +152,8 @@ has_sub_facet_layer_test: 3
 has_sub_facet_status_stable: 42
 has_sub_facet_status_partial: 1
 has_sub_facet_complexity_1: 14
-has_sub_facet_complexity_2: 21
-has_sub_facet_complexity_3: 8
+has_sub_facet_complexity_2: 20
+has_sub_facet_complexity_3: 9
 has_sub_tag_code_clifford_algebra: 29
 has_sub_tag_code_rigid_body_physics: 10
 has_sub_tag_code_conformal_geometric_algebra: 5
@@ -162,8 +162,8 @@ has_sub_tag_code_mass_distribution: 2
 has_sub_tag_code_typed_wrapper: 2
 has_sub_tag_code_abstract_base: 7
 has_sub_tag_code_dual_numbers: 2
-has_sub_tag_code_split_complex: 1
 has_sub_tag_code_enum: 9
+has_sub_tag_code_split_complex: 1
 has_sub_concept_physics_simulation: 10
 has_sub_concept_mathematics_geometry_geometric_algebra_md: 33
 ---

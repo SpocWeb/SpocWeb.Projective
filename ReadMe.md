@@ -50,22 +50,24 @@ related:
 dv_has_:
   sub_:
     folders: 3
-    files: 138
-    units: 112
+    files: 144
+    units: 113
     facet_:
       layer_:
-        domain: 105
+        domain: 103
         test: 6
+        presentation: 2
+        foundation: 1
         scaffold: 1
       status_:
-        stable: 101
+        stable: 102
         buggy: 5
         partial: 5
         stub: 1
       complexity_:
-        "1": 41
-        "2": 44
-        "3": 24
+        "1": 44
+        "2": 43
+        "3": 23
         "4": 3
     tag_:
       code_:
@@ -73,51 +75,56 @@ dv_has_:
         clifford_algebra: 30
         rigid_body_physics: 12
         conformal_geometric_algebra: 11
-        geometric_algebra: 8
-        polar_coordinates: 3
+        geometric_algebra: 5
         vector_math: 7
+        polar_coordinates: 3
         computational_geometry: 4
+        factory: 5
         mass_distribution: 2
-        typed_wrapper: 2
     concept_:
       "Mathematics\\Geometry\\Geometric_Algebra.md": 87
       physics_simulation: 10
       "Mathematics\\Geometry\\Vector.md": 11
-      geometric_algebra_spaces: 1
-      pga_motors_:
-        reflectors: 1
-      typed_geometric_primitives: 1
+      projective_geometric_algebra: 2
+      float_tolerance_comparison: 1
+      multivector_components: 1
+      numerical_tolerance: 1
+      reproducible_test_seed: 1
       "Mathematics\\Statistics\\Combinatorics.md": 1
 has_sub_folders: 3
-has_sub_files: 138
-has_sub_units: 112
-has_sub_facet_layer_domain: 105
+has_sub_files: 144
+has_sub_units: 113
+has_sub_facet_layer_domain: 103
 has_sub_facet_layer_test: 6
+has_sub_facet_layer_presentation: 2
+has_sub_facet_layer_foundation: 1
 has_sub_facet_layer_scaffold: 1
-has_sub_facet_status_stable: 101
+has_sub_facet_status_stable: 102
 has_sub_facet_status_buggy: 5
 has_sub_facet_status_partial: 5
 has_sub_facet_status_stub: 1
-has_sub_facet_complexity_1: 41
-has_sub_facet_complexity_2: 44
-has_sub_facet_complexity_3: 24
+has_sub_facet_complexity_1: 44
+has_sub_facet_complexity_2: 43
+has_sub_facet_complexity_3: 23
 has_sub_facet_complexity_4: 3
 has_sub_tag_code_projective_geometric_algebra: 39
 has_sub_tag_code_clifford_algebra: 30
 has_sub_tag_code_rigid_body_physics: 12
 has_sub_tag_code_conformal_geometric_algebra: 11
-has_sub_tag_code_geometric_algebra: 8
-has_sub_tag_code_polar_coordinates: 3
+has_sub_tag_code_geometric_algebra: 5
 has_sub_tag_code_vector_math: 7
+has_sub_tag_code_polar_coordinates: 3
 has_sub_tag_code_computational_geometry: 4
+has_sub_tag_code_factory: 5
 has_sub_tag_code_mass_distribution: 2
-has_sub_tag_code_typed_wrapper: 2
 has_sub_concept_mathematics_geometry_geometric_algebra_md: 87
 has_sub_concept_physics_simulation: 10
 has_sub_concept_mathematics_geometry_vector_md: 11
-has_sub_concept_geometric_algebra_spaces: 1
-has_sub_concept_pga_motors_reflectors: 1
-has_sub_concept_typed_geometric_primitives: 1
+has_sub_concept_projective_geometric_algebra: 2
+has_sub_concept_float_tolerance_comparison: 1
+has_sub_concept_multivector_components: 1
+has_sub_concept_numerical_tolerance: 1
+has_sub_concept_reproducible_test_seed: 1
 has_sub_concept_mathematics_statistics_combinatorics_md: 1
 ---
 # maths.pga

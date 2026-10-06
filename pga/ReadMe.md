@@ -93,16 +93,16 @@ dv_has_:
     units: 46
     facet_:
       layer_:
-        domain: 43
-        test: 3
+        domain: 44
+        test: 2
       status_:
         stable: 42
         partial: 3
         buggy: 1
       complexity_:
         "1": 26
-        "2": 15
-        "3": 4
+        "2": 16
+        "3": 3
         "4": 1
     tag_:
       code_:
@@ -110,8 +110,8 @@ dv_has_:
         conformal_geometric_algebra: 6
         polar_coordinates: 3
         factory: 4
-        rigid_body_physics: 2
         enum: 25
+        rigid_body_physics: 2
         hyperoperation: 1
         extension_method: 7
         recursive_sequence: 1
@@ -121,21 +121,21 @@ dv_has_:
 has_sub_folders: 0
 has_sub_files: 36
 has_sub_units: 46
-has_sub_facet_layer_domain: 43
-has_sub_facet_layer_test: 3
+has_sub_facet_layer_domain: 44
+has_sub_facet_layer_test: 2
 has_sub_facet_status_stable: 42
 has_sub_facet_status_partial: 3
 has_sub_facet_status_buggy: 1
 has_sub_facet_complexity_1: 26
-has_sub_facet_complexity_2: 15
-has_sub_facet_complexity_3: 4
+has_sub_facet_complexity_2: 16
+has_sub_facet_complexity_3: 3
 has_sub_facet_complexity_4: 1
 has_sub_tag_code_projective_geometric_algebra: 36
 has_sub_tag_code_conformal_geometric_algebra: 6
 has_sub_tag_code_polar_coordinates: 3
 has_sub_tag_code_factory: 4
-has_sub_tag_code_rigid_body_physics: 2
 has_sub_tag_code_enum: 25
+has_sub_tag_code_rigid_body_physics: 2
 has_sub_tag_code_hyperoperation: 1
 has_sub_tag_code_extension_method: 7
 has_sub_tag_code_recursive_sequence: 1
