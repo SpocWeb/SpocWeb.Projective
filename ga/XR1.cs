@@ -599,7 +599,7 @@ public static class XR1
 		var r1 = mv.Times(rcp);
 		r1.ShouldBeApprox(R100._1_, 5e-5);
 
-		var r2 = mv.Times(rcp);
+		var r2 = rcp.Times(mv);
 		r2.ShouldBeApprox(R100._1_, 5e-5);
 	}
 
@@ -632,7 +632,7 @@ public static class XR1
 		var r1 = mv.Times(rcp);
 		r1.ShouldBeApprox(R010._1_, 5e-5);
 
-		var r2 = mv.Times(rcp);
+		var r2 = rcp.Times(mv);
 		r2.ShouldBeApprox(R010._1_, 5e-5);
 	}
 
@@ -665,7 +665,7 @@ public static class XR1
 		var r1 = mv.Times(rcp);
 		r1.ShouldBeApprox(R001._1_, 5e-5);
 
-		var r2 = mv.Times(rcp);
+		var r2 = rcp.Times(mv);
 		r2.ShouldBeApprox(R001._1_, 5e-5);
 	}
 
@@ -698,7 +698,7 @@ public static class XR1
 		var r1 = mv.Times(rcp);
 		r1.ShouldBeApprox(R011._1_, 5e-5);
 
-		var r2 = mv.Times(rcp);
+		var r2 = rcp.Times(mv);
 		r2.ShouldBeApprox(R011._1_, 5e-5);
 	}
 
@@ -731,7 +731,7 @@ public static class XR1
 		var r1 = mv.Times(rcp);
 		r1.ShouldBeApprox(R110._1_, 2e-4);
 
-		var r2 = mv.Times(rcp);
+		var r2 = rcp.Times(mv);
 		r2.ShouldBeApprox(R110._1_, 2e-4);
 	}
 
@@ -752,7 +752,7 @@ public static class XR1
 		var r1 = mv.Times(rcp);
 		r1.ShouldBeApprox(R101._1_, 5e-5);
 
-		var r2 = mv.Times(rcp);
+		var r2 = rcp.Times(mv);
 		r2.ShouldBeApprox(R101._1_, 5e-5);
 	}*/
 
