@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using org.SpocWeb.root.array;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -18,16 +19,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// and its dual space Rd,0,1 (where the vectors represent points) is introduced yielding 2 dual Spaces.
 /// In Practice this Mapping is rarely needed though. 
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 6c1aaee5cad5dc761875b9255d666ed142869aa8eb3ecc760872bda65a9b69f6
-/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "6c1aaee5cad5dc761875b9255d666ed142869aa8eb3ecc760872bda65a9b69f6", Stale = false, Path = "ga/R310.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+[System.ComponentModel.Description("R310 AKA 2D CGA (Conformal Geometric Algebra) R^4 Relativistic Vector-Space with Rotations and Reflections")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class R310 : AGeoGebra16<R310>
 {
 	// just for debug and print output, the basis names
@@ -47,17 +43,12 @@ public class R310 : AGeoGebra16<R310>
 	public override R310 Self() => this;
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T05:58:47Z
-	/// digest: 0468984f7c2e23d3b138fad394112200b60502b6844b19f136a91ee26852ec32
-	/// tags: [code/enum, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T05:58:47Z", Digest = "0468984f7c2e23d3b138fad394112200b60502b6844b19f136a91ee26852ec32", Stale = false, Path = "ga/R310.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary> [0] Scalar e.g. Dot Product or oriented Volume </summary>
@@ -278,13 +269,10 @@ public class R310 : AGeoGebra16<R310>
 
 	/// <summary> Creates a new <see cref="R310"/> G(3,1,0) multivector from the given component array. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Creates a new R310 G(3,1,0) multivector from the given component array.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R310 New(params float[] f) => New((IReadOnlyList<float>) f);
 	/// <inheritdoc cref="New(float[])"/>
 	public static R310 New(IReadOnlyList<float> f) => new(f);
@@ -295,57 +283,42 @@ public class R310 : AGeoGebra16<R310>
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Base idx] => _C[(int) idx];
 
 	/// <summary>Initializes a new instance of <see cref="R310"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="R310"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R310 with the specified f and idx. Initializes a new instance of R310 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R310(double f = 0, Base idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="R310"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R310 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R310(double f = 0, int idx = 0) : base(f, idx) {}
 
 	/// <summary> Unchecked private Constructor for Speed </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	R310(float[] f) : base(f) {}
 
 	/// <summary> Checked Constructor with Copy </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Checked Constructor with Copy")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R310(IReadOnlyList<float> values) : base(values) {}
 
 	/// <inheritdoc />

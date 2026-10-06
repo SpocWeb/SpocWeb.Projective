@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -10,16 +11,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// This is isomorphic to the even subalgebra of <see cref="R200"/>.
 /// 
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 13ac15a49f743a6ffbcde863a4fa1d6f07a74708c550a84572e2315be436e433
-/// tags: [code/clifford_algebra, code/complex_math]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "13ac15a49f743a6ffbcde863a4fa1d6f07a74708c550a84572e2315be436e433", Stale = false, Path = "ga/R010.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/clifford_algebra", "code/complex_math")]
+[System.ComponentModel.Description("Real + Imaginary Complex Number Algebra with (E1 = I)�=-1: Rotation only")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class R010 : AGeoGebra2<R010>
 {
 	/// <summary> basis names for debug and print output </summary>
@@ -38,17 +34,12 @@ public class R010 : AGeoGebra2<R010>
 	public override R010 Self() => this;
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T05:58:36Z
-	/// digest: a5994f6a714f629b603fb9f06fd798b84e11b88cb796c044f93b42fd776480c5
-	/// tags: [code/enum, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T05:58:36Z", Digest = "a5994f6a714f629b603fb9f06fd798b84e11b88cb796c044f93b42fd776480c5", Stale = false, Path = "ga/R010.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary> [0] Scalar Part </summary>
@@ -113,13 +104,10 @@ public class R010 : AGeoGebra2<R010>
 
 	/// <summary> Creates a new <see cref="R010"/> complex number multivector from the given component array. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Creates a new R010 complex number multivector from the given component array.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R010 New(params float[] f) => New((IReadOnlyList<float>) f);
 	/// <inheritdoc cref="New(float[])"/>
 	public static R010 New(IReadOnlyList<float> f) => new(f);
@@ -137,89 +125,65 @@ public class R010 : AGeoGebra2<R010>
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Base idx] => _C[(int) idx];
 
 	/// <summary>Initializes a new instance of <see cref="R010"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="R010"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Initializes a new instance of R010 with the specified f and idx. Initializes a new instance of R010 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R010(double f = 0, Base idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="R010"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Initializes a new instance of R010 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R010(double f = 0, int idx = 0) : base(f, idx) {}
 	/// <summary>Initializes a new instance of <see cref="R010"/> with the specified <paramref name="c"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Initializes a new instance of R010 with the specified c.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R010(Complex c) : base(new []{ (float)c.Real, (float)c.Imaginary}) {}
 
 	/// <summary> Unchecked private Constructor for Speed </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	R010(float[] f) : base(f) {}
 
 	/// <summary> Checked Constructor with Copy </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Checked Constructor with Copy")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R010(IReadOnlyList<float> values) : base(values) {}
 
 	/// <summary> Euclidean norm. (strict positive). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Euclidean norm. (strict positive).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override double NormSqr() => _C.NormSqr2R010();
 
 	/// <summary> Ideal norm. (signed) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/complex_math")]
+	[System.ComponentModel.Description("Ideal norm. (signed)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override double NormI() => this[1] != 0 ? this[1] : Norm();
 
 	/// <inheritdoc />

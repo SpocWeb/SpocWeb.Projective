@@ -4,6 +4,7 @@ using System.Text;
 using NUnit.Framework;
 using org.SpocWeb.root.interfaces.maths;
 using org.SpocWeb.root.logging;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -29,28 +30,20 @@ namespace org.SpocWeb.root.maths.pga;
 /// | <see cref="PGA3D"/> | Returned by a method. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:38:52Z
-/// digest: 9c04d76f03537170aab4c1ae4c444e6556113ee3c59e3c26518026f411c7fde1
-/// tags: [code/extension_method, code/projective_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:38:52Z", Digest = "9c04d76f03537170aab4c1ae4c444e6556113ee3c59e3c26518026f411c7fde1", Stale = false, Path = "pga3d.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/extension_method", "code/projective_geometric_algebra")]
+[System.ComponentModel.Description("Static extension and utility methods for the PGA3D G(3,0,1) multivector type.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public static class XPGA3D
 {
 	/// <summary>Test.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Test.")]
 	[Test, Ignore("Triage: point * point is a geometric product, not an addition, so moved is not Point(7, 7); the Expectation predates the current Convention")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void Test() {
 		var xz = PGA3D.Plane(0, 1,0, 0);
 		var yz = PGA3D.Plane(1, 0, 0, 0);
@@ -77,15 +70,12 @@ public static class XPGA3D
 
 	/// <summary> Wedge Product </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/outer_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
 	//[TestCase(new []{1,2,3,4,5,6,7,8.0}, new []{-1,-2,-3,-4,-5,-6,-7,-8.0}
 	//	, ExpectedResult = new []{ -1, -4, -6, -8, -10, -12, -14, -48.0})]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/outer_product")]
+	[System.ComponentModel.Description("Wedge Product")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Meet(this float[] a, float[] b) => new[]{
 		b[0]*a[0],
 		b[1]*a[0]+b[0]*a[1],
@@ -107,13 +97,10 @@ public static class XPGA3D
 
 	/// <summary> Full geometric product of two 16-component G(3,0,1) multivector coefficient arrays. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/geometric_product")]
+	[System.ComponentModel.Description("Full geometric product of two 16-component G(3,0,1) multivector coefficient arrays.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Times(this float[] a, float[] b) => new []{
 			b[0]*a[0]+b[2]*a[2]+b[3]*a[3]+b[4]*a[4]-b[8]*a[8]-b[9]*a[9]-b[10]*a[10]-b[14]*a[14],
 			b[1]*a[0]+b[0]*a[1]-b[5]*a[2]-b[6]*a[3]-b[7]*a[4]+b[2]*a[5]+b[3]*a[6]+b[4]*a[7]+b[11]*a[8]+b[12]*a[9]+b[13]*a[10]+b[8]*a[11]+b[9]*a[12]+b[10]*a[13]+b[15]*a[14]-b[14]*a[15],
@@ -135,19 +122,16 @@ public static class XPGA3D
 
 	/// <summary>Dot.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/dot_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/dot_product")]
+	[System.ComponentModel.Description("Dot.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}, new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}
 		, ExpectedResult = new []{-12,68,-36,-20,-4,-54,18,-18, -72, -60,-48, -8, -10,-12, -14, -16f})]
 	[TestCase(new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}, new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{-114,60,-36,-60,-12,-60,-46,-32,0, 0, 0,80,64, 48,0,0f})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}, new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{-114,60,-60,-12,-36,-60,-46,-32,0, 0, 0,-80, -64, -48,0, 0f})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Dot(this IReadOnlyList<float> a, IReadOnlyList<float> b) =>
 		new[]{
 			b[0]*a[0]+b[2]*a[2]+b[3]*a[3]+b[4]*a[4]-b[8]*a[8]-b[9]*a[9]-b[10]*a[10]-b[14]*a[14],
@@ -170,19 +154,16 @@ public static class XPGA3D
 
 	/// <summary>Join.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Join.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}, new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}
 		, ExpectedResult = new []{-96,174,-126,-174,-186,-96,-112,-128,16,32,48,64,80,96,112,64f})]
 	[TestCase(new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}, new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{-144,0,6,-12,6,0,0,0,16, 32, 48,64, 80, 96,112, 64f})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}, new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{144,0,6,-12,6,0,0,0,16, 32, 48,64, 80, 96,112, 64f})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Join(this IReadOnlyList<float> a, IReadOnlyList<float> b) =>
 		new [] {
 			a[0]*b[15]+-1*a[1]*b[14]+a[2]*b[13]*-1+a[3]*b[12]*-1+a[4]*b[11]*-1+a[5]*b[10]+a[6]*b[9]+a[7]*b[8]+a[8]*b[7]+a[9]*b[6]+a[10]*b[5]-a[11]*-1*b[4]-a[12]*-1*b[3]-a[13]*-1*b[2]-a[14]*-1*b[1]+a[15]*b[0],
@@ -204,24 +185,18 @@ public static class XPGA3D
 		};
 
 	/// <summary> <inheritdoc cref="MulS16"/> </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/scalar_multiplication]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/scalar_multiplication")]
+	[System.ComponentModel.Description("")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D MulS (this PGA3D a, float b) => new(a.Values.MulS16(b));
 
 	/// <summary> Product of a <paramref name="scalar"/> with a 16-dim. <paramref name="vector"/> common in 3D geometric Algebra </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/scalar_multiplication]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/scalar_multiplication")]
+	[System.ComponentModel.Description("Product of a scalar with a 16-dim. vector common in 3D geometric Algebra")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] MulS16 (this IReadOnlyList<float> vector, float scalar) =>
 		new[] {
 			vector[0]*scalar,
@@ -257,16 +232,6 @@ public static class XPGA3D
 /// framework is particularly useful in computer graphics, robotics, and physics
 /// for modeling and analyzing spatial relationships and transformations.
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-06-17T03:27:56Z
-/// digest: 6d60f7c980c4240cabf7e6b6dd02f664f7f8b1649bc85b56d382a4fb89920faf
-/// tags: [code/projective_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: partial, complexity: 3}
-/// </code>
-/// </example>
 /// </summary>
 /// <remarks>
 /// ## Public Methods
@@ -335,6 +300,11 @@ public static class XPGA3D
 /// |---|---|
 /// | <see cref="PGA3D"/> | Returned by a method. |
 /// </remarks>
+[DocState(Pass = 2, MTime = "2026-06-17T03:27:56Z", Digest = "6d60f7c980c4240cabf7e6b6dd02f664f7f8b1649bc85b56d382a4fb89920faf", Stale = false, Path = "pga3d.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+[Tags("code/projective_geometric_algebra")]
+[System.ComponentModel.Description("Pga3D Projective Geometric Algebra in 3D, also known as 3D PGA, extends geometric algebra to include projective geometry. It provides a powerful tool for representing and manipulating geometric objects such as - points, lines, planes, and transformations in three-dimensional space. In 3D PGA, geometric entities are represented as multivectors, which can be combined using various algebraic operations to perform geometric transformations and calculations. This framework is particularly useful in computer graphics, robotics, and physics for modeling and analyzing spatial relationships and transformations. pass: 2 mtime: 2026-06-17T03:27:56Z digest: 6d60f7c980c4240cabf7e6b6dd02f664f7f8b1649bc85b56d382a4fb89920faf tags: [code/projective_geometric_algebra] concepts: [Mathematics\\Geometry\\Geometric_Algebra.md] facets: {layer: domain, status: partial, complexity: 3}")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class PGA3D
 {
 	// just for debug and print output, the basis names
@@ -346,56 +316,41 @@ public class PGA3D
 	readonly float[] _C = new float[16];
 	/// <summary>Initializes a new instance of <see cref="PGA3D"/> with the specified <paramref name="f"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of PGA3D with the specified f.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public IReadOnlyList<float> Values => _C;
 	/// <summary>Initializes a new instance of <see cref="PGA3D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of PGA3D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public PGA3D(double f, int idx = 0) => _C[idx] = (float) f;
 
 	/// <summary>Initializes a new instance of <see cref="PGA3D"/> with the specified <paramref name="f"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of PGA3D with the specified f.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	PGA3D() {}
 	/// <summary>Initializes a new instance of <see cref="PGA3D"/> with the specified <paramref name="f"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of PGA3D with the specified f.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public PGA3D(float[] f) => _C = f;
 
 	#region Array Access
 	/// <summary> Gets or sets the <paramref name="idx"/>-th component coefficient. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the idx-th component coefficient.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public double this[int idx]
 	{
 		get => _C[idx];
@@ -461,13 +416,10 @@ public class PGA3D
 	/// Clifford Conjugation
 	/// </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("PGA3D.Conjugate: res = a.Conjugate() Clifford Conjugation")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public  PGA3D Conjugate ()
 	{
 		PGA3D res = new() {
@@ -496,13 +448,10 @@ public class PGA3D
 	/// Main involution
 	/// </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("PGA3D.Involute: res = a.Involute() Main involution")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public  PGA3D Involute ()
 	{
 		PGA3D res = new() {
@@ -534,13 +483,10 @@ public class PGA3D
 
 	/// <summary> Outer (wedge) product of this multivector and <paramref name="b"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Outer (wedge) product of this multivector and b.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public PGA3D Meet(PGA3D b) => new(_C.Meet(b._C));
 
 	/// <summary>
@@ -551,13 +497,10 @@ public class PGA3D
 
 	/// <summary> Full geometric product of this multivector and <paramref name="b"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Full geometric product of this multivector and b.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public PGA3D Times(PGA3D b) => new(_C.Times(b._C));
 
 	/// <summary> &amp;, v; regressive product. (JOIN) </summary>
@@ -565,13 +508,10 @@ public class PGA3D
 
 	/// <summary> Regressive (join / vee) product of this multivector and <paramref name="b"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Regressive (join / vee) product of this multivector and b.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public PGA3D Join(PGA3D b) => new(_C.Join(b._C));
 
 	/// <summary>
@@ -582,13 +522,10 @@ public class PGA3D
 
 	/// <summary> Inner (dot) product of this multivector and <paramref name="b"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Inner (dot) product of this multivector and b.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public PGA3D Dot(PGA3D b) => new(_C.Dot(b._C));
 
 	/// <summary>
@@ -790,47 +727,35 @@ public class PGA3D
 
 	/// <summary> Euclidean norm. (strictly positive). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Euclidean norm. (strictly positive).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float Norm() => (float) Math.Sqrt(Math.Abs(NormSqr()));
 
 	// TODO: inefficient: rather calc ONLY the 0 Component!
 	/// <summary> Signed square norm: (this * Conjugate())[0]. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Signed square norm: (this * Conjugate())[0].")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public double NormSqr() => (this*Conjugate())[0];
 
 	/// <summary> Ideal norm. (signed) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Ideal norm. (signed)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float NormIdeal() => _C[1] != 0?_C[1] : _C[15] != 0 ? _C[15]:(!this).Norm();
 	
 	/// <summary> normalized (Euclidean) element. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("normalized (Euclidean) element.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public PGA3D Normalized() {
 		var normSqr = Math.Abs(NormSqr());
 		if (normSqr.IsOne()) {
@@ -879,13 +804,10 @@ public class PGA3D
 	/// A plane is defined using its homogenous equation ax + by + cz + d = 0
 	/// </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("PGA3D.plane(a,b,c,d) A plane is defined using its homogenous equation ax + by + cz + d = 0")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D Plane(float a, float b, float c, float d) => a*E1 + b*E2 + c*E3 + d*E0; 
 	
 	/// <summary>
@@ -893,36 +815,27 @@ public class PGA3D
 	/// TODO: this is wrong! "e12", "e31", "e23"
 	/// </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("homogenous Line is defined using 3 homogenous equations TODO: this is wrong! \"e12\", \"e31\", \"e23\"")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D Line(float a, float b, float c, float d) => a*E1 + b*E2 + c*E3 + d*E0; 
 	
 	/// <summary> homogeneous point; euclidean coordinates plus the origin </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("homogeneous point; euclidean coordinates plus the origin")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D Point(double x, double y, double z = 0, double w = 1) 
 		=> w*E123 + x*E032 + y*E013 + z*E021; 
 	
 	/// <summary> Rotors by <paramref name="angle"/> around the <paramref name="line"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Rotors by angle around the line")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D Rotor(double angle, PGA3D line) {
 		var (sin, cos) = angle.SinCos();
 		return (float) cos + (float) sin * line.Normalized();
@@ -932,13 +845,10 @@ public class PGA3D
 	/// translators are ideal lines 
 	/// </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("translators are ideal lines")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D Translator(float dist, PGA3D line) => 1f + dist*0.5f * line; 
 
 	// for our toy problem (generate points on the surface of a torus)
@@ -946,39 +856,30 @@ public class PGA3D
 	// circle(t) with t going from 0 to 1.
 	/// <summary> Returns the motor describing a circle of <paramref name="radius"/> at parameter <paramref name="t"/> ∈ [0,1] around <paramref name="line"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Returns the motor describing a circle of radius at parameter t ∈ [0,1] around line.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D Circle(float t, float radius, PGA3D line)
 		=> Rotor(t*2f*(float) Math.PI,line) * Translator(radius,E1*E0);
 
 	// a torus is now the product of two circles. 
 	/// <summary> Returns the motor for a point on a torus formed by two circles of radii <paramref name="r1"/> and <paramref name="r2"/> around <paramref name="l1"/> and <paramref name="l2"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Returns the motor for a point on a torus formed by two circles of radii r1 and r2 around l1 and l2.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D Torus(float s, float t, float r1, PGA3D l1, float r2, PGA3D l2)
 		=> Circle(s,r2,l2)*Circle(t,r1,l1);
 
 	// and to sample its points we simply sandwich the origin ..
 	/// <summary> Returns the point on the default torus (r1=0.25, r2=0.6) at parameters <paramref name="s"/> and <paramref name="t"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Returns the point on the default torus (r1=0.25, r2=0.6) at parameters s and t.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static PGA3D PointOnTorus(float s, float t) {
 		var to = Torus(s,t,0.25f,E12,0.6f,E31);
 		return to * E123 * ~to;
@@ -987,13 +888,10 @@ public class PGA3D
 
 	/// <summary> String Representation </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("String Representation")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override string ToString() {
 		var sb = new StringBuilder();
 		for (int i = 0; i < 16; ++i) {
@@ -1008,28 +906,22 @@ public class PGA3D
 
 	/// <summary>Test To String.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
 	//[Test] Empty placeholder; PGA3D has no parameterless constructor, so NUnit cannot create the fixture
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Test To String.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestToString()
 	{
 	}
 
 	/// <summary> Demonstrates rotation, translation, line/plane creation, and point-on-torus computation using PGA3D. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
 	//[Test] Legacy PGA3D draft: no parameterless constructor for NUnit; superseded by Pga3D tests
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Demonstrates rotation, translation, line/plane creation, and point-on-torus computation using PGA3D.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void Test()
 	{
 
@@ -1072,13 +964,10 @@ public class PGA3D
 
 	/// <summary> Returns true when this multivector is approximately equal to <paramref name="arg"/> relative to their combined norm. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 3)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Returns true when this multivector is approximately equal to arg relative to their combined norm.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool CloseTo(PGA3D arg) {
 		var diff = this - arg;
 		var diffNorm = diff.NormSqr();

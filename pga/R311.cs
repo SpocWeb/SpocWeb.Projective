@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using org.SpocWeb.root.interfaces.Vectors;
 using org.SpocWeb.root.maths.pga.ga;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -13,50 +14,50 @@ namespace org.SpocWeb.root.maths.pga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 351 | <see cref="ProductOuter"/> | ^ Meet/Outer/Wedge Product: Intersection |
-/// | 540 | <see cref="ProductGeometric"/> | * Full Geometric Product |
-/// | 729 | <see cref="ProductDot"/> | Dot/Inner/Scalar Product |
-/// | 734 | <see cref="Products"/> | Public read-only view of all three product Cayley tables indexed by product type. |
-/// | 741 | <see cref="_1_"/> | Gets the 1. |
-/// | 743 | <see cref="e0"/> | Gets the e0. |
-/// | 745 | <see cref="e1"/> | Gets the e1. |
-/// | 747 | <see cref="e2"/> | Gets the e2. |
-/// | 749 | <see cref="e3"/> | Gets the e3. |
-/// | 751 | <see cref="eN"/> | Gets the e N. |
-/// | 753 | <see cref="e01"/> | Gets the e01. |
-/// | 755 | <see cref="e02"/> | Gets the e02. |
-/// | 757 | <see cref="e03"/> | Gets the e03. |
-/// | 759 | <see cref="e0N"/> | Gets the e0 N. |
-/// | 761 | <see cref="e12"/> | Gets the e12. |
-/// | 763 | <see cref="e13"/> | Gets the e13. |
-/// | 765 | <see cref="e1N"/> | Gets the e1 N. |
-/// | 767 | <see cref="e23"/> | Gets the e23. |
-/// | 769 | <see cref="e2N"/> | Gets the e2 N. |
-/// | 771 | <see cref="e3N"/> | Gets the e3 N. |
-/// | 774 | <see cref="e012"/> | Gets the e012. |
-/// | 776 | <see cref="e013"/> | Gets the e013. |
-/// | 778 | <see cref="e01N"/> | Gets the e01 N. |
-/// | 780 | <see cref="e023"/> | Gets the e023. |
-/// | 782 | <see cref="e02N"/> | Gets the e02 N. |
-/// | 784 | <see cref="e03N"/> | Gets the e03 N. |
-/// | 787 | <see cref="e123"/> | Gets the e123. |
-/// | 789 | <see cref="e23N"/> | Gets the e23 N. |
-/// | 791 | <see cref="e13N"/> | Gets the e13 N. |
-/// | 793 | <see cref="e12N"/> | Gets the e12 N. |
-/// | 796 | <see cref="e0123"/> | Gets the e0123. |
-/// | 798 | <see cref="e012N"/> | Gets the e012 N. |
-/// | 800 | <see cref="e013N"/> | Gets the e013 N. |
-/// | 802 | <see cref="e023N"/> | Gets the e023 N. |
-/// | 804 | <see cref="e123N"/> | Gets the e123 N. |
-/// | 807 | <see cref="e0123N"/> | Gets the e0123 N. |
-/// | 825 | <see cref="New"/> | Creates a new R311 from the supplied component array, checking the length. |
-/// | 834 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 845 | <see cref="R311"/> | Initializes a new instance of R311 with the specified f and idx. |
-/// | 847 | <see cref="R311"/> | Initializes a new instance of R311 with the specified f and idx. |
-/// | 849 | <see cref="R311"/> | Initializes a new instance of R311 with the specified values. |
-/// | 851 | <see cref="R311"/> | Initializes a new instance of R311 with the specified values. |
-/// | 854 | <see cref="AsMultiVector"/> | Converts an array of weighted Base blades into a flat float component array of length NUM_COORDS. |
-/// | 861 | <see cref="R311"/> | Checked Constructor |
+/// | 444 | <see cref="ProductOuter"/> | ^ Meet/Outer/Wedge Product: Intersection |
+/// | 633 | <see cref="ProductGeometric"/> | * Full Geometric Product |
+/// | 822 | <see cref="ProductDot"/> | Dot/Inner/Scalar Product |
+/// | 827 | <see cref="Products"/> | Public read-only view of all three product Cayley tables indexed by product type. |
+/// | 834 | <see cref="_1_"/> | Gets the 1. |
+/// | 836 | <see cref="e0"/> | Gets the e0. |
+/// | 838 | <see cref="e1"/> | Gets the e1. |
+/// | 840 | <see cref="e2"/> | Gets the e2. |
+/// | 842 | <see cref="e3"/> | Gets the e3. |
+/// | 844 | <see cref="eN"/> | Gets the e N. |
+/// | 846 | <see cref="e01"/> | Gets the e01. |
+/// | 848 | <see cref="e02"/> | Gets the e02. |
+/// | 850 | <see cref="e03"/> | Gets the e03. |
+/// | 852 | <see cref="e0N"/> | Gets the e0 N. |
+/// | 854 | <see cref="e12"/> | Gets the e12. |
+/// | 856 | <see cref="e13"/> | Gets the e13. |
+/// | 858 | <see cref="e1N"/> | Gets the e1 N. |
+/// | 860 | <see cref="e23"/> | Gets the e23. |
+/// | 862 | <see cref="e2N"/> | Gets the e2 N. |
+/// | 864 | <see cref="e3N"/> | Gets the e3 N. |
+/// | 867 | <see cref="e012"/> | Gets the e012. |
+/// | 869 | <see cref="e013"/> | Gets the e013. |
+/// | 871 | <see cref="e01N"/> | Gets the e01 N. |
+/// | 873 | <see cref="e023"/> | Gets the e023. |
+/// | 875 | <see cref="e02N"/> | Gets the e02 N. |
+/// | 877 | <see cref="e03N"/> | Gets the e03 N. |
+/// | 880 | <see cref="e123"/> | Gets the e123. |
+/// | 882 | <see cref="e23N"/> | Gets the e23 N. |
+/// | 884 | <see cref="e13N"/> | Gets the e13 N. |
+/// | 886 | <see cref="e12N"/> | Gets the e12 N. |
+/// | 889 | <see cref="e0123"/> | Gets the e0123. |
+/// | 891 | <see cref="e012N"/> | Gets the e012 N. |
+/// | 893 | <see cref="e013N"/> | Gets the e013 N. |
+/// | 895 | <see cref="e023N"/> | Gets the e023 N. |
+/// | 897 | <see cref="e123N"/> | Gets the e123 N. |
+/// | 900 | <see cref="e0123N"/> | Gets the e0123 N. |
+/// | 919 | <see cref="New"/> | Creates a new R311 from the supplied component array, checking the length. |
+/// | 933 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
+/// | 949 | <see cref="R311"/> | Initializes a new instance of R311 with the specified f and idx. |
+/// | 956 | <see cref="R311"/> | Initializes a new instance of R311 with the specified f and idx. |
+/// | 963 | <see cref="R311"/> | Initializes a new instance of R311 with the specified values. |
+/// | 970 | <see cref="R311"/> | Initializes a new instance of R311 with the specified values. |
+/// | 978 | <see cref="AsMultiVector"/> | Converts an array of weighted Base blades into a flat float component array of length NUM_COORDS. |
+/// | 995 | <see cref="R311"/> | Checked Constructor |
 ///
 /// ## Collaborators
 ///
@@ -67,16 +68,11 @@ namespace org.SpocWeb.root.maths.pga;
 /// | <see cref="Base"/> | Nested enum. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 85037b7295e2bd87d147d681d241a3a39e0bb1d51d88933c9a2a8bb12c080f27
-/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 4}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "85037b7295e2bd87d147d681d241a3a39e0bb1d51d88933c9a2a8bb12c080f27", Stale = false, Path = "pga/R311.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+[System.ComponentModel.Description("Conformal Geometric Algebra with e0� = 0 and eN�=-1")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class R311 : AGeoGebra32<R311>
 {
 
@@ -86,10 +82,10 @@ public class R311 : AGeoGebra32<R311>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 33 | <see cref="Point"/> | Creates a conformal point at the given Euclidean point (a zero-radius sphere). |
-	/// | 35 | <see cref="Plane"/> | Creates a conformal plane with unit normal at signed distance from the origin. |
-	/// | 42 | <see cref="Sphere"/> | Creates a conformal sphere with the given Euclidean center and radius. |
-	/// | 51 | <see cref="Circle"/> | A Circle can be computed from three Points on it. |
+	/// | 106 | <see cref="Point"/> | Creates a conformal point at the given Euclidean point (a zero-radius sphere). |
+	/// | 113 | <see cref="Plane"/> | Creates a conformal plane with unit normal at signed distance from the origin. |
+	/// | 125 | <see cref="Sphere"/> | Creates a conformal sphere with the given Euclidean center and radius. |
+	/// | 138 | <see cref="Circle"/> | A Circle can be computed from three Points on it. |
 	///
 	/// ## Collaborators
 	///
@@ -98,37 +94,26 @@ public class R311 : AGeoGebra32<R311>
 	/// | <see cref="R311"/> | Returned by a method. |
 	/// | <see cref="Vector3"/> | Passed as a parameter. |
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T10:08:27Z
-	/// digest: 5c1b2db7f871d0e0f8d41867c0f58a20e7858ef6b80f9777a3910b1ae287b081
-	/// tags: [code/factory, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T10:08:27Z", Digest = "5c1b2db7f871d0e0f8d41867c0f58a20e7858ef6b80f9777a3910b1ae287b081", Stale = false, Path = "pga/R311.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/factory", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Factory methods for constructing conformal primitives (points, planes, spheres, circles) in the R311 algebra.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static class Make
 	{
 		/// <summary> Creates a conformal point at the given Euclidean <paramref name="point"/> (a zero-radius sphere). </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory_method, code/conformal_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory_method", "code/conformal_geometric_algebra")]
+		[System.ComponentModel.Description("Creates a conformal point at the given Euclidean point (a zero-radius sphere).")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static R311 Point(Vector3 point) => Sphere(point, 0);
 		/// <summary> Creates a conformal plane with unit <paramref name="normal"/> at signed <paramref name="distance"/> from the origin. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory_method, code/conformal_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+		[Tags("code/factory_method", "code/conformal_geometric_algebra")]
+		[System.ComponentModel.Description("Creates a conformal plane with unit normal at signed distance from the origin.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static R311 Plane(Vector3 normal, double distance)
 			=> new(Base.eN.AsBlade(distance)
 				, Base.e1.AsBlade(normal.X)
@@ -137,13 +122,10 @@ public class R311 : AGeoGebra32<R311>
 
 		/// <summary> Creates a conformal sphere with the given Euclidean <paramref name="center"/> and <paramref name="radius"/>. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory_method, code/conformal_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+		[Tags("code/factory_method", "code/conformal_geometric_algebra")]
+		[System.ComponentModel.Description("Creates a conformal sphere with the given Euclidean center and radius.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static R311 Sphere(Vector3 center, double radius)
 			=> new (Base.e0.AsBlade()
 				, Base.e1.AsBlade(center.X)
@@ -153,25 +135,19 @@ public class R311 : AGeoGebra32<R311>
 
 		/// <summary> A Circle can be computed from three Points on it. </summary>
 		/// <returns> A Line if the Points are collinear or one of the Points are at Infinity </returns>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory_method, code/outer_product, code/conformal_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 3}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+		[Tags("code/factory_method", "code/outer_product", "code/conformal_geometric_algebra")]
+		[System.ComponentModel.Description("A Circle can be computed from three Points on it.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static R311 Circle(Vector3 p1, Vector3 p2, Vector3 p3) => Point(p1) ^ Point(p2) ^ Point(p3);
 	}
 
 	/// <summary>Ordered array of basis blade name strings for debug and print output.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Ordered array of basis blade name strings for debug and print output.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override IReadOnlyList<string> Basis => _Basis;
 	/// <summary>Backing array of ordered basis blade name strings.</summary>
 	static readonly string[] _Basis = {
@@ -187,17 +163,12 @@ public class R311 : AGeoGebra32<R311>
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:07Z
-	/// digest: fbc0add112ebc325e336691922492318288602332913b718d69c2f0ed689a384
-	/// tags: [code/enum, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:07Z", Digest = "fbc0add112ebc325e336691922492318288602332913b718d69c2f0ed689a384", Stale = false, Path = "pga/R311.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary> [00] Scalar e.g. Dot Product or oriented Volume </summary>
@@ -945,13 +916,10 @@ public class R311 : AGeoGebra32<R311>
 
 	/// <summary> Creates a new <see cref="R311"/> from the supplied component array, checking the length. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Creates a new R311 from the supplied component array, checking the length.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R311 New(params float[] f) => New((IReadOnlyList<float>) f);
 	/// <inheritdoc cref="New(float[])"/>
 	public static R311 New(IReadOnlyList<float> f) => new(f);
@@ -962,13 +930,10 @@ public class R311 : AGeoGebra32<R311>
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Base idx] => _C[(int) idx];
 
 	/// <inheritdoc />
@@ -981,77 +946,56 @@ public class R311 : AGeoGebra32<R311>
 	/// <summary>Initializes a new instance of <see cref="R311"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="R311"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R311 with the specified f and idx. Initializes a new instance of R311 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R311(double f = 0, Base idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="R311"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R311 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R311(double f = 0, int idx = 0) : base(f, idx) {}
 	/// <summary>Initializes a new instance of <see cref="R311"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R311 with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R311(IReadOnlyList<Base<Base>> values) : base(AsMultiVector(values)) { }
 	/// <summary>Initializes a new instance of <see cref="R311"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R311 with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R311(params Base<Base>[] values) : base(AsMultiVector(values)) { }
 
 	/// <summary> Converts an array of weighted <see cref="Base{T}"/> blades into a flat float component array of length <see cref="AGeoGebra32{T}.NUM_COORDS"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Converts an array of weighted Base blades into a flat float component array of length NUM_COORDS.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] AsMultiVector<T>(IReadOnlyList<Base<T>> values) where T : Enum
 		=> values.AsSingles(NUM_COORDS);
 
 	/// <summary> Unchecked private Constructor for Speed </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	R311(params float[] f) : base(f) {}
 
 	/// <summary> Checked Constructor </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Checked Constructor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R311(IReadOnlyList<float> values) : base(values) {}
 
 	/// <inheritdoc />
@@ -1075,13 +1019,10 @@ public class R311 : AGeoGebra32<R311>
 
 	/// <summary> *; geometric product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 4}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 4)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("*; geometric product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected override double[][] Coefficients() => new[]
 	{  new double[] { _C[00],		0, _C[02], _C[03], _C[04], -_C[05],		0,		0,		0,			0, -_C[10], -_C[11], _C[12], -_C[13], _C[14], _C[15],		0,		0,		0,		0,			0,		0, -_C[22], _C[23], _C[24], _C[25],		0,		0,		0,			0, -_C[30],0,
 		}, new double[] { _C[01], _C[00], -_C[06], -_C[07], -_C[08], _C[09], _C[02], _C[03], _C[04],  -_C[05], -_C[16], -_C[17], _C[18], -_C[19], _C[20], _C[21], -_C[10], -_C[11], _C[12], -_C[13], _C[14], _C[15], _C[26], -_C[27], -_C[28], -_C[29], -_C[22], _C[23], _C[24], _C[25], -_C[31], -_C[30],

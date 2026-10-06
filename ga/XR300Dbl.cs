@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using org.SpocWeb.root.extensions.maths;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -9,103 +10,77 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// <remarks>
 ///
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-07-07T17:46:00Z
-/// digest: 4606df1b40259b4a1937914cbde72c0a02470164e71b07c0adfe2b737dbaf4af
-/// tags: [code/extension_method, code/clifford_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
 // ReSharper disable once InconsistentNaming
+[DocState(Pass = 2, MTime = "2026-07-07T17:46:00Z", Digest = "4606df1b40259b4a1937914cbde72c0a02470164e71b07c0adfe2b737dbaf4af", Stale = false, Path = "ga/XR300Dbl.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/extension_method", "code/clifford_algebra")]
+[System.ComponentModel.Description("R^3 Vector-Space with Rotations and Reflections")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public static class XR300Dbl
 {
 	#region unary Operations
 
 	/// <summary> ~a; Complex/Quaternion Conjugate for <see cref="R300"/> and <see cref="Pga2D"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("~a; Complex/Quaternion Conjugate for R300 and Pga2D.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = new []{1, 2, 3, 4, -5, -6, -7, -8.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Reverted8(this IReadOnlyList<double> a) => new []{a[0], a[1], a[2], a[3], -a[4], -a[5], -a[6], -a[7]};
 
 	/// <summary> !a; Poincare duality operator. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("!a; Poincare duality operator.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = new []{-8, -7, 6, -5, 4, -3, 2, 1.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Dual8(this IReadOnlyList<double> a) => new []{-a[7], -a[6], a[5], -a[4], a[3], -a[2], a[1], a[0]};
 
 	/// <summary> Involution both for <see cref="R300"/> and <see cref="Pga2D"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Involution both for R300 and Pga2D")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = new []{1, -2, -3, -4, 5, 6, 7, -8.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Involute8(this IReadOnlyList<double> a) => new []{a[0], -a[1], -a[2], -a[3], a[4], a[5], a[6], -a[7]};
 
 	/// <summary> Negates all eight components of an 8-element double-precision multivector coordinate array. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/negation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/negation")]
+	[System.ComponentModel.Description("Negates all eight components of an 8-element double-precision multivector coordinate array.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Neg8(this IReadOnlyList<double> c) => new[] {-c[0], -c[1], -c[2], -c[3], -c[4], -c[5], -c[6], -c[7]};
 
 	/// <summary> Clifford Conjugate both for <see cref="Pga2D"/> and <see cref="R300"/></summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/conjugate]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/conjugate")]
+	[System.ComponentModel.Description("Clifford Conjugate both for Pga2D and R300")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = new []{1, -2, -3, -4, -5, -6, -7, 8.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] CliffCjg8(this IReadOnlyList<double> a) => new []{a[0], -a[1], -a[2], -a[3], -a[4], -a[5], -a[6], a[7]};
 
 	/// <summary>Norm Sqr6 R300 Q.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/norm_calculation")]
+	[System.ComponentModel.Description("Norm Sqr6 R300 Q.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = 18)]
 	[TestCase(new []{1,8,7,6,5,4,3,2.0}, ExpectedResult = -102)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double NormSqr6R300Q(IReadOnlyList<double> c) => c.Times8(c.CliffCjg8())[0];
 	/// <summary>Norm Sqr6 R300.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/norm_calculation")]
+	[System.ComponentModel.Description("Norm Sqr6 R300.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = 18)]
 	[TestCase(new []{1,8,7,6,5,4,3,2.0}, ExpectedResult = -102)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double NormSqr6R300(this IReadOnlyList<double> a) => a[0].Sqr()
 		- a[1].Sqr() - a[2].Sqr() - a[3].Sqr() + a[4].Sqr() + a[5].Sqr() + a[6].Sqr() - a[7].Sqr();
 
@@ -115,15 +90,12 @@ public static class XR300Dbl
 
 	/// <summary> Full geometric product: ^ + * </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/geometric_product")]
+	[System.ComponentModel.Description("Full geometric product: ^ + *")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, new []{-1,-2,-3,-4,-5,-6,-7,-8.0}
 		, ExpectedResult = new []{144, 108, -102, 72, -74, 36, -46, -48.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Times8(this IReadOnlyList<double> a, IReadOnlyList<double> b) =>
 		new []{
 			b[0] * a[0] + b[1] * a[1] + b[2] * a[2] + b[3] * a[3] - b[4] * a[4] - b[5] * a[5] - b[6] * a[6] - b[7] * a[7],
@@ -138,15 +110,12 @@ public static class XR300Dbl
 
 	/// <summary> ^ MEET/Wedge; outer (Grassmann) product </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/outer_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/outer_product")]
+	[System.ComponentModel.Description("^ MEET/Wedge; outer (Grassmann) product")]
 	[TestCase(new[] {1, 2, 3, 4, 5, 6, 7, 8.0}, new[] {-1, -2, -3, -4, -5, -6, -7, -8.0}
 		, ExpectedResult = new[] {-1, -4, -6, -8, -10, -12, -14, -48.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Meet8(this IReadOnlyList<double> a, IReadOnlyList<double> b) => new[] {
 			b[0] * a[0],
 			b[1] * a[0] + b[0] * a[1],
@@ -161,16 +130,13 @@ public static class XR300Dbl
 
 	/// <summary> regressive product. (JOIN) symmetric </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("regressive product. (JOIN) symmetric")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = new []{48,32,48,64,80,96,112,64.0})]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, new []{-1,-2,-3,-4,-5,-6,-7,-8.0}, ExpectedResult = new []{  -48, -32, -48, -64, -80, -96, -112, -64.0})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8.0}, new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = new []{  -48, -32, -48, -64, -80, -96, -112, -64.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Join8(this IReadOnlyList<double> a, IReadOnlyList<double> b) =>
 		new []{
 			a[0] * b[7] + a[1] * b[6] - a[2] * b[5] + a[3] * b[4] + a[4] * b[3] - a[5] * b[2] +
@@ -186,16 +152,13 @@ public static class XR300Dbl
 
 	/// <summary> inner/Dot product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/dot_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/dot_product")]
+	[System.ComponentModel.Description("inner/Dot product.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, new []{ 1, 2, 3, 4, 5, 6, 7, 8.0}, ExpectedResult = new []{ -144, -108,  102, -72, 74, -36, 46, 16.0})]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, new []{-1,-2,-3,-4,-5,-6,-7,-8.0}, ExpectedResult = new []{  144,  108, -102, 72, -74, 36, -46, -16.0})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8.0}, new []{1,2,3,4,5,6,7,8.0}, ExpectedResult = new []{  144,  108, -102, 72, -74, 36, -46, -16.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Dot8(this IReadOnlyList<double> a, IReadOnlyList<double> b) =>
 		new []{
 			b[0] * a[0] + b[1] * a[1] + b[2] * a[2] + b[3] * a[3] - b[4] * a[4] - b[5] * a[5] - b[6] * a[6] - b[7] * a[7],
@@ -231,13 +194,10 @@ public static class XR300Dbl
 
 	/// <summary> Generates all Pairs of <see cref="R300"/> Base Vectors Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_data_generation, code/combinatorial_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/test_data_generation", "code/combinatorial_generation")]
+	[System.ComponentModel.Description("Generates all Pairs of R300 Base Vectors Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(R300.Base x, R300.Base y)> BaseVectorPairs() {
 		for (var k = R300.Base._1_; k != R300.Base._0; ++k) {
 			for (var i = R300.Base._1_; i != R300.Base._0; ++i) {
@@ -250,13 +210,10 @@ public static class XR300Dbl
 	/// <summary> Creates a three-element double-precision test vector array representing operands and their expected
 	/// product result for the given basis elements and scale factors. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/test_data_generation")]
+	[System.ComponentModel.Description("Creates a three-element double-precision test vector array representing operands and their expected product result for the given basis elements and scale factors.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[][] CreateVectors(R300.Base a, R300.Base b, double factor1, double factor2, R300.Base e, int factor) {
 		var vectors = new[] {
 			new double[R300.NUM_COORDS],
@@ -273,19 +230,16 @@ public static class XR300Dbl
 
 	/// <summary>Plus8.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_addition]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/vector_addition")]
+	[System.ComponentModel.Description("Plus8.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, new []{1,2,3,4,5,6,7,8.0}
 		, ExpectedResult = new []{2,4,6,8,10,12,14,16.0})]
 	[TestCase(new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8.0}, new []{-1,-2,-3,-4,-5,-6,-7,-8.0}
 		, ExpectedResult = new []{0,0,0,0,0,0,0,0.0})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8.0}, new []{1,2,3,4,5,6,7,8.0}
 		, ExpectedResult = new []{0,0,0,0,0,0,0,0.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Plus8(this IReadOnlyList<double> a, IReadOnlyList<double> b) => new []{
 		a[0] + b[0],
 		a[1] + b[1],
@@ -298,19 +252,16 @@ public static class XR300Dbl
 
 	/// <summary> - Minus, SUB; Vector[8] Subtraction </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_subtraction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/vector_subtraction")]
+	[System.ComponentModel.Description("- Minus, SUB; Vector[8] Subtraction")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, new []{1,2,3,4,5,6,7,8.0}
 		, ExpectedResult = new []{0,0,0,0,0,0,0,0.0})]
 	[TestCase(new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8.0}, new []{-1,-2,-3,-4,-5,-6,-7,-8.0}
 		, ExpectedResult = new []{2,4,6,8,10,12,14,16.0})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8.0}, new []{1,2,3,4,5,6,7,8.0}
 		, ExpectedResult = new []{-2,-4,-6,-8,-10,-12,-14,-16.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Minus8(this IReadOnlyList<double> a, IReadOnlyList<double> b) => new []{
 			a[0] - b[0],
 			a[1] - b[1],
@@ -323,17 +274,14 @@ public static class XR300Dbl
 
 	/// <summary> * sMul / Times : scalar/multi-vector multiplication </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/scalar_multiplication]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/scalar_multiplication")]
+	[System.ComponentModel.Description("* sMul / Times: scalar/multi-vector multiplication")]
 	[TestCase(new []{1,2,3,4,5,6,7,8.0}, 3
 		, ExpectedResult = new []{3,6,9,12,15,18,21,24.0})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8.0}, 3
 		, ExpectedResult = new []{-3,-6,-9,-12,-15,-18,-21,-24.0})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] Times8(this IReadOnlyList<double> a, double b) => new []{
 		a[0] * b,
 		a[1] * b,

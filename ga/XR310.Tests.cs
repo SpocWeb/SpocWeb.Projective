@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using NUnit.Framework;
 using org.SpocWeb.root.array;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -14,20 +15,20 @@ namespace org.SpocWeb.root.maths.pga.ga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 24 | <see cref="GetFactor"/> | Returns the canonical positive basis element and its sign factor for e, yielding factor 0 for the zero element. |
-/// | 30 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
-/// | 33 | <see cref="ProductDot"/> | Gets the product Dot. |
-/// | 36 | <see cref="ProductOuter"/> | Gets the product Outer. |
-/// | 46 | <see cref="Products"/> | Gets the products. |
-/// | 49 | <see cref="AllProductTests"/> | Generates all Test Pairs for all Products in Products |
-/// | 64 | <see cref="BaseVectorPairs"/> | Generates all Pairs of R310 Base Vectors Elements |
-/// | 74 | <see cref="TestAllProducts"/> | Test All Products. |
-/// | 82 | <see cref="CreateVectors"/> | Creates a three-element test vector array representing operand a, operand b and their expected product result according to products. |
-/// | 105 | <see cref="RandomR310"/> | Generates 99 random R310 multivectors for use as test inputs. |
-/// | 116 | <see cref="TestAssociativity"/> | Test Associativity. |
-/// | 127 | <see cref="RandomR310Vector"/> | Generates 99 random grade-1 (vector) R310 elements for use as test inputs. |
-/// | 138 | <see cref="TestInverseVector"/> | Test Inverse Vector. |
-/// | 147 | <see cref="TestRcp"/> | Test Rcp. |
+/// | 59 | <see cref="GetFactor"/> | Returns the canonical positive basis element and its sign factor for e, yielding factor 0 for the zero element. |
+/// | 69 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
+/// | 72 | <see cref="ProductDot"/> | Gets the product Dot. |
+/// | 75 | <see cref="ProductOuter"/> | Gets the product Outer. |
+/// | 85 | <see cref="Products"/> | Gets the products. |
+/// | 89 | <see cref="AllProductTests"/> | Generates all Test Pairs for all Products in Products |
+/// | 114 | <see cref="BaseVectorPairs"/> | Generates all Pairs of R310 Base Vectors Elements |
+/// | 129 | <see cref="TestAllProducts"/> | Test All Products. |
+/// | 142 | <see cref="CreateVectors"/> | Creates a three-element test vector array representing operand a, operand b and their expected product result according to products. |
+/// | 170 | <see cref="RandomR310"/> | Generates 99 random R310 multivectors for use as test inputs. |
+/// | 186 | <see cref="TestAssociativity"/> | Test Associativity. |
+/// | 202 | <see cref="RandomR310Vector"/> | Generates 99 random grade-1 (vector) R310 elements for use as test inputs. |
+/// | 218 | <see cref="TestInverseVector"/> | Test Inverse Vector. |
+/// | 232 | <see cref="TestRcp"/> | Test Rcp. |
 ///
 /// ## Collaborators
 ///
@@ -55,13 +56,10 @@ public static partial class XR310
 	/// <summary> Returns the canonical positive basis element and its sign factor for <paramref name="e"/>,
 	/// yielding factor 0 for the zero element. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the canonical positive basis element and its sign factor for e, yielding factor 0 for the zero element.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static (R310.Base e, int factor) GetFactor(this R310.Base e)
 		=> e < 0 ? (~e, -1) : e == R310.Base._0 ? (R310.Base._1_, 0) : (e, 1);
 
@@ -88,13 +86,10 @@ public static partial class XR310
 
 	/// <summary> Generates all Test Pairs for all Products in <see cref="R310.Products"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_data_generation, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/test_data_generation", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Generates all Test Pairs for all Products in Products")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(float[][], Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product)> AllProductTests() {
 		for (var i = Products.Length; --i >= 0; ) {
 			foreach (var valueTuple in R310.Products[i].ProductTests(Products[i])) {
@@ -105,13 +100,10 @@ public static partial class XR310
 
 	/// <summary> Generates all Test Cases for <paramref name="product"/> from <paramref name=""/> Pairs of <see cref="R310"/> Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Generates all Test Cases for product from Pairs of R310 Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	static IEnumerable<(float[][], Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product)
 		> ProductTests(this IReadOnlyList<IReadOnlyList<R310.Base>> matrix
 		, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product) 
@@ -119,13 +111,10 @@ public static partial class XR310
 
 	/// <summary> Generates all Pairs of <see cref="R310"/> Base Vectors Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_vector_generation, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/test_vector_generation", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Generates all Pairs of R310 Base Vectors Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(R310.Base x, R310.Base y)> BaseVectorPairs() {
 		for (var k = R310.Base._1_; k != R310.Base._0; ++k) {
 			for (var i = R310.Base._1_; i != R310.Base._0; ++i) {
@@ -137,14 +126,11 @@ public static partial class XR310
 
 	/// <summary>Test All Products.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/unit_test", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Test All Products.")]
 	[TestCaseSource(nameof(AllProductTests))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestAllProducts((float[][] vectors, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product) test) {
 		var z = test.product(test.vectors[0], test.vectors[1]);
 		CollectionAssert.AreEqual(test.vectors[2], z);
@@ -153,13 +139,10 @@ public static partial class XR310
 	/// <summary> Creates a three-element test vector array representing operand <paramref name="a"/>,
 	/// operand <paramref name="b"/> and their expected product result according to <paramref name="products"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Creates a three-element test vector array representing operand a, operand b and their expected product result according to products.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[][] CreateVectors(this IReadOnlyList<IReadOnlyList<R310.Base>> products, R310.Base a, R310.Base b, double factor1, double factor2) {
 		var (e, factor) = products[(int) a][(int) b].GetFactor();
 		return CreateVectors(a, b, factor1, factor2, e, factor);
@@ -184,13 +167,10 @@ public static partial class XR310
 	static readonly Random RANDOM = new(PgaTolerance.TestSeed); //fixed Seed: reproducible Test-Cases
 	/// <summary> Generates 99 random <see cref="R310"/> multivectors for use as test inputs. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/random_data_generation, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/random_data_generation", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Generates 99 random R310 multivectors for use as test inputs.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<R310> RandomR310() {
 		var arr = new float[R310.NUM_COORDS];
 		for (int i = 99; --i >= 0;) {
@@ -203,15 +183,12 @@ public static partial class XR310
 
 	/// <summary>Test Associativity.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/algebraic_laws]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/algebraic_laws")]
+	[System.ComponentModel.Description("Test Associativity.")]
 	[TestCaseSource(nameof(RandomR310))]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestAssociativity(R310 u) {
 		var v = RandomR310().First();
 		var w = RandomR310().First();
@@ -222,13 +199,10 @@ public static partial class XR310
 
 	/// <summary> Generates 99 random grade-1 (vector) <see cref="R310"/> elements for use as test inputs. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/random_data_generation, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/random_data_generation", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Generates 99 random grade-1 (vector) R310 elements for use as test inputs.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<R310> RandomR310Vector() {
 		var arr = new float[R310.NUM_COORDS];
 		for (int i = 99; --i >= 0;) {
@@ -241,14 +215,11 @@ public static partial class XR310
 
 	/// <summary>Test Inverse Vector.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/inversion, code/property_testing]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/inversion", "code/property_testing")]
+	[System.ComponentModel.Description("Test Inverse Vector.")]
 	[TestCaseSource(nameof(RandomR310))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestInverseVector(R310 u) {
 		var v = RandomR310Vector().First();
 		var uv = u * v;
@@ -258,15 +229,12 @@ public static partial class XR310
 
 	/// <summary>Test Rcp.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/inversion, code/property_testing]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/inversion", "code/property_testing")]
+	[System.ComponentModel.Description("Test Rcp.")]
 	[TestCaseSource(typeof(R310), nameof(R310.Blades))]
 	[TestCaseSource(nameof(RandomR310))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestRcp(R310 mv) {
 		var rcp = mv.Rcp();
 		var r1 = mv.Times(rcp);

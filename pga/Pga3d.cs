@@ -9,6 +9,7 @@ using org.SpocWeb.root.interfaces.Vectors;
 using org.SpocWeb.root.logging;
 using org.SpocWeb.root.maths.pga.ga;
 using org.SpocWeb.root.maths.pga.typed;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -19,12 +20,12 @@ namespace org.SpocWeb.root.maths.pga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 28 | <see cref="V"/> | Converts the Base enum value axis to a Pga3D unit blade. |
-/// | 41 | <see cref="AsBlade"/> | Wraps blade and value into a typed Base pair. |
-/// | 52 | <see cref="TestComponents"/> | Test Components. |
-/// | 74 | <see cref="TestMake"/> | Test Make. |
-/// | 132 | <see cref="TestPrimitives"/> | Test Primitives. |
-/// | 209 | <see cref="Test"/> | Test. |
+/// | 58 | <see cref="V"/> | Converts the Base enum value axis to a Pga3D unit blade. |
+/// | 76 | <see cref="AsBlade"/> | Wraps blade and value into a typed Base pair. |
+/// | 92 | <see cref="TestComponents"/> | Test Components. |
+/// | 119 | <see cref="TestMake"/> | Test Make. |
+/// | 182 | <see cref="TestPrimitives"/> | Test Primitives. |
+/// | 264 | <see cref="Test"/> | Test. |
 ///
 /// ## Collaborators
 ///
@@ -54,13 +55,10 @@ public static partial class XPga3D
 {
 	/// <summary> Converts the <see cref="Pga3D.Base"/> enum value <paramref name="axis"/> to a <see cref="Pga3D"/> unit blade. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/implicit_conversion, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/implicit_conversion", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Converts the Base enum value axis to a Pga3D unit blade.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Pga3D V(this Pga3D.Base axis) => axis;
 	/// <inheritdoc cref="V(Pga3D.Base)"/>
 	public static Pga3D V(this Pga3D.AxisTrans axis) => axis;
@@ -75,13 +73,10 @@ public static partial class XPga3D
 
 	/// <summary> Wraps <paramref name="blade"/> and <paramref name="value"/> into a typed <see cref="Base{T}"/> pair. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/factory, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/factory", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Wraps blade and value into a typed Base pair.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Base<Pga3D.Base> AsBlade(this Pga3D.Base blade, double value = 1) => new(value, blade);
 	/// <inheritdoc cref="AsBlade(Pga3D.Base,double)"/>
 	public static Base<Pga3D.Points> AsBlade(this Pga3D.Points blade, double value = 1) => new(value, blade);
@@ -94,13 +89,9 @@ public static partial class XPga3D
 
 	/// <summary>Test Components.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/unit_test", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Test Components.")]
 	[TestCase(Pga3D.Base._1_, ExpectedResult = Pga3D.Bases._1_)]
 	[TestCase(Pga3D.Base.e0, ExpectedResult = Pga3D.Bases.e0)]
 	[TestCase(Pga3D.Base.e01, ExpectedResult = Pga3D.Bases.e01)]
@@ -117,6 +108,7 @@ public static partial class XPga3D
 	[TestCase(Pga3D.Base.e2, ExpectedResult = Pga3D.Bases.e2)]
 	[TestCase(Pga3D.Base.e3, ExpectedResult = Pga3D.Bases.e3)]
 	[TestCase(Pga3D.Base.e31, ExpectedResult = Pga3D.Bases.e31)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Pga3D.Bases TestComponents(Pga3D.Base b) {
 		var p = b.AsPga3D();
 		return p.Components;
@@ -124,14 +116,11 @@ public static partial class XPga3D
 
 	/// <summary>Test Make.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Test Make.")]
 	[Test]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestMake()
 	{
 		var point = Pga3D.Make.Point(2,3,4,5);
@@ -190,14 +179,11 @@ public static partial class XPga3D
 
 	/// <summary>Test Primitives.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 3)]
+	[Tags("code/unit_test", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Test Primitives.")]
 	[Test, Ignore("Triage: ToString with Separator * no longer prints the Coefficient 1 (+ *X instead of 1*X); the expected Strings are outdated or the Formatter regressed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestPrimitives() {
 		//var dt = new DateTime(1970,1,1,0,0,0, DateTimeKind.Utc).AddSeconds(1516057200);
 
@@ -275,14 +261,11 @@ public static partial class XPga3D
 
 	/// <summary>Test.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Test.")]
 	[Test]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void Test() {
 		var xz = Pga3D.Make.Plane(0, 1,0, 0);
 		var yz = Pga3D.Make.Plane(1, 0, 0, 0);
@@ -318,16 +301,6 @@ public static partial class XPga3D
 
 /// <summary> R301 = 3D+€ PGA (Euclidean Plane-Based Geometric Algebra) </summary>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T16:03:01Z
-/// digest: cf9218219207f1fe6ea6b1955c17c06b81e59a06fa84a3c4194bca7af267e79e
-/// tags: [code/projective_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: partial, complexity: 2}
-/// </code>
-/// </example>
 /// <remarks>
 /// <see cref="pga.PGA3D"/>
 /// 
@@ -376,17 +349,19 @@ public static partial class XPga3D
 /// 
 /// So it pays off to extract this Sub-Algebra into a Group of Transformations.
 /// </remarks>
+[DocState(Pass = 2, MTime = "2026-05-24T16:03:01Z", Digest = "cf9218219207f1fe6ea6b1955c17c06b81e59a06fa84a3c4194bca7af267e79e", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+[Tags("code/projective_geometric_algebra")]
+[System.ComponentModel.Description("R301 = 3D+€ PGA (Euclidean Plane-Based Geometric Algebra)")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class Pga3D : AGeoGebra16<Pga3D>
 {
 	/// <summary> just for debug and print output, the basis names </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("just for debug and print output, the basis names")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override IReadOnlyList<string> Basis => _Basis;
 
 	/// <summary>Ordered array of basis blade name strings for debug and print output.</summary>
@@ -421,18 +396,13 @@ public class Pga3D : AGeoGebra16<Pga3D>
 			, 0};
 
 	/// <summary> Bits for each non-zero Component of a Multi-Vector </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T10:09:57Z
-	/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T10:09:57Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Bits for each non-zero Component of a Multi-Vector")]
 	[Flags]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Bases
 	{
 		/// <inheritdoc cref="Base._1_"/>
@@ -496,24 +466,18 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 	/// <summary>Gets the components.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets the components.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Bases Components => (Bases) this.GetComponents();
 
 	/// <summary> Classifies the non-zero components of this multi-vector as a combination of geometric <see cref="Types"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Classifies the non-zero components of this multi-vector as a combination of geometric Types.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Types Type {
 		get {
 			Types ret = 0; //Typ.All;
@@ -536,17 +500,12 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 	/// <summary> <see cref="Components"/> Types </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:06Z
-	/// digest: 43f079111c5074cb136e7ba4735b701c7d2017de7aa8b2aad15aa393767bfdca
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "43f079111c5074cb136e7ba4735b701c7d2017de7aa8b2aad15aa393767bfdca", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Components Types")]
 	[Flags]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Types : byte
 	{
 		/// <summary> Scale-Factor, used in Combination with <see cref="Motor"/> and <see cref="Rotor"/> where it is Cos </summary>
@@ -603,17 +562,12 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:06Z
-	/// digest: 66c81b8887d2ade3e64165ed3108c573db02f55a87f9e79187aa38293cf828b5
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "66c81b8887d2ade3e64165ed3108c573db02f55a87f9e79187aa38293cf828b5", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary> [0] AKA e,S; Scalar e.g. Dot Product </summary>
@@ -1066,16 +1020,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 	/// <summary>Static ordered list of all 16 unit basis blades of the 3D PGA algebra.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T10:09:57Z
-	/// digest: d631a2f3cb68a3f0224854188cb6c35044c110ab3581aab400be911a771c557d
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Static ordered list of all 16 unit basis blades of the 3D PGA algebra.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IReadOnlyList<Pga3D> Blades => _Blades;
 	/// <summary>Backing array of all 16 ordered unit basis blades.</summary>
 	static readonly Pga3D[] _Blades = {_1_ //Grade0
@@ -1087,17 +1035,12 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 	/// <summary> Grade 1: Static Planes </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:06Z
-	/// digest: d631a2f3cb68a3f0224854188cb6c35044c110ab3581aab400be911a771c557d
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "d631a2f3cb68a3f0224854188cb6c35044c110ab3581aab400be911a771c557d", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Grade 1: Static Planes")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Planes : sbyte
 	{
 		/// <inheritdoc cref="Base.e0"/>
@@ -1122,29 +1065,24 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1014 | <see cref="Sky"/> | Represents sky. |
-	/// | 1017 | <see cref="Origin"/> | current Position of the Observer |
-	/// | 1020 | <see cref="Meridian"/> | Represents meridian. |
-	/// | 1023 | <see cref="PrimeVertical"/> | Represents prime Vertical. |
-	/// | 1026 | <see cref="Horizon"/> | Represents horizon. |
-	/// | 1039 | <see cref="Zenith"/> | Represents zenith. |
-	/// | 1042 | <see cref="Nadir"/> | Represents nadir. |
-	/// | 1045 | <see cref="West"/> | Represents west. |
-	/// | 1055 | <see cref="East"/> | Represents east. |
-	/// | 1058 | <see cref="North"/> | Represents north. |
-	/// | 1068 | <see cref="South"/> | Represents south. |
+	/// | 1089 | <see cref="Sky"/> | Represents sky. |
+	/// | 1092 | <see cref="Origin"/> | current Position of the Observer |
+	/// | 1095 | <see cref="Meridian"/> | Represents meridian. |
+	/// | 1098 | <see cref="PrimeVertical"/> | Represents prime Vertical. |
+	/// | 1101 | <see cref="Horizon"/> | Represents horizon. |
+	/// | 1114 | <see cref="Zenith"/> | Represents zenith. |
+	/// | 1117 | <see cref="Nadir"/> | Represents nadir. |
+	/// | 1120 | <see cref="West"/> | Represents west. |
+	/// | 1130 | <see cref="East"/> | Represents east. |
+	/// | 1133 | <see cref="North"/> | Represents north. |
+	/// | 1143 | <see cref="South"/> | Represents south. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:06Z
-	/// digest: 29c9f3a451af85939d573e784c285baa9191ad285ee19927efe6c2601e336a65
-	/// tags: [code/enum, code/polar_coordinates]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "29c9f3a451af85939d573e784c285baa9191ad285ee19927efe6c2601e336a65", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/polar_coordinates")]
+	[System.ComponentModel.Description("Polar Coordinates match projective Geometry")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Geo : sbyte
 	{
 		/// <inheritdoc cref="Base.e0"/>
@@ -1212,16 +1150,11 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	/// These correspond to orthogonal/dual Rotation Planes.
 	/// The Axes are fixed Points for their Rotations.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:06Z
-	/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Grade2: euclidean Axes for Rotor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum AxisRot : sbyte
 	{
 		/// <inheritdoc cref="Base.e23"/>
@@ -1243,22 +1176,17 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1112 | <see cref="X"/> | Represents x. |
-	/// | 1115 | <see cref="Y"/> | Represents y. |
-	/// | 1118 | <see cref="Z"/> | Represents z. |
-	/// | 1121 | <see cref="_1_"/> | Represents 1. |
+	/// | 1193 | <see cref="X"/> | Represents x. |
+	/// | 1196 | <see cref="Y"/> | Represents y. |
+	/// | 1199 | <see cref="Z"/> | Represents z. |
+	/// | 1202 | <see cref="_1_"/> | Represents 1. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:06Z
-	/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Grade2: 'Ideal' Axes for Translator/Motor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum AxisTrans : sbyte
 	{
 		/// <inheritdoc cref="Base.e01"/>
@@ -1280,23 +1208,18 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1136 | <see cref="Origin"/> | Represents origin. |
-	/// | 1139 | <see cref="Dist"/> | Represents dist. |
-	/// | 1142 | <see cref="Z"/> | Represents z. |
-	/// | 1145 | <see cref="Y"/> | Represents y. |
-	/// | 1148 | <see cref="X"/> | Represents x. |
+	/// | 1226 | <see cref="Origin"/> | Represents origin. |
+	/// | 1229 | <see cref="Dist"/> | Represents dist. |
+	/// | 1232 | <see cref="Z"/> | Represents z. |
+	/// | 1235 | <see cref="Y"/> | Represents y. |
+	/// | 1238 | <see cref="X"/> | Represents x. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:06Z
-	/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Grade3: Static Axes for Point")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Points : sbyte
 	{
 		/// <inheritdoc cref="Base.e123"/>
@@ -1380,43 +1303,31 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.<br/>
 	/// Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index. Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[AxisTrans idx] => _C[(int) idx];
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[AxisRot idx] => _C[(int) idx];
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Points idx] => _C[(int) idx];
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Planes idx] => _C[(int) idx];
 	/// <inheritdoc cref="New(float[])"/>
 	public float this[Base idx] => _C[(int) idx];
@@ -1442,97 +1353,70 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	protected override Pga3D Create_(float[] values) => new(values);
 	/// <summary> Unchecked private Constructor for Speed </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	internal Pga3D(params float[] f) : base(f){ }
 
 	/// <summary>Checked Constructor<br/>
 	/// Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
 	//public Pga3D(params float[] values) : base(values){ }
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Checked Constructor Initializes a new instance of Pga3D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(IReadOnlyList<float> values) : base(values){ }
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(IReadOnlyList<Base<Base>> values) : base(AsMultiVector(values)){ }
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(params Base<Base>[] values) : base(AsMultiVector(values)){ }
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(params Base<Points>[] values) : base(AsMultiVector(values)){ }
 	/// <summary> Initializes a new instance of <see cref="Pga3D"/> from an array of weighted <see cref="Planes"/> blades. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D from an array of weighted Planes blades.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(params Base<Planes>[] values) : base(AsMultiVector(values)){ }
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(params Base<AxisTrans>[] values) : base(AsMultiVector(values)){ }
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(params Base<AxisRot>[] values) : base(AsMultiVector(values)){ }
 
 	/// <summary>Implicitly converts <paramref name="axis"/> to <see cref="Pga3D"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Implicitly converts axis to Pga3D.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] AsMultiVector<T>(IReadOnlyList<Base<T>> values) where T : Enum
 		=> values.AsSingles(NUM_COORDS);
 
@@ -1551,84 +1435,60 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(double f = 0, Points idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(double f = 0, Planes idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(double f = 0, AxisTrans idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(double f = 0, AxisRot idx = 0) : base(f, (int)idx) {}
 	/// <summary> Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(double f = 0, Base idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(double f = 0, Geo idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="Pga3D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga3D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga3D(double f = 0, int idx = 0) : base(f, idx) {}
 
 	/// <summary> Extracts the homogeneous Euclidean XYZ coordinates of this multi-vector as a <see cref="Points"/> point, dividing by the origin component when non-zero. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Extracts the homogeneous Euclidean XYZ coordinates of this multi-vector as a Points point, dividing by the origin component when non-zero.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float[] AsPoint() {
 		//return Extract(Point.X, Point.Y, Point.Z);
 		var ret = new[] {this[Points.X], this[Points.Y], this[Points.Z]};
@@ -1680,13 +1540,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 	/// <summary> Returns true if the norm of the difference between this and <paramref name="arg"/> is negligible relative to their combined norms. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Returns true if the norm of the difference between this and arg is negligible relative to their combined norms.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool CloseTo(Pga3D arg) {
 		var diff = this - arg;
 		var diffNorm = diff.NormSqr();
@@ -1698,13 +1555,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	/// <remarks>
 	/// With Homogeneous Coordinates, Parallel Elements cancel out and you can test for a Scalar Product with itself.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("test if this is approx. that")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override bool Equals(Pga3D? that) {
 		if (that is null) return false;
 		if (ReferenceEquals(that, this)) return true;
@@ -1716,13 +1570,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 	/// <summary>Determines whether scalar.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Determines whether scalar.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool IsScalar() {
 		var pos = Math.Abs(_C[0]) * 1e-6;
 		var neg = -pos;
@@ -1743,33 +1594,33 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1408 | <see cref="Point"/> | Point given by Coordinates x, y and z |
-	/// | 1415 | <see cref="Vector"/> | Point given by Coordinates x, y and z |
-	/// | 1435 | <see cref="Rotor"/> | Rotor around euclidean axisRot |
-	/// | 1441 | <see cref="Rot"/> | Constructs a rotor that rotates by angle a (radians) around the given axisRot. |
-	/// | 1453 | <see cref="Translator"/> |  |
-	/// | 1465 | <see cref="Motor"/> | AKA Translator(double,Pga3D); translates dist along the axisTrans/Vector when using the Sandwich Product |
-	/// | 1477 | <see cref="Line"/> | Line given by slope and intersect |
-	/// | 1497 | <see cref="Plane"/> | Plane given by slope and intersect |
-	/// | 1516 | <see cref="Circle"/> | Returns a motor that places a point at radius along the X-axis after rotating by t full turns around line. |
-	/// | 1522 | <see cref="IdealLine"/> | Ideal Line. |
-	/// | 1537 | <see cref="Lathe"/> | Constructs 3D Bodies around a Rotation Axis like a Lathe |
-	/// | 1559 | <see cref="SqRtTwo"/> | Square root of 2, used as a scaling factor for cube spine heights. |
-	/// | 1561 | <see cref="SqRtHalf"/> | Square root of 0. |
-	/// | 1564 | <see cref="TestDual"/> | Test Dual. |
-	/// | 1571 | <see cref="Cylinder"/> | Generates the outer Cylinder Mesh; degenerates to a Cube for numSegments = 4 |
-	/// | 1578 | <see cref="CubeSpineCoords"/> | Spines of a Cube with Height = √2, not its Sides! |
-	/// | 1590 | <see cref="CubeSpineCoords2"/> | Spines of a Cube with Height = 1 rotated around the X-Axis from 0 to +1, (not its Sides!) |
-	/// | 1599 | <see cref="TestCubeSpineCoords"/> | NUnit test-case source providing expected CubeSpineCoords2 for CubePoints. |
-	/// | 1606 | <see cref="CubePoints"/> | Cube Points. |
-	/// | 1619 | <see cref="Cube"/> | Generates the 4 'Spines' of a Cube, around the X-Symmetry-Axis. |
-	/// | 1623 | <see cref="Torus"/> | Generates a Torus Mesh; degenerates to a solid Polygon Line for small numLargeToroidal |
-	/// | 1631 | <see cref="Sphere"/> | Generates a Sphere Mesh; degenerates to a double Pyramid for numMeridian = 2 |
-	/// | 1637 | <see cref="Cone"/> | Generates a Cone/Pyramid Mesh; degenerates to a Tetrahedron for numSegments = 3 |
-	/// | 1641 | <see cref="Tetrahedron"/> | Generates a regular Tetrahedron mesh with circumradius r as a degenerate 3-segment Cone. |
-	/// | 1644 | <see cref="Arrow"/> | Generates an Arrow mesh composed of a cone tip, an inverted cone base, and a cylinder shaft. |
-	/// | 1663 | <see cref="Planets"/> | Planet Name, Mass, Position and Speed from https://ssd. |
-	/// | 1673 | <see cref="G"/> | Gravity Constant |
+	/// | 1653 | <see cref="Point"/> | Point given by Coordinates x, y and z |
+	/// | 1665 | <see cref="Vector"/> | Point given by Coordinates x, y and z |
+	/// | 1693 | <see cref="Rotor"/> | Rotor around euclidean axisRot |
+	/// | 1704 | <see cref="Rot"/> | Constructs a rotor that rotates by angle a (radians) around the given axisRot. |
+	/// | 1725 | <see cref="Translator"/> |  |
+	/// | 1737 | <see cref="Motor"/> | AKA Translator(double,Pga3D); translates dist along the axisTrans/Vector when using the Sandwich Product |
+	/// | 1758 | <see cref="Line"/> | Line given by slope and intersect |
+	/// | 1792 | <see cref="Plane"/> | Plane given by slope and intersect |
+	/// | 1821 | <see cref="Circle"/> | Returns a motor that places a point at radius along the X-axis after rotating by t full turns around line. |
+	/// | 1832 | <see cref="IdealLine"/> | Ideal Line. |
+	/// | 1857 | <see cref="Lathe"/> | Constructs 3D Bodies around a Rotation Axis like a Lathe |
+	/// | 1883 | <see cref="SqRtTwo"/> | Square root of 2, used as a scaling factor for cube spine heights. |
+	/// | 1885 | <see cref="SqRtHalf"/> | Square root of 0. |
+	/// | 1890 | <see cref="TestDual"/> | Test Dual. |
+	/// | 1902 | <see cref="Cylinder"/> | Generates the outer Cylinder Mesh; degenerates to a Cube for numSegments = 4 |
+	/// | 1913 | <see cref="CubeSpineCoords"/> | Spines of a Cube with Height = √2, not its Sides! |
+	/// | 1925 | <see cref="CubeSpineCoords2"/> | Spines of a Cube with Height = 1 rotated around the X-Axis from 0 to +1, (not its Sides!) |
+	/// | 1935 | <see cref="TestCubeSpineCoords"/> | NUnit test-case source providing expected CubeSpineCoords2 for CubePoints. |
+	/// | 1947 | <see cref="CubePoints"/> | Cube Points. |
+	/// | 1965 | <see cref="Cube"/> | Generates the 4 'Spines' of a Cube, around the X-Symmetry-Axis. |
+	/// | 1974 | <see cref="Torus"/> | Generates a Torus Mesh; degenerates to a solid Polygon Line for small numLargeToroidal |
+	/// | 1987 | <see cref="Sphere"/> | Generates a Sphere Mesh; degenerates to a double Pyramid for numMeridian = 2 |
+	/// | 1998 | <see cref="Cone"/> | Generates a Cone/Pyramid Mesh; degenerates to a Tetrahedron for numSegments = 3 |
+	/// | 2007 | <see cref="Tetrahedron"/> | Generates a regular Tetrahedron mesh with circumradius r as a degenerate 3-segment Cone. |
+	/// | 2015 | <see cref="Arrow"/> | Generates an Arrow mesh composed of a cone tip, an inverted cone base, and a cylinder shaft. |
+	/// | 2038 | <see cref="Planets"/> | Planet Name, Mass, Position and Speed from https://ssd. |
+	/// | 2048 | <see cref="G"/> | Gravity Constant |
 	///
 	/// ## Collaborators
 	///
@@ -1777,16 +1628,11 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	/// |---|---|
 	/// | <see cref="Pga3D"/> | Returned by a method. |
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T10:09:57Z
-	/// digest: 6348caa1d98860fe344ead8a0f783fd3f3662b556b89b29766fee2bc3df0b98e
-	/// tags: [code/factory, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: partial, complexity: 2}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T10:09:57Z", Digest = "6348caa1d98860fe344ead8a0f783fd3f3662b556b89b29766fee2bc3df0b98e", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+	[Tags("code/factory", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Static Factory Methods")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static class Make
 	{
 		/// <summary> Point given by Coordinates <see cref="x"/>, <see cref="y"/> and <see cref="z"/> </summary>
@@ -1803,14 +1649,11 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		///
 		/// A point is just a homogeneous point, euclidean coordinates plus the origin
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
 		// ReSharper disable once MemberHidesStaticFromOuterClass
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Point given by Coordinates x, y and z")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Point(double x, double y, double z = 0, double norm = 1)
 			=> new(Points.Origin.AsBlade(norm)
 				, Points.X.AsBlade(x)
@@ -1819,13 +1662,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary> Point given by Coordinates <paramref name="x"/>, <paramref name="y"/> and <paramref name="z"/> </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Point given by Coordinates x, y and z")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Vector(double x, double y, double z = 0) => new(
 			Points.X.AsBlade(x),
 			Points.Y.AsBlade(y),
@@ -1835,14 +1675,11 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		/// <remarks>
 		/// Alternatively you can join three <see cref="Point"/>s.
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
 		// ReSharper disable once MemberHidesStaticFromOuterClass
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("A plane is defined using its homogenous equation ax + by + cz + d = 0")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Plane(double ax, double by, double cz, double d)
 			=> new(Planes.Dist.AsBlade(d)
 				, Planes.YZ.AsBlade(ax)
@@ -1853,13 +1690,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		/// <remarks>
 		/// The Axis must be any linear Combination of <see cref="AxisRot"/> Elements.
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Rotor around euclidean axisRot")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Rotor(double angle, Pga3D axisRot) {
 			var sinCos = (angle * 0.5).SinCos();
 			return sinCos.cos + sinCos.sin * axisRot.Normalized();
@@ -1867,23 +1701,17 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary> Constructs a rotor that rotates by angle <paramref name="a"/> (radians) around the given <paramref name="axisRot"/>. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Constructs a rotor that rotates by angle a (radians) around the given axisRot.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Rot(double a, Pga3D axisRot) => Math.Cos(a) + Math.Sin(a) * axisRot.Normalized();
 		/// <summary>Constructs a normalized rotor that rotates by <paramref name="angle"/> (radians) around the axis (<paramref name="x"/>, <paramref name="y"/>, <paramref name="z"/>).</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Constructs a normalized rotor that rotates by angle (radians) around the axis (x, y, z).")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Rotor(double angle, double x, double y, double z) {
 			var sinCos = (angle * 0.5).SinCos();
 			var sin = sinCos.sin / Math.Sqrt(x * x + y * y + z * z);
@@ -1906,25 +1734,19 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		/// <remarks>
 		/// The Axis must be a Vector (ideal Line), i.e. any linear Combination of <see cref="AxisTrans"/> Elements.
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("AKA Translator(double, Pga3D); translates dist along the axisTrans/Vector when using the Sandwich Product")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Motor(double dist, Pga3D axisTrans) => Translator(dist, axisTrans);
 
 		/// <summary> Generates a Motor/Vector that translates 
 		/// by twice (<paramref name="xHalf"/>,<paramref name="yHalf"/>,<paramref name="zHalf"/>) on Sandwiching</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Generates a Motor/Vector that translates by twice (xHalf,yHalf,zHalf) on Sandwiching")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Motor(double xHalf, double yHalf, double zHalf) => Translator(xHalf, yHalf, zHalf);
 
 		/// <summary> Line given by <paramref name="slope"/> and <paramref name="intersect"/> </summary>
@@ -1933,37 +1755,28 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		/// with themselves as Fixed-Points.
 		/// All Points with the same normalized Coordinates are equivalent!
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Line given by slope and intersect")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Line(double slope, double intersect)
 			=> new(0, (float) intersect, (float) slope, -1, 0, 0, 0, 0);
 
 		/// <summary> Line given by Point and Slope/Direction </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Line given by Point and Slope/Direction")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Line(double slope, double y, double x)
 			=> Line(slope, y - x * slope);
 
 		/// <summary>Line given by 2 Points</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Line given by 2 Points")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Line(double x0, double y0, double x1, double y1) {
 			var slope = (y1 - y0) / (x1 - x0);
 			return Line(slope, y0, x0);
@@ -1975,27 +1788,21 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		/// with themselves as Fixed-Points.
 		/// All Points with the same normalized Coordinates are equivalent!
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
 		// ReSharper disable once MemberHidesStaticFromOuterClass
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Plane given by slope and intersect")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Plane(double slope, double intersect)
 			=> new(0, (float) intersect, (float) slope, -1, 0, 0, 0, 0);
 
 		/// <summary> Plane given by Point and Normal </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
 		// ReSharper disable once MemberHidesStaticFromOuterClass
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Plane given by Point and Normal")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Plane(double slope, double y, double x)
 			=> Plane(slope, y - x * slope);
 
@@ -2011,13 +1818,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		// circle(t) with t going from 0 to 1.
 		/// <summary> Returns a motor that places a point at <paramref name="radius"/> along the X-axis after rotating by <paramref name="t"/> full turns around <paramref name="line"/>. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Returns a motor that places a point at radius along the X-axis after rotating by t full turns around line.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Circle(float t, float radius, Pga3D line) {
 			return Rotor(t * 2 * Math.PI, line)
 			       * Translator(radius, AxisTrans.X);
@@ -2025,14 +1829,11 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary>Ideal Line.</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/unit_test, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: test, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+		[Tags("code/unit_test", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Ideal Line.")]
 		[Test]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static void IdealLine() {
 			var idealLine = (Pga3D)Planes.YZ * (Pga3D)Planes.Dist;
 			// e1 and e0 anticommute, so YZ * Dist is -e01 = -AxisTrans.X
@@ -2041,13 +1842,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary>Returns the motor that places a point on a torus formed by composing two circles with radii <paramref name="r1"/> and <paramref name="r2"/>.</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Returns the motor that places a point on a torus formed by composing two circles with radii r1 and r2.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga3D Torus(float s, float t, float r1, Pga3D l1, float r2, Pga3D l2)
 			=> Circle(s, r2, l2) * Circle(t, r1, l1);
 
@@ -2056,13 +1854,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		/// <param name="numSegments">number of Rotation-Segments </param>
 		/// <param name="axisRot">rotation Axis from <see cref="AxisRot"/></param>
 		/// <param name="arc">arc-Length in Pi from [0..1]</param>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/mesh_data, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: graphics, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 2)]
+		[Tags("code/factory", "code/mesh_data", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Constructs 3D Bodies around a Rotation Axis like a Lathe")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<IEnumerable<Pga3D>> Lathe(IEnumerable<Pga3D> points, int numSegments, Pga3D axisRot, double arc = 1) => Enumerable
 				.Range(0, numSegments+1).Select((_, i) => Rot(i* Math.PI*arc/numSegments,axisRot) < points);//.ToArray();
 
@@ -2091,14 +1886,11 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary>Test Dual.</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/unit_test, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: test, status: stub, complexity: 1}
-		/// </code>
-		/// </example>
 		// TODO: LOGIC bug - computes dual and dual2 but asserts nothing; this test verifies no behavior.
+		[Facets(Layer = "test", Status = "stub", Complexity = 1)]
+		[Tags("code/unit_test", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Test Dual.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static void TestDual() {
 			var dual = !(E0 + 3 * E3);
 			var dual2 = !(E0 + 3 * E3);
@@ -2107,13 +1899,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary> Generates the outer Cylinder Mesh; degenerates to a Cube for <paramref name="numSegments"/> = 4 </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/mesh_data, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: graphics, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/mesh_data", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Generates the outer Cylinder Mesh; degenerates to a Cube for numSegments = 4")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<IEnumerable<Pga3D>> Cylinder(double radius = 1, double height = 1, int numSegments = 32)
 			=> Lathe(new []{!E0, !(E0 + radius*E3),!(E0+radius*E3+height*E1),!(E0+height*E1)},numSegments,E23);
 
@@ -2143,13 +1932,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary> NUnit test-case source providing expected <see cref="CubeSpineCoords2"/> for <see cref="CubePoints"/>. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/nunit_test_case_inversion, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: test, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+		[Tags("code/nunit_test_case_inversion", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("NUnit test-case source providing expected CubeSpineCoords2 for CubePoints.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<TestCaseData> TestCubeSpineCoords {
 			get {
 				yield return new TestCaseData(1) {ExpectedResult = CubeSpineCoords2};
@@ -2158,15 +1944,12 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary>Cube Points.</summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/unit_test, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: test, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+		[Tags("code/unit_test", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Cube Points.")]
 		[Ignore("Triage: the Cube Points differ from the expected Spine Coordinates at Index [2][1]; Expectation or Cube() is outdated")]
 		[TestCaseSource(nameof(TestCubeSpineCoords))]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static float[][][] CubePoints(double r) {
 			var ret = Cube(r).Select(row => row.Select(col => col.AsPoint()).ToArray()).ToArray();
 			//return ret.ToDebugString()
@@ -2179,25 +1962,19 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		/// <remarks>The Spine-Diagonals to the Corners are √2 shorter
 		/// than the resulting Cube-<paramref name="width"/>, therefore the height is adjusted.
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/mesh_data, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: graphics, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/mesh_data", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Generates the 4 'Spines' of a Cube, around the X-Symmetry-Axis.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<IEnumerable<Pga3D>> Cube(double width) => Cylinder(width*SqRtHalf, width
 			, 4);
 
 		/// <summary> Generates a Torus Mesh; degenerates to a solid Polygon Line for small <paramref name="numLargeToroidal"/> </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/mesh_data, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: graphics, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 2)]
+		[Tags("code/factory", "code/mesh_data", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Generates a Torus Mesh; degenerates to a solid Polygon Line for small numLargeToroidal")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<IEnumerable<Pga3D>> Torus(double r=.3
 			, double r2=.25, int numLargeToroidal = 32, int numSmallPoloidal = 16) {
 			var circle = Lathe(!(E0 + (E1 + E3) * r2 * SqRtHalf), numSmallPoloidal, E31);
@@ -2207,13 +1984,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary> Generates a Sphere Mesh; degenerates to a double Pyramid for <paramref name="numMeridian"/> = 2 </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/mesh_data, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: graphics, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 2)]
+		[Tags("code/factory", "code/mesh_data", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Generates a Sphere Mesh; degenerates to a double Pyramid for numMeridian = 2")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<IEnumerable<Pga3D>> Sphere(double r = 1, int numEquator = 32, int numMeridian = 16) {
 			var halfCircle = Lathe(!(E0 + r * E1), numMeridian, E31, .5);
 			return Lathe(halfCircle, numEquator, E23);
@@ -2221,36 +1995,27 @@ public class Pga3D : AGeoGebra16<Pga3D>
 
 		/// <summary> Generates a Cone/Pyramid Mesh; degenerates to a Tetrahedron for <paramref name="numSegments"/> = 3 </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/mesh_data, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: graphics, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/mesh_data", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Generates a Cone/Pyramid Mesh; degenerates to a Tetrahedron for numSegments = 3")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<IEnumerable<Pga3D>> Cone(double r=1, double h=1, int numSegments=64)
 			=>Lathe(new []{!E0,!(E0+r*E3),!(E0+h*E1)}, numSegments, E23);
 
 		/// <summary> Generates a regular Tetrahedron mesh with circumradius <paramref name="r"/> as a degenerate 3-segment Cone. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/mesh_data, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: graphics, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/mesh_data", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Generates a regular Tetrahedron mesh with circumradius r as a degenerate 3-segment Cone.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<IEnumerable<Pga3D>> Tetrahedron(double r) => Cone(r,r*SqRtTwo,3);
 
 		/// <summary> Generates an Arrow mesh composed of a cone tip, an inverted cone base, and a cylinder shaft. </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory, code/mesh_data, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: graphics, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "graphics", Status = "stable", Complexity = 1)]
+		[Tags("code/factory", "code/mesh_data", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Generates an Arrow mesh composed of a cone tip, an inverted cone base, and a cylinder shaft.")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static IEnumerable<IEnumerable<Pga3D>> Arrow()
 			=> Cone(.15,.3).Concat(Cone(.15,0)).Concat(Cylinder(.05,-2));
 

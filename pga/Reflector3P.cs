@@ -5,6 +5,7 @@ using System.IO;
 using System.Numerics;
 using org.SpocWeb.root.expressions;
 using org.SpocWeb.root.extensions.maths;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -13,16 +14,11 @@ namespace org.SpocWeb.root.maths.pga;
 /// <see cref="Vector4"/> is an incomplete geometric Number.
 /// It cannot be inverted.
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 1cde3d8d337430e1709e2e44d4e868cf33d108601843f60f27b848b314f58306
-/// tags: [code/projective_geometric_algebra, code/value_object]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "1cde3d8d337430e1709e2e44d4e868cf33d108601843f60f27b848b314f58306", Stale = false, Path = "pga/Reflector3P.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/projective_geometric_algebra", "code/value_object")]
+[System.ComponentModel.Description("3D Projective Algebra Odd/Reflector Components: Planes and Points (2*4*float)")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class Reflector3P : IEquatable<Reflector3P>, //AGeoGebra16<Pga3D>,
 	IExpression<Reflector3P>, //AGeoGebra16<Pga3D>,
 	IReadOnlyList<float>
@@ -61,13 +57,10 @@ public class Reflector3P : IEquatable<Reflector3P>, //AGeoGebra16<Pga3D>,
 
 	/// <summary>Initializes a new instance of <see cref="Reflector3P"/> with the specified <paramref name="sky"/>, <paramref name="yz"/>, <paramref name="zx"/>, <paramref name="xy"/>, <paramref name="x"/>, <paramref name="y"/>, <paramref name="z"/> and <paramref name="w"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Initializes a new instance of Reflector3P with the specified sky, yz, zx, xy, x, y, z and w.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Reflector3P(float sky, float yz, float zx, float xy, float x, float y, float z, float w) {
 		Sky = sky;
 		YZ = yz;
@@ -81,13 +74,10 @@ public class Reflector3P : IEquatable<Reflector3P>, //AGeoGebra16<Pga3D>,
 
 	/// <summary> Returns a value-based hash code for use in equality-sensitive collections. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Returns a value-based hash code for use in equality-sensitive collections.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public int ValueHash() => GetHashCode();
 	/// <inheritdoc />
 	public override int GetHashCode() {
@@ -108,13 +98,10 @@ public class Reflector3P : IEquatable<Reflector3P>, //AGeoGebra16<Pga3D>,
 	public override bool Equals(object obj) => obj is Reflector3P reflector && Equals(reflector);
 	/// <summary>Determines whether equal To.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Determines whether equal To.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool IsEqualTo(Reflector3P that) => Equals(that);
 
 	/// <inheritdoc cref="Equals(object)"/>
@@ -126,13 +113,10 @@ public class Reflector3P : IEquatable<Reflector3P>, //AGeoGebra16<Pga3D>,
 	public static string Infix = ", ";
 	/// <summary> Writes the eight components separated by <see cref="Infix"/> to <paramref name="writer"/> and returns <paramref name="lengthLeft"/> unchanged. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Writes the eight components separated by Infix to writer and returns lengthLeft unchanged.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public long WriteTo(TextWriter writer, long lengthLeft) {
 		writer.Write(Sky);
 		writer.Write(Infix); writer.Write(YZ);
@@ -152,13 +136,10 @@ public class Reflector3P : IEquatable<Reflector3P>, //AGeoGebra16<Pga3D>,
 
 	/// <summary>Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public int Count => 8;
 
 	/// <inheritdoc />
@@ -177,13 +158,10 @@ public class Reflector3P : IEquatable<Reflector3P>, //AGeoGebra16<Pga3D>,
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[int index] =>
 		index switch {
 			0 => Sky,

@@ -13,6 +13,7 @@ using org.SpocWeb.root.iMath;
 using org.SpocWeb.root.interfaces;
 using org.SpocWeb.root.interfaces.maths;
 using org.SpocWeb.root.tensors;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -26,16 +27,11 @@ namespace org.SpocWeb.root.maths.pga;
 /// <see cref="IList{T}"/>, <see cref="List{T}"/> and Array.
 /// </remarks>
 /// <inheritdoc cref="IGeoGebra{T}"/>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:24Z
-/// digest: bf1c9ff1d35dda84c85322b9e154a083c9dcf67662c575c50562d12cbe64c17d
-/// tags: [code/abstract_base, code/geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: buggy, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:24Z", Digest = "bf1c9ff1d35dda84c85322b9e154a083c9dcf67662c575c50562d12cbe64c17d", Stale = false, Path = "AGeoGebraDbl.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+[Tags("code/abstract_base", "code/geometric_algebra")]
+[System.ComponentModel.Description("Abstract Base Class for Multi-Vector-Spaces")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, IReadOnlyList<T>
 	where T : AGeoGebraDbl<T>
 {
@@ -45,33 +41,24 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 	/// <summary>Gets the dim.<br/>
 	/// Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Gets the dim. Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract byte Dim { get; }
 	/// <summary>Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public int Count => 1 << Dim;
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract double this[int index] { get; }
 
 	/// <inheritdoc />
@@ -82,24 +69,18 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary>Gets the basis.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Gets the basis.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract IReadOnlyList<string> Basis { get; }
 
 	/// <summary> Writes all component coefficients separated by <see cref="Infix"/> to <paramref name="writer"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Writes all component coefficients separated by Infix to writer.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public virtual long WriteTo(TextWriter writer, long lengthLeft) {
 		for (int i = 0; i < Count; i++) {
 			writer.Write(this[i]);
@@ -111,47 +92,35 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> Returns a hash code based solely on the component values. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns a hash code based solely on the component values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract int ValueHash();// => Hash.
 	/// <inheritdoc />
 	public override int GetHashCode() => ValueHash();
 
 	/// <summary> Returns this instance typed as <typeparamref name="T"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns this instance typed as.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Self();
 	/// <summary> Evaluates the expression by returning this instance typed as <typeparamref name="T"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Evaluates the expression by returning this instance typed as.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Evaluate() => Self();
 
 	/// <summary> Returns true when all components of <paramref name="that"/> are approximately equal to this. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns true when all components of that are approximately equal to this.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract bool Equals(IReadOnlyList<double>? that);
 	/// <inheritdoc cref="Equals(IReadOnlyList{double}?)"/>
 	public virtual bool Equals(T? that) => ReferenceEquals(this, that) || Equals((IReadOnlyList<double>?) that);
@@ -164,84 +133,67 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> Unchecked Creation with Reference (no Copy!) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Unchecked Creation with Reference (no Copy!)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected abstract T Create_(double[] values);
 
 	/// <summary>Determines whether zero.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Determines whether zero.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool IsZero() => this.All(c => c.IsSmallerThanAbs(PgaTolerance.Double));
 
 	/// <summary> True when all Components are within <paramref name="absAccuracy"/> of 0. </summary>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("True when all Components are within absAccuracy of 0.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool IsZero(double absAccuracy) => this.All(c => Math.Abs(c) <= absAccuracy);
 
 	/// <summary> Euclidean norm. (strictly positive). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Euclidean norm. (strictly positive).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public virtual double Norm() => Math.Sqrt(Math.Abs(NormSqr()));
 
 	/// <summary> Signed Square Norm; this * this.Conjugate()[0] </summary>
 	/// <remarks>
 	/// !optimize by calculating ONLY the [0]th Component of the geometric Product!
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Signed Square Norm; this * this.Conjugate()[0]")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract double NormSqr(); // => Times(Conjugate())[0];
 
 	/// <summary> NormSqr of the PseudoScalar, typically -1 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("NormSqr of the PseudoScalar, typically -1")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public virtual double NormSqrI() => -1;
 
 	/// <summary> Ideal norm. (signed) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Ideal norm. (signed)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public virtual double NormI() => this[1].IsSmallerThanAbs(PgaTolerance.Double) ? Count > 15 && this[15].IsSmallerThanAbs(PgaTolerance.Double) ? Norm() : this[15] : this[1];
 
 	/// <summary> AKA Sign, Direction; normalized this element; not for ideal (pure) Vectors. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("AKA Sign, Direction; normalized this element; not for ideal (pure) Vectors.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Normalized() {
 		if (IsZero()) {
 			return Self();
@@ -296,13 +248,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> - Negative Multi-Vector </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("- Negative Multi-Vector")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Neg() => Create_(Neg_());
 
 	/// <inheritdoc cref="Neg()"/>
@@ -310,13 +259,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> Returns a raw coefficient array with every component negated. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns a raw coefficient array with every component negated.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected abstract double[] Neg_();
 
 	/// <summary> \/ Square Root </summary>
@@ -331,13 +277,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 	///
 	/// Log could theoretically do this in Reverse.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("\\/ Square Root")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T SqRt() {
 		//Works for real and Points, but not for  
 		var denom = 2 * (1 + this[0]);
@@ -350,24 +293,18 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> ++; this + 1 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("++; this + 1")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Succ() => Plus(1);
 
 	/// <summary> --; this - 1 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("--; this - 1")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Pred() => Plus(-1);
 
 	/// <summary> ! Poincare Dual, NOT the Reciprocal! </summary>
@@ -383,13 +320,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 	///
 	/// Dua
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("! Poincare Dual, NOT the Reciprocal!")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Dual();
 
 	/// <summary> ~ Complex Conjugate. Reverse Transformation. </summary>
@@ -407,13 +341,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 	/// This is formed by reverting the order of all Factor-Dimensions, i.e. e1^e2 => e2^e1
 	/// TODO: rename to Cjg <see cref="Conjugate"/>
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("~ Complex Conjugate. Reverse Transformation.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Reverted();
 
 	/// <summary> Clifford Conjugate; x*x.Conjugate() = x.<see cref="NormSqr"/>() </summary>
@@ -424,13 +355,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 	///
 	/// <see cref="Rcp"/>
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Clifford Conjugate; x*x.Conjugate() = x.NormSqr()")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Conjugate();
 
 	/// <summary> Main/Grade involution </summary>
@@ -453,13 +381,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 	/// e.g. Reversion and Clifford Conjugate on the even Sub-Algebra yield the same Sign.
 	/// 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Main/Grade involution")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Involute();
 
 	#endregion unary Functions
@@ -468,68 +393,50 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> Returns the geometric product of this multivector with <paramref name="factor"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the geometric product of this multivector with factor.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Times(IReadOnlyList<double> factor);
 
 	/// <summary> Returns the geometric product of <paramref name="factor"/> with this multivector (reversed operand order). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the geometric product of factor with this multivector (reversed operand order).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T TimesR(IReadOnlyList<double> factor);
 
 	/// <summary> Returns the inner (dot) product of this multivector with <paramref name="that"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the inner (dot) product of this multivector with that.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Dot(IReadOnlyList<double> that);
 
 	/// <summary> Returns the regressive product (meet) of this multivector with <paramref name="that"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the regressive product (meet) of this multivector with that.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Meet(IReadOnlyList<double> that);
 
 	/// <summary> Returns the regressive product (meet) of <paramref name="that"/> with this multivector (reversed operand order). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the regressive product (meet) of that with this multivector (reversed operand order).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T MeetR(IReadOnlyList<double> that);
 
 	/// <summary> Returns the outer product (join) of this multivector with <paramref name="that"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the outer product (join) of this multivector with that.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Join(IReadOnlyList<double> that);
 
 	//public abstract T Plus(IReadOnlyList<double> versor);
@@ -543,70 +450,52 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> Creates a new instance of <typeparamref name="T"/> from raw component values in <paramref name="list"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Creates a new instance of from raw component values in list.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public abstract T Create(IList<double> list);
 
 	/// <summary> Adds <paramref name="scalar"/> to the scalar component. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Adds scalar to the scalar component.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Plus(double scalar) => Plus(scalar, (DayOfWeek) 0);
 	/// <summary> Subtracts <paramref name="scalar"/> from the scalar component. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Subtracts scalar from the scalar component.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Minus(double scalar) => Minus(scalar, (DayOfWeek) 0);
 	/// <summary> Subtracts the scalar component from <paramref name="scalar"/> (scalar - this[0]). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Subtracts the scalar component from scalar (scalar - this[0]).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T MinusR(double scalar) => MinusR(scalar, (DayOfWeek) 0);
 
 	/// <inheritdoc cref="Times(IReadOnlyList{double})"/>
 	public abstract T Times(double factor);
 	/// <summary> Divides all components by <paramref name="factor"/> via multiplication by its reciprocal. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Divides all components by factor via multiplication by its reciprocal.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Per(double factor) => Times(1/factor);
 	/// <inheritdoc cref="Per(double)"/>
 	public T Per(T divisor) => Times(divisor.Rcp());
 
 	/// <summary> Computes the reciprocal by LU-decomposing the left-multiplication matrix and back-substituting. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Computes the reciprocal by LU-decomposing the left-multiplication matrix and back-substituting.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected T _Rcp() {
 		var m = Coefficients();
 		var rows = new int[Count]; // ReSharper disable once CoVariantArrayConversion
@@ -628,24 +517,18 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> Returns the left-multiplication matrix whose columns represent the geometric product with each basis blade. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the left-multiplication matrix whose columns represent the geometric product with each basis blade.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected abstract double[][] Coefficients();
 
 	/// <summary> Returns a double array of length <see cref="Count"/> with <paramref name="value"/> at <paramref name="pos"/> and zeros elsewhere. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns a double array of length Count with value at pos and zeros elsewhere.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected double[] DOUBLES(int pos, double value = 1) {
 		var ret = new double[Count];
 		ret[pos] = value;
@@ -654,13 +537,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> Reciprocal of this geometric Number </summary>
 	/// <returns></returns>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Reciprocal of this geometric Number")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public virtual T Rcp() {
 		var maxGrade = this.MaxGrade();
 		if (maxGrade == 0) {
@@ -686,13 +566,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary> Computes the reciprocal of a pure vector or co-vector via conjugation and norm scaling. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Computes the reciprocal of a pure vector or co-vector via conjugation and norm scaling.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected T RcpVector() {
 		var ret = Conjugate();
 		var normSqr = NormSqr();
@@ -718,13 +595,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 
 	/// <summary>Determines whether equal To.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Determines whether equal To.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool IsEqualTo<S>(S that) where S : T => this.SequenceEqual(that);
 
 #pragma warning restore 8633
@@ -828,34 +702,25 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 	/// Since ~this*this = this*~this = this.NormSqr()
 	/// 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("&lt; AKA Map, 'Sandwich' Product: ~this * vector * this")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T Sandwich(AGeoGebraDbl<T> vector) => Conjugate() * vector * this;
 
 	/// <summary><paramref name="self"/> >> <paramref name="that"/> applies <paramref name="that"/> to self</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("self >> that applies that to self")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	[SpecialName] public static T op_RightShift(AGeoGebraDbl<T> self, AGeoGebraDbl<T> that) => that.Sandwich(self);
 	/// <summary> &lt;&lt; applies this sandwich product to <paramref name="that"/>: ~<paramref name="self"/> * <paramref name="that"/> * <paramref name="self"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("&lt;&lt; applies this sandwich product to that: ~self * that * self")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	[SpecialName] public static T op_LeftShift(AGeoGebraDbl<T> self, AGeoGebraDbl<T> that) => self.Sandwich(that);
 
 	/// <summary> > AKA Map, 'Sandwich' Product: ~<paramref name="versor"/> * this * <paramref name="versor"/> </summary>
@@ -865,13 +730,10 @@ public abstract class AGeoGebraDbl<T> : IGeoGebra<T,double>, IExpression<T>//, I
 	/// 
 	/// <paramref name="versor"/> itself is invariant under this Transformation! (prove by inserting into Expression)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/abstract_base", "code/geometric_algebra")]
+	[System.ComponentModel.Description("> AKA Map, 'Sandwich' Product: ~versor * this * versor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public T SandwichBy(AGeoGebraDbl<T> versor) => versor.Conjugate() * this * versor;
 
 	/// <summary> scalar/multiVector multiplication </summary>

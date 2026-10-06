@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using org.SpocWeb.root.array;
 using org.SpocWeb.root.data.hash;
 using org.SpocWeb.root.extensions.enumerables;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -13,16 +14,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// But to support Lists from the Left and to resolve the resulting Ambiguity you still have to define all 3 Operators.
 /// </remarks>
 /// <inheritdoc />
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: f2722d39b6b986124f56c6acfc07003ef1621738a39b38489b1b2c28801a84be
-/// tags: [code/abstract_base, code/clifford_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "f2722d39b6b986124f56c6acfc07003ef1621738a39b38489b1b2c28801a84be", Stale = false, Path = "ga/AGeoGebra4.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/abstract_base", "code/clifford_algebra")]
+[System.ComponentModel.Description("Abstract base for a 2D Clifford algebra G(p,q,r) with DIM=2 and 2²=4 components, used by e.g. R110, R011.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public abstract class AGeoGebra4<T> : AGeoGebra<T>
 	where T : AGeoGebra4<T> 
 {
@@ -48,23 +44,17 @@ public abstract class AGeoGebra4<T> : AGeoGebra<T>
 	/// <summary>Unchecked private Constructor for Speed<br/>
 	/// Initializes a new instance of <see cref="AGeoGebra4"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed Initializes a new instance of AGeoGebra4 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected AGeoGebra4(float[] f) => _C = f;//: this((IReadOnlyList<float>) f) { }
 	/// <summary>Initializes a new instance of <see cref="AGeoGebra4"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of AGeoGebra4 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected AGeoGebra4(double f, int idx = 0) {
 		var arr = new float[Count];
 		arr[idx] = (float) f;
@@ -73,13 +63,10 @@ public abstract class AGeoGebra4<T> : AGeoGebra<T>
 
 	/// <summary> Checked Constructor </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Checked Constructor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected AGeoGebra4(IReadOnlyList<float> f) {
 		if (f.Count != Count) {
 			throw new ArgumentOutOfRangeException("Must have " + Count + " Components, but has " + f.Count);
@@ -104,24 +91,18 @@ public abstract class AGeoGebra4<T> : AGeoGebra<T>
 
 	/// <summary> Main involution </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Main involution")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public sealed override T Involute () => Create_(_C.Involute4());
 
 	/// <summary> Clifford Conjugate </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Clifford Conjugate")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public sealed override T Conjugate () => Create_(_C.CliffCjg4());
 
 	#endregion Unary Functions

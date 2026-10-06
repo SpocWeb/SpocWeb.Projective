@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using org.SpocWeb.root.array;
 using org.SpocWeb.root.data.hash;
 using org.SpocWeb.root.extensions.enumerables;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -12,16 +13,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// By implementing <see cref="IReadOnlyList{Single}"/>, Operators would need to be defined only once.
 /// But to support Lists from the Left and to resolve the resulting Ambiguity you still have to define all 3 Operators.
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 0f1f4e19b76f3099322e7421d691d955ae8bc3fb3f0325161c0f70d2f8f012a5
-/// tags: [code/abstract_base, code/clifford_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "0f1f4e19b76f3099322e7421d691d955ae8bc3fb3f0325161c0f70d2f8f012a5", Stale = false, Path = "ga/AGeoGebra32.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/abstract_base", "code/clifford_algebra")]
+[System.ComponentModel.Description("Abstract base for a 5D Clifford algebra G(p,q,r) with DIM=5 and 2⁵=32 components, used for e.g. G(4,1,0) CGA.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public abstract class AGeoGebra32<T> : AGeoGebra<T>
 	where T : AGeoGebra32<T>
 {
@@ -34,13 +30,10 @@ public abstract class AGeoGebra32<T> : AGeoGebra<T>
 
 	/// <summary> Creates a 32-component coefficient array with <paramref name="value"/> at position <paramref name="pos"/> and zeros elsewhere. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Creates a 32-component coefficient array with value at position pos and zeros elsewhere.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] NEW(int pos, float value = 1) {
 		var ret = new float[NUM_COORDS];
 		ret[pos] = value;
@@ -69,23 +62,17 @@ public abstract class AGeoGebra32<T> : AGeoGebra<T>
 	/// <summary>Unchecked private Constructor for Speed<br/>
 	/// Initializes a new instance of <see cref="AGeoGebra32"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed Initializes a new instance of AGeoGebra32 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected AGeoGebra32(float[] f) => _C = f;//: this((IReadOnlyList<float>) f) { }
 	/// <summary>Initializes a new instance of <see cref="AGeoGebra32"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of AGeoGebra32 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected AGeoGebra32(double f, int idx = 0) {
 		var arr = new float[Count];
 		arr[idx] = (float) f;
@@ -94,13 +81,10 @@ public abstract class AGeoGebra32<T> : AGeoGebra<T>
 
 	/// <summary> Checked Constructor </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Checked Constructor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected AGeoGebra32(IReadOnlyList<float> f) {
 		if (f.Count != Count) {
 			throw new ArgumentOutOfRangeException("Must have " + Count + " Components, but has " + f.Count);

@@ -15,7 +15,7 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 28 | <see cref="Times"/> | Rotates and Scales the vector by scaleRot |
+/// | 40 | <see cref="Times"/> | Rotates and Scales the vector by scaleRot |
 ///
 /// ## Collaborators
 ///
@@ -25,16 +25,11 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// | <see cref="Complex"/> | Passed as a parameter. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:40:20Z
-/// digest: 9b1e17dd8d922bb8cd498f75da9fc1f5ba40d88d35129375aba5cb50b26bfb1a
-/// tags: [code/extension_method, code/complex_math]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:40:20Z", Digest = "9b1e17dd8d922bb8cd498f75da9fc1f5ba40d88d35129375aba5cb50b26bfb1a", Stale = false, Path = "typed/Vector2D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/extension_method", "code/complex_math")]
+[System.ComponentModel.Description("Provides extension methods for Complex.")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public static class XVector2
 {
 
@@ -42,13 +37,10 @@ public static class XVector2
 	/// <remarks>Multiplication from the Left results in opposite Rotation.
 	/// Unlike the Sandwich Product, this performs only a single Rotation.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_rotation, code/complex_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/vector_rotation", "code/complex_math")]
+	[System.ComponentModel.Description("Rotates and Scales the vector by scaleRot")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public static Vector2 Times(this Complex scaleRot, Vector2 vector) => new(
 		(float) (vector.X * scaleRot.Real - scaleRot.Imaginary * vector.Y),
 		(float) (vector.Y * scaleRot.Real + scaleRot.Imaginary * vector.X));
@@ -57,17 +49,12 @@ public static class XVector2
 
 /// <summary> <see cref="Vector2"/>-backed struct impl. up to <see cref="IVector4D"/> </summary>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-06-17T05:57:36Z
-/// digest: 0da81f3edacab246e9009bcd38de6c530ff9bffb5d8386fc5870b29e3bc9f5bb
-/// tags: [code/value_object, code/vector_math]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-06-17T05:57:36Z", Digest = "0da81f3edacab246e9009bcd38de6c530ff9bffb5d8386fc5870b29e3bc9f5bb", Stale = false, Path = "typed/Vector2D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/value_object", "code/vector_math")]
+[System.ComponentModel.Description("Vector2-backed struct impl. up to IVector4D")]
 [Replaces("../../_org.structs/maths/scalars/Vector2D.cs")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 {
 	public readonly Vector2 V;
@@ -75,77 +62,56 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 	/// <summary>Initializes a new instance of <see cref="Vector2D"/> with the specified <paramref name="x"/> and <paramref name="y"/>.<br/>
 	/// Initializes a new instance of <see cref="Vector2D"/> with the specified <paramref name="v"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector2D with the specified x and y. Initializes a new instance of Vector2D with the specified v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D(float x, float y) => V = new Vector2(x, y);
 	/// <summary>Initializes a new instance of <see cref="Vector2D"/> with the specified <paramref name="x"/> and <paramref name="y"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector2D with the specified x and y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D(double x, double y) => V = new Vector2((float) x, (float) y);
 	/// <summary>Initializes a new instance of <see cref="Vector2D"/> with the specified <paramref name="v"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector2D with the specified v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D(Vector2 v) => V = v;
 
 	/// <summary> AKA Length/Longitude </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("AKA Length/Longitude")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double X => V.X;
 
 	/// <summary> AKA Height/Latitude </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("AKA Height/Latitude")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Y => V.Y;
 
 	/// <summary>Gets the w.<br/>
 	/// Gets the w.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the w. Gets the w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Z => 0;
 	/// <summary>Gets the w.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double W => 0;
 
 	#region Operators
@@ -196,67 +162,49 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 	/// <summary>Gets the norm.<br/>
 	/// Gets the norm.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm. Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormSqr => V.NormSqr();
 	/// <summary>Gets the norm.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Norm => V.Norm();
 
 	/// <summary>Gets the normalized.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the normalized.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D Normalized => new(V.Normalized());
 
 	/// <summary>Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public int Count => 2;
 
 	/// <summary>Gets the norm Abs.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm Abs.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormAbs => V.NormAbs();
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double this[int index] => index switch {
 			0 => X,
 			1 => Y,
@@ -267,24 +215,18 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 
 	/// <summary> Returns the complex conjugate of this 2D vector (negates the Y component). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Returns the complex conjugate of this 2D vector (negates the Y component).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D Cjg() => new(V.Cjg());
 
 	/// <summary> Returns the additive inverse of this vector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Returns the additive inverse of this vector.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D Neg() => new(V.Minus());
 
 	/// <inheritdoc cref="Plus(Point2D)"/>
@@ -294,72 +236,54 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 
 	/// <summary> Divides all components by <paramref name="scalar"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Divides all components by scalar.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D Per(double scalar) => new(V * (float) (1 / scalar));
 
 	/// <summary> Scales all components by <paramref name="scalar"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Scales all components by scalar.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D Times(double scalar) => new(V * (float) scalar);
 
 	/// <summary> Component-wise Multiplication </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Component-wise Multiplication")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point2D Times(Point2D p) => new(V * p.V);
 
 	/// <summary> Component-wise Multiplication! </summary>
 	/// <inheritdoc cref="Times(double)"/>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Component-wise Multiplication!")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D Times(Vector2D p) => new(V * p.V);
 	/// <inheritdoc cref="Times(double)"/>
 	public Vector2D Times(Vector2 p) => new(V * p);
 
 	/// <summary> AKA AntiWedge; anti-symmetric Cross Product </summary>
 	/// <inheritdoc cref="Cross(Vector2D)"/>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("AKA AntiWedge; anti-symmetric Cross Product")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public float Cross(Vector2D that) => V.MulCross(that.V);
 	/// <inheritdoc cref="Cross(Vector2D)"/>
 	public float Cross(Vector2 that) => V.MulCross(that);
 
 	/// <summary> symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of <paramref name="that"/> </summary>
 	/// <inheritdoc cref="Dot(Vector2D)"/>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of that")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public float Dot(Vector2D that) => Vector2.Dot(V, that.V);
 	/// <inheritdoc cref="Dot(Vector2D)"/>
 	public float Dot(Vector2 that) => Vector2.Dot(V, that);
@@ -371,13 +295,10 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 	/// <remarks>
 	/// this == <see cref="ProjectOn"/>(normed) + <see cref="RejectFrom"/>(normed)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Non-normalized Projection in normed Direction")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D ProjectOn(Vector2D normed) => new(V.ProjectOn(normed.V));
 
 	/// <summary> Non-normalized Rejection from <paramref name="normed"/> Direction </summary>
@@ -385,13 +306,10 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 	/// <remarks>
 	/// this == <see cref="ProjectOn"/>(normed) + <see cref="RejectFrom"/>(normed)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Non-normalized Rejection from normed Direction")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D RejectFrom(Vector2D normed) => new(V.RejectFrom(normed.V)); //this - ProjectOn(normed);
 
 	/// <summary> Reflects this at <paramref name="normed"/> </summary>
@@ -403,48 +321,36 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 	/// Reject  = b - Project yields
 	/// Reflect = Project*2 - b
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Reflects this at normed")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D ReflectAt(Vector2D normed) => new(V.ReflectAt(normed.V));// normed.V * 2 *Dot(normed) - V);
 
 	#endregion Project, Reflect, Reject
 
 	/// <summary> Component-wise floor toward negative infinity. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Component-wise floor toward negative infinity.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D Floor() => new(Math.Floor(V.X), Math.Floor(V.Y));
 
 	/// <summary> Component-wise ceiling toward positive infinity. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Component-wise ceiling toward positive infinity.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D Ceil() => new(Math.Ceiling(V.X), Math.Ceiling(V.Y));
 
 	/// <summary> Returns a unit vector whose X = cos(<paramref name="angle"/>) and Y = sin(<paramref name="angle"/>). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Returns a unit vector whose X = cos(angle) and Y = sin(angle).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public static Vector2D CosSin(float angle) {
 		var sin = Math.Sin(angle); //Math.SinCos(angle);
 		var cos = Math.Cos(angle); //Math.Sqrt(1-sin*sin);
@@ -453,13 +359,10 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 
 	/// <summary> Rotates this vector counter-clockwise by <paramref name="angle"/> radians around the origin. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Rotates this vector counter-clockwise by angle radians around the origin.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector2D RotateBy(float angle) {
 		Vector2 t = CosSin(angle).V;
 		var nx = t.X * V.X - t.Y * V.Y;
@@ -469,13 +372,10 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 
 	/// <summary> Approximate equality within a tolerance scaled to the combined magnitude of both vectors. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Approximate equality within a tolerance scaled to the combined magnitude of both vectors.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(IVector2D? other)
 	{
 		if (other is null) return false;
@@ -486,13 +386,10 @@ public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 
 	/// <summary> Enumerates the X and Y coordinates as doubles. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Enumerates the X and Y coordinates as doubles.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public IEnumerator<double> GetEnumerator() {
 		yield return X;
 		yield return Y;

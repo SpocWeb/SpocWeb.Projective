@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using NUnit.Framework;
 using org.SpocWeb.root.interfaces.maths;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -13,19 +14,19 @@ namespace org.SpocWeb.root.maths.pga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 30 | <see cref="Times"/> | * = geometric/cartesian product. |
-/// | 40 | <see cref="Dual"/> | The Dual associates projective Planes with Lines and vice versa |
-/// | 44 | <see cref="Involute"/> | Main involution |
-/// | 47 | <see cref="Conjugate"/> | Clifford-Conjugate, same as Reverted |
-/// | 54 | <see cref="Reverted"/> | ~ Complex Conjugate of the basis blades. |
-/// | 94 | <see cref="Sandwich"/> | &lt; AKA Map, 'Sandwich' Product: ~this * trafo * this |
-/// | 103 | <see cref="SandwichBy"/> | > AKA Map, 'Sandwich' Product: ~motor * this * motor |
-/// | 111 | <see cref="op_RightShift"/> | self >> that applies that to self |
-/// | 113 | <see cref="op_LeftShift"/> | Applies the sandwich product  ~self * that * self  to transform the reflector. |
-/// | 121 | <see cref="AsPga2D"/> | Embeds this Motor2P into the full Pga2D multi-vector by placing its four even-grade components at their canonical positions. |
-/// | 129 | <see cref="AsMotor2P"/> | Extracts the even-grade components of self as a Motor2P, throwing if the odd-grade components are non-negligible. |
-/// | 138 | <see cref="AsReflector2P"/> | Extracts the odd-grade components of self as a Reflector2P, throwing if the even-grade components are non-negligible. |
-/// | 149 | <see cref="TestMotorTrans"/> | Test Motor Trans. |
+/// | 56 | <see cref="Times"/> | * = geometric/cartesian product. |
+/// | 71 | <see cref="Dual"/> | The Dual associates projective Planes with Lines and vice versa |
+/// | 79 | <see cref="Involute"/> | Main involution |
+/// | 87 | <see cref="Conjugate"/> | Clifford-Conjugate, same as Reverted |
+/// | 98 | <see cref="Reverted"/> | ~ Complex Conjugate of the basis blades. |
+/// | 152 | <see cref="Sandwich"/> | &lt; AKA Map, 'Sandwich' Product: ~this * trafo * this |
+/// | 165 | <see cref="SandwichBy"/> | > AKA Map, 'Sandwich' Product: ~motor * this * motor |
+/// | 178 | <see cref="op_RightShift"/> | self >> that applies that to self |
+/// | 185 | <see cref="op_LeftShift"/> | Applies the sandwich product  ~self * that * self  to transform the reflector. |
+/// | 198 | <see cref="AsPga2D"/> | Embeds this Motor2P into the full Pga2D multi-vector by placing its four even-grade components at their canonical positions. |
+/// | 211 | <see cref="AsMotor2P"/> | Extracts the even-grade components of self as a Motor2P, throwing if the odd-grade components are non-negligible. |
+/// | 225 | <see cref="AsReflector2P"/> | Extracts the odd-grade components of self as a Reflector2P, throwing if the even-grade components are non-negligible. |
+/// | 241 | <see cref="TestMotorTrans"/> | Test Motor Trans. |
 ///
 /// ## Collaborators
 ///
@@ -36,16 +37,11 @@ namespace org.SpocWeb.root.maths.pga;
 /// | <see cref="Pga2D"/> | Returned by a method. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 34fde7baa8022786f6a31678af38fe26481ba7081b68e7348aa3b083fe92071c
-/// tags: [code/extension_method, code/projective_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: partial, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "34fde7baa8022786f6a31678af38fe26481ba7081b68e7348aa3b083fe92071c", Stale = false, Path = "pga/XMotor2P.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
+[Tags("code/extension_method", "code/projective_geometric_algebra")]
+[System.ComponentModel.Description("Extension methods for Motor2P and Reflector2P implementing the 2D PGA geometric, sandwich, and conversion products.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public static class XMotor2P
 {
 	/// <summary> * = geometric/cartesian product. </summary>
@@ -57,13 +53,10 @@ public static class XMotor2P
 	/// Normalized Versors are also called Rotors or Spinors.
 	/// 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/geometric_product")]
+	[System.ComponentModel.Description("* = geometric/cartesian product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Motor2P Times(this Motor2P a, Motor2P b) => new(
 		b._1_ * a._1_ - b.RotZ * a.RotZ,
 
@@ -75,60 +68,45 @@ public static class XMotor2P
 
 	/// <summary> The Dual associates projective Planes with Lines and vice versa </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("The Dual associates projective Planes with Lines and vice versa")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Motor2P Dual(this Motor2P m) => new(m.RotZ, m.TransY, m.TransX, m._1_);
 
 	/// <summary> Main involution </summary>
 	/// <remarks> Another Involution Operator </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Main involution")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Motor2P Involute(this Motor2P m) => m;
 
 	/// <summary> Clifford-Conjugate, same as <see cref="Reverted"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Clifford-Conjugate, same as Reverted")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Motor2P Conjugate(this Motor2P m) => Reverted(m);
 
 	/// <summary> ~ Complex Conjugate of the basis blades. </summary>
 	/// <remarks>
 	/// Creates the Conjugate, which is the Inverse Transformation, except for Normalization 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
 	/// TODO: bad Naming! Dual should be named that
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("~ Complex Conjugate of the basis blades.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Motor2P Reverted(this Motor2P m) => new(m._1_, -m.TransX, -m.TransY, -m.RotZ);
 
 	/// <summary> * = geometric/cartesian product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/geometric_product")]
+	[System.ComponentModel.Description("* = geometric/cartesian product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Reflector2P Times(this Motor2P a, Reflector2P b) => new(
 		b.Horizon * a._1_ + b.AxisY * a.TransX + b.AxisX * a.TransY + b.I * a.RotZ,
 
@@ -140,13 +118,10 @@ public static class XMotor2P
 
 	/// <summary> * = geometric/cartesian product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/geometric_product")]
+	[System.ComponentModel.Description("* = geometric/cartesian product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Reflector2P Times(this Reflector2P a, Motor2P b) => new(
 		+ b._1_ * a.Horizon - b.TransX * a.AxisY - b.TransY * a.AxisX- + b.RotZ * a.I,
 
@@ -174,13 +149,10 @@ public static class XMotor2P
 	/// Since ~this*this = this*~this = this.NormSqr()
 	/// 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/transformation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/transformation")]
+	[System.ComponentModel.Description("&lt; AKA Map, 'Sandwich' Product: ~this * trafo * this")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Motor2P Sandwich(this Motor2P self, Motor2P trafo) => self.Conjugate().Times(trafo).Times(self);
 
 	/// <summary> > AKA Map, 'Sandwich' Product: ~<paramref name="motor"/> * this * <paramref name="motor"/> </summary>
@@ -190,13 +162,10 @@ public static class XMotor2P
 	/// 
 	/// <paramref name="motor"/> itself is invariant under this Transformation! (prove by inserting into Expression)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/transformation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/transformation")]
+	[System.ComponentModel.Description("> AKA Map, 'Sandwich' Product: ~motor * this * motor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Motor2P SandwichBy(this Motor2P self, Motor2P motor) => motor.Conjugate() * self * motor;
 
 	/// <inheritdoc cref="Sandwich(Motor2P, Motor2P)"/>
@@ -206,23 +175,17 @@ public static class XMotor2P
 
 	/// <summary><paramref name="self"/> >> <paramref name="that"/> applies <paramref name="that"/> to self</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/operator_overload, code/transformation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/operator_overload", "code/transformation")]
+	[System.ComponentModel.Description("self >> that applies that to self")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	[SpecialName] public static Reflector2P op_RightShift(Reflector2P self, Motor2P that) => that.Sandwich(self);
 	/// <summary> Applies the sandwich product <c>~<paramref name="self"/> * <paramref name="that"/> * <paramref name="self"/></c> to transform the reflector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/operator_overload, code/transformation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/operator_overload", "code/transformation")]
+	[System.ComponentModel.Description("Applies the sandwich product ~self * that * self to transform the reflector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	[SpecialName] public static Reflector2P op_LeftShift(Motor2P self, Reflector2P that) => self.Sandwich(that);
 
 	/// <inheritdoc cref="op_LeftShift(Motor2P, Reflector2P)"/>
@@ -232,13 +195,10 @@ public static class XMotor2P
 
 	/// <summary> Embeds this <see cref="Motor2P"/> into the full <see cref="Pga2D"/> multi-vector by placing its four even-grade components at their canonical positions. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/factory_method]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/factory_method")]
+	[System.ComponentModel.Description("Embeds this Motor2P into the full Pga2D multi-vector by placing its four even-grade components at their canonical positions.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Pga2D AsPga2D(this Motor2P self) => new(self._1_, 0, 0, 0 //1 + 3
 		, self.TransX, self.TransY, self.RotZ, 0); //+3 + 1
 
@@ -248,13 +208,10 @@ public static class XMotor2P
 
 	/// <summary> Extracts the even-grade components of <paramref name="self"/> as a <see cref="Motor2P"/>, throwing if the odd-grade components are non-negligible. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/factory_method, code/validation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/factory_method", "code/validation")]
+	[System.ComponentModel.Description("Extracts the even-grade components of self as a Motor2P, throwing if the odd-grade components are non-negligible.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Motor2P AsMotor2P(this Pga2D self) {
 		var norm = self.NormAbs().MulAccuracy();
 		if (Math.Abs(self[7]) + Math.Abs(self[1]) + Math.Abs(self[2]) + Math.Abs(self[3]) > norm) {
@@ -265,13 +222,10 @@ public static class XMotor2P
 
 	/// <summary> Extracts the odd-grade components of <paramref name="self"/> as a <see cref="Reflector2P"/>, throwing if the even-grade components are non-negligible. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/factory_method, code/validation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/factory_method", "code/validation")]
+	[System.ComponentModel.Description("Extracts the odd-grade components of self as a Reflector2P, throwing if the even-grade components are non-negligible.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Reflector2P AsReflector2P(this Pga2D self) {
 		var norm = self.NormAbs().MulAccuracy();
 		if (Math.Abs(self[0]) + Math.Abs(self[4]) + Math.Abs(self[5]) + Math.Abs(self[6]) > norm)
@@ -284,14 +238,11 @@ public static class XMotor2P
 
 	/// <summary>Test Motor Trans.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stub, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stub", Complexity = 1)]
+	[Tags("code/unit_test")]
+	[System.ComponentModel.Description("Test Motor Trans.")]
 	[Test]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestMotorTrans() {
 		var m1 = new Motor2P(1,1.1f,2.1f,0);
 		var m2 = new Motor2P(1, 3.1f,4.1f,0);

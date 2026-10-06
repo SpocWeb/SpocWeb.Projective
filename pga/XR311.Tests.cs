@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using org.SpocWeb.root.array;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -13,18 +14,18 @@ namespace org.SpocWeb.root.maths.pga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 22 | <see cref="GetFactor"/> | Returns the canonical positive basis element and sign factor (+1, 0, or -1) corresponding to the given (possibly negated) e. |
-/// | 26 | <see cref="ProductGeometric"/> | Delegate wrapping the geometric product operation for use in product test pipelines. |
-/// | 28 | <see cref="ProductDot"/> | Delegate wrapping the inner (dot) product operation for use in product test pipelines. |
-/// | 30 | <see cref="ProductOuter"/> | Delegate wrapping the outer (wedge) product operation for use in product test pipelines. |
-/// | 40 | <see cref="Products"/> | Public read-only view of all three product delegate functions indexed by product type. |
-/// | 43 | <see cref="AllProductTests"/> | Generates all Test Pairs for all Products in Products |
-/// | 58 | <see cref="BaseVectorPairs"/> | Generates all Pairs of R311 Base Vectors Elements |
-/// | 68 | <see cref="TestAllProducts"/> | Test All Products. |
-/// | 75 | <see cref="CreateVectors"/> | Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley products table. |
-/// | 97 | <see cref="RandomR311"/> | Generates 99 random R311 multi-vectors with uniformly distributed components for property-based tests. |
-/// | 119 | <see cref="Invertibles"/> | Public read-only view of the invertible R311 basis blades used as test cases. |
-/// | 122 | <see cref="TestRcp"/> | Test Rcp. |
+/// | 55 | <see cref="GetFactor"/> | Returns the canonical positive basis element and sign factor (+1, 0, or -1) corresponding to the given (possibly negated) e. |
+/// | 63 | <see cref="ProductGeometric"/> | Delegate wrapping the geometric product operation for use in product test pipelines. |
+/// | 65 | <see cref="ProductDot"/> | Delegate wrapping the inner (dot) product operation for use in product test pipelines. |
+/// | 67 | <see cref="ProductOuter"/> | Delegate wrapping the outer (wedge) product operation for use in product test pipelines. |
+/// | 77 | <see cref="Products"/> | Public read-only view of all three product delegate functions indexed by product type. |
+/// | 81 | <see cref="AllProductTests"/> | Generates all Test Pairs for all Products in Products |
+/// | 106 | <see cref="BaseVectorPairs"/> | Generates all Pairs of R311 Base Vectors Elements |
+/// | 121 | <see cref="TestAllProducts"/> | Test All Products. |
+/// | 133 | <see cref="CreateVectors"/> | Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley products table. |
+/// | 160 | <see cref="RandomR311"/> | Generates 99 random R311 multi-vectors with uniformly distributed components for property-based tests. |
+/// | 186 | <see cref="Invertibles"/> | Public read-only view of the invertible R311 basis blades used as test cases. |
+/// | 190 | <see cref="TestRcp"/> | Test Rcp. |
 ///
 /// ## Collaborators
 ///
@@ -51,13 +52,10 @@ public static partial class XR311
 {
 	/// <summary> Returns the canonical positive basis element and sign factor (+1, 0, or -1) corresponding to the given (possibly negated) <paramref name="e"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the canonical positive basis element and sign factor (+1, 0, or -1) corresponding to the given (possibly negated) e.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static (R311.Base e, int factor) GetFactor(this R311.Base e)
 		=> e < 0 ? (~e, -1) : e == R311.Base._0 ? (R311.Base._1_, 0) : (e, 1);
 
@@ -80,13 +78,10 @@ public static partial class XR311
 
 	/// <summary> Generates all Test Pairs for all Products in <see cref="R311.Products"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_data_generation, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/test_data_generation", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Generates all Test Pairs for all Products in Products")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(float[][], Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product)> AllProductTests() {
 		for (var i = Products.Length; --i >= 0; ) {
 			foreach (var valueTuple in R311.Products[i].ProductTests(Products[i])) {
@@ -97,13 +92,10 @@ public static partial class XR311
 
 	/// <summary> Generates all Test Cases for <paramref name="product"/> from <paramref name=""/> Pairs of <see cref="R311"/> Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Generates all Test Cases for product from Pairs of R311 Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	static IEnumerable<(float[][], Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product)
 		> ProductTests(this IReadOnlyList<IReadOnlyList<R311.Base>> matrix
 		, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product) 
@@ -111,13 +103,10 @@ public static partial class XR311
 
 	/// <summary> Generates all Pairs of <see cref="R311"/> Base Vectors Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_vector_generation, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/test_vector_generation", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Generates all Pairs of R311 Base Vectors Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(R311.Base x, R311.Base y)> BaseVectorPairs() {
 		for (var k = R311.Base._1_; k != R311.Base._0; ++k) {
 			for (var i = R311.Base._1_; i != R311.Base._0; ++i) {
@@ -129,14 +118,11 @@ public static partial class XR311
 
 	/// <summary>Test All Products.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/unit_test", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Test All Products.")]
 	[TestCaseSource(nameof(AllProductTests))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestAllProducts((float[][] vectors, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product) test) {
 		var z = test.product(test.vectors[0], test.vectors[1]);
 		CollectionAssert.AreEqual(test.vectors[2], z);
@@ -144,13 +130,10 @@ public static partial class XR311
 
 	/// <summary> Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley <paramref name="products"/> table. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley products table.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[][] CreateVectors(this IReadOnlyList<IReadOnlyList<R311.Base>> products, R311.Base a, R311.Base b, double factor1, double factor2) {
 		var (e, factor) = products[(int) a][(int) b].GetFactor();
 		return CreateVectors(a, b, factor1, factor2, e, factor);
@@ -174,13 +157,10 @@ public static partial class XR311
 
 	/// <summary> Generates 99 random <see cref="R311"/> multi-vectors with uniformly distributed components for property-based tests. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/random_data_generation, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/random_data_generation", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Generates 99 random R311 multi-vectors with uniformly distributed components for property-based tests.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<R311> RandomR311() {
 		var arr = new float[R311.NUM_COORDS];
 		for (int i = 99; --i >= 0;) {
@@ -207,15 +187,12 @@ public static partial class XR311
 
 	/// <summary>Test Rcp.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/reciprocal, code/algebraic_laws]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/reciprocal", "code/algebraic_laws")]
+	[System.ComponentModel.Description("Test Rcp.")]
 	[TestCaseSource(nameof(Invertibles))]
 	[TestCaseSource(nameof(RandomR311))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestRcp(R311 mv) {
 		var rcp = mv.Rcp();
 		var r1 = mv.Times(rcp);

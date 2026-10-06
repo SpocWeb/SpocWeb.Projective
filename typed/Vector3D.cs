@@ -5,6 +5,7 @@ using System.Numerics;
 using org.SpocWeb.root.extensions.maths;
 using org.SpocWeb.root.interfaces.maths;
 using org.SpocWeb.root.interfaces.Vectors;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.typed;
 
@@ -15,36 +16,36 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 26 | <see cref="Count"/> | Gets the number of elements. |
-/// | 30 | <see cref="X"/> | Gets the x. |
-/// | 32 | <see cref="Y"/> | Gets the y. |
-/// | 34 | <see cref="Z"/> | Gets the z. |
-/// | 36 | <see cref="W"/> | Gets the w. |
-/// | 39 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 48 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified v. |
-/// | 52 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified x, y and z. |
-/// | 54 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified x, y and z. |
-/// | 147 | <see cref="operator !"/> | Returns the Complement/Dual of the vector v. |
-/// | 150 | <see cref="operator -"/> | Negates v. |
-/// | 157 | <see cref="operator *"/> | Multiplies p by v. |
-/// | 159 | <see cref="operator *"/> | Multiplies v by scalar. |
-/// | 163 | <see cref="operator *"/> | Multiplies scalar by v. |
-/// | 165 | <see cref="operator *"/> | Multiplies v by scalar. |
-/// | 167 | <see cref="operator /"/> | Divides v by scalar. |
-/// | 171 | <see cref="operator +"/> | Adds p and v. |
-/// | 173 | <see cref="operator +"/> | Adds v and p. |
-/// | 176 | <see cref="operator +"/> | Adds p and v. |
-/// | 180 | <see cref="operator -"/> | Subtracts v from p. |
-/// | 182 | <see cref="operator -"/> | Subtracts p from v. |
-/// | 185 | <see cref="operator -"/> | Subtracts v from p. |
-/// | 192 | <see cref="operator ^"/> | Wedge/Meet/Cross/outer Product |
-/// | 195 | <see cref="operator *"/> | Multiplies a by b. |
-/// | 200 | <see cref="operator =="/> | Determines whether a equals b. |
-/// | 202 | <see cref="operator !="/> | Determines whether a does not equal b. |
-/// | 208 | <see cref="NormAbs"/> | Gets the norm Abs. |
-/// | 210 | <see cref="NormSqr"/> | Gets the norm Sqr. |
-/// | 212 | <see cref="Norm"/> | Gets the norm. |
-/// | 221 | <see cref="Normalized"/> | Gets the normalized. |
+/// | 75 | <see cref="Count"/> | Gets the number of elements. |
+/// | 84 | <see cref="X"/> | Gets the x. |
+/// | 91 | <see cref="Y"/> | Gets the y. |
+/// | 98 | <see cref="Z"/> | Gets the z. |
+/// | 105 | <see cref="W"/> | Gets the w. |
+/// | 113 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
+/// | 127 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified v. |
+/// | 136 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified x, y and z. |
+/// | 143 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified x, y and z. |
+/// | 270 | <see cref="operator !"/> | Returns the Complement/Dual of the vector v. |
+/// | 273 | <see cref="operator -"/> | Negates v. |
+/// | 280 | <see cref="operator *"/> | Multiplies p by v. |
+/// | 282 | <see cref="operator *"/> | Multiplies v by scalar. |
+/// | 286 | <see cref="operator *"/> | Multiplies scalar by v. |
+/// | 288 | <see cref="operator *"/> | Multiplies v by scalar. |
+/// | 290 | <see cref="operator /"/> | Divides v by scalar. |
+/// | 294 | <see cref="operator +"/> | Adds p and v. |
+/// | 296 | <see cref="operator +"/> | Adds v and p. |
+/// | 299 | <see cref="operator +"/> | Adds p and v. |
+/// | 303 | <see cref="operator -"/> | Subtracts v from p. |
+/// | 305 | <see cref="operator -"/> | Subtracts p from v. |
+/// | 308 | <see cref="operator -"/> | Subtracts v from p. |
+/// | 315 | <see cref="operator ^"/> | Wedge/Meet/Cross/outer Product |
+/// | 318 | <see cref="operator *"/> | Multiplies a by b. |
+/// | 323 | <see cref="operator =="/> | Determines whether a equals b. |
+/// | 325 | <see cref="operator !="/> | Determines whether a does not equal b. |
+/// | 332 | <see cref="NormAbs"/> | Gets the norm Abs. |
+/// | 339 | <see cref="NormSqr"/> | Gets the norm Sqr. |
+/// | 346 | <see cref="Norm"/> | Gets the norm. |
+/// | 370 | <see cref="Normalized"/> | Gets the normalized. |
 ///
 /// ## Collaborators
 ///
@@ -60,82 +61,59 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// | <see cref="Vector4D"/> | Returned by a method. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 1f6e3ce7b150be66688fb0d0e14ea43dbb05aee539ba41baf5e90f3f1b8c7192
-/// tags: [code/value_object, code/vector_math]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: buggy, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "1f6e3ce7b150be66688fb0d0e14ea43dbb05aee539ba41baf5e90f3f1b8c7192", Stale = false, Path = "typed/Vector3D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+[Tags("code/value_object", "code/vector_math")]
+[System.ComponentModel.Description("Vector3-backed immutable 3D direction vector that implements IVector4D with W = 0, supporting rotations, projection, rejection, and standard arithmetic.")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 {
 	public readonly Vector3 V;
 
 	/// <summary>Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public int Count => 3;
 
 	/// <summary>Gets the x.<br/>
 	/// Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the x. Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double X => V.X;
 	/// <summary>Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Y => V.Y;
 	/// <summary>Gets the z.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Z => V.Z;
 	/// <summary>Gets the w.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double W => 0;
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double this[int index] => index switch {
 			0 => V.X,
 			1 => V.Y,
@@ -146,46 +124,34 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 
 	/// <summary>Initializes a new instance of <see cref="Vector3D"/> with the specified <paramref name="v"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector3D with the specified v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D(Vector3 v) => V = v;
 
 	/// <summary>Initializes a new instance of <see cref="Vector3D"/> with the specified <paramref name="x"/>, <paramref name="y"/> and <paramref name="z"/>.<br/>
 	/// Initializes a new instance of <see cref="Vector3D"/> with the specified <paramref name="x"/>, <paramref name="y"/> and <paramref name="z"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector3D with the specified x, y and z. Initializes a new instance of Vector3D with the specified x, y and z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D(float x, float y, float z) => V = new Vector3(x, y, z);
 	/// <summary>Initializes a new instance of <see cref="Vector3D"/> with the specified <paramref name="x"/>, <paramref name="y"/> and <paramref name="z"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector3D with the specified x, y and z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D(double x, double y, double z) => V = new Vector3((float) x, (float) y, (float) z);
 
 	/// <summary> Rotates this vector counter-clockwise by <paramref name="angle"/> radians about the X axis. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Rotates this vector counter-clockwise by angle radians about the X axis.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D RotateAboutX(float angle)
 	{
 		var v = Vector2D.CosSin(angle).V;
@@ -196,13 +162,10 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 
 	/// <summary> Rotates this vector counter-clockwise by <paramref name="angle"/> radians about the Y axis. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Rotates this vector counter-clockwise by angle radians about the Y axis.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D RotateAboutY(float angle)
 	{
 		var v = Vector2D.CosSin(angle).V;
@@ -213,13 +176,10 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 
 	/// <summary> Rotates this vector counter-clockwise by <paramref name="angle"/> radians about the Z axis. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Rotates this vector counter-clockwise by angle radians about the Z axis.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D RotateAboutZ(float angle)
 	{
 		var v = Vector2D.CosSin(angle).V;
@@ -231,13 +191,10 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 	/// <summary> Rotates this vector by <paramref name="angle"/> radians about the arbitrary axis <paramref name="a"/>
 	/// using the Rodrigues rotation formula. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Rotates this vector by angle radians about the arbitrary axis a using the Rodrigues rotation formula.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D RotateAboutAxis(float angle, BiVector3D a)
 	{
 		var v = Vector2D.CosSin(angle).V;
@@ -265,13 +222,10 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 
 	/// <summary> Approximate equality within a tolerance scaled to the combined magnitude of both vectors. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Approximate equality within a tolerance scaled to the combined magnitude of both vectors.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(IVector3D? other) {
 		if (other is null) {
 			return false;
@@ -285,13 +239,10 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 
 	/// <summary> Approximate equality; treats a non-zero W component as inequality (direction vs. point). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Approximate equality; treats a non-zero W component as inequality (direction vs. point).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(IVector4D? other) {
 		if (other is null) {
 			return false;
@@ -378,77 +329,56 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 	/// <summary>Gets the norm Abs.<br/>
 	/// Gets the norm Sqr.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm Abs. Gets the norm Sqr.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormAbs => Math.Abs(V.X) + Math.Abs(V.Y) + Math.Abs(V.Z);
 	/// <summary>Gets the norm Sqr.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm Sqr.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormSqr => V.X * V.X + V.Y * V.Y + V.Z * V.Z; //V.LengthSquared(); //
 	/// <summary>Gets the norm.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Norm => Math.Sqrt(NormSqr);// V.Length(); //
 
 	/// <summary> Returns the Hodge complement (dual) of this vector as a <see cref="BiVector3D"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Returns the Hodge complement (dual) of this vector as a BiVector3D.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector3D Complement() => new(V);
 
 	//public Vector3D Cjg() => new(new Vector3(V.X, -V.Y));
 	/// <summary> Additive inverse of this vector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Additive inverse of this vector.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Neg() => new(Vector3.Negate(V));
 	/// <summary>Gets the normalized.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Gets the normalized.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Normalized => new(Vector3.Normalize(V));
 
 	/// <summary> Translates <paramref name="that"/> by this direction vector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Translates that by this direction vector.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D Plus(Point3D that) => new(Vector3.Add(V, that.V));
 	/// <inheritdoc cref="Plus(Point3D)"/>
 	public Vector3D Plus(Vector3D that) => new(Vector3.Add(V, that.V));
@@ -456,72 +386,54 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 	public Vector4D Plus(Vector4D that) => that.Plus(this);
 	/// <summary> Returns the component-wise difference of this vector minus <paramref name="that"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Returns the component-wise difference of this vector minus that.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Minus(Vector3D that) => new(Vector3.Subtract(V, that.V));
 	/// <inheritdoc cref="Minus(Vector3D)"/>
 	public Vector4D Minus(Vector4D that) => that.MinusR(this);
 
 	/// <summary> Scales this vector by 1/<paramref name="scalar"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Scales this vector by 1/scalar.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Per(double scalar) => new(V * (float) (1 / scalar));
 
 	/// <summary> Scales all components by <paramref name="scalar"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Scales all components by scalar.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Times(double scalar) => new(V * (float) scalar);
 
 	/// <summary> Component-wise Multiplication </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Component-wise Multiplication")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D Times(Point3D p) => new(V * p.V);
 
 	/// <summary> AKA AntiWedge; anti-symmetric Cross Product </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("AKA AntiWedge; anti-symmetric Cross Product")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Cross(Vector3D that) => new(Vector3.Cross(V, that.V));
 		// var b = that.V;
 		// return new Vector3D(V.Y * b.Z - V.Z * b.Y, V.Z * b.X - V.X * b.Z, V.X * b.Y - V.Y * b.X);
 
 	/// <summary> symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of <paramref name="that"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of that")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Dot(Vector3D that) => Vector3.Dot(V, that.V);
 	/// <inheritdoc cref="Dot(Vector3D)"/>
 	public double Dot(Point3D that) => Vector3.Dot(V, that.V);
@@ -530,13 +442,10 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 
 	/// <summary> Component-wise Multiplication </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Component-wise Multiplication")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Times(Vector3D p) => new(V * p.V);
 
 	/// <summary> Non-normalized Projection in <paramref name="that"/> Direction </summary>
@@ -544,13 +453,10 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 	/// <remarks>
 	/// this == <see cref="ProjectOn"/>(that) + <see cref="RejectFrom"/>(that)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Non-normalized Projection in that Direction")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D ProjectOn(Vector3D that) => that * Dot(that);
 
 	/// <summary> Non-normalized Rejection from <paramref name="that"/> Direction </summary>
@@ -558,35 +464,26 @@ public readonly struct Vector3D : IEquatable<Vector3D>, IVector3D, IVector4D
 	/// <remarks>
 	/// this == <see cref="ProjectOn"/>(that) + <see cref="RejectFrom"/>(that)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Non-normalized Rejection from that Direction")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D RejectFrom(Vector3D that) => new(V - that.V * Vector3.Dot(V, that.V));
 
 	/// <summary> Component-wise floor toward negative infinity. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Component-wise floor toward negative infinity.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Floor() => new(Math.Floor(V.X), Math.Floor(V.Y), Math.Floor(V.Z));
 
 	/// <summary> Component-wise ceiling toward positive infinity. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/vector_math]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/vector_math")]
+	[System.ComponentModel.Description("Component-wise ceiling toward positive infinity.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D Ceil() => new(Math.Ceiling(V.X), Math.Ceiling(V.Y), Math.Ceiling(V.Z));
 
 }

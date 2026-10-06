@@ -4,6 +4,7 @@ using System.Linq;
 using NUnit.Framework;
 using org.SpocWeb.root.extensions.maths;
 using org.SpocWeb.root.interfaces.Vectors;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -14,30 +15,30 @@ namespace org.SpocWeb.root.maths.pga;
     ///
     /// | Line | Method | Description |
     /// |--:|---|---|
-    /// | 25 | <see cref="AsBlade"/> | Wraps blade and value into a weighted Base blade for use in multi-vector construction. |
-    /// | 32 | <see cref="Reverted32"/> | ~a; Inverse the basis blades. |
-    /// | 40 | <see cref="Dual32"/> | !; Poincare duality operator. |
-    /// | 48 | <see cref="Dual32C"/> | ! Poincare Dual for Conformal Geometry |
-    /// | 56 | <see cref="Involute32"/> | Main involution |
-    /// | 65 | <see cref="CliffCjg32"/> | Clifford Conjugate; analogous to Complex Conjugation; yields the Norm when multiplied |
-    /// | 72 | <see cref="NormSqr32R311Q"/> | Norm Sqr32 R311 Q. |
-    /// | 76 | <see cref="NormSqr32R311"/> | Norm Sqr32 R311. |
-    /// | 84 | <see cref="NormSqr32R410Q"/> | Norm Sqr32 R410 Q. |
-    /// | 88 | <see cref="NormSqr32R410"/> | Norm Sqr32 R410. |
-    /// | 101 | <see cref="Times32"/> | *; geometric product. |
-    /// | 255 | <see cref="Times32C"/> | *; conformal geometric product. |
-    /// | 291 | <see cref="Wedge32"/> | ^; MEET/outer product |
-    /// | 327 | <see cref="Join32"/> | v, &amp;; regressive product. |
-    /// | 406 | <see cref="Join32C"/> | Conformal outer (join/wedge) product of two 32-component R311 multi-vectors. |
-    /// | 442 | <see cref="Dot32"/> | | Dot/ inner product. |
-    /// | 513 | <see cref="Dot32C"/> | Conformal inner (dot) product of two 32-component R311 multi-vectors. |
-    /// | 549 | <see cref="Plus32"/> | +; Plus,Add; Multi-Vector addition |
-    /// | 585 | <see cref="Minus32"/> | -; Minus,Sub; Multi-Vector subtraction |
-    /// | 664 | <see cref="MinusR32"/> | -; scalar - multi-Vector subtraction |
-    /// | 670 | <see cref="Neg32"/> | -; scalar - multi-Vector subtraction |
-    /// | 682 | <see cref="Plus"/> | Returns a copy of a with the component at basis incremented by value. |
-    /// | 689 | <see cref="Minus"/> | Returns a copy of a with the component at basis decremented by value. |
-    /// | 696 | <see cref="MinusR"/> | Returns the negation of b with the component at basis set to  value - b[basis] . |
+    /// | 60 | <see cref="AsBlade"/> | Wraps blade and value into a weighted Base blade for use in multi-vector construction. |
+    /// | 72 | <see cref="Reverted32"/> | ~a; Inverse the basis blades. |
+    /// | 85 | <see cref="Dual32"/> | !; Poincare duality operator. |
+    /// | 98 | <see cref="Dual32C"/> | ! Poincare Dual for Conformal Geometry |
+    /// | 111 | <see cref="Involute32"/> | Main involution |
+    /// | 125 | <see cref="CliffCjg32"/> | Clifford Conjugate; analogous to Complex Conjugation; yields the Norm when multiplied |
+    /// | 137 | <see cref="NormSqr32R311Q"/> | Norm Sqr32 R311 Q. |
+    /// | 146 | <see cref="NormSqr32R311"/> | Norm Sqr32 R311. |
+    /// | 159 | <see cref="NormSqr32R410Q"/> | Norm Sqr32 R410 Q. |
+    /// | 168 | <see cref="NormSqr32R410"/> | Norm Sqr32 R410. |
+    /// | 186 | <see cref="Times32"/> | *; geometric product. |
+    /// | 345 | <see cref="Times32C"/> | *; conformal geometric product. |
+    /// | 386 | <see cref="Wedge32"/> | ^; MEET/outer product |
+    /// | 427 | <see cref="Join32"/> | v, &amp;; regressive product. |
+    /// | 511 | <see cref="Join32C"/> | Conformal outer (join/wedge) product of two 32-component R311 multi-vectors. |
+    /// | 552 | <see cref="Dot32"/> | | Dot/ inner product. |
+    /// | 628 | <see cref="Dot32C"/> | Conformal inner (dot) product of two 32-component R311 multi-vectors. |
+    /// | 669 | <see cref="Plus32"/> | +; Plus,Add; Multi-Vector addition |
+    /// | 710 | <see cref="Minus32"/> | -; Minus,Sub; Multi-Vector subtraction |
+    /// | 804 | <see cref="MinusR32"/> | -; scalar - multi-Vector subtraction |
+    /// | 815 | <see cref="Neg32"/> | -; scalar - multi-Vector subtraction |
+    /// | 837 | <see cref="Plus"/> | Returns a copy of a with the component at basis incremented by value. |
+    /// | 849 | <see cref="Minus"/> | Returns a copy of a with the component at basis decremented by value. |
+    /// | 861 | <see cref="MinusR"/> | Returns the negation of b with the component at basis set to  value - b[basis] . |
     ///
     /// ## Collaborators
     ///
@@ -46,28 +47,20 @@ namespace org.SpocWeb.root.maths.pga;
     /// | <see cref="Base"/> | Returned by a method. |
     /// </remarks>
     ///
-    /// <example>
-    /// <code language="yaml">
-    /// pass: 2
-    /// mtime: 2026-05-24T15:36:37Z
-    /// digest: b74754676b3546b7fed0bd9e79a07ee0de3fa604c971a66dd392f8fc27c30bc7
-    /// tags: [code/extension_method, code/conformal_geometric_algebra]
-    /// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-    /// facets: {layer: domain, status: stable, complexity: 2}
-    /// </code>
-    /// </example>
+    [DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "b74754676b3546b7fed0bd9e79a07ee0de3fa604c971a66dd392f8fc27c30bc7", Stale = false, Path = "pga/XR311.cs", Since = "2026-10-06")]
+    [Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+    [Tags("code/extension_method", "code/conformal_geometric_algebra")]
+    [System.ComponentModel.Description("Extension methods providing geometric, inner, and outer products plus utilities for the R311 conformal geometric algebra.")]
+    [Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
     public static partial class XR311
 {
 
 	/// <summary> Wraps <paramref name="blade"/> and <paramref name="value"/> into a weighted <see cref="Base{T}"/> blade for use in multi-vector construction. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/object_construction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/object_construction")]
+	[System.ComponentModel.Description("Wraps blade and value into a weighted Base blade for use in multi-vector construction.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Base<R311.Base> AsBlade(this R311.Base blade, double value = 1) => new(value, blade);
 	//public static Base<R311.Points> AsBlade(this Pga3D.Points blade, double value = 1) => new(value, blade);
 	//public static Base<R311.Planes> AsBlade(this Pga3D.Planes blade, double value = 1) => new(value, blade);
@@ -76,13 +69,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> ~a; Inverse the basis blades. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("~a; Inverse the basis blades.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Reverted32(this IReadOnlyList<float> a) => new[] {
 			a[0], a[1], a[2], a[3], a[4], a[5],
 			-a[6], -a[7], -a[8], -a[9], -a[10], -a[11], -a[12], -a[13], -a[14], -a[15], 
@@ -92,13 +82,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> !; Poincare duality operator. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("!; Poincare duality operator.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Dual32(this IReadOnlyList<float> a) => new[] {
 			a[31], a[30], a[29], a[28], a[27], a[26], a[25], a[24], 
 			a[23], a[22], a[21], a[20], a[19], a[18], a[17], a[16],
@@ -108,13 +95,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> ! Poincare Dual for Conformal Geometry </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("! Poincare Dual for Conformal Geometry")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Dual32C(this IReadOnlyList<float> a) => new[] {
 		-a[31], -a[30], a[29], -a[28], a[27], a[26], a[25], -a[24],
 		a[23], a[22], a[21], -a[20], -a[19], a[18], a[17], -a[16],
@@ -124,13 +108,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> Main involution </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Main involution")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Involute32(this IReadOnlyList<float> a) => new[] {a[0],
 		-a[1], -a[2], -a[3], -a[4], -a[5],
 		a[6], a[7], a[8], a[9], a[10], a[11], a[12], a[13], a[14], a[15],
@@ -141,13 +122,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> Clifford Conjugate; analogous to Complex Conjugation; yields the Norm when multiplied </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/conjugate]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/conjugate")]
+	[System.ComponentModel.Description("Clifford Conjugate; analogous to Complex Conjugation; yields the Norm when multiplied")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] CliffCjg32(this IReadOnlyList<float> a) => new[] {a[0],
 			-a[1], -a[2], -a[3], -a[4], -a[5], -a[6], -a[7], -a[8], -a[9], -a[10], -a[11], -a[12], -a[13], -a[14], -a[15],
 			a[16], a[17], a[18], a[19], a[20], a[21], a[22], a[23], a[24], a[25], a[26], a[27], a[28], a[29], a[30],
@@ -156,27 +134,21 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary>Norm Sqr32 R311 Q.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/norm_calculation")]
+	[System.ComponentModel.Description("Norm Sqr32 R311 Q.")]
 	[TestCase(new []{8,7,6,5,4,3,2,1,11,12,13,14,15,16,17,18
 		,-8,-7,-6,-5,-4,-3,-2,-1,-11,-12,-13,-14,-15,-16,-17,-18f}, ExpectedResult = -248)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float NormSqr32R311Q(IReadOnlyList<float> c) => c.Times32(c.CliffCjg32())[0];
 	/// <summary>Norm Sqr32 R311.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/norm_calculation")]
+	[System.ComponentModel.Description("Norm Sqr32 R311.")]
 	[TestCase(new []{8,7,6,5,4,3,2,1,11,12,13,14,15,16,17,18
 		,-8,-7,-6,-5,-4,-3,-2,-1,-11,-12,-13,-14,-15,-16,-17,-18f}, ExpectedResult = -248)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float NormSqr32R311(this IReadOnlyList<float> a) => a[0].Sqr()
 		- a[2].Sqr() - a[3].Sqr() - a[4].Sqr() + a[5].Sqr() + a[10].Sqr()
 		+ a[11].Sqr() - a[12].Sqr() + a[13].Sqr() - a[14].Sqr() - a[15].Sqr()
@@ -184,27 +156,21 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary>Norm Sqr32 R410 Q.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/norm_calculation")]
+	[System.ComponentModel.Description("Norm Sqr32 R410 Q.")]
 	[TestCase(new []{8,7,6,5,4,3,2,1,11,12,13,14,15,16,17,18
 		,-8,-7,-6,-5,-4,-3,-2,-1,-11,-12,-13,-14,-15,-16,-17,-18f}, ExpectedResult = -576)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float NormSqr32R410Q(IReadOnlyList<float> c) => c.Times32C(c.CliffCjg32())[0];
 	/// <summary>Norm Sqr32 R410.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/norm_calculation")]
+	[System.ComponentModel.Description("Norm Sqr32 R410.")]
 	[TestCase(new []{8,7,6,5,4,3,2,1,11,12,13,14,15,16,17,18
 		,-8,-7,-6,-5,-4,-3,-2,-1,-11,-12,-13,-14,-15,-16,-17,-18f}, ExpectedResult = -576)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float NormSqr32R410(this IReadOnlyList<float> a) => a[0].Sqr() 
 		- a[1].Sqr() - a[2].Sqr() - a[3].Sqr() - a[4].Sqr()
 		+ a[5].Sqr() + a[6].Sqr()
@@ -217,13 +183,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> *; geometric product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/geometric_product")]
+	[System.ComponentModel.Description("*; geometric product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Times32(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new[] {
 			b[0] * a[0] + b[2] * a[2] + b[3] * a[3] + b[4] * a[4] - b[5] * a[5] - b[10] * a[10] -
 			b[11] * a[11] + b[12] * a[12] - b[13] * a[13] + b[14] * a[14] + b[15] * a[15] - b[22] * a[22] +
@@ -379,13 +342,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> *; conformal geometric product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/geometric_product")]
+	[System.ComponentModel.Description("*; conformal geometric product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Times32C(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new[] {
 			b[0]*a[0]+b[1]*a[1]+b[2]*a[2]+b[3]*a[3]+b[4]*a[4]-b[5]*a[5]-b[6]*a[6]-b[7]*a[7]-b[8]*a[8]+b[9]*a[9]-b[10]*a[10]-b[11]*a[11]+b[12]*a[12]-b[13]*a[13]+b[14]*a[14]+b[15]*a[15]-b[16]*a[16]-b[17]*a[17]+b[18]*a[18]-b[19]*a[19]+b[20]*a[20]+b[21]*a[21]-b[22]*a[22]+b[23]*a[23]+b[24]*a[24]+b[25]*a[25]+b[26]*a[26]-b[27]*a[27]-b[28]*a[28]-b[29]*a[29]-b[30]*a[30]-b[31]*a[31],
 			b[1]*a[0]+b[0]*a[1]-b[6]*a[2]-b[7]*a[3]-b[8]*a[4]+b[9]*a[5]+b[2]*a[6]+b[3]*a[7]+b[4]*a[8]-b[5]*a[9]-b[16]*a[10]-b[17]*a[11]+b[18]*a[12]-b[19]*a[13]+b[20]*a[14]+b[21]*a[15]-b[10]*a[16]-b[11]*a[17]+b[12]*a[18]-b[13]*a[19]+b[14]*a[20]+b[15]*a[21]+b[26]*a[22]-b[27]*a[23]-b[28]*a[24]-b[29]*a[25]-b[22]*a[26]+b[23]*a[27]+b[24]*a[28]+b[25]*a[29]-b[31]*a[30]-b[30]*a[31],
@@ -423,13 +383,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> ^; MEET/outer product </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/outer_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/outer_product")]
+	[System.ComponentModel.Description("^; MEET/outer product")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Wedge32(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new[] {
 			b[0] * a[0],
 			b[1] * a[0] + b[0] * a[1],
@@ -467,13 +424,9 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> v, &amp;; regressive product. (JOIN) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("v, &amp;; regressive product. (JOIN)")]
 	[TestCase(new[] {-1, -2, -3, -4, -5, -6, -7, -8, 1, 2, 3, 4, 5, 6, 7, 8, -1, -2, -3, -4, -5, -6, -7, -8, 1, 2, 3, 4, 5, 6, 7, 8f}
 		, new[] {1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8f}
 		, ExpectedResult = new[] {0, -12, 88, 106, -84, -96, 0, 0, 16, 32, 48, 70, 88, 108, 128, 136, 0, 0, 0, 0, 0, 0, 0, 0, 16, 32, 48, 64, 80, 96, 112, 64f})]
@@ -483,6 +436,7 @@ namespace org.SpocWeb.root.maths.pga;
 	[TestCase(new[] {1, 2, 3, 4, 5, 6, 7, 8, -1, -2, -3, -4, -5, -6, -7, -8, 1, 2, 3, 4, 5, 6, 7, 8, -1, -2, -3, -4, -5, -6, -7, -8f}
 		, new[] {1, 2, 3, 4, 5, 6, 7, 8, -1, -2, -3, -4, -5, -6, -7, -8, 1, 2, 3, 4, 5, 6, 7, 8, -1, -2, -3, -4, -5, -6, -7, -8f}
 		, ExpectedResult = new[] {-104, -16, -40, -62, 4, -2, -124, -138, -4, -2, 42, 112, 126, 136, 154, 52, -16, -32, -48, -64, -80, -96, -112, -128, 16, 32, 48, 64, 80, 96, 112, 64f})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Join32(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new[] {
 		a[0] * b[31] + a[1] * b[30] - a[2] * b[29] + a[3] * b[28] - a[4] * b[27] +
 		a[5] * b[26] + a[6] * b[25] - a[7] * b[24] + a[8] * b[23] - a[9] * b[22] +
@@ -554,13 +508,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> Conformal outer (join/wedge) product of two 32-component R311 multi-vectors. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Conformal outer (join/wedge) product of two 32-component R311 multi-vectors.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Join32C(this IReadOnlyList<float> a, IReadOnlyList<float>  b) => new[] {
 			1*(a[0]*b[31]+a[1]*b[30]-a[2]*-1*b[29]*-1+a[3]*b[28]-a[4]*-1*b[27]*-1+a[5]*b[26]+a[6]*b[25]-a[7]*-1*b[24]*-1+a[8]*b[23]-a[9]*-1*b[22]*-1+a[10]*b[21]-a[11]*-1*b[20]*-1+a[12]*b[19]+a[13]*b[18]-a[14]*-1*b[17]*-1+a[15]*b[16]+a[16]*b[15]-a[17]*-1*b[14]*-1+a[18]*b[13]+a[19]*b[12]-a[20]*-1*b[11]*-1+a[21]*b[10]-a[22]*-1*b[9]*-1+a[23]*b[8]-a[24]*-1*b[7]*-1+a[25]*b[6]+a[26]*b[5]-a[27]*-1*b[4]*-1+a[28]*b[3]-a[29]*-1*b[2]*-1+a[30]*b[1]+a[31]*b[0]),
 			1*(a[1]*b[31]+a[6]*b[29]*-1-a[7]*-1*b[28]+a[8]*b[27]*-1-a[9]*-1*b[26]+a[16]*b[21]-a[17]*-1*b[20]*-1+a[18]*b[19]+a[19]*b[18]-a[20]*-1*b[17]*-1+a[21]*b[16]+a[26]*b[9]*-1-a[27]*-1*b[8]+a[28]*b[7]*-1-a[29]*-1*b[6]+a[31]*b[1]),
@@ -598,13 +549,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> | Dot/ inner product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/dot_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/dot_product")]
+	[System.ComponentModel.Description("| Dot/ inner product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Dot32(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new[] {
 			b[0] * a[0] + b[2] * a[2] + b[3] * a[3] + b[4] * a[4] - b[5] * a[5] - b[10] * a[10] -
 			b[11] * a[11] + b[12] * a[12] - b[13] * a[13] + b[14] * a[14] + b[15] * a[15] - b[22] * a[22] +
@@ -677,13 +625,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> Conformal inner (dot) product of two 32-component R311 multi-vectors. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/dot_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/dot_product")]
+	[System.ComponentModel.Description("Conformal inner (dot) product of two 32-component R311 multi-vectors.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Dot32C(this IReadOnlyList<float> a, IReadOnlyList<float>  b) => new[] {
 		b[0]*a[0]+b[1]*a[1]+b[2]*a[2]+b[3]*a[3]+b[4]*a[4]-b[5]*a[5]-b[6]*a[6]-b[7]*a[7]-b[8]*a[8]+b[9]*a[9]-b[10]*a[10]-b[11]*a[11]+b[12]*a[12]-b[13]*a[13]+b[14]*a[14]+b[15]*a[15]-b[16]*a[16]-b[17]*a[17]+b[18]*a[18]-b[19]*a[19]+b[20]*a[20]+b[21]*a[21]-b[22]*a[22]+b[23]*a[23]+b[24]*a[24]+b[25]*a[25]+b[26]*a[26]-b[27]*a[27]-b[28]*a[28]-b[29]*a[29]-b[30]*a[30]-b[31]*a[31],
 		b[1]*a[0]+b[0]*a[1]-b[6]*a[2]-b[7]*a[3]-b[8]*a[4]+b[9]*a[5]+b[2]*a[6]+b[3]*a[7]+b[4]*a[8]-b[5]*a[9]-b[16]*a[10]-b[17]*a[11]+b[18]*a[12]-b[19]*a[13]+b[20]*a[14]+b[21]*a[15]-b[10]*a[16]-b[11]*a[17]+b[12]*a[18]-b[13]*a[19]+b[14]*a[20]+b[15]*a[21]+b[26]*a[22]-b[27]*a[23]-b[28]*a[24]-b[29]*a[25]-b[22]*a[26]+b[23]*a[27]+b[24]*a[28]+b[25]*a[29]-b[31]*a[30]-b[30]*a[31],
@@ -721,13 +666,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> +; Plus,Add; Multi-Vector addition </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_addition]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/vector_addition")]
+	[System.ComponentModel.Description("+; Plus,Add; Multi-Vector addition")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Plus32(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new[] {
 			a[0] + b[0],
 			a[1] + b[1],
@@ -765,13 +707,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> -; Minus,Sub; Multi-Vector subtraction </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_subtraction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/vector_subtraction")]
+	[System.ComponentModel.Description("-; Minus,Sub; Multi-Vector subtraction")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Minus32(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new[] {
 			a[0] - b[0],
 			a[1] - b[1],
@@ -809,13 +748,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> *; scalar/multi-Vector multiplication </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/scalar_multiplication]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/scalar_multiplication")]
+	[System.ComponentModel.Description("*; scalar/multi-Vector multiplication")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Times32(this IReadOnlyList<float> b, float a) => new[] {
 			a * b[0],
 			a * b[1],
@@ -853,13 +789,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> +; Add; multi-Vector/scalar addition </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/scalar_addition]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/scalar_addition")]
+	[System.ComponentModel.Description("+; Add; multi-Vector/scalar addition")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Plus32(this IReadOnlyList<float> a, double b) => new[] {
 			(float)(a[0] + b),
 			a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12], a[13], a[14], a[15],
@@ -868,13 +801,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> -; scalar - multi-Vector subtraction </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/subtraction, code/negation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/subtraction", "code/negation")]
+	[System.ComponentModel.Description("-; scalar - multi-Vector subtraction")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] MinusR32(this IReadOnlyList<float> b, double a) => new[] {(float)(a - b[0]),
 			-b[1], -b[2], -b[3], -b[4], -b[5], -b[6], -b[7], -b[8], -b[9], -b[10], -b[11], -b[12], -b[13], -b[14], -b[15], -b[16],
 			-b[17], -b[18], -b[19], -b[20], -b[21], -b[22], -b[23], -b[24], -b[25], -b[26], -b[27], -b[28], -b[29], -b[30], -b[31]
@@ -882,13 +812,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> -; scalar - multi-Vector subtraction </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/negation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/negation")]
+	[System.ComponentModel.Description("-; scalar - multi-Vector subtraction")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Neg32(this IReadOnlyList<float> b) => new[] {
 		-b[0], -b[1], -b[2], -b[3], -b[4], -b[5], -b[6], -b[7], -b[8], -b[9], -b[10], -b[11], -b[12], -b[13], -b[14], -b[15], -b[16],
 		-b[17], -b[18], -b[19], -b[20], -b[21], -b[22], -b[23], -b[24], -b[25], -b[26], -b[27], -b[28], -b[29], -b[30], -b[31]
@@ -896,13 +823,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> -; multi-Vector - scalar subtraction </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/subtraction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/subtraction")]
+	[System.ComponentModel.Description("-; multi-Vector - scalar subtraction")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Minus32(this IReadOnlyList<float> a, double b) => new[] { (float)(a[0] - b),
 		a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12], a[13], a[14], a[15], a[16],
 		a[17], a[18], a[19], a[20], a[21], a[22], a[23], a[24], a[25], a[26], a[27], a[28], a[29], a[30], a[31]
@@ -910,13 +834,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> Returns a copy of <paramref name="a"/> with the component at <paramref name="basis"/> incremented by <paramref name="value"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/array_mutation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/array_mutation")]
+	[System.ComponentModel.Description("Returns a copy of a with the component at basis incremented by value.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Plus<B>(this IReadOnlyList<float> a, double value, B basis) where B : Enum, IConvertible {
 		float[] ret = (float[]?)(a as float[])?.Clone() ?? a.ToArray();
 		ret[basis.ToInt32(null)] += (float)value;
@@ -925,13 +846,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> Returns a copy of <paramref name="a"/> with the component at <paramref name="basis"/> decremented by <paramref name="value"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/array_mutation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/array_mutation")]
+	[System.ComponentModel.Description("Returns a copy of a with the component at basis decremented by value.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Minus<B>(this IReadOnlyList<float> a, double value, B basis) where B : Enum, IConvertible {
 		float[] ret = (float[]?)(a as float[])?.Clone() ?? a.ToArray();
 		ret[basis.ToInt32(null)] -= (float)value;
@@ -940,13 +858,10 @@ namespace org.SpocWeb.root.maths.pga;
 
 	/// <summary> Returns the negation of <paramref name="b"/> with the component at <paramref name="basis"/> set to <c><paramref name="value"/> - b[basis]</c>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/negation, code/array_mutation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/negation", "code/array_mutation")]
+	[System.ComponentModel.Description("Returns the negation of b with the component at basis set to value - b[basis].")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] MinusR<B>(this IReadOnlyList<float> b, double value, B basis) where B : Enum, IConvertible {
 		var ret = b.Neg32();
 		ret[basis.ToInt32(null)] += (float)value;

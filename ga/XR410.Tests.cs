@@ -4,6 +4,7 @@ using System.Linq;
 using NUnit.Framework;
 using org.SpocWeb.root.array;
 using org.SpocWeb.root.logging;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -14,19 +15,19 @@ namespace org.SpocWeb.root.maths.pga.ga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 24 | <see cref="GetFactor"/> | Returns the canonical positive basis element and its sign factor for e, yielding factor 0 for the zero element. |
-/// | 28 | <see cref="Grade"/> | Returns the grade (number of basis vector factors) of the given Base blade value. |
-/// | 67 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
-/// | 69 | <see cref="ProductDot"/> | Gets the product Dot. |
-/// | 71 | <see cref="ProductOuter"/> | Gets the product Outer. |
-/// | 81 | <see cref="Products"/> | Gets the products. |
-/// | 84 | <see cref="AllProductTests"/> | Generates all Test Pairs for all Products in Products |
-/// | 100 | <see cref="BaseVectorPairs"/> | Generates all Pairs of R410 Base Vectors Elements |
-/// | 109 | <see cref="TestAllProducts"/> | Test All Products. |
-/// | 117 | <see cref="CreateVectorPairs"/> | Creates a three-element test vector array representing operand a, operand b and their expected product result according to products. |
-/// | 137 | <see cref="TestJoinMeet"/> | Test Join Meet. |
-/// | 159 | <see cref="RandomR410"/> | Generates 99 random R410 multivectors for use as test inputs. |
-/// | 170 | <see cref="TestRcp"/> | Test Rcp. |
+/// | 54 | <see cref="GetFactor"/> | Returns the canonical positive basis element and its sign factor for e, yielding factor 0 for the zero element. |
+/// | 63 | <see cref="Grade"/> | Returns the grade (number of basis vector factors) of the given Base blade value. |
+/// | 106 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
+/// | 108 | <see cref="ProductDot"/> | Gets the product Dot. |
+/// | 110 | <see cref="ProductOuter"/> | Gets the product Outer. |
+/// | 120 | <see cref="Products"/> | Gets the products. |
+/// | 124 | <see cref="AllProductTests"/> | Generates all Test Pairs for all Products in Products |
+/// | 150 | <see cref="BaseVectorPairs"/> | Generates all Pairs of R410 Base Vectors Elements |
+/// | 164 | <see cref="TestAllProducts"/> | Test All Products. |
+/// | 177 | <see cref="CreateVectorPairs"/> | Creates a three-element test vector array representing operand a, operand b and their expected product result according to products. |
+/// | 202 | <see cref="TestJoinMeet"/> | Test Join Meet. |
+/// | 229 | <see cref="RandomR410"/> | Generates 99 random R410 multivectors for use as test inputs. |
+/// | 245 | <see cref="TestRcp"/> | Test Rcp. |
 ///
 /// ## Collaborators
 ///
@@ -40,40 +41,29 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// | <see cref="R410"/> | Passed as a parameter. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: db5bb830688329d6bea95803aa343182cc453d90d73245859b22d3567963d58a
-/// tags: [code/unit_test, code/conformal_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: test, status: partial, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "db5bb830688329d6bea95803aa343182cc453d90d73245859b22d3567963d58a", Stale = false, Path = "ga/XR410.Tests.cs", Since = "2026-10-06")]
+[Facets(Layer = "test", Status = "partial", Complexity = 3)]
+[Tags("code/unit_test", "code/conformal_geometric_algebra")]
+[System.ComponentModel.Description("Static test and utility methods for the R410 G(4,1,0) 3D Conformal Geometric Algebra multivector type.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public static class XR410
 {
 	/// <summary> Returns the canonical positive basis element and its sign factor for <paramref name="e"/>,
 	/// yielding factor 0 for the zero element. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/canonicalization, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/canonicalization", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Returns the canonical positive basis element and its sign factor for e, yielding factor 0 for the zero element.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static (R410.Base e, int factor) GetFactor(this R410.Base e)
 		=> e < 0 ? (~e, -1) : e == R410.Base._0 ? (R410.Base._1_, 0) : (e, 1);
 
 	/// <summary> Returns the grade (number of basis vector factors) of the given <see cref="R410.Base"/> blade <paramref name="value"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/grade_computation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/grade_computation")]
+	[System.ComponentModel.Description("Returns the grade (number of basis vector factors) of the given Base blade value.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static byte Grade(this R410.Base value)
 		=> value switch {
 			R410.Base._1_ => 0,
@@ -131,13 +121,10 @@ public static class XR410
 
 	/// <summary> Generates all Test Pairs for all Products in <see cref="R410.Products"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_data_generation, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/test_data_generation", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Generates all Test Pairs for all Products in Products")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(float[][], Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product
 		)> AllProductTests() {
 		for (var i = Products.Length; --i >= 0; ) {
@@ -149,13 +136,10 @@ public static class XR410
 
 	/// <summary> Generates all Test Cases for <paramref name="product"/> from <paramref name=""/> Pairs of <see cref="R410"/> Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_data_generation, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/test_data_generation", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Generates all Test Cases for product from Pairs of R410 Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	static IEnumerable<(float[][], Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product
 		)> ProductTests(this IReadOnlyList<IReadOnlyList<R410.Base>> matrix
 		, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product) 
@@ -163,13 +147,10 @@ public static class XR410
 
 	/// <summary> Generates all Pairs of <see cref="R410"/> Base Vectors Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/combinatorial_generation, code/test_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/combinatorial_generation", "code/test_data_generation")]
+	[System.ComponentModel.Description("Generates all Pairs of R410 Base Vectors Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(R410.Base r, R410.Base c)> BaseVectorPairs() {
 		for (var r = R410.Base._1_; r != R410.Base._0; ++r) {
 			for (var c = R410.Base._1_; c != R410.Base._0; ++c) {
@@ -180,14 +161,11 @@ public static class XR410
 
 	/// <summary>Test All Products.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/property_testing]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/unit_test", "code/property_testing")]
+	[System.ComponentModel.Description("Test All Products.")]
 	[TestCaseSource(nameof(AllProductTests))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestAllProducts((float[][] vectors, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product) test) {
 		var z = test.product(test.vectors[0], test.vectors[1]);
 		CollectionAssert.AreEqual(test.vectors[2], z);
@@ -196,13 +174,10 @@ public static class XR410
 	/// <summary> Creates a three-element test vector array representing operand <paramref name="a"/>,
 	/// operand <paramref name="b"/> and their expected product result according to <paramref name="products"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_vector_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/test_vector_generation")]
+	[System.ComponentModel.Description("Creates a three-element test vector array representing operand a, operand b and their expected product result according to products.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[][] CreateVectorPairs(this IReadOnlyList<IReadOnlyList<R410.Base>> products
 		, R410.Base a, R410.Base b, double factor1, double factor2) {
 		var (e, factor) = products[(int) a][(int) b].GetFactor();
@@ -224,14 +199,11 @@ public static class XR410
 
 	/// <summary>Test Join Meet.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/join_operation, code/algebraic_laws]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: partial, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "partial", Complexity = 3)]
+	[Tags("code/unit_test", "code/join_operation", "code/algebraic_laws")]
+	[System.ComponentModel.Description("Test Join Meet.")]
 	[TestCaseSource(nameof(BaseVectorPairs))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestJoinMeet((R410.Base x, R410.Base y) pair) {
 		float[][] arg1Arg2Product = R410.ProductOuter.CreateVectorPairs(pair.x, pair.y, 2, 3);
 		var arg1 = arg1Arg2Product[0].Dual32C();
@@ -254,13 +226,10 @@ public static class XR410
 
 	/// <summary> Generates 99 random <see cref="R410"/> multivectors for use as test inputs. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/random_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 1)]
+	[Tags("code/random_data_generation")]
+	[System.ComponentModel.Description("Generates 99 random R410 multivectors for use as test inputs.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<R410> RandomR410() {
 		var arr = new float[R410.NUM_COORDS];
 		for (int i = 99; --i >= 0;) {
@@ -273,15 +242,12 @@ public static class XR410
 
 	/// <summary>Test Rcp.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/reciprocal, code/algebraic_laws]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/reciprocal", "code/algebraic_laws")]
+	[System.ComponentModel.Description("Test Rcp.")]
 	[TestCaseSource(typeof(R410), nameof(R410.Blades))]
 	[TestCaseSource(nameof(RandomR410))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestRcp(R410 mv) {
 		var rcp = mv.Rcp();
 		var r1 = mv.Times(rcp);

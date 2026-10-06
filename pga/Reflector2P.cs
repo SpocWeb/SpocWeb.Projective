@@ -5,6 +5,7 @@ using System.IO;
 using org.SpocWeb.root.expressions;
 using org.SpocWeb.root.extensions.maths;
 using org.SpocWeb.root.interfaces.maths;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -12,16 +13,11 @@ namespace org.SpocWeb.root.maths.pga;
 /// <remarks>
 /// Only odd Components of the full Algebra
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 398df9672285acce0792bcd93e1eb0bb8cf183995263e5ae547745c69a49702a
-/// tags: [code/projective_geometric_algebra, code/value_object]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "398df9672285acce0792bcd93e1eb0bb8cf183995263e5ae547745c69a49702a", Stale = false, Path = "pga/Reflector2P.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/projective_geometric_algebra", "code/value_object")]
+[System.ComponentModel.Description("2D Projective Algebra Reflector Components: 3 Lines + Z Scale")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public readonly struct Reflector2P : 
 	IEquatable<Reflector2P>,
 	IExpression<Reflector2P>, //AGeoGebra16<Pga2D>,
@@ -51,46 +47,34 @@ public readonly struct Reflector2P :
 
 	/// <summary> real e1 + e2 + projective e0 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("real e1 + e2 + projective e0")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public byte Dim => 3;
 
 	/// <summary> 2^3 = 1 + 3 + 3 + 1 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("2^3 = 1 + 3 + 3 + 1")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public int Count => 8;
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.<br/>
 	/// Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index. Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[int index] => this[(Pga2D.Base)index];
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Pga2D.Base index] => index switch
 	{
 		Pga2D.Base._1_ => Horizon,
@@ -102,13 +86,10 @@ public readonly struct Reflector2P :
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Pga2D.Lines index] => index switch
 	{
 		Pga2D.Lines.Horizon => Horizon,
@@ -120,13 +101,10 @@ public readonly struct Reflector2P :
 
 	/// <summary>Initializes a new instance of <see cref="Reflector2P"/> with the specified <paramref name="sky"/>, <paramref name="x"/>, <paramref name="y"/> and <paramref name="z"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Initializes a new instance of Reflector2P with the specified sky, x, y and z.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Reflector2P(float sky, float x, float y, float z) {
 		Horizon = sky;
 		AxisX = x;
@@ -160,13 +138,10 @@ public readonly struct Reflector2P :
 	public static string Infix = ", ";
 	/// <summary> Writes the four components separated by <see cref="Infix"/> to <paramref name="writer"/> and returns <paramref name="lengthLeft"/> unchanged. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Writes the four components separated by Infix to writer and returns lengthLeft unchanged.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public long WriteTo(TextWriter writer, long lengthLeft) {
 		writer.Write(Horizon);
 		writer.Write(Infix); writer.Write(AxisX);
@@ -177,13 +152,10 @@ public readonly struct Reflector2P :
 
 	/// <summary> Returns the L1 norm of the four components as an absolute-value sum. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/value_object]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/value_object")]
+	[System.ComponentModel.Description("Returns the L1 norm of the four components as an absolute-value sum.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public double NormAbs() => Math.Abs(Horizon) + Math.Abs(AxisX) + Math.Abs(AxisY) + Math.Abs(I);
 
 	/// <inheritdoc />

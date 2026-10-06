@@ -6,6 +6,7 @@ using org.SpocWeb.root.array;
 using org.SpocWeb.root.interfaces;
 using org.SpocWeb.root.interfaces.maths;
 using org.SpocWeb.root.logging;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -16,31 +17,23 @@ namespace org.SpocWeb.root.maths.pga.ga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 25 | <see cref="Test"/> | Test. |
+/// | 32 | <see cref="Test"/> | Test. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:40:19Z
-/// digest: 314ad142957febe390cc7223b4deb1d1b21c187f84f6e7257a23fe46c27fcae3
-/// tags: [code/extension_method, code/unit_test, code/clifford_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: test, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:40:19Z", Digest = "314ad142957febe390cc7223b4deb1d1b21c187f84f6e7257a23fe46c27fcae3", Stale = false, Path = "ga/R011.cs", Since = "2026-10-06")]
+[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+[Tags("code/extension_method", "code/unit_test", "code/clifford_algebra")]
+[System.ComponentModel.Description("Static extension and test methods for the R011 G(0,1,1) Dual-Complex Number algebra.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public static class XR011
 {
 	/// <summary>Test.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Test.")]
 	[Test, Ignore("Triage: point * point is not an addition, and the rotated point carries a spurious 1i component; the Expectations predate the current Convention")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void Test() {
 		var start = R011.Point(3, 4);
 		var trans = R011.Point(4, 3);
@@ -63,28 +56,28 @@ public static class XR011
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 106 | <see cref="_1_"/> | Identical Map; used together with I to represent Rotation |
-/// | 109 | <see cref="E0"/> | Gets the e0. |
-/// | 112 | <see cref="E1"/> | Gets the e1. |
-/// | 116 | <see cref="i"/> | Gets the i. |
-/// | 119 | <see cref="I"/> | Gets the i. |
-/// | 126 | <see cref="Blades"/> | Gets the blades. |
-/// | 129 | <see cref="Translator"/> | Generates a Point/Translator |
-/// | 131 | <see cref="Point"/> |  |
-/// | 134 | <see cref="Rotor"/> | Generates a Rotor |
-/// | 161 | <see cref="ProductGeometric"/> | Gets the product Inner. |
-/// | 163 | <see cref="ProductInner"/> | Gets the product Outer. |
-/// | 165 | <see cref="ProductOuter"/> | Gets the product Outer. |
-/// | 171 | <see cref="Products"/> | Gets the products. |
-/// | 175 | <see cref="R011"/> | Initializes a new instance of R011 with the specified f and idx. |
-/// | 177 | <see cref="R011"/> | Initializes a new instance of R011 with the specified values. |
-/// | 183 | <see cref="R011"/> | Initializes a new instance of R011 with the specified values. |
-/// | 193 | <see cref="New"/> |  |
-/// | 219 | <see cref="CloseTo"/> | Returns true when the squared difference norm of this and arg1 is negligible relative to their combined norms. |
-/// | 241 | <see cref="Scalar"/> | Gets the scalar. |
-/// | 244 | <see cref="e0"/> | Gets the e0. |
-/// | 247 | <see cref="e1"/> | Gets the e1. |
-/// | 250 | <see cref="e01"/> | Gets the e01. |
+/// | 146 | <see cref="_1_"/> | Identical Map; used together with I to represent Rotation |
+/// | 149 | <see cref="E0"/> | Gets the e0. |
+/// | 152 | <see cref="E1"/> | Gets the e1. |
+/// | 156 | <see cref="i"/> | Gets the i. |
+/// | 159 | <see cref="I"/> | Gets the i. |
+/// | 166 | <see cref="Blades"/> | Gets the blades. |
+/// | 170 | <see cref="Translator"/> | Generates a Point/Translator |
+/// | 176 | <see cref="Point"/> |  |
+/// | 180 | <see cref="Rotor"/> | Generates a Rotor |
+/// | 211 | <see cref="ProductGeometric"/> | Gets the product Inner. |
+/// | 213 | <see cref="ProductInner"/> | Gets the product Outer. |
+/// | 215 | <see cref="ProductOuter"/> | Gets the product Outer. |
+/// | 221 | <see cref="Products"/> | Gets the products. |
+/// | 226 | <see cref="R011"/> | Initializes a new instance of R011 with the specified f and idx. |
+/// | 233 | <see cref="R011"/> | Initializes a new instance of R011 with the specified values. |
+/// | 249 | <see cref="R011"/> | Initializes a new instance of R011 with the specified values. |
+/// | 263 | <see cref="New"/> |  |
+/// | 294 | <see cref="CloseTo"/> | Returns true when the squared difference norm of this and arg1 is negligible relative to their combined norms. |
+/// | 320 | <see cref="Scalar"/> | Gets the scalar. |
+/// | 323 | <see cref="e0"/> | Gets the e0. |
+/// | 326 | <see cref="e1"/> | Gets the e1. |
+/// | 329 | <see cref="e01"/> | Gets the e01. |
 ///
 /// ## Collaborators
 ///
@@ -93,16 +86,11 @@ public static class XR011
 /// | <see cref="R011"/> | Returned by a method. |
 /// | <see cref="Base"/> | Nested enum. |
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-06-17T05:58:38Z
-/// digest: d5e3112bec7e00c11d7f36b8451cc78a3227dd625dcf496ea62ae28bf89a03fa
-/// tags: [code/clifford_algebra, code/dual_numbers]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-06-17T05:58:38Z", Digest = "d5e3112bec7e00c11d7f36b8451cc78a3227dd625dcf496ea62ae28bf89a03fa", Stale = false, Path = "ga/R011.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/clifford_algebra", "code/dual_numbers")]
+[System.ComponentModel.Description("G(0,1,1) Dual-Complex Number algebra with E1²=−1 (rotation/imaginary) and E0²=0 (translation/dual).")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class R011 : AGeoGebra4<R011>
 {
 	// just for debug and print output, the basis names
@@ -123,17 +111,12 @@ public class R011 : AGeoGebra4<R011>
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:42:03Z
-	/// digest: e623cdcf2368a93a5472af0294edc62890a0dc2c2873a8f98be4d1d19e9eb044
-	/// tags: [code/enum, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:42:03Z", Digest = "e623cdcf2368a93a5472af0294edc62890a0dc2c2873a8f98be4d1d19e9eb044", Stale = false, Path = "ga/R011.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary>[0] Scalar / X-Coordinate e.g. Dot Product / oriented Area/Volume Dual</summary>
@@ -184,26 +167,20 @@ public class R011 : AGeoGebra4<R011>
 
 	/// <summary> Generates a <see cref="Point"/>/<see cref="Translator"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/dual_numbers]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/dual_numbers")]
+	[System.ComponentModel.Description("Generates a Point/Translator")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R011 Translator(double x, double y) => new(1, (float)x, 0, (float)y);
 	/// <inheritdoc cref="Translator"/>
 	public static R011 Point(double x, double y) => Translator(x, y);
 
 	/// <summary> Generates a <see cref="Rotor"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/dual_numbers]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/dual_numbers")]
+	[System.ComponentModel.Description("Generates a Rotor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R011 Rotor(double rad) {
 		var (sin, cos) = rad.SinCos();
 		return new R011((float) cos, 0, (float) sin, 0);
@@ -246,45 +223,33 @@ public class R011 : AGeoGebra4<R011>
 	/// <summary>Initializes a new instance of <see cref="R011"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="R011"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/dual_numbers]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/dual_numbers")]
+	[System.ComponentModel.Description("Initializes a new instance of R011 with the specified f and idx. Initializes a new instance of R011 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R011(double f = 0f, int idx = 0): base(f, idx) { }
 	/// <summary>Initializes a new instance of <see cref="R011"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/dual_numbers]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/dual_numbers")]
+	[System.ComponentModel.Description("Initializes a new instance of R011 with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R011(double f = 0f, Base idx = 0): base(f, (int) idx) { }
 
 	/// <summary>Initializes a new instance of <see cref="R011"/> with the specified <paramref name="values"/>.<br/>
 	/// Initializes a new instance of <see cref="R011"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/dual_numbers]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/dual_numbers")]
+	[System.ComponentModel.Description("Initializes a new instance of R011 with the specified values. Initializes a new instance of R011 with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	R011(params float[] f) : base(f) { }
 	/// <summary>Initializes a new instance of <see cref="R011"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/dual_numbers]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/dual_numbers")]
+	[System.ComponentModel.Description("Initializes a new instance of R011 with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R011(IReadOnlyList<float> values) : base(values) { }
 
 	/// <inheritdoc cref="Create(IReadOnlyList{float})"/>
@@ -303,13 +268,10 @@ public class R011 : AGeoGebra4<R011>
 
 	/// <summary>!  Poincare duality operator. </summary>
 	/// <inheritdoc />
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/dual_numbers]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/dual_numbers")]
+	[System.ComponentModel.Description("! Poincare duality operator.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override R011 Dual() => new(_C.DualR011());
 	/// <inheritdoc />
 	public override double NormSqr() => _C.NormSqr4R011();
@@ -329,13 +291,10 @@ public class R011 : AGeoGebra4<R011>
 
 	/// <summary> Returns true when the squared difference norm of this and <paramref name="arg1"/> is negligible relative to their combined norms. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/dual_numbers]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/dual_numbers")]
+	[System.ComponentModel.Description("Returns true when the squared difference norm of this and arg1 is negligible relative to their combined norms.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool CloseTo(R011 arg1) { //, double acc) {
 		var diff = (arg1 - this);
 		var normSqr = diff.NormSqr();

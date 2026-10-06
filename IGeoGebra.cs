@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using org.SpocWeb.root.iMath;
 using org.SpocWeb.root.interfaces;
 using org.SpocWeb.root.interfaces.maths;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -26,16 +27,11 @@ namespace org.SpocWeb.root.maths.pga;
 /// G+3,0,0)	quaternions:  x, y and z not used; Scalar + i = e23 + j = e31 + k = e12; I = e123 not used
 /// G(3,1,0)	space-time algebra (STA)
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:24Z
-/// digest: d288fe3f0b875d8b5a25e3c511a8a67419286f46ac396e9c09322e3ee63e0cd8
-/// tags: [code/interface, code/geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:24Z", Digest = "d288fe3f0b875d8b5a25e3c511a8a67419286f46ac396e9c09322e3ee63e0cd8", Stale = false, Path = "IGeoGebra.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/interface", "code/geometric_algebra")]
+[System.ComponentModel.Description("GA define several Products that transform its 2^n Dimensions into each other, described by Cayley Tables.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 	, ICanScaleWith<IIMeasureAble, T, IReadOnlyList<F>> //IVectorSpace<T> 
 	where T : IGeoGebra<T, F>
@@ -43,13 +39,10 @@ public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 	/// <summary> Dimensionality of the Basis-Vector Space R^<see cref="Dim"/> </summary>
 	/// <remarks> <see cref="IReadOnlyCollection{T}.Count"/> = 2^<see cref="Dim"/>
 	/// is the Dimensionality of the resulting euclidean Multi-Vector-Space E</remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Dimensionality of the Basis-Vector Space R^Dim")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	byte Dim { get; }
 
 	/// <summary> ! Poincare dual; </summary>
@@ -59,26 +52,20 @@ public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 	/// So Dot and Cross Products are Dual Operators
 	/// that combined describe invertible Product. 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("! Poincare dual;")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Dual();
 
 	/// <summary> * Scalar product. </summary>
 	/// <remarks>
 	/// commutative.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("* Scalar product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Times(double factor);
 
 	/// <summary>Full geometric product: ^ + � resp. &amp; and |<br/>
@@ -87,23 +74,17 @@ public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 	/// Not commutative; has <see cref="Meet"/> as anti-commuting,
 	/// and <see cref="Dot"/> as commuting Component.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Full geometric product: ^ + � resp. &amp; and | Reverse of Times(IReadOnlyList)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Times(IReadOnlyList<F> factor);
 	/// <summary> Geometric product of <paramref name="factor"/> with this multivector (factor * this). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Geometric product of factor with this multivector (factor * this).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T TimesR(IReadOnlyList<F> factor);
 
 	/// <summary> |,� Dot/inner/regressive/Tensor-Product; reduces the Grade </summary>
@@ -112,13 +93,10 @@ public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 	/// Only the <paramref name="parallel"/> Part counts, weighted by the Metric.
 	/// All other Components are orthogonal.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("|,� Dot/inner/regressive/Tensor-Product; reduces the Grade")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Dot(IReadOnlyList<F> parallel);
 
 	/// <summary>^ Wedge/Meet/outer Product<br/>
@@ -129,23 +107,17 @@ public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 	///
 	/// Anti-commuting between orthogonal Elements.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("^ Wedge/Meet/outer Product ^ MEET reverse outer product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Meet(IReadOnlyList<F> that);
 	/// <summary> Outer (wedge / meet) product of <paramref name="that"/> with this multivector (that ^ this). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Outer (wedge / meet) product of that with this multivector (that ^ this).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T MeetR(IReadOnlyList<F> that);
 
 	/// <summary> v,&amp; Join/regressive Product </summary>
@@ -158,13 +130,10 @@ public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 	/// 
 	/// The Symbols ^ and v should remind of the dual Operations of Intersect/Meet and Union/Join. 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("v,&amp; Join/regressive Product")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Join(IReadOnlyList<F> that);
 
 	/// <inheritdoc cref="Plus(IReadOnlyList{F})"/>
@@ -178,53 +147,38 @@ public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 
 	/// <summary> Adds <paramref name="b"/> component-wise to this multivector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Adds b component-wise to this multivector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Plus(IReadOnlyList<F> b);
 	/// <summary> Subtracts <paramref name="b"/> component-wise from this multivector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Subtracts b component-wise from this multivector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Minus(IReadOnlyList<F> b);
 	/// <summary> Subtracts this multivector from <paramref name="b"/> component-wise (b - this). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Subtracts this multivector from b component-wise (b - this).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T MinusR(IReadOnlyList<F> b);
 	/// <summary> Creates a new multivector from <paramref name="list"/>, copying its values. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Creates a new multivector from list, copying its values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	T Create(IList<F> list);
 	/// <summary> Signed square norm; equals (this * Conjugate())[0]. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/interface, code/geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/interface", "code/geometric_algebra")]
+	[System.ComponentModel.Description("Signed square norm; equals (this * Conjugate())[0].")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	double NormSqr();
 	//double NormAbs();
 }
@@ -235,12 +189,12 @@ public interface IGeoGebra<T,F> : IReadOnlyList<F>, IEquatable<T>
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 138 | <see cref="Plus"/> | Adds the unit basis blade basis to multiVector. |
-/// | 141 | <see cref="Minus"/> | Subtracts the unit basis blade basis from multiVector. |
-/// | 144 | <see cref="MinusR"/> | Reverse subtraction: unit basis blade basis minus multiVector. |
-/// | 156 | <see cref="ProjectedOn"/> | Non-normalized projection of a onto normal. |
-/// | 168 | <see cref="RejectedFrom"/> | Component of a orthogonal to normal (equals a minus its projection onto normal). |
-/// | 172 | <see cref="ReflectedByNormal"/> | Reflects a at the HyperPlane perpendicular to normal |
+/// | 221 | <see cref="Plus"/> | Adds the unit basis blade basis to multiVector. |
+/// | 229 | <see cref="Minus"/> | Subtracts the unit basis blade basis from multiVector. |
+/// | 237 | <see cref="MinusR"/> | Reverse subtraction: unit basis blade basis minus multiVector. |
+/// | 269 | <see cref="ProjectedOn"/> | Non-normalized projection of a onto normal. |
+/// | 286 | <see cref="RejectedFrom"/> | Component of a orthogonal to normal (equals a minus its projection onto normal). |
+/// | 295 | <see cref="ReflectedByNormal"/> | Reflects a at the HyperPlane perpendicular to normal |
 ///
 /// ## Collaborators
 ///
@@ -264,79 +218,58 @@ public static partial class XGeoGebra
 
 	/// <summary> Adds the unit basis blade <paramref name="basis"/> to <paramref name="multiVector"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/addition]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/addition")]
+	[System.ComponentModel.Description("Adds the unit basis blade basis to multiVector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static T Plus<T,F,B>(this T multiVector, B basis) where T : IGeoGebra<T,F> where B : Enum => multiVector.Plus(1, basis);
 
 	/// <summary> Subtracts the unit basis blade <paramref name="basis"/> from <paramref name="multiVector"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/subtraction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/subtraction")]
+	[System.ComponentModel.Description("Subtracts the unit basis blade basis from multiVector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static T Minus<T,F,B>(this T multiVector, B basis) where T : IGeoGebra<T,F> where B : Enum => multiVector.Minus(1, basis);
 
 	/// <summary> Reverse subtraction: unit basis blade <paramref name="basis"/> minus <paramref name="multiVector"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/subtraction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/subtraction")]
+	[System.ComponentModel.Description("Reverse subtraction: unit basis blade basis minus multiVector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static T MinusR<T,F,B>(this T multiVector, B basis) where T : IGeoGebra<T,F> where B : Enum => multiVector.MinusR(1, basis);
 
 	/// <summary> Adds scalar <paramref name="x"/> to the scalar component of <paramref name="multiVector"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/scalar_addition]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/scalar_addition")]
+	[System.ComponentModel.Description("Adds scalar x to the scalar component of multiVector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static T Plus<T,F>(this T multiVector, double x) where T : IGeoGebra<T,F> => multiVector.Plus(x, (DayOfWeek)0);
 
 	/// <summary> Subtracts scalar <paramref name="x"/> from the scalar component of <paramref name="multiVector"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/subtraction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/subtraction")]
+	[System.ComponentModel.Description("Subtracts scalar x from the scalar component of multiVector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static T Minus<T,F>(this T multiVector, double x) where T : IGeoGebra<T,F> => multiVector.Minus(x, (DayOfWeek)0);
 
 	/// <summary> Reverse subtraction: scalar <paramref name="x"/> minus the scalar component of <paramref name="multiVector"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/subtraction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/subtraction")]
+	[System.ComponentModel.Description("Reverse subtraction: scalar x minus the scalar component of multiVector.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static T MinusR<T,F>(this T multiVector, double x) where T : IGeoGebra<T,F> => multiVector.MinusR(x, (DayOfWeek)0);
 
 	/// <summary> Non-normalized projection of <paramref name="a"/> onto <paramref name="normal"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_projection]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/vector_projection")]
+	[System.ComponentModel.Description("Non-normalized projection of a onto normal.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IGeoGebra<T,F> ProjectedOn<T,F>(this IGeoGebra<T,F> a, IGeoGebra<T,F> normal) where T : IGeoGebra<T,F> {
 		T dot = a.Dot(normal);
 		double factor = Convert.ToDouble(dot[0]);
@@ -350,25 +283,19 @@ public static partial class XGeoGebra
 	/// <summary> Component of <paramref name="a"/> orthogonal to <paramref name="normal"/>
 	/// (equals <paramref name="a"/> minus its projection onto <paramref name="normal"/>). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_projection]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/vector_projection")]
+	[System.ComponentModel.Description("Component of a orthogonal to normal (equals a minus its projection onto normal).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IGeoGebra<T,F> RejectedFrom<T,F>(this IGeoGebra<T,F> a, IGeoGebra<T,F> normal)
 		where T : IGeoGebra<T,F> => a.Minus(a.ProjectedOn(normal));
 
 	/// <summary> Reflects <paramref name="a"/> at the HyperPlane perpendicular to <paramref name="normal"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_reflection]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/vector_reflection")]
+	[System.ComponentModel.Description("Reflects a at the HyperPlane perpendicular to normal")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IGeoGebra<T,F> ReflectedByNormal<T,F>(this IGeoGebra<T,F> a, IGeoGebra<T,F> normal) 
 		where T : IGeoGebra<T,F> => a.Minus(a.ProjectedOn(normal).Times(2));
 

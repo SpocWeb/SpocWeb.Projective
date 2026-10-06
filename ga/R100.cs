@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -11,16 +12,16 @@ namespace org.SpocWeb.root.maths.pga.ga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 64 | <see cref="Blades"/> | Gets the blades. |
-/// | 77 | <see cref="ProductOuter"/> | Gets the product Outer. |
-/// | 86 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
-/// | 95 | <see cref="ProductDot"/> | Gets the product Dot. |
-/// | 101 | <see cref="Products"/> | Gets the products. |
-/// | 106 | <see cref="New"/> | Creates a new R100 hyperbolic number multivector from the given component array. |
-/// | 122 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 126 | <see cref="R100"/> | Initializes a new instance of R100 with the specified f and idx. |
-/// | 128 | <see cref="R100"/> | Initializes a new instance of R100 with the specified f and idx. |
-/// | 134 | <see cref="R100"/> | Checked Constructor with Copy |
+/// | 84 | <see cref="Blades"/> | Gets the blades. |
+/// | 97 | <see cref="ProductOuter"/> | Gets the product Outer. |
+/// | 106 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
+/// | 115 | <see cref="ProductDot"/> | Gets the product Dot. |
+/// | 121 | <see cref="Products"/> | Gets the products. |
+/// | 127 | <see cref="New"/> | Creates a new R100 hyperbolic number multivector from the given component array. |
+/// | 148 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
+/// | 157 | <see cref="R100"/> | Initializes a new instance of R100 with the specified f and idx. |
+/// | 164 | <see cref="R100"/> | Initializes a new instance of R100 with the specified f and idx. |
+/// | 180 | <see cref="R100"/> | Checked Constructor with Copy |
 ///
 /// ## Collaborators
 ///
@@ -30,16 +31,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// | <see cref="Base"/> | Nested enum. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 5fefc57fb9037fa2bee617c37d6ea13a04b8e297bca15dfe418323bbd22a5232
-/// tags: [code/clifford_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "5fefc57fb9037fa2bee617c37d6ea13a04b8e297bca15dfe418323bbd22a5232", Stale = false, Path = "ga/R100.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/clifford_algebra")]
+[System.ComponentModel.Description("1D Hyperbolic Numbers: Boosting only")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class R100 : AGeoGebra2<R100>
 {
 	/// <summary> basis names for debug and print output </summary>
@@ -58,17 +54,12 @@ public class R100 : AGeoGebra2<R100>
 	public override R100 Self() => this;
 
 	/// <summary> Base-Blades in 1D, usable as Indices for Components </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T05:58:40Z
-	/// digest: 2f457a885fc8a8285b2147e0690a162e33cae42bff4b56ee9bc524abbeeca7a4
-	/// tags: [code/enum, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T05:58:40Z", Digest = "2f457a885fc8a8285b2147e0690a162e33cae42bff4b56ee9bc524abbeeca7a4", Stale = false, Path = "ga/R100.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 1D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary> [0] Scalar Part </summary>
@@ -133,13 +124,10 @@ public class R100 : AGeoGebra2<R100>
 
 	/// <summary> Creates a new <see cref="R100"/> hyperbolic number multivector from the given component array. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Creates a new R100 hyperbolic number multivector from the given component array.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R100 New(params float[] f) => New((IReadOnlyList<float>) f);
 	/// <inheritdoc cref="New(float[])"/>
 	public static R100 New(IReadOnlyList<float> f) => new(f);
@@ -157,68 +145,50 @@ public class R100 : AGeoGebra2<R100>
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Base idx] => _C[(int) idx];
 
 	/// <summary>Initializes a new instance of <see cref="R100"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="R100"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R100 with the specified f and idx. Initializes a new instance of R100 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R100(double f = 0, Base idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="R100"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R100 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R100(double f = 0, int idx = 0) : base(f, idx) {}
 
 	/// <summary> Unchecked private Constructor for Speed </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	R100(float[] f) : base(f) {}
 
 	/// <summary> Checked Constructor with Copy </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Checked Constructor with Copy")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R100(IReadOnlyList<float> values) : base(values) {}
 
 	/// <summary> Ideal norm. (signed) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Ideal norm. (signed)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override double NormI() => this[1] != 0 ? this[1] : Norm();
 
 	/// <inheritdoc />

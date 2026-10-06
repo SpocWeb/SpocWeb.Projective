@@ -1,34 +1,27 @@
 using System.Numerics;
 using org.SpocWeb.root.interfaces.maths;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
 /// <summary> A <see cref="RigidBody2D"/> that carries a typed identity payload <typeparamref name="T"/>
 /// for association with a game object or scene node. </summary>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:40:19Z
-/// digest: 41f5c10232c5e6b8e4e1bf9d7471d17e16f338f2cb51ba68fd5a13bc986a02c7
-/// tags: [code/rigid_body_physics, code/typed_wrapper]
-/// concepts: [physics_simulation]
-/// facets: {layer: domain, status: stable, complexity: 1}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:40:19Z", Digest = "41f5c10232c5e6b8e4e1bf9d7471d17e16f338f2cb51ba68fd5a13bc986a02c7", Stale = false, Path = "ga/RigidBody2D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+[Tags("code/rigid_body_physics", "code/typed_wrapper")]
+[System.ComponentModel.Description("A RigidBody2D that carries a typed identity payload for association with a game object or scene node.")]
+[Concept("physics_simulation")]
 public class RigidBody2D<T> : RigidBody2D
 {
 	public readonly T? Identity;
 
 	/// <summary>Initializes a new instance of <see cref="RigidBody2D"/> with the specified <paramref name="identity"/>, <paramref name="mass"/> and <paramref name="extension"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics, code/typed_wrapper]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/rigid_body_physics", "code/typed_wrapper")]
+	[System.ComponentModel.Description("Initializes a new instance of RigidBody2D with the specified identity, mass and extension.")]
+	[Concept("physics_simulation")]
 	public RigidBody2D(T? identity, double mass, float extension = 1) : base(mass, extension) {
 		Identity = identity;
 	}
@@ -38,16 +31,6 @@ public class RigidBody2D<T> : RigidBody2D
 /// 2 for <see cref="Position"/> and
 /// 1 for <see cref="Attitude"/>/Rotation Angle </summary>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:40:19Z
-/// digest: b99a1ab4a083e82dcba6d7795c6c2337083ead6587261a80d4082196065a5240
-/// tags: [code/rigid_body_physics]
-/// concepts: [physics_simulation]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
 /// <remarks>
 /// These are the essential Properties of a rigid Body in 2nd Order Approximation.
 /// 0th Order consists only of <see cref="Position"/> Position and is static in Time.
@@ -65,6 +48,11 @@ public class RigidBody2D<T> : RigidBody2D
 /// The most simple Body is an empty HyperSphere with uniform Distribution of the Mass on the Surface
 /// (to give it 
 /// </remarks>
+[DocState(Pass = 2, MTime = "2026-05-24T15:40:19Z", Digest = "b99a1ab4a083e82dcba6d7795c6c2337083ead6587261a80d4082196065a5240", Stale = false, Path = "ga/RigidBody2D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/rigid_body_physics")]
+[System.ComponentModel.Description("A rigid Body in 2D has 3 DoF(Degrees of Freedom): 2 for Position and 1 for Attitude/Rotation Angle")]
+[Concept("physics_simulation")]
 public class RigidBody2D
 {
 	/// <summary> The Mass/ 0th Inertia-Moment of a Body is a constant, unless it is broken up </summary>
@@ -92,13 +80,10 @@ public class RigidBody2D
 	/// Styling determines the actual Shape of the Characters,
 	/// which is less relevant than the actual Placement and Identity of the Character.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("2nd (angular) Inertia-Moment of a Body is a constant as long as the Body does not deform!")]
+	[Concept("physics_simulation")]
 	public float I => Mass * Extension * Extension;
 
 	/// <summary> AKA R,X, Position/Center of Mass, 1st Moment of Mass Distribution </summary>
@@ -110,24 +95,18 @@ public class RigidBody2D
 
 	/// <summary> AKA Velocity </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("AKA Velocity")]
+	[Concept("physics_simulation")]
 	public Vector2 V => Momentum * (1 / Mass);
 
 	/// <summary> AKA Omega, Angular Velocity is actual a BiVector, but alternatively only an Angle </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("AKA Omega, Angular Velocity is actual a BiVector, but alternatively only an Angle")]
+	[Concept("physics_simulation")]
 	public double W => L * (1 / I);
 
 	/// <summary> AKA L, angular Momentum = Sum(i,r[i]^p[i]) = Sum(i,r[i]^v[i]*m[i]) = </summary>
@@ -143,13 +122,10 @@ public class RigidBody2D
 
 	/// <summary> AKA Attitude to multiply Points with for <see cref="Rotation"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("AKA Attitude to multiply Points with for Rotation")]
+	[Concept("physics_simulation")]
 	public Complex Attitude => _Attitude ??= Polar.ToComplex(Rotation);
 	Complex? _Attitude;
 
@@ -163,13 +139,10 @@ public class RigidBody2D
 
 	/// <summary>Initializes a new instance of <see cref="RigidBody2D"/> with the specified <paramref name="mass"/> and <paramref name="extension"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("Initializes a new instance of RigidBody2D with the specified mass and extension.")]
+	[Concept("physics_simulation")]
 	public RigidBody2D(double mass, float extension = 1) {
 		Extension = extension;
 		Mass = (float) mass;
@@ -177,13 +150,10 @@ public class RigidBody2D
 
 	/// <summary> Moves/Updates/Propagates this Body in Time by <paramref name="dt"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("Moves/Updates/Propagates this Body in Time by dt")]
+	[Concept("physics_simulation")]
 	public void Move(double dt) {
 		Position += Momentum * (float)(dt / Mass);
 		var d = L * (dt / I);

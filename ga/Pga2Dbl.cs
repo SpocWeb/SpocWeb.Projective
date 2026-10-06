@@ -4,6 +4,7 @@ using org.SpocWeb.root.array;
 using org.SpocWeb.root.data.hash;
 using org.SpocWeb.root.extensions.collections;
 using org.SpocWeb.root.extensions.enumerables;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -16,16 +17,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// to support list arguments on the left and avoid ambiguity you still need all four overloads for
 /// <see cref="IReadOnlyList{T}"/>, <see cref="IList{T}"/>, <see cref="List{T}"/>, and array.
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 2b24803985e32f128f66755aff062eed90d230ed428b471567956610aaf4b781
-/// tags: [code/abstract_base, code/projective_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "2b24803985e32f128f66755aff062eed90d230ed428b471567956610aaf4b781", Stale = false, Path = "ga/Pga2Dbl.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/abstract_base", "code/projective_geometric_algebra")]
+[System.ComponentModel.Description("Abstract double-precision base for the 8-component multi-vector of G(2,0,1) (2D Projective Geometric Algebra), shared by Pga2Dbl.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public abstract class Pga2Dbl : AGeoGebraDbl<Pga2Dbl>
 {
 	/// <summary>Specifies the constant dIM.</summary>
@@ -55,35 +51,26 @@ public abstract class Pga2Dbl : AGeoGebraDbl<Pga2Dbl>
 
 	/// <summary> Unchecked private Constructor for Speed </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
 	//[Obsolete("Unchecked private Constructor for Speed")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected Pga2Dbl(double[] f) => _C = f;//: this((IReadOnlyList<double>) f) { }
 	/// <summary>Initializes a new instance of <see cref="Pga2Dbl"/> with the specified <paramref name="f"/> and <paramref name="pos"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2Dbl with the specified f and pos.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected Pga2Dbl(double f, int pos = 0) => _C = NEW(pos, f);
 
 	/// <summary> Creates a zero coefficient array with <paramref name="value"/> at blade index <paramref name="pos"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Creates a zero coefficient array with value at blade index pos.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static double[] NEW(int pos, double value = 1) {
 		var ret = new double[NUM_COORDS];
 		ret[pos] = value;
@@ -99,13 +86,10 @@ public abstract class Pga2Dbl : AGeoGebraDbl<Pga2Dbl>
 
 	/// <summary> Checked Constructor </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Checked Constructor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected Pga2Dbl(IReadOnlyList<double> f) {
 		if (f.Count != Count) {
 			throw new ArgumentOutOfRangeException("Must have " + Count + " Components, but has " + f.Count);
@@ -130,24 +114,18 @@ public abstract class Pga2Dbl : AGeoGebraDbl<Pga2Dbl>
 
 	/// <summary> Main involution </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Main involution")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public sealed override Pga2Dbl Involute () => Create_(_C.Involute8());
 
 	/// <summary> Clifford Conjugate </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/abstract_base, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/abstract_base", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Clifford Conjugate")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public sealed override Pga2Dbl Conjugate () => Create_(_C.CliffCjg8());
 
 	#endregion Unary Functions

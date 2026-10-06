@@ -6,6 +6,7 @@ using org.SpocWeb.root.array;
 using org.SpocWeb.root.interfaces.maths;
 using org.SpocWeb.root.maths.pga.ga;
 using org.SpocWeb.root.maths.pga.typed;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -55,39 +56,28 @@ namespace org.SpocWeb.root.maths.pga;
 ///	e012	  0 	 e20	 e01	  0 	  0 	-e0 	  0
 /// 
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T16:42:31Z
-/// digest: 3dbdb6533328f883e3443d43e515810ac1b4d1e08c029301ee9e2a25dcf259b5
-/// tags: [code/projective_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T16:42:31Z", Digest = "3dbdb6533328f883e3443d43e515810ac1b4d1e08c029301ee9e2a25dcf259b5", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/projective_geometric_algebra")]
+[System.ComponentModel.Description("R201 = 2D+€ PGA (Euclidean Plane-based projective Geometric Algebra)")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class Pga2D : AGeoGebra8<Pga2D>
 {
 	/// <summary> just for debug and print output, the basis names </summary>
 	/// <remarks>
 	/// The BiVector Order is not canonical; other orders are 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("just for debug and print output, the basis names")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override IReadOnlyList<string> Basis => _Basis;
 	/// <summary>Gets the basis2.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets the basis2.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public IReadOnlyList<string> Basis2 => _Basis2;
 	/// <summary>Gets the _ Basis.</summary>
 	static readonly string[] _Basis = {""
@@ -101,16 +91,10 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	public override Pga2D Self() => this;
 
 	/// <summary> Static ordered list of all 8 unit basis blades of the algebra. </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-05-24T16:42:31Z
-	/// digest: d4baf63043cef9f9a0fc770ccdc16fefe4aa2badbf91aa44ca337c1f3bbae1a2
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Static ordered list of all 8 unit basis blades of the algebra.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IReadOnlyList<Pga2D> Blades => _Blades;
 	/// <summary>Gets the blades.</summary>
 	static readonly Pga2D[] _Blades = {Base._1_
@@ -124,9 +108,9 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 123 | <see cref="Point"/> | Point given by Coordinates X and Y |
-	/// | 127 | <see cref="PointPolar"/> | Point given by Polar Coordinates directionRad and radius |
-	/// | 138 | <see cref="Line"/> | Line given by slope and intersect |
+	/// | 141 | <see cref="Point"/> | Point given by Coordinates X and Y |
+	/// | 150 | <see cref="PointPolar"/> | Point given by Polar Coordinates directionRad and radius |
+	/// | 165 | <see cref="Line"/> | Line given by slope and intersect |
 	///
 	/// ## Collaborators
 	///
@@ -135,16 +119,11 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	/// | <see cref="Pga2D"/> | Returned by a method. |
 	/// | <see cref="Vector2"/> | Passed as a parameter. |
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T06:07:14Z
-	/// digest: d4baf63043cef9f9a0fc770ccdc16fefe4aa2badbf91aa44ca337c1f3bbae1a2
-	/// tags: [code/factory, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T06:07:14Z", Digest = "d4baf63043cef9f9a0fc770ccdc16fefe4aa2badbf91aa44ca337c1f3bbae1a2", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/factory", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Factory methods for constructing canonical Pga2D geometric objects (points and lines).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static class Make
 	{
 		/// <summary> Point given by Coordinates <see cref="X"/> and <see cref="Y"/> </summary>
@@ -159,25 +138,19 @@ public class Pga2D : AGeoGebra8<Pga2D>
 		/// When <paramref name="norm"/> = 0, this is a Vector, a Point at the infinite Horizon.
 		/// All parallel Lines meet at the same Point at the Horizon and form a 1D Vector Space of Rotations. 
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory_method, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory_method", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Point given by Coordinates X and Y")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga2D Point(double x, double y, double norm = 1) 
 			=> new(0, 0, 0, 0, (float) y, (float) x, (float) norm, 0);
 
 		/// <summary> Point given by Polar Coordinates <see cref="directionRad"/> and <see cref="radius"/> </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory_method, code/polar_coordinates]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+		[Tags("code/factory_method", "code/polar_coordinates")]
+		[System.ComponentModel.Description("Point given by Polar Coordinates directionRad and radius")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga2D PointPolar(double directionRad, double radius) {
 			var (sin, cos) = directionRad.SinCos();
 			return new Pga2D(0, 0, 0, 0, (float) sin, (float) cos, (float) (1 / radius), 0);
@@ -189,40 +162,28 @@ public class Pga2D : AGeoGebra8<Pga2D>
 		/// with themselves as Fixed-Points.
 		/// All Points with the same normalized Coordinates are equivalent!
 		/// </remarks>
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory_method, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory_method", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Line given by slope and intersect")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga2D Line(double slope, double intersect) 
 			=> new(0, (float) intersect, (float) slope, -1, 0, 0, 0, 0);
 
 		/// <summary> Line given by Point and <paramref name="slope"/>/Direction </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// tags: [code/factory_method, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 1}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+		[Tags("code/factory_method", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Line given by Point and slope/Direction")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga2D Line(double slope, double y, double x) 
 			=> Line(slope, y-x*slope);
 
 		/// <summary> Line given by 2 Points </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// pass: 2
-		/// mtime: 2026-05-24T16:42:31Z
-		/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-		/// tags: [code/factory_method, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+		[Tags("code/factory_method", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Line given by 2 Points")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga2D Line(double x0, double y0, double x1, double y1) {
 			var slope = (y1 - y0) / (x1 - x0);
 			return Line(slope, y0, x0);
@@ -230,16 +191,10 @@ public class Pga2D : AGeoGebra8<Pga2D>
 
 		/// <summary> Line given by 2 Points </summary>
 		///
-		/// <example>
-		/// <code language="yaml">
-		/// pass: 2
-		/// mtime: 2026-06-17T06:07:14Z
-		/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-		/// tags: [code/factory_method, code/projective_geometric_algebra]
-		/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-		/// facets: {layer: domain, status: stable, complexity: 2}
-		/// </code>
-		/// </example>
+		[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+		[Tags("code/factory_method", "code/projective_geometric_algebra")]
+		[System.ComponentModel.Description("Line given by 2 Points")]
+		[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 		public static Pga2D Line(Vector2 p0, Vector2 p1) {
 			var slope = (p1.Y - p0.Y) / (p1.X - p0.X);
 			return Line(slope, p0.Y, p0.X);
@@ -253,22 +208,17 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 187 | <see cref="O"/> | Represents o. |
-	/// | 197 | <see cref="X"/> | Represents x. |
-	/// | 200 | <see cref="Y"/> | Represents y. |
-	/// | 203 | <see cref="_1_"/> | Represents 1. |
+	/// | 225 | <see cref="O"/> | Represents o. |
+	/// | 235 | <see cref="X"/> | Represents x. |
+	/// | 238 | <see cref="Y"/> | Represents y. |
+	/// | 241 | <see cref="_1_"/> | Represents 1. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:48:22Z
-	/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("BiVectors in projective 2D are Points")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Points : sbyte
 	{
 		/// <inheritdoc cref="Base.e12"/>
@@ -297,23 +247,18 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 218 | <see cref="Horizon"/> | Represents horizon. |
-	/// | 220 | <see cref="Dist"/> | Represents dist. |
-	/// | 223 | <see cref="X"/> | Represents x. |
-	/// | 226 | <see cref="Y"/> | Represents y. |
-	/// | 229 | <see cref="I"/> | Represents i. |
+	/// | 265 | <see cref="Horizon"/> | Represents horizon. |
+	/// | 267 | <see cref="Dist"/> | Represents dist. |
+	/// | 270 | <see cref="X"/> | Represents x. |
+	/// | 273 | <see cref="Y"/> | Represents y. |
+	/// | 276 | <see cref="I"/> | Represents i. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:48:22Z
-	/// digest: 84f9f8b7636304a82bbb0de8bf871e397c9045f27cde590eb0263fb577c4c5a8
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "84f9f8b7636304a82bbb0de8bf871e397c9045f27cde590eb0263fb577c4c5a8", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Vectors in projective 2D are Lines")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Lines : sbyte
 	{
 		/// <inheritdoc cref="Base.e0"/>
@@ -333,17 +278,12 @@ public class Pga2D : AGeoGebra8<Pga2D>
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:48:22Z
-	/// digest: 7bf53ac29a107a7b351a128bf2cab339e4db73166d5dd075c48ee93ffa9a9203
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "7bf53ac29a107a7b351a128bf2cab339e4db73166d5dd075c48ee93ffa9a9203", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary>[0] Scalar e.g. Dot Product / oriented Area/Volume Dual</summary>
@@ -399,21 +339,16 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 304 | <see cref="Y"/> | Represents y. |
-	/// | 307 | <see cref="X"/> | Represents x. |
-	/// | 310 | <see cref="_1_"/> | Represents 1. |
+	/// | 355 | <see cref="Y"/> | Represents y. |
+	/// | 358 | <see cref="X"/> | Represents x. |
+	/// | 361 | <see cref="_1_"/> | Represents 1. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:48:22Z
-	/// digest: a12a148db2763e22b0e805cebc76a7ef23711c7175878098474930b3027a22d1
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "a12a148db2763e22b0e805cebc76a7ef23711c7175878098474930b3027a22d1", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("'Ideal' Axes for Translator/Motor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum AxisTrans
 	{
 		/// <inheritdoc cref="Base.e01"/>
@@ -432,20 +367,15 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 325 | <see cref="Z"/> | Represents z. |
-	/// | 328 | <see cref="_1_"/> | Represents 1. |
+	/// | 382 | <see cref="Z"/> | Represents z. |
+	/// | 385 | <see cref="_1_"/> | Represents 1. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:48:22Z
-	/// digest: a12a148db2763e22b0e805cebc76a7ef23711c7175878098474930b3027a22d1
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "a12a148db2763e22b0e805cebc76a7ef23711c7175878098474930b3027a22d1", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("euclidean Axes for Rotor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum AxisRot : sbyte
 	{
 		/// <inheritdoc cref="Base.e12"/>
@@ -461,26 +391,21 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 343 | <see cref="Horizon"/> | Represents horizon. |
-	/// | 346 | <see cref="Origin"/> | current Position of the Observer |
-	/// | 356 | <see cref="Longitude"/> | Represents longitude. |
-	/// | 359 | <see cref="Latitude"/> | Represents latitude. |
-	/// | 364 | <see cref="West"/> | Represents west. |
-	/// | 367 | <see cref="East"/> | Represents east. |
-	/// | 370 | <see cref="North"/> | Represents north. |
-	/// | 373 | <see cref="South"/> | Represents south. |
+	/// | 412 | <see cref="Horizon"/> | Represents horizon. |
+	/// | 415 | <see cref="Origin"/> | current Position of the Observer |
+	/// | 425 | <see cref="Longitude"/> | Represents longitude. |
+	/// | 428 | <see cref="Latitude"/> | Represents latitude. |
+	/// | 433 | <see cref="West"/> | Represents west. |
+	/// | 436 | <see cref="East"/> | Represents east. |
+	/// | 439 | <see cref="North"/> | Represents north. |
+	/// | 442 | <see cref="South"/> | Represents south. |
 	/// </remarks>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:48:22Z
-	/// digest: 29c9f3a451af85939d573e784c285baa9191ad285ee19927efe6c2601e336a65
-	/// tags: [code/enum, code/polar_coordinates]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "29c9f3a451af85939d573e784c285baa9191ad285ee19927efe6c2601e336a65", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/polar_coordinates")]
+	[System.ComponentModel.Description("Polar Coordinates match projective Geometry")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Geo : sbyte
 	{
 		/// <inheritdoc cref="Base.e0"/>
@@ -520,18 +445,13 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	}
 
 	/// <summary> Bits for each non-zero Component of a Multi-Vector </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-05-24T16:42:31Z
-	/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-05-24T16:42:31Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Bits for each non-zero Component of a Multi-Vector")]
 	[Flags]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Bases
 	{
 		/// <inheritdoc cref="Base._1_"/>
@@ -571,13 +491,10 @@ public class Pga2D : AGeoGebra8<Pga2D>
 
 	/// <summary>Gets the components.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets the components.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Bases Components => (Bases) this.GetComponents();
 
 	/// <summary>Gets the type By Index.</summary>
@@ -590,13 +507,10 @@ public class Pga2D : AGeoGebra8<Pga2D>
 
 	/// <summary> Returns the geometric type flags describing which grade components of this multivector are non-zero. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Returns the geometric type flags describing which grade components of this multivector are non-zero.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Types Type {
 		get {
 			Types ret = 0; //Typ.All;
@@ -619,17 +533,12 @@ public class Pga2D : AGeoGebra8<Pga2D>
 
 	/// <summary> Flags classifying which geometric roles a <see cref="Pga2D"/> multivector's nonzero components play. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-07-07T17:48:22Z
-	/// digest: ef32482bcb087cf925ddce47224a4c1e96e209a559f012636bff778498fb1887
-	/// tags: [code/enum, code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "ef32482bcb087cf925ddce47224a4c1e96e209a559f012636bff778498fb1887", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Flags classifying which geometric roles a Pga2D multivector's nonzero components play.")]
 	[Flags]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Types : byte
 	{
 		/// <summary> Scale-Factor, used in Combination with <see cref="Motor"/> and <see cref="Rotor"/> where it is Cos </summary>
@@ -717,13 +626,10 @@ public class Pga2D : AGeoGebra8<Pga2D>
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Base idx] => _C[(int) idx];
 
 	/// <summary>Implicitly converts <paramref name="axis"/> to <see cref="Pga2D"/>.<br/>
@@ -743,95 +649,68 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	/// <summary>Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2D with the specified f and idx. Initializes a new instance of Pga2D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D(double f = 0f, int idx = 0) : base(f, idx) { }
 	/// <summary>Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D(double f = 0f, Geo idx = 0) : base(f, (int) idx) { }
 	/// <summary>Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D(double f = 0f, Base idx = 0) : base(f, (int) idx) { }
 	/// <summary>Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D(double f = 0f, Points idx = 0) : base(f, (int) idx) { }
 	/// <summary>Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D(double f = 0f, Lines idx = 0) : base(f, (int) idx) { }
 	/// <summary>Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D(double f = 0f, AxisRot idx = 0) : base(f, (int) idx) { }
 	/// <summary>Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2D with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D(double f = 0f, AxisTrans idx = 0) : base(f, (int) idx) { }
 
 	/// <summary>Unchecked private Constructor; requires 8 Components!<br/>
 	/// Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor; requires 8 Components! Initializes a new instance of Pga2D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	protected internal Pga2D(params float[] f) : base(f) { }
 	/// <summary>Initializes a new instance of <see cref="Pga2D"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of Pga2D with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D(IReadOnlyList<float> values) : base(values) { }
 
 	/// <inheritdoc />
@@ -843,13 +722,10 @@ public class Pga2D : AGeoGebra8<Pga2D>
 
 	/// <summary> Creates a new <see cref="Pga2D"/> from a raw coordinate array of 8 floats. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Creates a new Pga2D from a raw coordinate array of 8 floats.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Pga2D New(params float[] f) => New((IReadOnlyList<float>) f);
 	/// <inheritdoc cref="New(float[])"/>
 	public static Pga2D New(IReadOnlyList<float> f) => new(f);
@@ -888,68 +764,50 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	/// intersect = <see cref="Horizon"/>/<see cref="e2"/>
 	/// slope = <see cref="e1"/>/<see cref="e2"/>
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("normalized Line Equation: y = Horizon + x*e1")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D NormalLine() => this * (-1 / e2);
 
 	/// <summary> [1] Line Intersect y0 for x = 0 (normed) <see cref="Horizon"/> / <see cref="e2"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("[1] Line Intersect y0 for x = 0 (normed) Horizon / e2.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float Intersect => Horizon / e2;
 
 	/// <summary> normalized Line Slope <see cref="e1"/> / <see cref="e2"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("normalized Line Slope e1 / e2.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float Slope => e1 / e2;
 
 	/// <summary> normalized Point Coordinates. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("normalized Point Coordinates.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Pga2D NormalPoint() => this * (1 / e12);
 
 	/// <summary> [5] x Point Coordinate (normed) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("[5] x Point Coordinate (normed)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float X => e20 / e12;
 
 	/// <summary> [4] y Point Coordinate (normed) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("[4] y Point Coordinate (normed)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float Y => e01 / e12;
 
 	#region Static Base Blades

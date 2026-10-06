@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using org.SpocWeb.root.array;
 using org.SpocWeb.root.extensions;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -29,16 +30,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// * Rotations as the Quotient of 2 Planes
 /// * Screw Motions are the Quotient of 2 Lines in 3D 
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T16:03:01Z
-/// digest: dcffc4d0584896351376f30bfd1af590c3294213cae9290d868807a65e224e57
-/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T16:03:01Z", Digest = "dcffc4d0584896351376f30bfd1af590c3294213cae9290d868807a65e224e57", Stale = false, Path = "ga/R410.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+[System.ComponentModel.Description("5D CGA (3D Conformal Geometric Algebra) with Line, Circle, Plane and Sphere Primitives")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class R410 : AGeoGebra32<R410>
 {
 	// just for debug and print output, the basis names
@@ -61,17 +57,12 @@ public class R410 : AGeoGebra32<R410>
 	public override R410 Self() => this;
 
 	/// <summary> 32 = 2^5 Base-Blades in 4+1D, usable as Indices for Components </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T05:58:58Z
-	/// digest: 53dd8b312ddbd22bf90abb9f526ca548e54afc550a4271a65c3a407f310932a9
-	/// tags: [code/enum, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T05:58:58Z", Digest = "53dd8b312ddbd22bf90abb9f526ca548e54afc550a4271a65c3a407f310932a9", Stale = false, Path = "ga/R410.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/clifford_algebra")]
+	[System.ComponentModel.Description("32 = 2^5 Base-Blades in 4+1D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary> [0] Scalar </summary>
@@ -348,13 +339,10 @@ public class R410 : AGeoGebra32<R410>
 
 	/// <summary> Creates a new <see cref="R410"/> G(4,1,0) CGA multivector from the given component array. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Creates a new R410 G(4,1,0) CGA multivector from the given component array.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R410 New(params float[] f) => New((IReadOnlyList<float>) f);
 	/// <inheritdoc cref="New(float[])"/>
 	public static R410 New(IReadOnlyList<float> f) => new(f);
@@ -365,35 +353,26 @@ public class R410 : AGeoGebra32<R410>
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Base idx] => _C[(int) idx];
 
 	/// <summary>Initializes a new instance of <see cref="R410"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="R410"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R410 with the specified f and idx. Initializes a new instance of R410 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R410(double f = 0, Base idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="R410"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R410 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R410(double f = 0, int idx = 0) : base(f, idx) {}
 
 	/// <inheritdoc />
@@ -405,24 +384,18 @@ public class R410 : AGeoGebra32<R410>
 
 	/// <summary> Unchecked private Constructor for Speed </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	R410(float[] f) : base(f) {}
 
 	/// <summary> Checked Constructor with Copy </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("Checked Constructor with Copy")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R410(IReadOnlyList<float> values) : base(values) {}
 
 	#region Overloaded Operators
@@ -434,50 +407,38 @@ public class R410 : AGeoGebra32<R410>
 
 	/// <summary> * geometric product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("* geometric product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override R410 Times(IReadOnlyList<float> factor) => new(_C.Times32C(factor));
 	/// <inheritdoc />
 	public override R410 TimesR(IReadOnlyList<float> factor) => new(factor.Times32C(_C));
 
 	/// <summary> ^ Meet/Wedge/ outer product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("^ Meet/Wedge/ outer product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override R410 Meet(IReadOnlyList<float> that) => new(_C.Wedge32(that));
 	/// <inheritdoc />
 	public override R410 MeetR(IReadOnlyList<float> that) => new(that.Wedge32(_C));
 
 	/// <summary> &amp; Join/V/ regressive product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("&amp; Join/V/ regressive product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override R410 Join(IReadOnlyList<float> that) => new(_C.Join32C(that));
 
 	/// <summary> | Dot/ inner product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/conformal_geometric_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/clifford_algebra", "code/conformal_geometric_algebra")]
+	[System.ComponentModel.Description("| Dot/ inner product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override R410 Dot(IReadOnlyList<float> that)=> new(_C.Dot32C(that));
 
 	#endregion

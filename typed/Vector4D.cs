@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using org.SpocWeb.root.interfaces.Vectors;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.typed;
 
@@ -12,93 +13,67 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// 
 /// <see cref="Vector4D"/> can be scaled (unlike <see cref="IPoint4D"/>).
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 8dac1d0ea6917dd16c9e77a09b23116ea052517968eb65257fb6b56760d49945
-/// tags: [code/value_object, code/homogeneous_coordinates]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "8dac1d0ea6917dd16c9e77a09b23116ea052517968eb65257fb6b56760d49945", Stale = false, Path = "typed/Vector4D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/value_object", "code/homogeneous_coordinates")]
+[System.ComponentModel.Description("single-precision Point-/Place-Vector in 3D, used for (Position-)Vectors in homogeneous Coordinates")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 {
 	public readonly Vector4 V;
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="v"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Vector4 v) => V = v;
 
 	/// <summary>Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public int Count => 4;
 
 	/// <summary>Gets the x.<br/>
 	/// Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets the x. Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double X => V.X;
 	/// <summary>Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Y => V.Y;
 	/// <summary>Gets the z.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets the z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Z => V.Z;
 
 	/// <summary> Homogeneous Component; scales all others which can be interpreted as a Projection to the Hyper-Plane at Distance W </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Homogeneous Component; scales all others which can be interpreted as a Projection to the Hyper-Plane at Distance W")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double W => V.W;
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double this[int index] => index switch {
 		0 => V.X,
 		1 => V.Y,
@@ -109,36 +84,27 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="x"/>, <paramref name="y"/>, <paramref name="z"/> and <paramref name="w"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified x, y, z and w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(float x, float y, float z, float w) => V = new Vector4(x, y, z, w);
 
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="x"/>, <paramref name="y"/>, <paramref name="z"/> and <paramref name="w"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified x, y, z and w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(double x, double y, double z, double w) 
 		=> V = new Vector4((float) x, (float) y, (float) z, (float) w);
 
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="v"/> and <paramref name="w"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified v and w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Vector3D v, float w = 0) {
 		V.X = v.V.X;
 		V.Y = v.V.Y;
@@ -148,13 +114,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="v1"/> and <paramref name="v2"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified v1 and v2.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Vector2D v1, Vector2D v2) {
 		V.X = v1.V.X;
 		V.Y = v1.V.Y;
@@ -164,13 +127,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="p"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified p.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Point3D p) {
 		V.X = p.V.X;
 		V.Y = p.V.Y;
@@ -181,23 +141,17 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="p"/>.<br/>
 	/// Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="p"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified p. Initializes a new instance of Vector4D with the specified p.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Vector3D p) : this(p.V){}
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="p"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified p.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Vector3 p) {
 		V.X = p.X;
 		V.Y = p.Y;
@@ -208,23 +162,17 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="v"/>.<br/>
 	/// Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="v"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified v. Initializes a new instance of Vector4D with the specified v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Vector2D v) : this(v.V) {}
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="v"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Vector2 v) {
 		V.X = v.X;
 		V.Y = v.Y;
@@ -233,13 +181,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary>Initializes a new instance of <see cref="Vector4D"/> with the specified <paramref name="p"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of Vector4D with the specified p.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D(Point2D p) {
 		V.X = p.V.X;
 		V.Y = p.V.Y;
@@ -249,24 +194,18 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> Projects the homogeneous vector to a 3D point by dividing by W. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Projects the homogeneous vector to a 3D point by dividing by W.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D GetPoint3D() => new(GetVector3());
 
 	/// <summary> Divides X, Y, Z by W to obtain the equivalent affine <see cref="Vector3"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Divides X, Y, Z by W to obtain the equivalent affine Vector3.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3 GetVector3() {
 		var s = 1 / V.W;
 		return new Vector3(V.X * s, V.Y * s, V.Z * s);
@@ -274,13 +213,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> Rotates this vector counter-clockwise by <paramref name="angle"/> radians about the X axis. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Rotates this vector counter-clockwise by angle radians about the X axis.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D RotateAboutX(float angle) {
 		var v = Vector2D.CosSin(angle).V;
 		var ny = v.X * V.Y - v.Y * V.Z;
@@ -290,13 +226,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> Rotates this vector counter-clockwise by <paramref name="angle"/> radians about the Y axis. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Rotates this vector counter-clockwise by angle radians about the Y axis.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D RotateAboutY(float angle) {
 		var v = Vector2D.CosSin(angle).V;
 		var nx = v.X * V.X + v.Y * V.Z;
@@ -306,13 +239,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> Rotates this vector counter-clockwise by <paramref name="angle"/> radians about the Z axis. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Rotates this vector counter-clockwise by angle radians about the Z axis.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D RotateAboutZ(float angle) {
 		var v = Vector2D.CosSin(angle).V;
 		var nx = v.X * V.X - v.Y * V.Y;
@@ -323,13 +253,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 	/// <summary> Rotates this vector by <paramref name="angle"/> radians about the arbitrary axis <paramref name="a"/>
 	/// using the Rodrigues rotation formula. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Rotates this vector by angle radians about the arbitrary axis a using the Rodrigues rotation formula.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D RotateAboutAxis(float angle, BiVector3D a) {
 		var v = Vector2D.CosSin(angle).V;
 		var u = 1.0F - v.X;
@@ -350,13 +277,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> Enumerates the four components X, Y, Z, W in order. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Enumerates the four components X, Y, Z, W in order.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public IEnumerator<double> GetEnumerator() {
 		yield return V.X;
 		yield return V.Y;
@@ -434,13 +358,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary>Gets the norm Abs.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets the norm Abs.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormAbs => V.NormAbs();
 	/// <inheritdoc />
 	double INormed.NormSqr => NormSqr;
@@ -448,124 +369,91 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 	/// <summary>Gets the norm Sqr.<br/>
 	/// Gets the norm.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets the norm Sqr. Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public float NormSqr => V.NormSqr();
 	/// <summary>Gets the norm.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Norm => V.Norm();
 
 	/// <summary> Squared Euclidean length of the bulk (X, Y, Z) components only. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Squared Euclidean length of the bulk (X, Y, Z) components only.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double BulkNormSqr() => V.X * V.X + V.Y * V.Y + V.Z * V.Z;
 
 	/// <summary> Euclidean length of the bulk (X, Y, Z) components only. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Euclidean length of the bulk (X, Y, Z) components only.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double BulkNorm() => Math.Sqrt(BulkNormSqr());
 
 	/// <summary> Absolute value of the homogeneous weight component W. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Absolute value of the homogeneous weight component W.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public float WeightNorm() => Math.Abs(V.W);
 
 
 	//public Vector4D Cjg() => new(new Vector4(V.X, -V.Y));
 	/// <summary> Additive inverse of this vector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Additive inverse of this vector.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Neg() => new(Vector4.Negate(V));
 	/// <summary>Gets the normalized.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Gets the normalized.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Normalized => new(Vector4.Normalize(V));
 
 	/// <summary> Divides X, Y, Z by W so that the homogeneous weight equals 1. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Divides X, Y, Z by W so that the homogeneous weight equals 1.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Unitized() => new(GetPoint3D());
 
 	/// <summary> Grade-reverse of this vector (identity for grade-1 elements). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Grade-reverse of this vector (identity for grade-1 elements).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Reverse() => this;
 
 	/// <summary> Anti-reverse of this vector (negation for grade-1 elements). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Anti-reverse of this vector (negation for grade-1 elements).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D AntiReverse() => Neg();
 
 
 	/// <summary> Returns the component-wise sum of this vector and <paramref name="that"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Returns the component-wise sum of this vector and that.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Plus(Vector4D that) => new(Vector4.Add(V, that.V));
 
 	//public Point3D Plus(Point3D that) => new(Plus(that.V));
@@ -580,25 +468,19 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> Returns the component-wise difference of this vector minus <paramref name="that"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Returns the component-wise difference of this vector minus that.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Minus(Vector4D that) => new(Vector4.Subtract(V, that.V));
 
 	//public Point3D Minus(Point3D that) => new(Minus(that.V));
 	/// <summary> Returns <paramref name="that"/> minus this vector (reversed subtraction). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Returns that minus this vector (reversed subtraction).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D MinusR(Vector3D that) => new(MinusR(that.V));
 	/// <inheritdoc cref="Minus(Vector4D)"/>
 	public Vector4D Minus(Vector3D that) => new(Minus(that.V));
@@ -613,24 +495,18 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> Returns this vector divided by <paramref name="scalar"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Returns this vector divided by scalar.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Per(double scalar) => new(V * (float) (1 / scalar));
 
 	/// <summary> Returns this vector scaled by <paramref name="scalar"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Returns this vector scaled by scalar.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Times(double scalar) => new(V * (float) scalar);
 
 	///// <summary> Component-wise Multiplication </summary>
@@ -643,13 +519,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of <paramref name="that"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of that")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Dot(Vector4D that) => Dot(that.V);
 
 	/// <inheritdoc cref="Dot(Vector4D)"/>
@@ -669,13 +542,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 
 	/// <summary> Component-wise Multiplication </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Component-wise Multiplication")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Times(Vector4D p) => new(V * p.V);
 
 	/// <summary> Non-normalized Projection in <paramref name="that"/> Direction </summary>
@@ -683,13 +553,10 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 	/// <remarks>
 	/// this == <see cref="ProjectOn"/>(that) + <see cref="RejectFrom"/>(that)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Non-normalized Projection in that Direction")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D ProjectOn(Vector4D that) => that * Dot(that);
 
 	/// <summary> Non-normalized Rejection from <paramref name="that"/> Direction </summary>
@@ -697,34 +564,25 @@ public readonly struct Vector4D : IEquatable<Vector4D>, IVector4D
 	/// <remarks>
 	/// this == <see cref="ProjectOn"/>(that) + <see cref="RejectFrom"/>(that)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Non-normalized Rejection from that Direction")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D RejectFrom(Vector4D that) => new(V - that.V * Vector4.Dot(V, that.V));
 
 	/// <summary> Returns a new vector with each component rounded down to the nearest integer. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Returns a new vector with each component rounded down to the nearest integer.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Floor() => new(Math.Floor(V.X), Math.Floor(V.Y), Math.Floor(V.Z), Math.Floor(V.W));
 	/// <summary> Returns a new vector with each component rounded up to the nearest integer. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/homogeneous_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/homogeneous_coordinates")]
+	[System.ComponentModel.Description("Returns a new vector with each component rounded up to the nearest integer.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector4D Ceil() => new(Math.Ceiling(V.X), Math.Ceiling(V.Y), Math.Ceiling(V.Z), Math.Ceiling(V.W));
 
 }

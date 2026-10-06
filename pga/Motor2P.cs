@@ -7,6 +7,7 @@ using org.SpocWeb.root.expressions;
 using org.SpocWeb.root.extensions.maths;
 using org.SpocWeb.root.interfaces;
 using org.SpocWeb.root.interfaces.maths;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -28,16 +29,11 @@ namespace org.SpocWeb.root.maths.pga;
 /// * a translation along the Axis
 /// 
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 48a7e5ae0e8a5f345db41134cb59e73ddb3c2e23b9ed4a0b622739d2b76a9d0c
-/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "48a7e5ae0e8a5f345db41134cb59e73ddb3c2e23b9ed4a0b622739d2b76a9d0c", Stale = false, Path = "pga/Motor2P.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+[System.ComponentModel.Description("Even sub-algebra of Pga2D G(2,0,1) encoding 2D rigid-body transformations (rotation around Z and translation in X/Y) as a PGA Motor.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>, 
 	IEquatable<Motor2P>, //AGeoGebra16<Pga2D>,
 	IExpression<Motor2P>, //AGeoGebra16<Pga2D>,
@@ -67,13 +63,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary>Initializes a new instance of <see cref="Motor2P"/> with the specified <paramref name="scale"/>, <paramref name="transX"/>, <paramref name="transY"/> and <paramref name="rotZ"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Initializes a new instance of Motor2P with the specified scale, transX, transY and rotZ.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P(float scale, float transX, float transY, float rotZ)
 	{
 		_1_ = scale;
@@ -84,46 +77,34 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary> real e1 + e2 + projective e0 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("real e1 + e2 + projective e0")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public byte Dim => 3;
 
 	/// <summary> 2^3 = 1 + 3 + 3 + 1 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("2^3 = 1 + 3 + 3 + 1")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public int Count => 8;
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.<br/>
 	/// Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index. Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[int index] => this[(Pga2D.Base) index];
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Pga2D.Base index] => index switch {
 		Pga2D.Base._1_ => _1_,
 		Pga2D.Base.e01 => TransX,
@@ -134,13 +115,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Pga2D.Points index] => index switch {
 		Pga2D.Points._1_ => _1_,
 		Pga2D.Points.X => TransX,
@@ -153,13 +131,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 	IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 	/// <summary> yields 0s for the odd Grades </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("yields 0s for the odd Grades")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public IEnumerator<float> GetEnumerator() {
 		yield return _1_;
 
@@ -176,34 +151,25 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary> Returns this motor as its own evaluated form (identity for <see cref="IExpression{T}"/>). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns this motor as its own evaluated form (identity for IExpression).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P Evaluate() => this;
 	/// <summary> Returns this motor as its own canonical form (identity for <see cref="IExpression{T}"/>). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns this motor as its own canonical form (identity for IExpression).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P Self() => this;
 
 	/// <summary> Returns the hash code of this motor's coordinate values for use in expression caching. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns the hash code of this motor's coordinate values for use in expression caching.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public int ValueHash() => GetHashCode();
 	/// <inheritdoc />
 	public override int GetHashCode() => (((((_1_.GetHashCode() << 1) ^ TransX.GetHashCode()) << 1) ^ TransY.GetHashCode()) << 1) ^ RotZ.GetHashCode();
@@ -212,13 +178,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 	public override bool Equals(object obj) => obj is Motor2P trafo && Equals(trafo);
 	/// <summary>Determines whether equal To.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Determines whether equal To.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool IsEqualTo(Motor2P that) => Equals(that);
 
 	/// <inheritdoc cref="Equals(object)"/>
@@ -232,24 +195,18 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary> Returns the L1 (Manhattan) norm of this motor's four coordinate components. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns the L1 (Manhattan) norm of this motor's four coordinate components.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public double NormAbs() => Math.Abs(_1_) + Math.Abs(TransX) + Math.Abs(TransY) + Math.Abs(RotZ);
 
 	/// <summary> Scales all components of this motor by the given scalar <paramref name="factor"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Scales all components of this motor by the given scalar factor.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P Times(double factor) => Times((float)factor);
 	/// <inheritdoc cref="Times(double)"/>
 	public Motor2P Times(float factor) => new(factor * _1_
@@ -261,13 +218,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 	public static string Infix = ", ";
 	/// <summary> Writes the four motor components to <paramref name="writer"/> separated by <see cref="Infix"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Writes the four motor components to writer separated by Infix.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public long WriteTo(TextWriter writer, long lengthLeft) {
 		//new Pga2D().WriteTo(writer, lengthLeft);
 		//MemoryMarshal.Cast< Trafo3P, float >(this);
@@ -280,45 +234,33 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary>Determines whether zero.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Determines whether zero.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public bool IsZero() => _1_.IsSmall() && TransX.IsSmall() && TransY.IsSmall() && RotZ.IsSmall();
 
 	/// <summary> Returns the squared norm of this motor's rotational part (scalar² + rotZ²). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns the squared norm of this motor's rotational part (scalar² + rotZ²).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public double NormSqr() => _1_.Sqr() + RotZ.Sqr();
 
 	/// <summary> Returns this motor with all components negated. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns this motor with all components negated.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P Neg() => new(-_1_, -TransX, -TransY, -RotZ);
 	/// <summary> Returns the Poincaré dual of this motor by swapping scalar and bivector components. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns the Poincaré dual of this motor by swapping scalar and bivector components.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P Dual() => new(RotZ, TransY, TransX, _1_);
 
 	/// <inheritdoc cref="Plus(Motor2P)"/>
@@ -350,13 +292,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary> Subtracts <paramref name="subtrahend"/> component-wise from this motor. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Subtracts subtrahend component-wise from this motor.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P Minus(Motor2P subtrahend) => new(
 		_1_ - subtrahend._1_,
 		TransX - subtrahend.TransX,
@@ -365,13 +304,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary> Adds <paramref name="addend"/> component-wise to this motor. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Adds addend component-wise to this motor.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P Plus(Motor2P addend) => new(
 		addend._1_ + _1_,
 		addend.TransX + TransX,
@@ -380,13 +316,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary> Returns <paramref name="minuend"/> minus this motor (reversed subtraction). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns minuend minus this motor (reversed subtraction).")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P MinusR(Motor2P minuend) => new(
 		minuend._1_ + _1_,
 		minuend.TransX + TransX,
@@ -411,13 +344,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 
 	/// <summary> Returns the outer (Meet) product with the operands swapped: <paramref name="that"/> Meet this. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("Returns the outer (Meet) product with the operands swapped: that Meet this.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P MeetR(Motor2P that) => that.Meet(this);
 
 	/// <inheritdoc cref="XPga2D.Join8P(IReadOnlyList{float},IReadOnlyList{float})"/>
@@ -468,13 +398,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 	/// Since ~this*this = this*~this = this.NormSqr()
 	/// 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("&lt; AKA Map, 'Sandwich' Product: ~this * trafo * this")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P Sandwich(Motor2P trafo) => this.Conjugate() * trafo * this;
 
 	/// <summary> > AKA Map, 'Sandwich' Product: ~<paramref name="versor"/> * this * <paramref name="versor"/> </summary>
@@ -484,13 +411,10 @@ public readonly struct Motor2P : //IGeoGebra<Pga2DTrafo, float>,
 	/// 
 	/// <paramref name="versor"/> itself is invariant under this Transformation! (prove by inserting into Expression)
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/rigid_body_physics]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/rigid_body_physics")]
+	[System.ComponentModel.Description("> AKA Map, 'Sandwich' Product: ~versor * this * versor")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public Motor2P SandwichBy(Motor2P versor) => versor.Conjugate() * this * versor;
 
 }

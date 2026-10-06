@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using org.SpocWeb.root.array;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -11,15 +12,15 @@ namespace org.SpocWeb.root.maths.pga.ga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 65 | <see cref="R110"/> | Initializes a new instance of R110 with the specified f and idx. |
-/// | 67 | <see cref="R110"/> | Initializes a new instance of R110 with the specified values. |
-/// | 73 | <see cref="R110"/> | Initializes a new instance of R110 with the specified values. |
-/// | 83 | <see cref="New"/> | Creates a new R110 G(1,1,0) multivector from the given component array. |
-/// | 123 | <see cref="Scalar"/> | Gets the scalar. |
-/// | 126 | <see cref="e1"/> | Gets the e1. |
-/// | 129 | <see cref="e2"/> | Gets the e2. |
-/// | 132 | <see cref="e12"/> | Gets the e12. |
-/// | 150 | <see cref="Blades"/> | Gets the blades. |
+/// | 84 | <see cref="R110"/> | Initializes a new instance of R110 with the specified f and idx. |
+/// | 91 | <see cref="R110"/> | Initializes a new instance of R110 with the specified values. |
+/// | 107 | <see cref="R110"/> | Initializes a new instance of R110 with the specified values. |
+/// | 122 | <see cref="New"/> | Creates a new R110 G(1,1,0) multivector from the given component array. |
+/// | 171 | <see cref="Scalar"/> | Gets the scalar. |
+/// | 174 | <see cref="e1"/> | Gets the e1. |
+/// | 177 | <see cref="e2"/> | Gets the e2. |
+/// | 180 | <see cref="e12"/> | Gets the e12. |
+/// | 198 | <see cref="Blades"/> | Gets the blades. |
 ///
 /// ## Collaborators
 ///
@@ -29,16 +30,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// | <see cref="Base"/> | Nested enum. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: fc5ceb03e3051a383b8c4688a18a6d352fafd55a841f9a8397742f20026fe190
-/// tags: [code/clifford_algebra, code/split_complex]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "fc5ceb03e3051a383b8c4688a18a6d352fafd55a841f9a8397742f20026fe190", Stale = false, Path = "ga/R110.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/clifford_algebra", "code/split_complex")]
+[System.ComponentModel.Description("G(1,1,0) Split-Complex (Hyperbolic) Number algebra with e1²=+1 (real) and e2²=−1 (imaginary).")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class R110 : AGeoGebra4<R110>
 {
 	// just for debug and print output, the basis names
@@ -58,17 +54,12 @@ public class R110 : AGeoGebra4<R110>
 	public override R110 Self() => this;
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-06-17T05:58:42Z
-	/// digest: 26503888b6121e5e4ed37e13956351fa0ad87252f10d3ec1dc8b6374e004fd4b
-	/// tags: [code/enum, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[DocState(Pass = 2, MTime = "2026-06-17T05:58:42Z", Digest = "26503888b6121e5e4ed37e13956351fa0ad87252f10d3ec1dc8b6374e004fd4b", Stale = false, Path = "ga/R110.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary> [0] Scalar Part </summary>
@@ -90,45 +81,33 @@ public class R110 : AGeoGebra4<R110>
 	/// <summary>Initializes a new instance of <see cref="R110"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="R110"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/split_complex]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/split_complex")]
+	[System.ComponentModel.Description("Initializes a new instance of R110 with the specified f and idx. Initializes a new instance of R110 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R110(float f = 0f, int idx = 0) : base(f, idx) { }
 	/// <summary>Initializes a new instance of <see cref="R110"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/split_complex]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/split_complex")]
+	[System.ComponentModel.Description("Initializes a new instance of R110 with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R110(float f = 0f, Base idx = 0) : base(f, (int) idx) { }
 
 	/// <summary>Initializes a new instance of <see cref="R110"/> with the specified <paramref name="f"/>.<br/>
 	/// Initializes a new instance of <see cref="R110"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/split_complex]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/split_complex")]
+	[System.ComponentModel.Description("Initializes a new instance of R110 with the specified f. Initializes a new instance of R110 with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	R110(params float[] f) : base(f) { }
 	/// <summary>Initializes a new instance of <see cref="R110"/> with the specified <paramref name="values"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/split_complex]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/split_complex")]
+	[System.ComponentModel.Description("Initializes a new instance of R110 with the specified values.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R110(IReadOnlyList<float> values) : base(values) { }
 
 	/// <inheritdoc />
@@ -140,13 +119,10 @@ public class R110 : AGeoGebra4<R110>
 
 	/// <summary> Creates a new <see cref="R110"/> G(1,1,0) multivector from the given component array. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/split_complex]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/split_complex")]
+	[System.ComponentModel.Description("Creates a new R110 G(1,1,0) multivector from the given component array.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R110 New(params float[] f) => New((IReadOnlyList<float>) f);
 	/// <inheritdoc cref="New(float[])"/>
 	public static R110 New(IReadOnlyList<float> f) => new(f);
@@ -163,13 +139,10 @@ public class R110 : AGeoGebra4<R110>
 
 	/// <summary> ! Dual; Poincare duality operator. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra, code/split_complex]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra", "code/split_complex")]
+	[System.ComponentModel.Description("! Dual; Poincare duality operator.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override R110 Dual() => new(_C.DualR011());
 	/// <inheritdoc />
 	public override double NormSqr() => _C.NormSqr4R110();

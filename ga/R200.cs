@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using org.SpocWeb.root.array;
 using org.SpocWeb.root.interfaces.maths;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
@@ -16,16 +17,11 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// This is not a geometric Algebra Operation though.
 /// </remarks>
 /// <inheritdoc />
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 11990ae2cf6ff53abbd70c38fa724e000f9781251b5d7969612b15ee17d0f9b7
-/// tags: [code/clifford_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "11990ae2cf6ff53abbd70c38fa724e000f9781251b5d7969612b15ee17d0f9b7", Stale = false, Path = "ga/R200.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/clifford_algebra")]
+[System.ComponentModel.Description("2D Geometric Algebra: only Rotations")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public class R200 : AGeoGebra4<R200>
 {
 	// just for debug and print output, the basis names
@@ -42,16 +38,6 @@ public class R200 : AGeoGebra4<R200>
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// pass: 2
-	/// mtime: 2026-05-24T15:36:37Z
-	/// digest: 8368fe411343467d8d1e0f0b4b97907e945cdc795126cdaa4a7ed69c2b74a80f
-	/// tags: [code/enum, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
 	/// <remarks>
 	/// The Value of the <see cref="Base"/> also represents the Grade.
 	/// For Processing it would actually be better
@@ -59,7 +45,12 @@ public class R200 : AGeoGebra4<R200>
 	/// because they will typically be used together.
 	/// Mixed Grades are only intermediary. 
 	/// </remarks>
+	[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "8368fe411343467d8d1e0f0b4b97907e945cdc795126cdaa4a7ed69c2b74a80f", Stale = false, Path = "ga/R200.cs", Since = "2026-10-06")]
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/enum", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public enum Base : sbyte
 	{
 		/// <summary> [0] Scalar e.g. Dot Product or oriented Volume </summary>
@@ -143,13 +134,10 @@ public class R200 : AGeoGebra4<R200>
 
 	/// <summary> Creates a new <see cref="R200"/> G(2,0,0) multivector from the given double-precision component array. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Creates a new R200 G(2,0,0) multivector from the given double-precision component array.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R200 New(params double[] f) => New(f.AsFloat());
 	/// <inheritdoc cref="New(double[])"/>
 	public static R200 New(params float[] f) => New((IReadOnlyList<float>) f);
@@ -169,57 +157,42 @@ public class R200 : AGeoGebra4<R200>
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public float this[Base idx] => _C[(int) idx];
 
 	/// <summary>Initializes a new instance of <see cref="R200"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.<br/>
 	/// Initializes a new instance of <see cref="R200"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R200 with the specified f and idx. Initializes a new instance of R200 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R200(double f = 0, Base idx = 0) : base(f, (int)idx) {}
 	/// <summary>Initializes a new instance of <see cref="R200"/> with the specified <paramref name="f"/> and <paramref name="idx"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Initializes a new instance of R200 with the specified f and idx.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R200(double f = 0, int idx = 0) : base(f, idx) {}
 
 	/// <summary> Unchecked private Constructor for Speed </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Unchecked private Constructor for Speed")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	R200(float[] f) : base(f) {}
 
 	/// <summary> Checked Constructor with Copy </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Checked Constructor with Copy")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public R200(IReadOnlyList<float> values) : base(values) {}
 
 	#region Overloaded Operators
@@ -229,13 +202,10 @@ public class R200 : AGeoGebra4<R200>
 
 	/// <summary> * geometric product. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("* geometric product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override R200 Times(IReadOnlyList<float> that) => new(_C.Times4(that));
 	/// <inheritdoc />
 	public override R200 TimesR(IReadOnlyList<float> that) => new(that.Times4(_C));
@@ -253,13 +223,10 @@ public class R200 : AGeoGebra4<R200>
 
 	/// <summary> ^ outer product. (MEET) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("^ outer product. (MEET)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override R200 Meet(IReadOnlyList<float> that) => new(_C.Meet4(that));
 
 	/// <inheritdoc />
@@ -275,35 +242,26 @@ public class R200 : AGeoGebra4<R200>
 
 	/// <summary> Squared Euclidean norm. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Squared Euclidean norm.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override double NormSqr() => _C.NormSqr4R200();
 
 	/// <summary>Ideal norm. (signed) </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Ideal norm. (signed)")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public override double NormI() => _C[1]!=0?_C[1]:Norm();
 
 	/// <summary> Returns the normalized <see cref="R200.E1"/> Vector rotated by <paramref name="angle"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/clifford_algebra")]
+	[System.ComponentModel.Description("Returns the normalized E1 Vector rotated by angle")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static R200 RotatedNormal(double angle) {
 		var sinCos = angle.SinCos();
 		return New(0, (float) sinCos.cos, (float) sinCos.sin, 0);

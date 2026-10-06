@@ -2,35 +2,28 @@ using System.Collections.Generic;
 using System.Numerics;
 using org.SpocWeb.root.graphics;
 using org.SpocWeb.root.interfaces.Vectors;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.ga;
 
 /// <summary> A <see cref="RigidBody3D"/> that carries a typed identity payload <typeparamref name="T"/>
 /// for association with a game object or scene node. </summary>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:40:19Z
-/// digest: 84411742196ceb35fb33cda2e959c60220bde7f002219dd59a490eb1b45e28ca
-/// tags: [code/rigid_body_physics, code/typed_wrapper]
-/// concepts: [physics_simulation]
-/// facets: {layer: domain, status: stable, complexity: 1}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:40:19Z", Digest = "84411742196ceb35fb33cda2e959c60220bde7f002219dd59a490eb1b45e28ca", Stale = false, Path = "ga/RigidBody3D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+[Tags("code/rigid_body_physics", "code/typed_wrapper")]
+[System.ComponentModel.Description("A RigidBody3D that carries a typed identity payload for association with a game object or scene node.")]
+[Concept("physics_simulation")]
 public class RigidBody3D<T> : RigidBody3D
 {
 	public readonly T? Identity;
 
 	/// <summary>Initializes a new instance of <see cref="RigidBody3D"/> with the specified <paramref name="identity"/>, <paramref name="mass"/> and <paramref name="extension"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics, code/typed_wrapper]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/rigid_body_physics", "code/typed_wrapper")]
+	[System.ComponentModel.Description("Initializes a new instance of RigidBody3D with the specified identity, mass and extension.")]
+	[Concept("physics_simulation")]
 	public RigidBody3D(T? identity, double mass, float extension = 1) : base(mass, extension) {
 		Identity = identity;
 	}
@@ -40,16 +33,6 @@ public class RigidBody3D<T> : RigidBody3D
 /// 3 for <see cref="Position"/> and
 /// 3 in <see cref="Attitude"/> </summary>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:40:19Z
-/// digest: 33788c20cde0042b5ff18bce6dd1fa3ef11fc0f39bbef44af2be26e4ac9a6a1e
-/// tags: [code/rigid_body_physics]
-/// concepts: [physics_simulation]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
 /// <remarks>
 /// These are the essential Properties of a rigid Body in 2nd Order Approximation.
 /// 0th Order consists only of <see cref="Position"/> Position and is static in Time.
@@ -64,6 +47,11 @@ public class RigidBody3D<T> : RigidBody3D
 /// The most simple Body is an empty HyperSphere with uniform Distribution of the Mass on the Surface
 /// (to give it 
 /// </remarks>
+[DocState(Pass = 2, MTime = "2026-05-24T15:40:19Z", Digest = "33788c20cde0042b5ff18bce6dd1fa3ef11fc0f39bbef44af2be26e4ac9a6a1e", Stale = false, Path = "ga/RigidBody3D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/rigid_body_physics")]
+[System.ComponentModel.Description("A rigid Body in 3D has 6 DoF(Degrees of Freedom): 3 for Position and 3 in Attitude")]
+[Concept("physics_simulation")]
 public class RigidBody3D
 {
 	/// <summary> The Mass/ 0th Inertia-Moment of a Body is a constant, unless it is broken up </summary>
@@ -115,13 +103,10 @@ public class RigidBody3D
 
 	/// <summary> AKA Velocity </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("AKA Velocity")]
+	[Concept("physics_simulation")]
 	public Vector3 Velocity => Momentum * (1 / Mass);
 
 	/// <summary> AKA Omega, Angular Velocity is actual a BiVector </summary>
@@ -129,24 +114,18 @@ public class RigidBody3D
 	/// Due to the Rotation Axis not being aligned with the angular Momentum,
 	/// the Axis constantly changes and with it the angular Velocity Vector.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("AKA Omega, Angular Velocity is actual a BiVector")]
+	[Concept("physics_simulation")]
 	public Vector3? AngularVelocity() => InertiaInverse?.Dot3(AngularMomentum);
 
 	/// <summary> Acceleration is proportional to the applied <paramref name="torque"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("Acceleration is proportional to the applied torque")]
+	[Concept("physics_simulation")]
 	public Vector3? AngularAcceleration(Vector3 torque) => InertiaInverse?.Dot3(torque);
 
 	/// <summary> AKA L, angular Momentum = Sum(i,r[i]^p[i]) = Sum(i,r[i]^v[i]*m[i]) = </summary>
@@ -187,25 +166,19 @@ public class RigidBody3D
 	public Vector3 Rotation;
 	/// <summary> Lazily-computed <see cref="Quaternion"/> equivalent of <see cref="Rotation"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("Lazily-computed Quaternion equivalent of Rotation.")]
+	[Concept("physics_simulation")]
 	public Quaternion Attitude => _Attitude ??= Rotation.AsQuaternion();
 	Quaternion? _Attitude;
 
 	/// <summary>Initializes a new instance of <see cref="RigidBody3D"/> with the specified <paramref name="mass"/> and <paramref name="extension"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("Initializes a new instance of RigidBody3D with the specified mass and extension.")]
+	[Concept("physics_simulation")]
 	public RigidBody3D(double mass, float extension = 1) {
 		Extension = extension;
 		Mass = (float) mass;
@@ -213,13 +186,10 @@ public class RigidBody3D
 
 	/// <summary> Moves/Updates/Propagates this Body in Time by <paramref name="dt"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/rigid_body_physics]
-	/// concepts: [physics_simulation]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/rigid_body_physics")]
+	[System.ComponentModel.Description("Moves/Updates/Propagates this Body in Time by dt")]
+	[Concept("physics_simulation")]
 	public void Move(float dt) {
 		var angularVelocity = AngularVelocity();
 		if (angularVelocity is not null) {

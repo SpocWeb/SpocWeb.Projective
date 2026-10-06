@@ -5,6 +5,7 @@ using System.Numerics;
 using org.SpocWeb.root.extensions.maths;
 using org.SpocWeb.root.interfaces.maths;
 using org.SpocWeb.root.interfaces.Vectors;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.typed;
 
@@ -15,19 +16,19 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 27 | <see cref="X"/> | Gets the x. |
-/// | 29 | <see cref="Y"/> | Gets the y. |
-/// | 31 | <see cref="Z"/> | Gets the z. |
-/// | 33 | <see cref="W"/> | Gets the w. |
-/// | 36 | <see cref="Count"/> | Gets the number of elements. |
-/// | 39 | <see cref="NormAbs"/> | Gets the norm Abs. |
-/// | 42 | <see cref="NormSqr"/> | Gets the norm Sqr. |
-/// | 45 | <see cref="Norm"/> | Gets the norm. |
-/// | 48 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 57 | <see cref="Point2D"/> | Initializes a new instance of Point2D with the specified v. |
-/// | 60 | <see cref="operator *"/> | Multiplies scalar by point2D. |
-/// | 122 | <see cref="operator ^"/> | Returns the wedge product of the 2D points p and q. |
-/// | 129 | <see cref="operator ^"/> | Returns the wedge product of the 2D point p and the 2D vector v. |
+/// | 59 | <see cref="X"/> | Gets the x. |
+/// | 66 | <see cref="Y"/> | Gets the y. |
+/// | 73 | <see cref="Z"/> | Gets the z. |
+/// | 80 | <see cref="W"/> | Gets the w. |
+/// | 88 | <see cref="Count"/> | Gets the number of elements. |
+/// | 96 | <see cref="NormAbs"/> | Gets the norm Abs. |
+/// | 104 | <see cref="NormSqr"/> | Gets the norm Sqr. |
+/// | 112 | <see cref="Norm"/> | Gets the norm. |
+/// | 120 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
+/// | 134 | <see cref="Point2D"/> | Initializes a new instance of Point2D with the specified v. |
+/// | 141 | <see cref="operator *"/> | Multiplies scalar by point2D. |
+/// | 233 | <see cref="operator ^"/> | Returns the wedge product of the 2D points p and q. |
+/// | 240 | <see cref="operator ^"/> | Returns the wedge product of the 2D point p and the 2D vector v. |
 ///
 /// ## Collaborators
 ///
@@ -43,16 +44,11 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// | <see cref="IEnumerator"/> | Returned by a method. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 45dfe294652032a800df2d168f03696930a308929023ab7840b7fe2600cd2cc3
-/// tags: [code/value_object, code/affine_geometry]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "45dfe294652032a800df2d168f03696930a308929023ab7840b7fe2600cd2cc3", Stale = false, Path = "typed/Point2D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/value_object", "code/affine_geometry")]
+[System.ComponentModel.Description("Vector2-backed immutable 2D affine point with homogeneous W = 1, supporting addition/subtraction with Vector2D and wedge products that produce lines.")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public readonly struct Point2D : IPoint2D, IPoint3D, IPoint4D//, IVector2D, IVector3D
 {
 	public readonly Vector2 V;
@@ -60,98 +56,71 @@ public readonly struct Point2D : IPoint2D, IPoint3D, IPoint4D//, IVector2D, IVec
 	/// <summary>Gets the x.<br/>
 	/// Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets the x. Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double X => V.X;
 	/// <summary>Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Y => V.Y;
 	/// <summary>Gets the z.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets the z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Z => 0;
 	/// <summary>Gets the w.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets the w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double W => 1;
 
 	/// <summary>Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public int Count => 2;
 
 	/// <summary>Gets the norm Abs.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets the norm Abs.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormAbs => Math.Abs(X) + Math.Abs(Y);
 
 	/// <summary>Gets the norm Sqr.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets the norm Sqr.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormSqr => X*X + Y*Y;
 
 	/// <summary>Gets the norm.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Norm =>  Math.Sqrt(NormSqr);
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double this[int index] => index switch {
 		0 => X,
 		1 => Y,
@@ -162,13 +131,10 @@ public readonly struct Point2D : IPoint2D, IPoint3D, IPoint4D//, IVector2D, IVec
 
 	/// <summary>Initializes a new instance of <see cref="Point2D"/> with the specified <paramref name="v"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Initializes a new instance of Point2D with the specified v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point2D(Vector2 v) => V = v;
 
 	/// <summary>Multiplies <paramref name="scalar"/> by <paramref name="point2D"/>.</summary>
@@ -176,23 +142,17 @@ public readonly struct Point2D : IPoint2D, IPoint3D, IPoint4D//, IVector2D, IVec
 
 	/// <summary> Subtracts <paramref name="that"/> displacement from this point. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Subtracts that displacement from this point.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point2D Minus(Vector2D that) => new(Vector2.Subtract(V, that.V));
 	/// <summary> Adds <paramref name="that"/> displacement to this point. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Adds that displacement to this point.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point2D Plus(Vector2D that) => new(Vector2.Add(V, that.V));
 
 	/// <inheritdoc cref="Minus(Vector2D)"/>
@@ -204,13 +164,10 @@ public readonly struct Point2D : IPoint2D, IPoint3D, IPoint4D//, IVector2D, IVec
 
 	/// <summary> Approximate equality as a homogeneous 4D point; requires W≈1 and Z≈0. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Approximate equality as a homogeneous 4D point; requires W≈1 and Z≈0.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(IPoint4D? that)
 	{
 		if (that is null) {
@@ -226,13 +183,10 @@ public readonly struct Point2D : IPoint2D, IPoint3D, IPoint4D//, IVector2D, IVec
 
 	/// <summary> Approximate equality as a 3D point; requires Z≈0. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Approximate equality as a 3D point; requires Z≈0.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(IPoint3D? that)
 	{
 		if (that is null) {
@@ -247,13 +201,10 @@ public readonly struct Point2D : IPoint2D, IPoint3D, IPoint4D//, IVector2D, IVec
 
 	/// <summary> Approximate equality within a tolerance scaled to the combined magnitude of both points. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Approximate equality within a tolerance scaled to the combined magnitude of both points.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(IPoint2D? that) {
 		if (that is null) {
 			return false;
@@ -266,13 +217,10 @@ public readonly struct Point2D : IPoint2D, IPoint3D, IPoint4D//, IVector2D, IVec
 
 	/// <summary> Enumerates the X and Y coordinates as doubles. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/affine_geometry]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/affine_geometry")]
+	[System.ComponentModel.Description("Enumerates the X and Y coordinates as doubles.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public IEnumerator<double> GetEnumerator() {
 		yield return X;
 		yield return Y;

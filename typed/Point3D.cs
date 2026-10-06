@@ -5,6 +5,7 @@ using System.Numerics;
 using org.SpocWeb.root.extensions.maths;
 using org.SpocWeb.root.interfaces.maths;
 using org.SpocWeb.root.interfaces.Vectors;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.typed;
 
@@ -14,28 +15,28 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 25 | <see cref="Count"/> | Gets the number of elements. |
-/// | 29 | <see cref="X"/> | Gets the x. |
-/// | 31 | <see cref="Y"/> | Gets the y. |
-/// | 33 | <see cref="Z"/> | Gets the z. |
-/// | 35 | <see cref="W"/> | Gets the w. |
-/// | 38 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 47 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified v. |
-/// | 51 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. |
-/// | 53 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. |
-/// | 73 | <see cref="Wedge"/> |  |
-/// | 126 | <see cref="NormAbs"/> | Gets the norm Abs. |
-/// | 128 | <see cref="NormSqr"/> | Gets the norm Sqr. |
-/// | 130 | <see cref="Norm"/> | Gets the norm. |
-/// | 136 | <see cref="operator =="/> | Determines whether a equals b. |
-/// | 138 | <see cref="operator !="/> | Determines whether a does not equal b. |
-/// | 141 | <see cref="operator ^"/> | Wedge product of two 3D points, yielding the line through them. |
-/// | 143 | <see cref="operator ^"/> | Wedge product of a 3D point and a direction vector, yielding the line through the point parallel to the vector. |
-/// | 146 | <see cref="operator -"/> | Subtracts that from self. |
-/// | 148 | <see cref="operator -"/> | Subtracts that from self. |
-/// | 150 | <see cref="operator +"/> | Adds self and that. |
-/// | 154 | <see cref="operator -"/> | Subtracts that from self. |
-/// | 156 | <see cref="operator +"/> | Adds self and that. |
+/// | 66 | <see cref="Count"/> | Gets the number of elements. |
+/// | 75 | <see cref="X"/> | Gets the x. |
+/// | 82 | <see cref="Y"/> | Gets the y. |
+/// | 89 | <see cref="Z"/> | Gets the z. |
+/// | 96 | <see cref="W"/> | Gets the w. |
+/// | 104 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
+/// | 118 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified v. |
+/// | 127 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. |
+/// | 134 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. |
+/// | 168 | <see cref="Wedge"/> |  |
+/// | 232 | <see cref="NormAbs"/> | Gets the norm Abs. |
+/// | 239 | <see cref="NormSqr"/> | Gets the norm Sqr. |
+/// | 246 | <see cref="Norm"/> | Gets the norm. |
+/// | 256 | <see cref="operator =="/> | Determines whether a equals b. |
+/// | 258 | <see cref="operator !="/> | Determines whether a does not equal b. |
+/// | 261 | <see cref="operator ^"/> | Wedge product of two 3D points, yielding the line through them. |
+/// | 263 | <see cref="operator ^"/> | Wedge product of a 3D point and a direction vector, yielding the line through the point parallel to the vector. |
+/// | 266 | <see cref="operator -"/> | Subtracts that from self. |
+/// | 268 | <see cref="operator -"/> | Subtracts that from self. |
+/// | 270 | <see cref="operator +"/> | Adds self and that. |
+/// | 274 | <see cref="operator -"/> | Subtracts that from self. |
+/// | 276 | <see cref="operator +"/> | Adds self and that. |
 ///
 /// ## Collaborators
 ///
@@ -51,82 +52,59 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// | <see cref="IEnumerator"/> | Returned by a method. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: c67006e522c51fe4e192ebb384ff0ccbb3bd097f6ab08a0b6913bdcd1ff768a6
-/// tags: [code/value_object, code/simd]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: buggy, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "c67006e522c51fe4e192ebb384ff0ccbb3bd097f6ab08a0b6913bdcd1ff768a6", Stale = false, Path = "typed/Point3D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+[Tags("code/value_object", "code/simd")]
+[System.ComponentModel.Description("3D Point accelerated by Vector3")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public readonly struct Point3D : IPoint3D, IPoint4D, IEquatable<Point3D>
 {
 	public readonly Vector3 V;
 
 	/// <summary>Gets the number of elements.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets the number of elements.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public int Count => 3;
 
 	/// <summary>Gets the x.<br/>
 	/// Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets the x. Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double X => V.X;
 	/// <summary>Gets the y.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets the y.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Y => V.Y;
 	/// <summary>Gets the z.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets the z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Z => V.Z;
 	/// <summary>Gets the w.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets the w.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double W => 0;
 
 	/// <summary>Gets or sets the element at the specified <paramref name="index"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets or sets the element at the specified index.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double this[int index] => index switch {
 		0 => V.X,
 		1 => V.Y,
@@ -137,58 +115,43 @@ public readonly struct Point3D : IPoint3D, IPoint4D, IEquatable<Point3D>
 
 	/// <summary>Initializes a new instance of <see cref="Point3D"/> with the specified <paramref name="v"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Initializes a new instance of Point3D with the specified v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D(Vector3 v) => V = v;
 
 	/// <summary>Initializes a new instance of <see cref="Point3D"/> with the specified <paramref name="x"/>, <paramref name="y"/> and <paramref name="z"/>.<br/>
 	/// Initializes a new instance of <see cref="Point3D"/> with the specified <paramref name="x"/>, <paramref name="y"/> and <paramref name="z"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Initializes a new instance of Point3D with the specified x, y and z. Initializes a new instance of Point3D with the specified x, y and z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D(float x, float y, float z) => V = new Vector3(x, y, z);
 	/// <summary>Initializes a new instance of <see cref="Point3D"/> with the specified <paramref name="x"/>, <paramref name="y"/> and <paramref name="z"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Initializes a new instance of Point3D with the specified x, y and z.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D(double x, double y, double z) => V = new Vector3((float) x, (float) y, (float) z);
 
 	/// <summary> Subtracts <paramref name="that"/> displacement from this point. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Subtracts that displacement from this point.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D Minus(Vector3 that) => new(Vector3.Subtract(V, that));
 	/// <inheritdoc cref="Minus(Vector3)"/>
 	public Point3D Minus(Vector3D that) => new(Vector3.Subtract(V, that.V));
 	/// <summary> Adds <paramref name="that"/> displacement to this point. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Adds that displacement to this point.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Point3D Plus(Vector3D that) => new(Vector3.Add(V, that.V));
 
 	/// <inheritdoc cref="Minus(Vector3)"/>
@@ -221,13 +184,10 @@ public readonly struct Point3D : IPoint3D, IPoint4D, IEquatable<Point3D>
 
 	/// <summary> Approximate equality within a tolerance scaled to the combined magnitude of both points. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Approximate equality within a tolerance scaled to the combined magnitude of both points.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(IPoint3D? other) {
 		if (other is null) {
 			return false;
@@ -241,13 +201,10 @@ public readonly struct Point3D : IPoint3D, IPoint4D, IEquatable<Point3D>
 
 	/// <summary> Approximate equality as a homogeneous 4D point; requires W≈1. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Approximate equality as a homogeneous 4D point; requires W≈1.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(IPoint4D? other) {
 		if (other is null) {
 			return false;
@@ -272,33 +229,24 @@ public readonly struct Point3D : IPoint3D, IPoint4D, IEquatable<Point3D>
 	/// <summary>Gets the norm Abs.<br/>
 	/// Gets the norm Sqr.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets the norm Abs. Gets the norm Sqr.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormAbs => Math.Abs(V.X) + Math.Abs(V.Y) + Math.Abs(V.Z);
 	/// <summary>Gets the norm Sqr.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets the norm Sqr.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double NormSqr => V.X * V.X + V.Y * V.Y + V.Z * V.Z; //V.LengthSquared(); //
 	/// <summary>Gets the norm.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/simd]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: buggy, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+	[Tags("code/value_object", "code/simd")]
+	[System.ComponentModel.Description("Gets the norm.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double Norm => Math.Sqrt(NormSqr);// V.Length(); //
 
 	#region Operators

@@ -7,6 +7,7 @@ using org.SpocWeb.root.extensions.maths;
 using org.SpocWeb.root.interfaces.maths;
 using org.SpocWeb.root.logging;
 using org.SpocWeb.root.maths.pga.ga;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -16,49 +17,49 @@ namespace org.SpocWeb.root.maths.pga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 26 | <see cref="AsPga3D"/> | Constructs a Pga3D with a single component idx set to f. |
-/// | 40 | <see cref="Dual"/> | Demonstrates the Dual Operation on Base Components |
-/// | 72 | <see cref="Reverted"/> | Demonstrates the Reverted Operation on Base Components |
-/// | 106 | <see cref="Involute"/> | Demonstrates the Involute Operation on Base Components |
-/// | 140 | <see cref="Conjugate"/> | Demonstrates the Signs of the Conjugate Operation on Base Components |
-/// | 172 | <see cref="GetBases"/> | Returns all values of the Base enum as an array for use as NUnit test-case sources. |
-/// | 175 | <see cref="TestCliffordIsReversionOfInvolution"/> | Test Clifford Is Reversion Of Involution. |
-/// | 187 | <see cref="TestNormUsesConjugate"/> | Involute and Reverted violate NormSqr when e0 is missing |
-/// | 205 | <see cref="TestSqRt"/> | Test Sq Rt. |
-/// | 214 | <see cref="Test3D"/> | Test3 D. |
-/// | 285 | <see cref="Point_on_torus"/> | Returns a point on a standard torus at toroidal parameter s and poloidal parameter t, both in [0,1). |
-/// | 291 | <see cref="GetFactor"/> | Returns the canonical positive basis element and sign factor (+1, 0, or -1) corresponding to the given (possibly negated) e. |
-/// | 307 | <see cref="Dual16"/> | ! = Poincar� duality operator. |
-/// | 312 | <see cref="Involute16"/> | Main involution |
-/// | 322 | <see cref="Reverted16"/> | ~ Complex Conjugate of the basis blades. |
-/// | 327 | <see cref="Plus16"/> | + Add; MultiVector addition |
-/// | 353 | <see cref="Minus16"/> | - Minus, SUB; MultiVector Subtraction |
-/// | 373 | <see cref="Times16"/> | * mulS = scalar * multiVector multiplication |
-/// | 386 | <see cref="MinusR16"/> | Returns a new 16-element array with the scalar component set to  a - b[0]  and all remaining components negated. |
-/// | 419 | <see cref="Dot16P"/> | | Dot = inner / scalar product. |
-/// | 455 | <see cref="Join16P"/> | &amp; (JOIN): Vee AKA regressive product; symmetric |
-/// | 505 | <see cref="Meet16P"/> | ^ Cross-/ outer Product / MEET / Intersect / Wedge; antisymmetric 'Grassmann' product. |
-/// | 526 | <see cref="CliffCjg16"/> | Clifford Conjugation |
-/// | 531 | <see cref="NormSqr16Q"/> | Norm Sqr16 Q. |
-/// | 535 | <see cref="NormSqr16P"/> | Norm Sqr16 P. |
-/// | 547 | <see cref="Times16P"/> | * = geometric/cartesian product. |
-/// | 569 | <see cref="ProductGeometric"/> | Delegate wrapping the geometric product operation for use in product test pipelines. |
-/// | 571 | <see cref="ProductDot"/> | Delegate wrapping the inner (dot) product operation for use in product test pipelines. |
-/// | 573 | <see cref="ProductOuter"/> | Delegate wrapping the outer (meet) product operation for use in product test pipelines. |
-/// | 583 | <see cref="Products"/> | Public read-only view of all three product delegate functions indexed by product type. |
-/// | 586 | <see cref="AllProductTests"/> | Generates all Test Pairs for all Products in Products |
-/// | 597 | <see cref="TestJoinMeet"/> | Test Join Meet. |
-/// | 616 | <see cref="IsOdd"/> | Determines whether odd. |
-/// | 620 | <see cref="Grade"/> | Returns the grade (0–4) of the given basis blade value. |
-/// | 644 | <see cref="TestJoinMeetAbs"/> | Test Join Meet Abs. |
-/// | 654 | <see cref="ProductOuterSampleVectorPairs"/> | Generates all Test Cases for product from  Pairs of Pga3D Elements |
-/// | 667 | <see cref="BaseVectorPairs"/> | Generates all Pairs of Pga3D Base Vectors Elements |
-/// | 676 | <see cref="TestAllProducts"/> | Test All Products. |
-/// | 683 | <see cref="CreateVectorPairs"/> | Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley products table. |
-/// | 708 | <see cref="RandomPga3D"/> | Generates 99 random Pga3D multi-vectors with uniformly distributed components for property-based tests. |
-/// | 728 | <see cref="TestRcp"/> | Test Rcp. |
-/// | 740 | <see cref="MakeMotor"/> | Constructs a translator motor along axisTrans by twice halfDistance. |
-/// | 744 | <see cref="MakeRotor"/> | Constructs a rotor around axisRot by twice halfAngleRad radians. |
+/// | 91 | <see cref="AsPga3D"/> | Constructs a Pga3D with a single component idx set to f. |
+/// | 117 | <see cref="Dual"/> | Demonstrates the Dual Operation on Base Components |
+/// | 162 | <see cref="Reverted"/> | Demonstrates the Reverted Operation on Base Components |
+/// | 209 | <see cref="Involute"/> | Demonstrates the Involute Operation on Base Components |
+/// | 256 | <see cref="Conjugate"/> | Demonstrates the Signs of the Conjugate Operation on Base Components |
+/// | 294 | <see cref="GetBases"/> | Returns all values of the Base enum as an array for use as NUnit test-case sources. |
+/// | 302 | <see cref="TestCliffordIsReversionOfInvolution"/> | Test Clifford Is Reversion Of Involution. |
+/// | 319 | <see cref="TestNormUsesConjugate"/> | Involute and Reverted violate NormSqr when e0 is missing |
+/// | 342 | <see cref="TestSqRt"/> | Test Sq Rt. |
+/// | 356 | <see cref="Test3D"/> | Test3 D. |
+/// | 432 | <see cref="Point_on_torus"/> | Returns a point on a standard torus at toroidal parameter s and poloidal parameter t, both in [0,1). |
+/// | 443 | <see cref="GetFactor"/> | Returns the canonical positive basis element and sign factor (+1, 0, or -1) corresponding to the given (possibly negated) e. |
+/// | 463 | <see cref="Dual16"/> | ! = Poincar� duality operator. |
+/// | 472 | <see cref="Involute16"/> | Main involution |
+/// | 486 | <see cref="Reverted16"/> | ~ Complex Conjugate of the basis blades. |
+/// | 496 | <see cref="Plus16"/> | + Add; MultiVector addition |
+/// | 527 | <see cref="Minus16"/> | - Minus, SUB; MultiVector Subtraction |
+/// | 552 | <see cref="Times16"/> | * mulS = scalar * multiVector multiplication |
+/// | 570 | <see cref="MinusR16"/> | Returns a new 16-element array with the scalar component set to  a - b[0]  and all remaining components negated. |
+/// | 607 | <see cref="Dot16P"/> | | Dot = inner / scalar product. |
+/// | 647 | <see cref="Join16P"/> | &amp; (JOIN): Vee AKA regressive product; symmetric |
+/// | 701 | <see cref="Meet16P"/> | ^ Cross-/ outer Product / MEET / Intersect / Wedge; antisymmetric 'Grassmann' product. |
+/// | 727 | <see cref="CliffCjg16"/> | Clifford Conjugation |
+/// | 737 | <see cref="NormSqr16Q"/> | Norm Sqr16 Q. |
+/// | 746 | <see cref="NormSqr16P"/> | Norm Sqr16 P. |
+/// | 762 | <see cref="Times16P"/> | * = geometric/cartesian product. |
+/// | 788 | <see cref="ProductGeometric"/> | Delegate wrapping the geometric product operation for use in product test pipelines. |
+/// | 790 | <see cref="ProductDot"/> | Delegate wrapping the inner (dot) product operation for use in product test pipelines. |
+/// | 792 | <see cref="ProductOuter"/> | Delegate wrapping the outer (meet) product operation for use in product test pipelines. |
+/// | 802 | <see cref="Products"/> | Public read-only view of all three product delegate functions indexed by product type. |
+/// | 806 | <see cref="AllProductTests"/> | Generates all Test Pairs for all Products in Products |
+/// | 822 | <see cref="TestJoinMeet"/> | Test Join Meet. |
+/// | 846 | <see cref="IsOdd"/> | Determines whether odd. |
+/// | 855 | <see cref="Grade"/> | Returns the grade (0–4) of the given basis blade value. |
+/// | 884 | <see cref="TestJoinMeetAbs"/> | Test Join Meet Abs. |
+/// | 899 | <see cref="ProductOuterSampleVectorPairs"/> | Generates all Test Cases for product from  Pairs of Pga3D Elements |
+/// | 927 | <see cref="BaseVectorPairs"/> | Generates all Pairs of Pga3D Base Vectors Elements |
+/// | 941 | <see cref="TestAllProducts"/> | Test All Products. |
+/// | 953 | <see cref="CreateVectorPairs"/> | Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley products table. |
+/// | 983 | <see cref="RandomPga3D"/> | Generates 99 random Pga3D multi-vectors with uniformly distributed components for property-based tests. |
+/// | 1008 | <see cref="TestRcp"/> | Test Rcp. |
+/// | 1025 | <see cref="MakeMotor"/> | Constructs a translator motor along axisTrans by twice halfDistance. |
+/// | 1034 | <see cref="MakeRotor"/> | Constructs a rotor around axisRot by twice halfAngleRad radians. |
 ///
 /// ## Collaborators
 ///
@@ -78,27 +79,19 @@ namespace org.SpocWeb.root.maths.pga;
 /// | <see cref="Random"/> | Used as a field. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: bb55659c0dad345f02c0ed1f948c86cabc953b5894c53ed8cc3a6ff2a75e7a39
-/// tags: [code/extension_method, code/projective_geometric_algebra]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: domain, status: buggy, complexity: 3}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "bb55659c0dad345f02c0ed1f948c86cabc953b5894c53ed8cc3a6ff2a75e7a39", Stale = false, Path = "pga/XPga3D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
+[Tags("code/extension_method", "code/projective_geometric_algebra")]
+[System.ComponentModel.Description("Extension Methods on IReadOnlyList")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public static partial class XPga3D
 {
 	/// <summary> Constructs a <see cref="Pga3D"/> with a single component <paramref name="idx"/> set to <paramref name="f"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/factory_method]
-	/// concepts: [projective_geometric_algebra]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/factory_method")]
+	[System.ComponentModel.Description("Constructs a Pga3D with a single component idx set to f.")]
+	[Concept("projective_geometric_algebra")]
 	public static Pga3D AsPga3D(this Pga3D.Base idx, double f = 1) => new(f, idx);
 	/// <inheritdoc cref="AsPga3D(Pga3D.Base, double)"/>
 	public static Pga3D AsPga3D(this Pga3D.AxisTrans idx, double f = 1) => new(f, idx);
@@ -121,6 +114,9 @@ public static partial class XPga3D
 	/// </code>
 	/// </example>
 	#region TestCase
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra", "code/lookup")]
+	[System.ComponentModel.Description("Demonstrates the Dual Operation on Base Components")]
 	[TestCase(Pga3D.Base._1_, ExpectedResult = Pga3D.Bases.e0123)]
 
 	[TestCase((Pga3D.Base)Pga3D.Points.Origin, ExpectedResult = (Pga3D.Bases)(1 << (int)Pga3D.Planes.Sky))]
@@ -144,6 +140,8 @@ public static partial class XPga3D
 	[TestCase((Pga3D.Base)Pga3D.Planes.Sky, ExpectedResult = (Pga3D.Bases)(1 << (int)Pga3D.Points.Origin))]
 
 	[TestCase(Pga3D.Base.e0123, ExpectedResult = Pga3D.Bases._1_)]
+	[Concept("duality")]
+	[Concept("basis_blade")]
 	#endregion TestCase
 	public static Pga3D.Bases Dual(Pga3D.Base b) {
 		var p = b.AsPga3D();
@@ -161,6 +159,9 @@ public static partial class XPga3D
 	/// </code>
 	/// </example>
 	#region TestCase
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Demonstrates the Reverted Operation on Base Components")]
 	[TestCase(Pga3D.Base._1_, ExpectedResult = 1f)]
 
 	[TestCase((Pga3D.Base)Pga3D.Points.Origin, ExpectedResult = -1f)]
@@ -184,6 +185,8 @@ public static partial class XPga3D
 	[TestCase((Pga3D.Base)Pga3D.Planes.Sky, ExpectedResult = 1f)]
 
 	[TestCase(Pga3D.Base.e0123, ExpectedResult = 1f)]
+	[Concept("reversion")]
+	[Concept("basis_blade")]
 	#endregion TestCase
 	public static float Reverted(Pga3D.Base b) {
 		var p = b.AsPga3D();
@@ -203,6 +206,9 @@ public static partial class XPga3D
 	/// </code>
 	/// </example>
 	#region TestCase
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Demonstrates the Involute Operation on Base Components")]
 	[TestCase(Pga3D.Base._1_, ExpectedResult = 1f)]
 
 	[TestCase((Pga3D.Base)Pga3D.Points.Origin, ExpectedResult = -1f)]
@@ -226,6 +232,8 @@ public static partial class XPga3D
 	[TestCase((Pga3D.Base)Pga3D.Planes.Sky, ExpectedResult = -1f)]
 
 	[TestCase(Pga3D.Base.e0123, ExpectedResult = 1f)]
+	[Concept("grade_involution")]
+	[Concept("basis_blade")]
 	#endregion TestCase
 	public static float Involute(Pga3D.Base b) {
 		var p = b.AsPga3D();
@@ -245,6 +253,9 @@ public static partial class XPga3D
 	/// </code>
 	/// </example>
 	#region TestCase
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Demonstrates the Signs of the Conjugate Operation on Base Components")]
 	[TestCase(Pga3D.Base._1_, ExpectedResult = 1f)]
 
 	[TestCase((Pga3D.Base)Pga3D.Points.Origin, ExpectedResult = 1f)]
@@ -268,6 +279,8 @@ public static partial class XPga3D
 	[TestCase((Pga3D.Base)Pga3D.Planes.Sky, ExpectedResult = -1f)]
 
 	[TestCase(Pga3D.Base.e0123, ExpectedResult = 1f)]
+	[Concept("clifford_conjugation")]
+	[Concept("basis_blade")]
 	#endregion TestCase
 	public static float Conjugate(Pga3D.Base b) {
 		var p = b.AsPga3D();
@@ -278,25 +291,19 @@ public static partial class XPga3D
 
 	/// <summary> Returns all values of the <see cref="Pga3D.Base"/> enum as an array for use as NUnit test-case sources. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/enum_values, code/test_case_data_source]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: generator, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "generator", Status = "stable", Complexity = 1)]
+	[Tags("code/enum_values", "code/test_case_data_source")]
+	[System.ComponentModel.Description("Returns all values of the Base enum as an array for use as NUnit test-case sources.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static Pga3D.Base[] GetBases() => (Pga3D.Base[])Enum.GetValues(typeof(Pga3D.Base));
 
 	/// <summary>Test Clifford Is Reversion Of Involution.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Test Clifford Is Reversion Of Involution.")]
 	[TestCaseSource(typeof(XPga3D), nameof(GetBases))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestCliffordIsReversionOfInvolution(Pga3D.Base b) {
 		if (b == Pga3D.Base._0) {
 			return;
@@ -309,14 +316,11 @@ public static partial class XPga3D
 
 	/// <summary> <see cref="Involute"/> and <see cref="Reverted"/> violate NormSqr when e0 is missing </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/norm_calculation")]
+	[System.ComponentModel.Description("Involute and Reverted violate NormSqr when e0 is missing")]
 	[TestCaseSource(typeof(XPga3D), nameof(GetBases))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestNormUsesConjugate(Pga3D.Base b) {
 		if (b == Pga3D.Base._0) {
 			return;
@@ -335,15 +339,12 @@ public static partial class XPga3D
 
 	/// <summary>Test Sq Rt.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: buggy, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "buggy", Complexity = 1)]
+	[Tags("code/unit_test")]
+	[System.ComponentModel.Description("Test Sq Rt.")]
 	[Ignore("Sqrt not properly implemented", Until = "2027-01-01")]
 	[TestCaseSource(typeof(Pga3D), nameof(Pga3D.Blades))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestSqRt(Pga3D v) {
 		var sqRt = v.SqRt();
 		var sqr = sqRt.Times(sqRt);//.Reverted());//.Conjugate());
@@ -352,14 +353,11 @@ public static partial class XPga3D
 
 	/// <summary>Test3 D.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/projective_geometric_algebra]
-	/// concepts: [projective_geometric_algebra]
-	/// facets: {layer: test, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 3)]
+	[Tags("code/unit_test", "code/projective_geometric_algebra")]
+	[System.ComponentModel.Description("Test3 D.")]
 	[Test, Ignore("Triage: translated is moved twice (the > operator and the explicit sandwich), giving -4X instead of 8X; Rotor and Identity parts pass")]
+	[Concept("projective_geometric_algebra")]
 	public static void Test3D() {
 
 		// Elements of the even sub-algebra (scalar + BiVector + pss) of unit length are motors
@@ -431,13 +429,10 @@ public static partial class XPga3D
 	// and to sample its points we simply sandwich the origin ..
 	/// <summary> Returns a point on a standard torus at toroidal parameter <paramref name="s"/> and poloidal parameter <paramref name="t"/>, both in [0,1). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/projective_geometric_algebra, code/factory_method]
-	/// concepts: [projective_geometric_algebra]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/projective_geometric_algebra", "code/factory_method")]
+	[System.ComponentModel.Description("Returns a point on a standard torus at toroidal parameter s and poloidal parameter t, both in [0,1).")]
+	[Concept("projective_geometric_algebra")]
 	public static Pga3D Point_on_torus(float s, float t) {
 		var to = Pga3D.Make.Torus(s, t, 0.25f, Pga3D.AxisRot.Z, 0.6f, Pga3D.AxisRot.Y);
 		return to * (Pga3D)Pga3D.Points.Origin * ~to;
@@ -445,13 +440,10 @@ public static partial class XPga3D
 
 	/// <summary> Returns the canonical positive basis element and sign factor (+1, 0, or -1) corresponding to the given (possibly negated) <paramref name="e"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/canonicalization]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/canonicalization")]
+	[System.ComponentModel.Description("Returns the canonical positive basis element and sign factor (+1, 0, or -1) corresponding to the given (possibly negated) e.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static (Pga3D.Base e, int factor) GetFactor(this Pga3D.Base e)
 		=> e < 0 ? (~e, -1) : e == Pga3D.Base._0 ? (Pga3D.Base._1_, 0) : (e, 1);
 
@@ -468,25 +460,19 @@ public static partial class XPga3D
 	/// Is usually constructed by multiplying with the Pseudo-Scalar, the R^n Unit Volume,
 	/// but in PGA e0123 == 0, so we need the Poincar�-Dual.
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("! = Poincar� duality operator.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Dual16(this IReadOnlyList<float> v) => new []{v[15], v[14], v[13], v[12], v[11], v[10]
 		, v[9], v[8], v[7], v[6], v[5], v[4], v[3], v[2], v[1], v[0]};
 
 	/// <summary> Main involution </summary>
 	/// <remarks> Another Involution Operator </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Main involution")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Involute16(this IReadOnlyList<float> v) => new[]{v[0]
 		, -v[1], -v[2], -v[3], -v[4]
 		, v[5], v[6], v[7], v[8], v[9], v[10]
@@ -496,33 +482,27 @@ public static partial class XPga3D
 	/// <remarks>
 	/// Creates the Conjugate, which is the Inverse except for Normalization 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
 	/// TODO: bad Naming! Dual should be named that
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("~ Complex Conjugate of the basis blades.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Reverted16(this IReadOnlyList<float> a) => new []{a[0], a[1], a[2], a[3], a[4]
 		, -a[5], -a[6], -a[7], -a[8], -a[9], -a[10], -a[11], -a[12], -a[13], -a[14]
 		, a[15]};
 
 	/// <summary> + Add; MultiVector addition </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_addition]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/vector_addition")]
+	[System.ComponentModel.Description("+ Add; MultiVector addition")]
 	[TestCase(new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}, new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}
 		, ExpectedResult = new []{2,4,6,8,10,12,14,16,-2,-4,-6,-8,-10,-12,-14,-16f})]
 	[TestCase(new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}, new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{0,0,0,0,0,0,0,0,2,4,6,8,10,12,14,16f})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}, new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{0,0,0,0,0,0,0,0,2,4,6,8,10,12,14,16f})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Plus16(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new []{
 		a[0] + b[0],
 		a[1] + b[1],
@@ -544,13 +524,10 @@ public static partial class XPga3D
 
 	/// <summary> - Minus, SUB; MultiVector Subtraction </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/vector_subtraction]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/vector_subtraction")]
+	[System.ComponentModel.Description("- Minus, SUB; MultiVector Subtraction")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Minus16(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new []{
 		a[0] - b[0],
 		a[1] - b[1],
@@ -572,13 +549,10 @@ public static partial class XPga3D
 
 	/// <summary> * mulS = scalar * multiVector multiplication </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/scalar_multiplication]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/scalar_multiplication")]
+	[System.ComponentModel.Description("* mulS = scalar * multiVector multiplication")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Times16(this IReadOnlyList<float> p, float s) => new []{s * p[0], s * p[1], s * p[2], s * p[3]
 		, s * p[4], s * p[5], s * p[6], s * p[7], s * p[8], s * p[9]
 		, s * p[10], s * p[11], s * p[12], s * p[13], s * p[14], s * p[15]};
@@ -593,13 +567,10 @@ public static partial class XPga3D
 
 	/// <summary> Returns a new 16-element array with the scalar component set to <c><paramref name="a"/> - b[0]</c> and all remaining components negated. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/subtraction, code/negation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/subtraction", "code/negation")]
+	[System.ComponentModel.Description("Returns a new 16-element array with the scalar component set to a - b[0] and all remaining components negated.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] MinusR16(this IReadOnlyList<float> b, double a) => new []{(float)(a - b[0])
 		, -b[1], -b[2], -b[3], -b[4], -b[5], -b[6], -b[7], -b[8], -b[9], -b[10], -b[11], -b[12], -b[13], -b[14], -b[15]};
 
@@ -633,19 +604,16 @@ public static partial class XPga3D
 	/// ...
 	/// d15=a0*b15 + a15*b0
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/dot_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/dot_product")]
+	[System.ComponentModel.Description("| Dot = inner / scalar product.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}, new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}
 		, ExpectedResult = new []{-12,68,-36,-20,-4,-54,18,-18, -72, -60,-48, -8, -10,-12, -14, -16f})]
 	[TestCase(new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}, new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{-114,60,-36,-60,-12,-60,-46,-32,0, 0, 0,80,64, 48,0,0f})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}, new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{-114,60,-60,-12,-36,-60,-46,-32,0, 0, 0,-80, -64, -48,0, 0f})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Dot16P(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new []{
 		b[0] * a[0] + b[2] * a[2] + b[3] * a[3] + b[4] * a[4] - b[8] * a[8] - b[9] * a[9] - b[10] * a[10] - b[14] * a[14],
 		b[1] * a[0] + b[0] * a[1] - b[5] * a[2] - b[6] * a[3] - b[7] * a[4] + b[2] * a[5] + b[3] * a[6] + b[4] * a[7] + b[11] * a[8] + b[12] * a[9] + b[13] * a[10] + b[8] * a[11] + b[9] * a[12] + b[10] * a[13] + b[15] * a[14] - b[14] * a[15],
@@ -676,19 +644,16 @@ public static partial class XPga3D
 	/// ...
 	/// d15=a15*b15
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/clifford_algebra")]
+	[System.ComponentModel.Description("&amp; (JOIN): Vee AKA regressive product; symmetric")]
 	[TestCase(new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}, new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}
 		, ExpectedResult = new []{-96,174,-126,-174,-186,-96,-112,-128,16,32,48,64,80,96,112,64f})]
 	[TestCase(new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}, new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{-144,0,6,-12,6,0,0,0,16, 32, 48,64, 80, 96,112, 64f})]
 	[TestCase(new []{-1,-2,-3,-4,-5,-6,-7,-8,1,2,3,4,5,6,7,8f}, new []{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8f}
 		, ExpectedResult = new []{144,0,6,-12,6,0,0,0,16, 32, 48,64, 80, 96,112, 64f})]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Join16P(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new []{
 		a[0] * b[15] - a[1] * b[14] - a[2] * b[13] - a[3] * b[12] - a[4] * b[11] + a[5] * b[10] + a[6] * b[9] + a[7] * b[8] + a[8] * b[7]
 		+ a[9] * b[6] + a[10] * b[5] + a[11] * b[4] + a[12] * b[3] + a[13] * b[2] + a[14] * b[1] + a[15] * b[0],
@@ -733,13 +698,10 @@ public static partial class XPga3D
 	/// ...
 	/// d15=a0*b15 + a1*b14 + ... - a14*b1 + a15*b0
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/outer_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/outer_product")]
+	[System.ComponentModel.Description("^ Cross-/ outer Product / MEET / Intersect / Wedge; antisymmetric 'Grassmann' product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Meet16P(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new []{
 		b[0] * a[0],
 		b[1] * a[0] + b[0] * a[1],
@@ -762,39 +724,30 @@ public static partial class XPga3D
 
 	/// <summary> Clifford Conjugation </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/conjugate]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/conjugate")]
+	[System.ComponentModel.Description("Clifford Conjugation")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] CliffCjg16(this IReadOnlyList<float> v) => new[]{v[0]
 		, -v[1], -v[2], -v[3], -v[4], -v[5], -v[6], -v[7], -v[8], -v[9], -v[10]
 		, v[11], v[12], v[13], v[14], v[15]};
 
 	/// <summary>Norm Sqr16 Q.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/norm_calculation")]
+	[System.ComponentModel.Description("Norm Sqr16 Q.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}, ExpectedResult = -84)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float NormSqr16Q(IReadOnlyList<float> c) => c.Times16P(c.CliffCjg16())[0];
 
 	/// <summary>Norm Sqr16 P.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/norm_calculation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/norm_calculation")]
+	[System.ComponentModel.Description("Norm Sqr16 P.")]
 	[TestCase(new []{1,2,3,4,5,6,7,8,-1,-2,-3,-4,-5,-6,-7,-8f}, ExpectedResult = -84)]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float NormSqr16P(this IReadOnlyList<float> a) => a[0].Sqr()
 		- a[2].Sqr() - a[3].Sqr() - a[4].Sqr() + a[8].Sqr() + a[9].Sqr() + a[10].Sqr() - a[14].Sqr();
 
@@ -806,13 +759,10 @@ public static partial class XPga3D
 	/// Normalized Versors are also called Rotors or Spinors.
 	/// 
 	/// </remarks>
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/geometric_product]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/geometric_product")]
+	[System.ComponentModel.Description("* = geometric/cartesian product.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[] Times16P(this IReadOnlyList<float> a, IReadOnlyList<float> b) => new []{
 		b[0] * a[0] + b[2] * a[2] + b[3] * a[3] + b[4] * a[4] - b[8] * a[8] - b[9] * a[9] - b[10] * a[10] - b[14] * a[14],
 		b[1] * a[0] + b[0] * a[1] - b[5] * a[2] - b[6] * a[3] - b[7] * a[4] + b[2] * a[5] + b[3] * a[6] + b[4] * a[7] + b[11] * a[8] + b[12] * a[9] + b[13] * a[10] + b[8] * a[11] + b[9] * a[12] + b[10] * a[13] + b[15] * a[14] - b[14] * a[15],
@@ -853,13 +803,10 @@ public static partial class XPga3D
 
 	/// <summary> Generates all Test Pairs for all Products in <see cref="Pga3D.Products"/> </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: generator, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "generator", Status = "stable", Complexity = 2)]
+	[Tags("code/test_data_generation")]
+	[System.ComponentModel.Description("Generates all Test Pairs for all Products in Products")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(float[][] arg1Arg2Product, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> binaryOp)> AllProductTests() {
 		for (var i = Products.Length; --i >= 0; ) {
 			var binaryOp = Products[i];
@@ -872,14 +819,11 @@ public static partial class XPga3D
 
 	/// <summary>Test Join Meet.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Test Join Meet.")]
 	[TestCaseSource(nameof(BaseVectorPairs))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestJoinMeet((Pga3D.Base x, Pga3D.Base y) pair) {
 		float[][] arg1Arg2Product = Pga3D.ProductOuter.CreateVectorPairs(pair.x, pair.y, 2, 3);
 		var arg1 = Dual16(arg1Arg2Product[0]);
@@ -899,25 +843,19 @@ public static partial class XPga3D
 
 	/// <summary>Determines whether odd.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/bit_parity]
-	/// concepts: [bitwise_operations]
-	/// facets: {layer: utility, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "utility", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/bit_parity")]
+	[System.ComponentModel.Description("Determines whether odd.")]
+	[Concept("bitwise_operations")]
 	public static bool IsOdd(this int value) => 0 != (value & 1);
 	/// <inheritdoc cref="IsOdd(int)"/>
 	public static bool IsOdd(this Pga3D.Base value) => IsOdd((int)value);
 	/// <summary> Returns the grade (0–4) of the given basis blade <paramref name="value"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/enum_conversion]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/enum_conversion")]
+	[System.ComponentModel.Description("Returns the grade (0–4) of the given basis blade value.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static byte Grade(this Pga3D.Base value) 
 		=> value switch {
 			Pga3D.Base._1_ => 0,
@@ -943,14 +881,11 @@ public static partial class XPga3D
 
 	/// <summary>Test Join Meet Abs.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/clifford_algebra]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/clifford_algebra")]
+	[System.ComponentModel.Description("Test Join Meet Abs.")]
 	[TestCaseSource(nameof(ProductOuterSampleVectorPairs))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestJoinMeetAbs(float[][] arg1Arg2Product) {
 		var arg1 = Dual16(arg1Arg2Product[0]);
 		var arg2 = Dual16(arg1Arg2Product[1]);
@@ -961,36 +896,27 @@ public static partial class XPga3D
 
 	/// <summary> Generates all Test Cases for <paramref name="product"/> from <paramref name=""/> Pairs of <see cref="Pga3D"/> Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: generator, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "generator", Status = "stable", Complexity = 1)]
+	[Tags("code/test_data_generation")]
+	[System.ComponentModel.Description("Generates all Test Cases for product from Pairs of Pga3D Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<float[][]> ProductOuterSampleVectorPairs() => Pga3D.ProductOuter.ProductTests();
 
 	/// <summary> Generates all Test Cases for <paramref name="product"/> from <paramref name=""/> Pairs of <see cref="Pga3D"/> Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: generator, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "generator", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/test_data_generation")]
+	[System.ComponentModel.Description("Generates all Test Cases for product from Pairs of Pga3D Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	static IEnumerable<float[][]> ProductTests(this IReadOnlyList<IReadOnlyList<Pga3D.Base>> matrix) 
 		=> BaseVectorPairs().Select(pair => matrix.CreateVectorPairs(pair.x, pair.y, 2, 3));
 
 	/// <summary> Generates all Test Cases for <paramref name="product"/> from <paramref name=""/> Pairs of <see cref="Pga3D"/> Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: generator, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "generator", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/test_data_generation")]
+	[System.ComponentModel.Description("Generates all Test Cases for product from Pairs of Pga3D Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	static IEnumerable<(float[][] arg1Arg2Result, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product)
 	> ProductTests(this IReadOnlyList<IReadOnlyList<Pga3D.Base>> matrix
 		, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product) 
@@ -998,13 +924,10 @@ public static partial class XPga3D
 
 	/// <summary> Generates all Pairs of <see cref="Pga3D"/> Base Vectors Elements </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/test_data_generation, code/combinatorial_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: generator, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "generator", Status = "stable", Complexity = 2)]
+	[Tags("code/test_data_generation", "code/combinatorial_generation")]
+	[System.ComponentModel.Description("Generates all Pairs of Pga3D Base Vectors Elements")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<(Pga3D.Base x, Pga3D.Base y)> BaseVectorPairs() {
 		for (var k = Pga3D.Base._1_; k != Pga3D.Base._0; ++k) {
 			for (var i = Pga3D.Base._1_; i != Pga3D.Base._0; ++i) {
@@ -1015,14 +938,11 @@ public static partial class XPga3D
 
 	/// <summary>Test All Products.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test")]
+	[System.ComponentModel.Description("Test All Products.")]
 	[TestCaseSource(nameof(AllProductTests))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestAllProducts((float[][] vectors, Func<IReadOnlyList<float>, IReadOnlyList<float>, float[]> product) test) {
 		var z = test.product(test.vectors[0], test.vectors[1]);
 		CollectionAssert.AreEqual(test.vectors[2], z);
@@ -1030,13 +950,10 @@ public static partial class XPga3D
 
 	/// <summary> Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley <paramref name="products"/> table. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/test_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: generator, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "generator", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/test_data_generation")]
+	[System.ComponentModel.Description("Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley products table.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static float[][] CreateVectorPairs(this IReadOnlyList<IReadOnlyList<Pga3D.Base>> products
 		, Pga3D.Base a, Pga3D.Base b, double factor1, double factor2) {
 		var (e, factor) = products[(int) a][(int) b].GetFactor();
@@ -1063,13 +980,10 @@ public static partial class XPga3D
 
 	/// <summary> Generates 99 random <see cref="Pga3D"/> multi-vectors with uniformly distributed components for property-based tests. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/random_number_generator, code/test_data_generation]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: generator, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "generator", Status = "stable", Complexity = 2)]
+	[Tags("code/random_number_generator", "code/test_data_generation")]
+	[System.ComponentModel.Description("Generates 99 random Pga3D multi-vectors with uniformly distributed components for property-based tests.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static IEnumerable<Pga3D> RandomPga3D() {
 		var arr = new float[Pga3D.NUM_COORDS];
 		for (int i = 99; --i >= 0;) {
@@ -1091,15 +1005,12 @@ public static partial class XPga3D
 
 	/// <summary>Test Rcp.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/unit_test, code/reciprocal]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: test, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
+	[Tags("code/unit_test", "code/reciprocal")]
+	[System.ComponentModel.Description("Test Rcp.")]
 	[TestCaseSource(nameof(Invertables))]
 	[TestCaseSource(nameof(RandomPga3D))]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void TestRcp(Pga3D mv) {
 		var rcp = mv.Rcp();
 		var r1 = mv.Times(rcp);
@@ -1111,25 +1022,19 @@ public static partial class XPga3D
 
 	/// <summary> Constructs a translator motor along <paramref name="axisTrans"/> by twice <paramref name="halfDistance"/>. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/factory_method]
-	/// concepts: [projective_geometric_algebra]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/factory_method")]
+	[System.ComponentModel.Description("Constructs a translator motor along axisTrans by twice halfDistance.")]
+	[Concept("projective_geometric_algebra")]
 	public static Pga3D MakeMotor(this Pga3D.AxisTrans axisTrans, double halfDistance)
 		=> Pga3D.Make.Motor(halfDistance, axisTrans);
 
 	/// <summary> Constructs a rotor around <paramref name="axisRot"/> by twice <paramref name="halfAngleRad"/> radians. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/factory_method]
-	/// concepts: [projective_geometric_algebra]
-	/// facets: {layer: domain, status: stable, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
+	[Tags("code/extension_method", "code/factory_method")]
+	[System.ComponentModel.Description("Constructs a rotor around axisRot by twice halfAngleRad radians.")]
+	[Concept("projective_geometric_algebra")]
 	public static Pga3D MakeRotor(this Pga3D.AxisRot axisRot, double halfAngleRad)
 		=> Pga3D.Make.Rotor(halfAngleRad, axisRot);
 

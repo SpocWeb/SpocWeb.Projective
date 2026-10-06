@@ -1,3 +1,4 @@
+using org.SpocWeb.root.Attributes;
 namespace org.SpocWeb.root.maths.pga;
 
 /// <summary> Explicit absolute Tolerances for Zero- and Equality-Tests of normalized PGA Components. </summary>
@@ -5,6 +6,11 @@ namespace org.SpocWeb.root.maths.pga;
 /// Replaces the obsolete global-accuracy overloads of <c>IsZero()</c> and <c>IsApprox()</c>.
 /// Components are of Magnitude ~1, so absolute Tolerances are meaningful.
 /// </remarks>
+[Facets(Layer = "foundation", Status = "stable", Complexity = 1)]
+[Tags("code/numeric_constants", "code/constant")]
+[System.ComponentModel.Description("Explicit absolute Tolerances for Zero- and Equality-Tests of normalized PGA Components.")]
+[Concept("numerical_tolerance")]
+[Concept("reproducible_test_seed")]
 public static class PgaTolerance {
 
 	/// <summary> About 10 float Epsilons (1.2e-7 each); for <see cref="float"/> Components. </summary>

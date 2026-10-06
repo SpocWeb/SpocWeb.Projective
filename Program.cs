@@ -1,4 +1,5 @@
 using System;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga;
 
@@ -8,31 +9,23 @@ namespace org.SpocWeb.root.maths.pga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 18 | <see cref="Main"/> | Runs the PGA demo; currently a no-op placeholder. |
+/// | 25 | <see cref="Main"/> | Runs the PGA demo; currently a no-op placeholder. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:24Z
-/// digest: f234e40f5e704a92b71f3319f42ca08c1a7ac00a71e7e907857ef0cd7107df26
-/// tags: [code/entry_point, code/demo]
-/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-/// facets: {layer: scaffold, status: stub, complexity: 1}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:24Z", Digest = "f234e40f5e704a92b71f3319f42ca08c1a7ac00a71e7e907857ef0cd7107df26", Stale = false, Path = "Program.cs", Since = "2026-10-06")]
+[Facets(Layer = "scaffold", Status = "stub", Complexity = 1)]
+[Tags("code/entry_point", "code/demo")]
+[System.ComponentModel.Description("Entry point for the PGA demo/test runner.")]
+[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 public static class Program
 {
 
 	/// <summary> Runs the PGA demo; currently a no-op placeholder. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/console_entry_point, code/stub]
-	/// concepts: [Mathematics\Geometry\Geometric_Algebra.md]
-	/// facets: {layer: scaffold, status: stub, complexity: 1}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "scaffold", Status = "stub", Complexity = 1)]
+	[Tags("code/console_entry_point", "code/stub")]
+	[System.ComponentModel.Description("Runs the PGA demo; currently a no-op placeholder.")]
+	[Concept("Mathematics\\Geometry\\Geometric_Algebra.md")]
 	public static void Main(params string[] args) {
 		Console.WriteLine();
 	}

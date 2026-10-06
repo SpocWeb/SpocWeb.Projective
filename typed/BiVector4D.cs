@@ -1,5 +1,6 @@
 using System;
 using System.Numerics;
+using org.SpocWeb.root.Attributes;
 
 namespace org.SpocWeb.root.maths.pga.typed;
 
@@ -10,8 +11,8 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 21 | <see cref="Wedge4DPoint"/> | Returns the wedge/outer/progressive product of the points p and q. |
-/// | 26 | <see cref="Wedge4DVector"/> | Returns the wedge/outer/progressive product of the point p and Vector v. |
+/// | 36 | <see cref="Wedge4DPoint"/> | Returns the wedge/outer/progressive product of the points p and q. |
+/// | 46 | <see cref="Wedge4DVector"/> | Returns the wedge/outer/progressive product of the point p and Vector v. |
 ///
 /// ## Collaborators
 ///
@@ -21,42 +22,31 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// | <see cref="Vector3"/> | Passed as a parameter. |
 /// </remarks>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 8431e0f46cb89ce6da929586f5f67cdf43f49a973307705fdbbd137c8ce272e9
-/// tags: [code/factory, code/vector_math]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: stable, complexity: 2}
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "8431e0f46cb89ce6da929586f5f67cdf43f49a973307705fdbbd137c8ce272e9", Stale = false, Path = "typed/BiVector4D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+[Tags("code/factory", "code/vector_math")]
+[System.ComponentModel.Description("Static factory methods constructing BiVector4D lines via wedge products of homogeneous 3D points and direction vectors.")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public static class XBiVector4D
 {
 
 	/// <summary> Returns the wedge/outer/progressive product of the points <paramref name="p"/> and <paramref name="q"/>.
 	/// The w coordinates of p and q are assumed to be 1.	 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/outer_product, code/cross_product]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/outer_product", "code/cross_product")]
+	[System.ComponentModel.Description("Returns the wedge/outer/progressive product of the points p and q. The w coordinates of p and q are assumed to be 1.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public static BiVector4D Wedge4DPoint(this Vector3 q, Vector3 p) => new(q.X - p.X, q.Y - p.Y, q.Z - p.Z
 		, p.Y * q.Z - p.Z * q.Y, p.Z * q.X - p.X * q.Z, p.X * q.Y - p.Y * q.X);
 
 	/// <summary> Returns the wedge/outer/progressive product of the point <paramref name="p"/> and Vector <paramref name="v"/>.
 	/// The w coordinates of p and v are assumed to be 1.	 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/extension_method, code/outer_product, code/cross_product]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 2}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/outer_product", "code/cross_product")]
+	[System.ComponentModel.Description("Returns the wedge/outer/progressive product of the point p and Vector v. The w coordinates of p and v are assumed to be 1.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public static BiVector4D Wedge4DVector(this Vector3 v, Vector3 p) => new(v.X, v.Y, v.Z
 		, p.Y * v.Z - p.Z * v.Y, p.Z * v.X - p.X * v.Z, p.X * v.Y - p.Y * v.X);
 
@@ -65,22 +55,17 @@ public static class XBiVector4D
 /// <summary> Represents a line in 3D projective space via six Plücker coordinates:<br/>
 /// a <see cref="Direction"/> (vector part) and a <see cref="Moment"/> (bivector part). </summary>
 ///
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T15:36:37Z
-/// digest: 4978d999b4b3565a5438537eb827da872f660631229a6a947112b63cb9420a40
-/// tags: [code/value_object, code/plucker_coordinates]
-/// concepts: [Mathematics\Geometry\Vector.md]
-/// facets: {layer: domain, status: stable, complexity: 3}
-/// </code>
-/// </example>
 /// <remarks>
 /// It has 6 Components stored in 2 <see cref="Vector3D"/>
 /// hardware-accelerated <see cref="System.Numerics.Vector3"/>
 ///
 /// Alternatively represents a Rotor and a Versor in Projective Geometry. 
 /// </remarks>
+[DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "4978d999b4b3565a5438537eb827da872f660631229a6a947112b63cb9420a40", Stale = false, Path = "typed/BiVector4D.cs", Since = "2026-10-06")]
+[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+[Tags("code/value_object", "code/plucker_coordinates")]
+[System.ComponentModel.Description("Represents a line in 3D projective space via six Plücker coordinates: a Direction (vector part) and a Moment (bivector part).")]
+[Concept("Mathematics\\Geometry\\Vector.md")]
 public class BiVector4D : IEquatable<BiVector4D>
 {
 	/// <summary> AKA Direction/Offset; </summary>
@@ -90,13 +75,10 @@ public class BiVector4D : IEquatable<BiVector4D>
 
 	/// <summary>Initializes a new instance of <see cref="BiVector4D"/> with the specified <paramref name="tangent"/> and <paramref name="moment"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of BiVector4D with the specified tangent and moment.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D(Vector3D tangent, BiVector3D moment)
 	{
 		Direction = tangent;
@@ -105,13 +87,10 @@ public class BiVector4D : IEquatable<BiVector4D>
 
 	/// <summary>Initializes a new instance of <see cref="BiVector4D"/> with the specified <paramref name="vx"/>, <paramref name="vy"/>, <paramref name="vz"/>, <paramref name="mx"/>, <paramref name="my"/> and <paramref name="mz"/>.</summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Initializes a new instance of BiVector4D with the specified vx, vy, vz, mx, my and mz.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D(float vx, float vy, float vz, float mx, float my, float mz)
 	{
 		Direction = new Vector3D(vx, vy, vz);
@@ -123,13 +102,10 @@ public class BiVector4D : IEquatable<BiVector4D>
 	/// initialized to the wedge product between homogeneous extensions of p and q with w coordinates set to 1, giving a representation of the 3D line containing both points. The direction component of the BiVector is assigned the value q − p, and the moment component is assigned the value p ∧ q.
 	/// </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Line runs through points p and q. initialized to the wedge product between homogeneous extensions of p and q with w coordinates set to 1, giving a representation of the 3D line containing both points. The direction component of the BiVector is assigned the value q − p, and the moment component is assigned the value p ∧ q.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D(Point3D p3D, Point3D q3D){
 		var p = p3D.V;
 		var q = q3D.V;
@@ -142,13 +118,10 @@ public class BiVector4D : IEquatable<BiVector4D>
 	/// The BiVector is initialized to the wedge product between the homogeneous extension of p with w coordinate set to 1 and the homogeneous extension of v with w coordinate set to 0. The direction component of the BiVector is set equal to v, and the moment component is assigned the value p ∧ v.
 	/// </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Line contains the point p and runs parallel to the direction v. The BiVector is initialized to the wedge product between the homogeneous extension of p with w coordinate set to 1 and the homogeneous extension of v with w coordinate set to 0. The direction component of the BiVector is set equal to v, and the moment component is assigned the value p ∧ v.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D(Point3D p3D, Vector3D v3D){
 		Direction = v3D;
 		var p = p3D.V;
@@ -160,13 +133,10 @@ public class BiVector4D : IEquatable<BiVector4D>
 	/// anti-wedge product between the 4D tri-vectors f and g, giving a representation of the line where the planes intersect.
 	/// </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("anti-wedge product between the 4D tri-vectors f and g, giving a representation of the line where the planes intersect.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D(TriVector4D f4D, TriVector4D g4D){
 		var f = f4D.xyz;
 		var g = g4D.xyz;
@@ -176,24 +146,18 @@ public class BiVector4D : IEquatable<BiVector4D>
 
 	/// <summary> Returns the support vector: the closest point on the line to the origin. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Returns the support vector: the closest point on the line to the origin.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public Vector3D GetSupport() => !Direction ^ Moment;
 
 	/// <summary> Scales this line so that its <see cref="Direction"/> component becomes a unit vector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Scales this line so that its Direction component becomes a unit vector.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D Unitize() => this / Direction.Norm;
 
 	#region Operators
@@ -209,35 +173,26 @@ public class BiVector4D : IEquatable<BiVector4D>
 
 	/// <summary> Grade-reverse of this bivector (same as negation for grade-2 elements). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Grade-reverse of this bivector (same as negation for grade-2 elements).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D Reverse() => Neg();
 
 	/// <summary> Anti-reverse of this bivector (same as negation for grade-2 elements). </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Anti-reverse of this bivector (same as negation for grade-2 elements).")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D AntiReverse() => Neg();
 
 	/// <summary> Returns the additive inverse of this line bivector. </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Returns the additive inverse of this line bivector.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D Neg() {
 		var dir = Direction.V;
 		var mom = Moment.V3;
@@ -312,46 +267,34 @@ public class BiVector4D : IEquatable<BiVector4D>
 
 	/// <summary> Returns the product of this <see cref="BiVector4D"/> and the <paramref name="scalar"/>.	 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Returns the product of this BiVector4D and the scalar.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D Times(double scale) => new(Direction.Times(scale), Moment.Times(scale));
 
 	/// <summary> 	Returns the bulk norm of the BiVector L.	 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Returns the bulk norm of the BiVector L.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double BulkNorm() => Moment.Norm;
 
 	/// <summary> 	Returns the weight norm of the BiVector L.	 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Returns the weight norm of the BiVector L.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public double WeightNorm() => Direction.Norm;
 
 	/// <summary> 	Returns the projection of the point p onto the line L under the assumption that the line is unitized.	 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Returns the projection of the point p onto the line L under the assumption that the line is unitized.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public static Point3D Project(Point3D p, BiVector4D v)
 	{
 		var dir = v.Direction.V;
@@ -370,13 +313,10 @@ public class BiVector4D : IEquatable<BiVector4D>
 
 	/// <summary> 	Returns the anti-projection of the line L onto the point p (where p is always unitized because it has an implicit w coordinate of 1).	 </summary>
 	///
-	/// <example>
-	/// <code language="yaml">
-	/// tags: [code/value_object, code/plucker_coordinates]
-	/// concepts: [Mathematics\Geometry\Vector.md]
-	/// facets: {layer: domain, status: stable, complexity: 3}
-	/// </code>
-	/// </example>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Returns the projection of the line L onto the plane f under the assumption that the plane is unitized.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public BiVector4D AntiProject(Point3D p) => new(p, Direction);
 
 	/// <summary> 	Returns the anti-projection of the plane f onto the line L under the assumption that the line is unitized.	 </summary>
@@ -384,6 +324,10 @@ public class BiVector4D : IEquatable<BiVector4D>
 	//	=> new TriVector4D(f.xyz - !direction * (f.direction ^ direction), moment ^ !direction ^ f.xyz);
 
 
+	[Facets(Layer = "domain", Status = "stable", Complexity = 3)]
+	[Tags("code/value_object", "code/plucker_coordinates")]
+	[System.ComponentModel.Description("Returns the anti-projection of the plane f onto the line L under the assumption that the line is unitized.")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
 	public bool Equals(BiVector4D? other)
 	{
 		if (other is null) return false;
