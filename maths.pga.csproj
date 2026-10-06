@@ -60,6 +60,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- PgaGui is its own WPF project (moved from _core/pga, 2026-10-06) -->
+    <Compile Remove="PgaGui\**" />
+    <EmbeddedResource Remove="PgaGui\**" />
+    <None Remove="PgaGui\**" />
+    <Page Remove="PgaGui\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="_linked\" />
   </ItemGroup>
 
