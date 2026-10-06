@@ -16,36 +16,43 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 75 | <see cref="Count"/> | Gets the number of elements. |
-/// | 84 | <see cref="X"/> | Gets the x. |
-/// | 91 | <see cref="Y"/> | Gets the y. |
-/// | 98 | <see cref="Z"/> | Gets the z. |
-/// | 105 | <see cref="W"/> | Gets the w. |
-/// | 113 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 127 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified v. |
-/// | 136 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified x, y and z. |
-/// | 143 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified x, y and z. |
-/// | 270 | <see cref="operator !"/> | Returns the Complement/Dual of the vector v. |
-/// | 273 | <see cref="operator -"/> | Negates v. |
-/// | 280 | <see cref="operator *"/> | Multiplies p by v. |
-/// | 282 | <see cref="operator *"/> | Multiplies v by scalar. |
-/// | 286 | <see cref="operator *"/> | Multiplies scalar by v. |
-/// | 288 | <see cref="operator *"/> | Multiplies v by scalar. |
-/// | 290 | <see cref="operator /"/> | Divides v by scalar. |
-/// | 294 | <see cref="operator +"/> | Adds p and v. |
-/// | 296 | <see cref="operator +"/> | Adds v and p. |
-/// | 299 | <see cref="operator +"/> | Adds p and v. |
-/// | 303 | <see cref="operator -"/> | Subtracts v from p. |
-/// | 305 | <see cref="operator -"/> | Subtracts p from v. |
-/// | 308 | <see cref="operator -"/> | Subtracts v from p. |
-/// | 315 | <see cref="operator ^"/> | Wedge/Meet/Cross/outer Product |
-/// | 318 | <see cref="operator *"/> | Multiplies a by b. |
-/// | 323 | <see cref="operator =="/> | Determines whether a equals b. |
-/// | 325 | <see cref="operator !="/> | Determines whether a does not equal b. |
-/// | 332 | <see cref="NormAbs"/> | Gets the norm Abs. |
-/// | 339 | <see cref="NormSqr"/> | Gets the norm Sqr. |
-/// | 346 | <see cref="Norm"/> | Gets the norm. |
-/// | 370 | <see cref="Normalized"/> | Gets the normalized. |
+/// | 134 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified v. |
+/// | 143 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified x, y and z. Initializes a new instance of Vector3D with the specified x, y and z. |
+/// | 150 | <see cref="Vector3D"/> | Initializes a new instance of Vector3D with the specified x, y and z. |
+/// | 158 | <see cref="RotateAboutX"/> | Rotates this vector counter-clockwise by angle radians about the X axis. |
+/// | 172 | <see cref="RotateAboutY"/> | Rotates this vector counter-clockwise by angle radians about the Y axis. |
+/// | 186 | <see cref="RotateAboutZ"/> | Rotates this vector counter-clockwise by angle radians about the Z axis. |
+/// | 201 | <see cref="RotateAboutAxis"/> | Rotates this vector by angle radians about the arbitrary axis a using the Rodrigues rotation formula. |
+/// | 277 | <see cref="operator !"/> | Returns the Complement/Dual of the vector v. |
+/// | 280 | <see cref="operator -"/> | Negates v. |
+/// | 287 | <see cref="operator *"/> | Multiplies p by v. Multiplies v by p. |
+/// | 289 | <see cref="operator *"/> | Multiplies v by scalar. |
+/// | 293 | <see cref="operator *"/> | Multiplies scalar by v. Multiplies v by scalar. |
+/// | 295 | <see cref="operator *"/> | Multiplies v by scalar. |
+/// | 297 | <see cref="operator /"/> | Divides v by scalar. |
+/// | 301 | <see cref="operator +"/> | Adds p and v. Adds v and p. |
+/// | 303 | <see cref="operator +"/> | Adds v and p. |
+/// | 306 | <see cref="operator +"/> | Adds p and v. |
+/// | 310 | <see cref="operator -"/> | Subtracts v from p. Subtracts p from v. |
+/// | 312 | <see cref="operator -"/> | Subtracts p from v. |
+/// | 315 | <see cref="operator -"/> | Subtracts v from p. |
+/// | 322 | <see cref="operator ^"/> | Wedge/Meet/Cross/outer Product |
+/// | 325 | <see cref="operator *"/> | Multiplies a by b. |
+/// | 330 | <see cref="operator =="/> | Determines whether a equals b. Determines whether a does not equal b. |
+/// | 332 | <see cref="operator !="/> | Determines whether a does not equal b. |
+/// | 361 | <see cref="Complement"/> | Returns the Hodge complement (dual) of this vector as a BiVector3D. |
+/// | 370 | <see cref="Neg"/> | Additive inverse of this vector. |
+/// | 377 | <see cref="Normalized"/> | Gets the normalized. |
+/// | 378 | <see cref="Plus"/> | Translates that by this direction vector. |
+/// | 389 | <see cref="Minus"/> | Returns the component-wise difference of this vector minus that. |
+/// | 406 | <see cref="Per"/> | Scales this vector by 1/scalar. |
+/// | 407 | <see cref="Times"/> | Scales all components by scalar. |
+/// | 430 | <see cref="Cross"/> | AKA AntiWedge; anti-symmetric Cross Product |
+/// | 433 | <see cref="Dot"/> | symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of that |
+/// | 463 | <see cref="ProjectOn"/> | Non-normalized Projection in that Direction |
+/// | 474 | <see cref="RejectFrom"/> | Non-normalized Rejection from that Direction |
+/// | 482 | <see cref="Floor"/> | Component-wise floor toward negative infinity. |
+/// | 490 | <see cref="Ceil"/> | Component-wise ceiling toward positive infinity. |
 ///
 /// ## Collaborators
 ///

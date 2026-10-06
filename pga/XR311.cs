@@ -28,7 +28,7 @@ namespace org.SpocWeb.root.maths.pga;
     /// | 186 | <see cref="Times32"/> | *; geometric product. |
     /// | 345 | <see cref="Times32C"/> | *; conformal geometric product. |
     /// | 386 | <see cref="Wedge32"/> | ^; MEET/outer product |
-    /// | 427 | <see cref="Join32"/> | v, &amp;; regressive product. |
+    /// | 427 | <see cref="Join32"/> | v, &amp;; regressive product. (JOIN) |
     /// | 511 | <see cref="Join32C"/> | Conformal outer (join/wedge) product of two 32-component R311 multi-vectors. |
     /// | 552 | <see cref="Dot32"/> | | Dot/ inner product. |
     /// | 628 | <see cref="Dot32C"/> | Conformal inner (dot) product of two 32-component R311 multi-vectors. |
@@ -38,7 +38,7 @@ namespace org.SpocWeb.root.maths.pga;
     /// | 815 | <see cref="Neg32"/> | -; scalar - multi-Vector subtraction |
     /// | 837 | <see cref="Plus"/> | Returns a copy of a with the component at basis incremented by value. |
     /// | 849 | <see cref="Minus"/> | Returns a copy of a with the component at basis decremented by value. |
-    /// | 861 | <see cref="MinusR"/> | Returns the negation of b with the component at basis set to  value - b[basis] . |
+    /// | 861 | <see cref="MinusR"/> | Returns the negation of b with the component at basis set to value - b[basis]. |
     ///
     /// ## Collaborators
     ///

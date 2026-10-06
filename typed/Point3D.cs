@@ -15,28 +15,21 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 66 | <see cref="Count"/> | Gets the number of elements. |
-/// | 75 | <see cref="X"/> | Gets the x. |
-/// | 82 | <see cref="Y"/> | Gets the y. |
-/// | 89 | <see cref="Z"/> | Gets the z. |
-/// | 96 | <see cref="W"/> | Gets the w. |
-/// | 104 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 118 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified v. |
+/// | 111 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified v. |
+/// | 120 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. Initializes a new instance of Point3D with the specified x, y and z. |
 /// | 127 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. |
-/// | 134 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. |
-/// | 168 | <see cref="Wedge"/> |  |
-/// | 232 | <see cref="NormAbs"/> | Gets the norm Abs. |
-/// | 239 | <see cref="NormSqr"/> | Gets the norm Sqr. |
-/// | 246 | <see cref="Norm"/> | Gets the norm. |
-/// | 256 | <see cref="operator =="/> | Determines whether a equals b. |
-/// | 258 | <see cref="operator !="/> | Determines whether a does not equal b. |
-/// | 261 | <see cref="operator ^"/> | Wedge product of two 3D points, yielding the line through them. |
-/// | 263 | <see cref="operator ^"/> | Wedge product of a 3D point and a direction vector, yielding the line through the point parallel to the vector. |
-/// | 266 | <see cref="operator -"/> | Subtracts that from self. |
-/// | 268 | <see cref="operator -"/> | Subtracts that from self. |
-/// | 270 | <see cref="operator +"/> | Adds self and that. |
-/// | 274 | <see cref="operator -"/> | Subtracts that from self. |
-/// | 276 | <see cref="operator +"/> | Adds self and that. |
+/// | 142 | <see cref="Minus"/> | Subtracts that displacement from this point. |
+/// | 151 | <see cref="Plus"/> | Adds that displacement to this point. |
+/// | 161 | <see cref="Wedge"/> |  |
+/// | 249 | <see cref="operator =="/> | Determines whether a equals b. Determines whether a does not equal b. |
+/// | 251 | <see cref="operator !="/> | Determines whether a does not equal b. |
+/// | 254 | <see cref="operator ^"/> | Wedge product of two 3D points, yielding the line through them. |
+/// | 256 | <see cref="operator ^"/> | Wedge product of a 3D point and a direction vector, yielding the line through the point parallel to the vector. |
+/// | 259 | <see cref="operator -"/> | Subtracts that from self. |
+/// | 261 | <see cref="operator -"/> | Subtracts that from self. |
+/// | 263 | <see cref="operator +"/> | Adds self and that. |
+/// | 267 | <see cref="operator -"/> | Subtracts that from self. Adds self and that. |
+/// | 269 | <see cref="operator +"/> | Adds self and that. |
 ///
 /// ## Collaborators
 ///

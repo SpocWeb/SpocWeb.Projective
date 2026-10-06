@@ -15,13 +15,13 @@ namespace org.SpocWeb.root.maths.pga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 23 | <see cref="Test"/> | Test. |
-/// | 51 | <see cref="Meet"/> | Wedge Product |
-/// | 71 | <see cref="Times"/> | Full geometric product of two 16-component G(3,0,1) multivector coefficient arrays. |
-/// | 91 | <see cref="Dot"/> | Dot. |
-/// | 118 | <see cref="Join"/> | Join. |
-/// | 145 | <see cref="MulS"/> |  |
-/// | 148 | <see cref="MulS16"/> | Product of a scalar with a 16-dim. |
+/// | 42 | <see cref="Test"/> | Test. |
+/// | 75 | <see cref="Meet"/> | Wedge Product |
+/// | 100 | <see cref="Times"/> | Full geometric product of two 16-component G(3,0,1) multivector coefficient arrays. |
+/// | 125 | <see cref="Dot"/> | Dot. |
+/// | 157 | <see cref="Join"/> | Join. |
+/// | 188 | <see cref="MulS"/> |  |
+/// | 196 | <see cref="MulS16"/> | Product of a scalar with a 16-dim. vector common in 3D geometric Algebra |
 ///
 /// ## Collaborators
 ///
@@ -238,61 +238,61 @@ public static class XPGA3D
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 198 | <see cref="Basis"/> | Initializes a new instance of PGA3D with the specified f and idx. |
-/// | 202 | <see cref="Values"/> | Initializes a new instance of PGA3D with the specified f. |
-/// | 204 | <see cref="PGA3D"/> | Initializes a new instance of PGA3D with the specified f and idx. |
-/// | 209 | <see cref="PGA3D"/> | Initializes a new instance of PGA3D with the specified f. |
-/// | 213 | <see cref="this[]"/> | Gets or sets the idx-th component coefficient. |
-/// | 223 | <see cref="operator ~"/> | ~ Inverse the basis blades. |
-/// | 250 | <see cref="operator !"/> | PGA3D. |
-/// | 277 | <see cref="Conjugate"/> | PGA3D. |
-/// | 304 | <see cref="Involute"/> | PGA3D. |
-/// | 331 | <see cref="operator ^"/> | PGA3D. |
-/// | 334 | <see cref="Meet"/> | Outer (wedge) product of this multivector and b. |
-/// | 340 | <see cref="operator *"/> | PGA3D. |
-/// | 343 | <see cref="Times"/> | Full geometric product of this multivector and b. |
-/// | 346 | operator &amp; | &amp;, v; regressive product. |
-/// | 349 | <see cref="Join"/> | Regressive (join / vee) product of this multivector and b. |
-/// | 355 | <see cref="operator |"/> | PGA3D. |
-/// | 358 | <see cref="Dot"/> | Inner (dot) product of this multivector and b. |
-/// | 364 | <see cref="operator +"/> | PGA3D. |
-/// | 391 | <see cref="operator -"/> | PGA3D. |
-/// | 418 | <see cref="operator *"/> | PGA3D. |
-/// | 442 | <see cref="operator *"/> | Multiplies <paramref name="a"/> by <paramref name="b"/>. |
-/// | 445 | <see cref="operator *"/> | Multiplies <paramref name="a"/> by <paramref name="b"/>. |
-/// | 451 | <see cref="operator +"/> | PGA3D. |
-/// | 478 | <see cref="operator +"/> | PGA3D. |
-/// | 505 | <see cref="operator -"/> | PGA3D. |
-/// | 532 | <see cref="operator -"/> | PGA3D. |
-/// | 558 | <see cref="Norm"/> | Euclidean norm. |
-/// | 562 | <see cref="NormSqr"/> | Signed square norm: (this * Conjugate())[0]. |
-/// | 565 | <see cref="NormIdeal"/> | Ideal norm. |
-/// | 568 | <see cref="Normalized"/> | normalized (Euclidean) element. |
-/// | 579 | <see cref="E0"/> | Gets the e0. |
-/// | 581 | <see cref="E1"/> | Gets the e1. |
-/// | 583 | <see cref="E2"/> | Gets the e01. |
-/// | 585 | <see cref="E3"/> | Gets the e02. |
-/// | 589 | <see cref="E01"/> | Gets the e31. |
-/// | 591 | <see cref="E02"/> | Gets the e23. |
-/// | 593 | <see cref="E03"/> | Gets the e03. |
-/// | 595 | <see cref="E12"/> | Gets the e12. |
-/// | 597 | <see cref="E31"/> | Gets the e123. |
-/// | 599 | <see cref="E23"/> | Gets the e032. |
-/// | 603 | <see cref="E123"/> | Gets the e123. |
-/// | 605 | <see cref="E032"/> | Gets the e032. |
-/// | 607 | <see cref="E013"/> | Gets the e013. |
-/// | 609 | <see cref="E021"/> | Gets the e021. |
-/// | 615 | <see cref="Plane"/> | PGA3D. |
-/// | 621 | <see cref="Line"/> | homogenous Line is defined using 3 homogenous equations TODO: this is wrong! "e12", "e31", "e23" |
-/// | 624 | <see cref="Point"/> | homogeneous point; euclidean coordinates plus the origin |
-/// | 628 | <see cref="Rotor"/> | Rotors by angle around the line |
-/// | 636 | <see cref="Translator"/> | translators are ideal lines |
-/// | 642 | <see cref="Circle"/> | Returns the motor describing a circle of radius at parameter t ∈ [0,1] around line. |
-/// | 647 | <see cref="Torus"/> | Returns the motor for a point on a torus formed by two circles of radii r1 and r2 around l1 and l2. |
-/// | 652 | <see cref="PointOnTorus"/> | Returns the point on the default torus (r1=0. |
-/// | 672 | <see cref="TestToString"/> | Test To String. |
-/// | 678 | <see cref="Test"/> | Demonstrates rotation, translation, line/plane creation, and point-on-torus computation using PGA3D. |
-/// | 720 | <see cref="CloseTo"/> | Returns true when this multivector is approximately equal to arg relative to their combined norm. |
+/// | 314 | <see cref="Basis"/> | Initializes a new instance of PGA3D with the specified f and idx. |
+/// | 319 | <see cref="Values"/> | Initializes a new instance of PGA3D with the specified f. |
+/// | 326 | <see cref="PGA3D"/> | Initializes a new instance of PGA3D with the specified f and idx. |
+/// | 341 | <see cref="PGA3D"/> | Initializes a new instance of PGA3D with the specified f. |
+/// | 350 | <see cref="this[]"/> | Gets or sets the idx-th component coefficient. |
+/// | 364 | <see cref="operator ~"/> | ~ Inverse the basis blades. |
+/// | 391 | <see cref="operator !"/> | PGA3D.Dual: res = !a Poincare duality operator. |
+/// | 419 | <see cref="Conjugate"/> | PGA3D.Conjugate: res = a.Conjugate() Clifford Conjugation |
+/// | 451 | <see cref="Involute"/> | PGA3D.Involute: res = a.Involute() Main involution |
+/// | 482 | <see cref="operator ^"/> | PGA3D.Wedge: res = a ^ b The outer product. (MEET) |
+/// | 486 | <see cref="Meet"/> | Outer (wedge) product of this multivector and b. |
+/// | 496 | <see cref="operator *"/> | PGA3D.Mul: res = a * b The geometric product. |
+/// | 500 | <see cref="Times"/> | Full geometric product of this multivector and b. |
+/// | 507 | <see cref="operator &"/> | &amp;, v; regressive product. (JOIN) |
+/// | 511 | <see cref="Join"/> | Regressive (join / vee) product of this multivector and b. |
+/// | 521 | <see cref="operator |"/> | PGA3D.Dot: res = a | b The inner product. |
+/// | 525 | <see cref="Dot"/> | Inner (dot) product of this multivector and b. |
+/// | 535 | <see cref="operator +"/> | PGA3D.Add: res = a + b Multivector addition |
+/// | 562 | <see cref="operator -"/> | PGA3D.Sub: res = a - b Multivector subtraction |
+/// | 589 | <see cref="operator *"/> | PGA3D.smul: res = a * b scalar/multivector multiplication |
+/// | 613 | <see cref="operator *"/> | Multiplies <paramref name="a"/> by <paramref name="b"/>. |
+/// | 616 | <see cref="operator *"/> | Multiplies <paramref name="a"/> by <paramref name="b"/>. |
+/// | 622 | <see cref="operator +"/> | PGA3D.AddS: res = a + b scalar/multiVector addition |
+/// | 649 | <see cref="operator +"/> | PGA3D.adds: res = a + b multivector/scalar addition |
+/// | 676 | <see cref="operator -"/> | PGA3D.ssub: res = a - b scalar/multivector subtraction |
+/// | 703 | <see cref="operator -"/> | PGA3D.subs: res = a - b multivector/scalar subtraction |
+/// | 730 | <see cref="Norm"/> | Euclidean norm. (strictly positive). |
+/// | 739 | <see cref="NormSqr"/> | Signed square norm: (this * Conjugate())[0]. |
+/// | 747 | <see cref="NormIdeal"/> | Ideal norm. (signed) |
+/// | 755 | <see cref="Normalized"/> | normalized (Euclidean) element. |
+/// | 770 | <see cref="E0"/> | Gets the e0. |
+/// | 772 | <see cref="E1"/> | Gets the e1. |
+/// | 774 | <see cref="E2"/> | Gets the e01. |
+/// | 776 | <see cref="E3"/> | Gets the e02. |
+/// | 780 | <see cref="E01"/> | Gets the e31. |
+/// | 782 | <see cref="E02"/> | Gets the e23. |
+/// | 784 | <see cref="E03"/> | Gets the e03. |
+/// | 786 | <see cref="E12"/> | Gets the e12. |
+/// | 788 | <see cref="E31"/> | Gets the e123. |
+/// | 790 | <see cref="E23"/> | Gets the e032. |
+/// | 794 | <see cref="E123"/> | Gets the e123. |
+/// | 796 | <see cref="E032"/> | Gets the e032. |
+/// | 798 | <see cref="E013"/> | Gets the e013. |
+/// | 800 | <see cref="E021"/> | Gets the e021. |
+/// | 807 | <see cref="Plane"/> | PGA3D.plane(a,b,c,d) A plane is defined using its homogenous equation ax + by + cz + d = 0 |
+/// | 818 | <see cref="Line"/> | homogenous Line is defined using 3 homogenous equations TODO: this is wrong! "e12", "e31", "e23" |
+/// | 826 | <see cref="Point"/> | homogeneous point; euclidean coordinates plus the origin |
+/// | 835 | <see cref="Rotor"/> | Rotors by angle around the line |
+/// | 848 | <see cref="Translator"/> | translators are ideal lines |
+/// | 859 | <see cref="Circle"/> | Returns the motor describing a circle of radius at parameter t ∈ [0,1] around line. |
+/// | 869 | <see cref="Torus"/> | Returns the motor for a point on a torus formed by two circles of radii r1 and r2 around l1 and l2. |
+/// | 879 | <see cref="PointOnTorus"/> | Returns the point on the default torus (r1=0.25, r2=0.6) at parameters s and t. |
+/// | 910 | <see cref="TestToString"/> | Test To String. |
+/// | 921 | <see cref="Test"/> | Demonstrates rotation, translation, line/plane creation, and point-on-torus computation using PGA3D. |
+/// | 967 | <see cref="CloseTo"/> | Returns true when this multivector is approximately equal to arg relative to their combined norm. |
 ///
 /// ## Collaborators
 ///

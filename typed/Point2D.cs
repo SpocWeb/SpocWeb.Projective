@@ -16,19 +16,12 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 59 | <see cref="X"/> | Gets the x. |
-/// | 66 | <see cref="Y"/> | Gets the y. |
-/// | 73 | <see cref="Z"/> | Gets the z. |
-/// | 80 | <see cref="W"/> | Gets the w. |
-/// | 88 | <see cref="Count"/> | Gets the number of elements. |
-/// | 96 | <see cref="NormAbs"/> | Gets the norm Abs. |
-/// | 104 | <see cref="NormSqr"/> | Gets the norm Sqr. |
-/// | 112 | <see cref="Norm"/> | Gets the norm. |
-/// | 120 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 134 | <see cref="Point2D"/> | Initializes a new instance of Point2D with the specified v. |
-/// | 141 | <see cref="operator *"/> | Multiplies scalar by point2D. |
-/// | 233 | <see cref="operator ^"/> | Returns the wedge product of the 2D points p and q. |
-/// | 240 | <see cref="operator ^"/> | Returns the wedge product of the 2D point p and the 2D vector v. |
+/// | 127 | <see cref="Point2D"/> | Initializes a new instance of Point2D with the specified v. |
+/// | 134 | <see cref="operator *"/> | Multiplies scalar by point2D. |
+/// | 145 | <see cref="Minus"/> | Subtracts that displacement from this point. |
+/// | 145 | <see cref="Plus"/> | Adds that displacement to this point. |
+/// | 226 | <see cref="operator ^"/> | Returns the wedge product of the 2D points p and q. The z coordinates of p and q are assumed to be 1. |
+/// | 233 | <see cref="operator ^"/> | Returns the wedge product of the 2D point p and the 2D vector v. The z coordinate of p is assumed to be 1. |
 ///
 /// ## Collaborators
 ///

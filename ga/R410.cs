@@ -57,6 +57,45 @@ public class R410 : AGeoGebra32<R410>
 	public override R410 Self() => this;
 
 	/// <summary> 32 = 2^5 Base-Blades in 4+1D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 69 | <see cref="_1_"/> | [0] Scalar |
+	/// | 72 | <see cref="e1"/> | [0] x Base Vector; e1� = 1 |
+	/// | 75 | <see cref="e2"/> | [0] y Base Vector; e2� = 1 |
+	/// | 78 | <see cref="e3"/> | [0] z Base Vector; e3� = 1 |
+	/// | 81 | <see cref="e4"/> | [0] w Base Vector; e4� = 1 |
+	/// | 93 | <see cref="e5"/> | [0] i*t Base Vector; e5�=-1 Represents e45. Represents e35. Represents e34. Represents e25. Represents e24. Represents e23. Represents e15. Represents e14. Represents e13. |
+	/// | 114 | <see cref="e12"/> | [0] BiVector: Point-Pair Represents e345. Represents e245. Represents e235. Represents e234. Represents e145. Represents e135. Represents e134. Represents e125. Represents e124. Represents e45. Represents e35. Represents e34. Represents e25. Represents e24. Represents e23. Represents e15. Represents e14. Represents e13. |
+	/// | 117 | <see cref="e13"/> | Represents e13. |
+	/// | 120 | <see cref="e14"/> | Represents e14. |
+	/// | 123 | <see cref="e15"/> | Represents e15. |
+	/// | 126 | <see cref="e23"/> | Represents e23. |
+	/// | 129 | <see cref="e24"/> | Represents e24. |
+	/// | 132 | <see cref="e25"/> | Represents e25. |
+	/// | 135 | <see cref="e34"/> | Represents e34. |
+	/// | 138 | <see cref="e35"/> | Represents e35. |
+	/// | 141 | <see cref="e45"/> | Represents e45. |
+	/// | 157 | <see cref="e123"/> | [0] TriVector Point-Triple defining a Line: Circles and Lines (when collinear) Represents e2345. Represents e1345. Represents e1245. Represents e1235. Represents e345. Represents e245. Represents e235. Represents e234. Represents e145. Represents e135. Represents e134. Represents e125. Represents e124. |
+	/// | 160 | <see cref="e124"/> | Represents e124. |
+	/// | 163 | <see cref="e125"/> | Represents e125. |
+	/// | 166 | <see cref="e134"/> | Represents e134. |
+	/// | 169 | <see cref="e135"/> | Represents e135. |
+	/// | 172 | <see cref="e145"/> | Represents e145. |
+	/// | 175 | <see cref="e234"/> | Represents e234. |
+	/// | 178 | <see cref="e235"/> | Represents e235. |
+	/// | 181 | <see cref="e245"/> | Represents e245. |
+	/// | 184 | <see cref="e345"/> | Represents e345. |
+	/// | 191 | <see cref="e1234"/> | [0] QuadVector Point-Quadruple defining Spheres and Planes (when coplanar) Represents e2345. Represents e1345. Represents e1245. Represents e1235. |
+	/// | 194 | <see cref="e1235"/> | Represents e1235. |
+	/// | 197 | <see cref="e1245"/> | Represents e1245. |
+	/// | 200 | <see cref="e1345"/> | Represents e1345. |
+	/// | 203 | <see cref="e2345"/> | Represents e2345. |
+	/// | 206 | <see cref="e12345"/> | [0] e12345� = -1 because e5� = -1 |
+	/// | 209 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:58Z", Digest = "53dd8b312ddbd22bf90abb9f526ca548e54afc550a4271a65c3a407f310932a9", Stale = false, Path = "ga/R410.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
 	[Tags("code/enum", "code/clifford_algebra")]

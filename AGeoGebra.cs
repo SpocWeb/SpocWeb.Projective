@@ -30,10 +30,10 @@ namespace org.SpocWeb.root.maths.pga;
 /// | 122 | <see cref="MinGrade"/> | Minimum Grade; -1 for Zero |
 /// | 133 | <see cref="MaxGrade"/> | Maximum Grade; -1 for Zero |
 /// | 180 | <see cref="MaxNonZero"/> | Maximum Grade; -1 for Zero |
-/// | 203 | <see cref="MaxNonZeroTests"/> | Maximum Grade; -1 for Zero  Maximum non-zero component index; -1 for Zero |
+/// | 203 | <see cref="MaxNonZeroTests"/> | Maximum Grade; -1 for Zero Maximum non-zero component index; -1 for Zero |
 /// | 231 | <see cref="Pga3DTests"/> | Test cases enumerating all 3D basis blades with their expected component indices. |
 /// | 240 | <see cref="Pga2DTests"/> | Test cases enumerating all 2D basis blades with their expected component indices. |
-/// | 250 | <see cref="MinNonZeroTests"/> | Minimum Grade; -1 for Zero  Minimum non-zero component index; -1 for Zero |
+/// | 250 | <see cref="MinNonZeroTests"/> | Minimum Grade; -1 for Zero Minimum non-zero component index; -1 for Zero |
 /// | 260 | <see cref="MinNonZero"/> |  |
 /// | 300 | <see cref="GetNonZeroBits"/> | Bits set for every Non-Zero Component |
 ///
@@ -328,7 +328,7 @@ public static partial class XGeoGebra
 /// But to support Lists from the Left and to resolve the resulting Ambiguity you still have to define all 3 Operators.
 /// </remarks>
 /// <inheritdoc cref="IGeoGebra{T,Single}"/>
-[DocState(Pass = 2, MTime = "2026-05-24T16:42:09Z", Digest = "4f1293b6c1fcea76f512f6dad7376753c312e8df770f0136059b759b258a85cb", Stale = false, Path = "AGeoGebra.cs", Since = "2026-10-06")]
+[DocState(Pass = 2, MTime = "2026-10-06T10:56:59Z", Digest = "0fc01dbe2d6a5f92b60c3e52510653481520b89ed866849458805648de02cd17", Stale = false, Path = "AGeoGebra.cs", Since = "2026-10-06")]
 [Facets(Layer = "domain", Status = "stable", Complexity = 4)]
 [Tags("code/abstract_base", "code/geometric_algebra")]
 [System.ComponentModel.Description("Abstract Base Class for Multi-Vector-Spaces")]

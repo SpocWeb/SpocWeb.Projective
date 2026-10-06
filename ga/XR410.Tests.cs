@@ -17,7 +17,7 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// |--:|---|---|
 /// | 54 | <see cref="GetFactor"/> | Returns the canonical positive basis element and its sign factor for e, yielding factor 0 for the zero element. |
 /// | 63 | <see cref="Grade"/> | Returns the grade (number of basis vector factors) of the given Base blade value. |
-/// | 106 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
+/// | 106 | <see cref="ProductGeometric"/> | Gets the product Geometric. Gets the product Dot. |
 /// | 108 | <see cref="ProductDot"/> | Gets the product Dot. |
 /// | 110 | <see cref="ProductOuter"/> | Gets the product Outer. |
 /// | 120 | <see cref="Products"/> | Gets the products. |

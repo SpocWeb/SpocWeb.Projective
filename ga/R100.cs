@@ -12,16 +12,16 @@ namespace org.SpocWeb.root.maths.pga.ga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 84 | <see cref="Blades"/> | Gets the blades. |
-/// | 97 | <see cref="ProductOuter"/> | Gets the product Outer. |
-/// | 106 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
-/// | 115 | <see cref="ProductDot"/> | Gets the product Dot. |
-/// | 121 | <see cref="Products"/> | Gets the products. |
-/// | 127 | <see cref="New"/> | Creates a new R100 hyperbolic number multivector from the given component array. |
-/// | 148 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 157 | <see cref="R100"/> | Initializes a new instance of R100 with the specified f and idx. |
-/// | 164 | <see cref="R100"/> | Initializes a new instance of R100 with the specified f and idx. |
-/// | 180 | <see cref="R100"/> | Checked Constructor with Copy |
+/// | 93 | <see cref="Blades"/> | Gets the blades. |
+/// | 106 | <see cref="ProductOuter"/> | Gets the product Outer. |
+/// | 115 | <see cref="ProductGeometric"/> | Gets the product Geometric. |
+/// | 124 | <see cref="ProductDot"/> | Gets the product Dot. |
+/// | 130 | <see cref="Products"/> | Gets the products. |
+/// | 136 | <see cref="New"/> | Creates a new R100 hyperbolic number multivector from the given component array. |
+/// | 157 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
+/// | 166 | <see cref="R100"/> | Initializes a new instance of R100 with the specified f and idx. Initializes a new instance of R100 with the specified f and idx. |
+/// | 173 | <see cref="R100"/> | Initializes a new instance of R100 with the specified f and idx. |
+/// | 189 | <see cref="R100"/> | Checked Constructor with Copy |
 ///
 /// ## Collaborators
 ///
@@ -54,6 +54,15 @@ public class R100 : AGeoGebra2<R100>
 	public override R100 Self() => this;
 
 	/// <summary> Base-Blades in 1D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 66 | <see cref="_1_"/> | [0] Scalar Part |
+	/// | 69 | <see cref="h"/> | [1] h-Direction h� = 1 |
+	/// | 72 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:40Z", Digest = "2f457a885fc8a8285b2147e0690a162e33cae42bff4b56ee9bc524abbeeca7a4", Stale = false, Path = "ga/R100.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
 	[Tags("code/enum", "code/clifford_algebra")]

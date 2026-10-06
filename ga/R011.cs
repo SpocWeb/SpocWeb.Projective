@@ -56,28 +56,28 @@ public static class XR011
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 146 | <see cref="_1_"/> | Identical Map; used together with I to represent Rotation |
-/// | 149 | <see cref="E0"/> | Gets the e0. |
-/// | 152 | <see cref="E1"/> | Gets the e1. |
-/// | 156 | <see cref="i"/> | Gets the i. |
-/// | 159 | <see cref="I"/> | Gets the i. |
-/// | 166 | <see cref="Blades"/> | Gets the blades. |
-/// | 170 | <see cref="Translator"/> | Generates a Point/Translator |
-/// | 176 | <see cref="Point"/> |  |
-/// | 180 | <see cref="Rotor"/> | Generates a Rotor |
-/// | 211 | <see cref="ProductGeometric"/> | Gets the product Inner. |
-/// | 213 | <see cref="ProductInner"/> | Gets the product Outer. |
-/// | 215 | <see cref="ProductOuter"/> | Gets the product Outer. |
-/// | 221 | <see cref="Products"/> | Gets the products. |
-/// | 226 | <see cref="R011"/> | Initializes a new instance of R011 with the specified f and idx. |
-/// | 233 | <see cref="R011"/> | Initializes a new instance of R011 with the specified values. |
-/// | 249 | <see cref="R011"/> | Initializes a new instance of R011 with the specified values. |
-/// | 263 | <see cref="New"/> |  |
-/// | 294 | <see cref="CloseTo"/> | Returns true when the squared difference norm of this and arg1 is negligible relative to their combined norms. |
-/// | 320 | <see cref="Scalar"/> | Gets the scalar. |
-/// | 323 | <see cref="e0"/> | Gets the e0. |
-/// | 326 | <see cref="e1"/> | Gets the e1. |
-/// | 329 | <see cref="e01"/> | Gets the e01. |
+/// | 157 | <see cref="_1_"/> | Identical Map; used together with I to represent Rotation |
+/// | 160 | <see cref="E0"/> | Gets the e0. |
+/// | 163 | <see cref="E1"/> | Gets the e1. |
+/// | 167 | <see cref="i"/> | Gets the i. |
+/// | 170 | <see cref="I"/> | Gets the i. |
+/// | 177 | <see cref="Blades"/> | Gets the blades. |
+/// | 181 | <see cref="Translator"/> | Generates a Point/Translator |
+/// | 187 | <see cref="Point"/> |  |
+/// | 191 | <see cref="Rotor"/> | Generates a Rotor |
+/// | 222 | <see cref="ProductGeometric"/> | Gets the product Inner. |
+/// | 224 | <see cref="ProductInner"/> | Gets the product Outer. |
+/// | 226 | <see cref="ProductOuter"/> | Gets the product Outer. |
+/// | 232 | <see cref="Products"/> | Gets the products. |
+/// | 237 | <see cref="R011"/> | Initializes a new instance of R011 with the specified f and idx. Initializes a new instance of R011 with the specified f and idx. |
+/// | 244 | <see cref="R011"/> | Initializes a new instance of R011 with the specified values. |
+/// | 260 | <see cref="R011"/> | Initializes a new instance of R011 with the specified values. |
+/// | 274 | <see cref="New"/> |  |
+/// | 305 | <see cref="CloseTo"/> | Returns true when the squared difference norm of this and arg1 is negligible relative to their combined norms. |
+/// | 331 | <see cref="Scalar"/> | Gets the scalar. |
+/// | 334 | <see cref="e0"/> | Gets the e0. |
+/// | 337 | <see cref="e1"/> | Gets the e1. |
+/// | 340 | <see cref="e01"/> | Gets the e01. |
 ///
 /// ## Collaborators
 ///
@@ -110,6 +110,17 @@ public class R011 : AGeoGebra4<R011>
 	public override R011 Self() => this;
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 123 | <see cref="_1_"/> | [0] Scalar / X-Coordinate e.g. Dot Product / oriented Area/Volume Dual |
+	/// | 126 | <see cref="x"/> | [1] AKA e0, �; X-Translation Coordinate; Projective/homogeneous |
+	/// | 134 | <see cref="i"/> | [2] AKA e1; Vector/Line Y-Coordinate; yz-Dual |
+	/// | 137 | <see cref="y"/> | [3] AKA �i, e12 y Y-Translation Coordinate: y� = 0 |
+	/// | 140 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:03Z", Digest = "e623cdcf2368a93a5472af0294edc62890a0dc2c2873a8f98be4d1d19e9eb044", Stale = false, Path = "ga/R011.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]

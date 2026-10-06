@@ -27,7 +27,7 @@ namespace org.SpocWeb.root.maths.pga;
 /// G+3,0,0)	quaternions:  x, y and z not used; Scalar + i = e23 + j = e31 + k = e12; I = e123 not used
 /// G(3,1,0)	space-time algebra (STA)
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-05-24T15:36:24Z", Digest = "d288fe3f0b875d8b5a25e3c511a8a67419286f46ac396e9c09322e3ee63e0cd8", Stale = false, Path = "IGeoGebra.cs", Since = "2026-10-06")]
+[DocState(Pass = 2, MTime = "2026-10-06T10:57:00Z", Digest = "a4d2b57bd6374d82cb5e033479bf99dc7f43745bef0b823755da917c35cd90a7", Stale = false, Path = "IGeoGebra.cs", Since = "2026-10-06")]
 [Facets(Layer = "domain", Status = "stable", Complexity = 2)]
 [Tags("code/interface", "code/geometric_algebra")]
 [System.ComponentModel.Description("GA define several Products that transform its 2^n Dimensions into each other, described by Cayley Tables.")]

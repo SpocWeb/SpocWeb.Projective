@@ -277,6 +277,22 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	}
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 290 | <see cref="_1_"/> | [0] Scalar e.g. Dot Product / oriented Area/Volume Dual |
+	/// | 293 | <see cref="e0"/> | [1] Horizon-Line; €-Coordinate; Projective/homogeneous |
+	/// | 301 | <see cref="e1"/> | [2] X-Line X-Coordinate |
+	/// | 304 | <see cref="e2"/> | [3] Y-Line Y-Coordinate |
+	/// | 307 | <see cref="e01"/> | [4] Y-Point-Coordinate |
+	/// | 310 | <see cref="e20"/> | [5] X-Point-Coordinate |
+	/// | 317 | <see cref="e12"/> | [6] O/W/Origin; 1 for Points, 0 for Vectors; Distance of Projection Plane from the Origin |
+	/// | 320 | <see cref="e012"/> | [7] e012² = 0 |
+	/// | 323 | <see cref="i"/> | Represents i. |
+	/// | 333 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "7bf53ac29a107a7b351a128bf2cab339e4db73166d5dd075c48ee93ffa9a9203", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
@@ -339,9 +355,9 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 355 | <see cref="Y"/> | Represents y. |
-	/// | 358 | <see cref="X"/> | Represents x. |
-	/// | 361 | <see cref="_1_"/> | Represents 1. |
+	/// | 371 | <see cref="Y"/> | Represents y. |
+	/// | 374 | <see cref="X"/> | Represents x. |
+	/// | 377 | <see cref="_1_"/> | Represents 1. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "a12a148db2763e22b0e805cebc76a7ef23711c7175878098474930b3027a22d1", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
@@ -367,8 +383,8 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 382 | <see cref="Z"/> | Represents z. |
-	/// | 385 | <see cref="_1_"/> | Represents 1. |
+	/// | 398 | <see cref="Z"/> | Represents z. |
+	/// | 401 | <see cref="_1_"/> | Represents 1. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "a12a148db2763e22b0e805cebc76a7ef23711c7175878098474930b3027a22d1", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
@@ -391,14 +407,14 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 412 | <see cref="Horizon"/> | Represents horizon. |
-	/// | 415 | <see cref="Origin"/> | current Position of the Observer |
-	/// | 425 | <see cref="Longitude"/> | Represents longitude. |
-	/// | 428 | <see cref="Latitude"/> | Represents latitude. |
-	/// | 433 | <see cref="West"/> | Represents west. |
-	/// | 436 | <see cref="East"/> | Represents east. |
-	/// | 439 | <see cref="North"/> | Represents north. |
-	/// | 442 | <see cref="South"/> | Represents south. |
+	/// | 428 | <see cref="Horizon"/> | Represents horizon. |
+	/// | 431 | <see cref="Origin"/> | current Position of the Observer |
+	/// | 441 | <see cref="Longitude"/> | Represents longitude. |
+	/// | 444 | <see cref="Latitude"/> | Represents latitude. |
+	/// | 449 | <see cref="West"/> | Represents west. |
+	/// | 452 | <see cref="East"/> | Represents east. |
+	/// | 455 | <see cref="North"/> | Represents north. |
+	/// | 458 | <see cref="South"/> | Represents south. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "29c9f3a451af85939d573e784c285baa9191ad285ee19927efe6c2601e336a65", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
@@ -445,6 +461,21 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	}
 
 	/// <summary> Bits for each non-zero Component of a Multi-Vector </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 458 | <see cref="_1_"/> | Represents 1. |
+	/// | 461 | <see cref="e0"/> | Represents e0. |
+	/// | 464 | <see cref="e1"/> | Represents e1. |
+	/// | 467 | <see cref="e2"/> | Represents e2. |
+	/// | 470 | <see cref="e01"/> | Represents e01. |
+	/// | 473 | <see cref="e20"/> | Represents e20. |
+	/// | 483 | <see cref="e12"/> | Represents e12. |
+	/// | 486 | <see cref="e012"/> | Represents e012. |
+	/// | 489 | <see cref="_0"/> | Represents 0. |
+	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-05-24T16:42:31Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
 	[Tags("code/enum", "code/projective_geometric_algebra")]
@@ -532,6 +563,19 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	}
 
 	/// <summary> Flags classifying which geometric roles a <see cref="Pga2D"/> multivector's nonzero components play. </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 545 | <see cref="Scalar"/> | Scale-Factor, used in Combination with Motor and Rotor where it is Cos |
+	/// | 551 | <see cref="Distance"/> | Distance of the Plane from the Origin (scaled by the Plane-Coordinates) |
+	/// | 555 | <see cref="Rotor"/> | AxisRot are Rotation Axes |
+	/// | 558 | <see cref="Motor"/> | AxisTrans are ideal Translation Axes |
+	/// | 561 | <see cref="Vector"/> | Pointss can be 'real' or 'ideal' (a Vector |
+	/// | 564 | <see cref="Point"/> | Pointss are Vectors with a nonzero O Component |
+	/// | 567 | <see cref="All"/> | Specifies all values. |
+	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "ef32482bcb087cf925ddce47224a4c1e96e209a559f012636bff778498fb1887", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]

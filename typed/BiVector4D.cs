@@ -11,8 +11,8 @@ namespace org.SpocWeb.root.maths.pga.typed;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 36 | <see cref="Wedge4DPoint"/> | Returns the wedge/outer/progressive product of the points p and q. |
-/// | 46 | <see cref="Wedge4DVector"/> | Returns the wedge/outer/progressive product of the point p and Vector v. |
+/// | 36 | <see cref="Wedge4DPoint"/> | Returns the wedge/outer/progressive product of the points p and q. The w coordinates of p and q are assumed to be 1. |
+/// | 46 | <see cref="Wedge4DVector"/> | Returns the wedge/outer/progressive product of the point p and Vector v. The w coordinates of p and v are assumed to be 1. |
 ///
 /// ## Collaborators
 ///

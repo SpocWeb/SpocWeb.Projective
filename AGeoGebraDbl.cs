@@ -27,7 +27,7 @@ namespace org.SpocWeb.root.maths.pga;
 /// <see cref="IList{T}"/>, <see cref="List{T}"/> and Array.
 /// </remarks>
 /// <inheritdoc cref="IGeoGebra{T}"/>
-[DocState(Pass = 2, MTime = "2026-05-24T15:36:24Z", Digest = "bf1c9ff1d35dda84c85322b9e154a083c9dcf67662c575c50562d12cbe64c17d", Stale = false, Path = "AGeoGebraDbl.cs", Since = "2026-10-06")]
+[DocState(Pass = 2, MTime = "2026-10-06T10:56:59Z", Digest = "ab5618df5e998d1dffbb622be76a34df2c98f1359e049fcc2f1f08d1868318e6", Stale = false, Path = "AGeoGebraDbl.cs", Since = "2026-10-06")]
 [Facets(Layer = "domain", Status = "buggy", Complexity = 3)]
 [Tags("code/abstract_base", "code/geometric_algebra")]
 [System.ComponentModel.Description("Abstract Base Class for Multi-Vector-Spaces")]

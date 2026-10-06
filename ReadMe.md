@@ -10,29 +10,35 @@ description: "A C# library implementing Projective Geometric Algebra (PGA) for 2
 digest:
   local-classes:
     AGeoGebra:
-      mtime: "2026-07-07T17:54:19Z"
-      digest: "b894a9103cf6ec9bb71802de5c4534a4329b3dca30a68a23d06822cfba2d3b9e"
+      mtime: "2026-10-06T11:08:59Z"
+      digest: "0fc01dbe2d6a5f92b60c3e52510653481520b89ed866849458805648de02cd17"
     AGeoGebraDbl:
-      mtime: "2026-07-07T17:54:44Z"
-      digest: "9df6a09523671483460f3f629527911117a4b1df4c42e2bc9f6f680f9b00db77"
+      mtime: "2026-10-06T11:09:00Z"
+      digest: "ab5618df5e998d1dffbb622be76a34df2c98f1359e049fcc2f1f08d1868318e6"
     IGeoGebra:
-      mtime: "2026-07-07T17:54:19Z"
-      digest: "e80d05b24a30601df8838834480ad82cecee355df579fc6f1808108b33479dd6"
+      mtime: "2026-10-06T11:09:00Z"
+      digest: "a4d2b57bd6374d82cb5e033479bf99dc7f43745bef0b823755da917c35cd90a7"
     PGA3D:
-      mtime: "2026-07-07T17:54:19Z"
-      digest: "7b23aa487c2c2d59d036d3896573500236f80fbc91ec15e65d96912528f404a5"
+      mtime: "2026-10-06T11:08:53Z"
+      digest: "6d60f7c980c4240cabf7e6b6dd02f664f7f8b1649bc85b56d382a4fb89920faf"
+    PgaAssert:
+      mtime: "2026-10-06T11:08:53Z"
+      digest: "9c5947d037dd231cae90a225bb186c60f38637996cc3dd1ac6e9345acb4763f6"
+    PgaTolerance:
+      mtime: "2026-10-06T11:08:47Z"
+      digest: "a00acfe9dcd8084f66c8b2655c64aa4f4d760f094d79a8a8c5daa9590a5b23b3"
     Program:
       mtime: "2026-07-07T17:48:55Z"
       digest: "f234e40f5e704a92b71f3319f42ca08c1a7ac00a71e7e907857ef0cd7107df26"
     XGeoGebra:
-      mtime: "2026-07-07T17:54:19Z"
-      digest: "c3d57ec6c170096dcf07a1d24e70fe9d7c119b6675407199c0a0900c7dbf102f"
+      mtime: "2026-10-06T11:08:59Z"
+      digest: "f156f02232b25b54fe9bafeb7b1ae7db681ff0ce7d94436796a6b8e421f0c728"
     xPermute:
       mtime: "2026-07-07T17:48:55Z"
       digest: "14c0750e0efe0945d41e8f6c9d8235462381d9207aeda34d5901191b9fa91edb"
     XPGA3D:
-      mtime: "2026-07-07T17:54:19Z"
-      digest: "edca1df48022bd017d1f37dcc79ccb3ec13bf181a44868bb1de9c39c036406f9"
+      mtime: "2026-10-06T11:08:53Z"
+      digest: "9c04d76f03537170aab4c1ae4c444e6556113ee3c59e3c26518026f411c7fde1"
   folders: {}
 related:
   - path: ../_Matthias/Code/NET/_SpocWeb.Root/_std/SpocWeb.Projective/ga
@@ -191,14 +197,15 @@ flowchart TD
 
 ## Classes
 
-| Class | Responsibility |
-|---|---|
-| [XGeoGebra](AGeoGebra.cs) | Extension Methods and Tests for IGeoGebra and PGA Classes |
-| [AGeoGebra](AGeoGebra.cs) | Abstract Base Class for Multi-Vector-Spaces |
-| [AGeoGebraDbl](AGeoGebraDbl.cs) | Abstract Base Class for Multi-Vector-Spaces |
-| [IGeoGebra](IGeoGebra.cs) | GA define several Products that transform its 2^n Dimensions into each other, described by Cayley Tables. |
-| [XGeoGebra](IGeoGebra.cs) | Extension Methods for IGeoGebra. |
-| [XPGA3D](pga3d.cs) | Static extension and utility methods for the PGA3D G(3,0,1) multivector type. |
-| [PGA3D](pga3d.cs) | Pga3D Projective Geometric Algebra in 3D, also known as 3D PGA,  extends geometric algebra to include projective geometry. |
-| [Program](Program.cs) | Entry point for the PGA demo/test runner. |
-| [xPermute](xPermute.cs) | Extension methods for generating all permutations of a list in-place via Heap's algorithm, yielding each permutation together with its parity sign. |
+| Class | Responsibility | Key Collaborators |
+|---|---|---|
+| [XGeoGebra](AGeoGebra.cs) | Extension Methods and Tests for IGeoGebra and PGA Classes |  |
+| [AGeoGebra](AGeoGebra.cs) | Abstract Base Class for Multi-Vector-Spaces |  |
+| [AGeoGebraDbl](AGeoGebraDbl.cs) | Abstract Base Class for Multi-Vector-Spaces |  |
+| [IGeoGebra](IGeoGebra.cs) | GA define several Products that transform its 2^n Dimensions into each other, described by Cayley Tables. |  |
+| [XPGA3D](pga3d.cs) | Static extension and utility methods for the PGA3D G(3,0,1) multivector type. | `PGA3D` |
+| [PGA3D](pga3d.cs) | Pga3D Projective Geometric Algebra in 3D, also known as 3D PGA, extends geometric algebra to include projective geometry. It provides a powerful tool for representing and manipulating geometric objects such as - points, lines, planes, and transformations in three-dimensional space. In 3D PGA, geometric entities are represented as multivectors, which can be combined using various algebraic operations to perform geometric transformations and calculations. This framework is particularly useful in computer graphics, robotics, and physics for modeling and analyzing spatial relationships and transformations. | `PGA3D` |
+| [PgaAssert](PgaAssert.cs) | Component-wise Comparison of float Multivectors with an explicit Tolerance. |  |
+| [PgaTolerance](PgaTolerance.cs) | Explicit absolute Tolerances for Zero- and Equality-Tests of normalized PGA Components. |  |
+| [Program](Program.cs) | Entry point for the PGA demo/test runner. |  |
+| [xPermute](xPermute.cs) | Extension methods for generating all permutations of a list in-place via Heap's algorithm, yielding each permutation together with its parity sign. |  |

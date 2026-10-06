@@ -17,7 +17,7 @@ namespace org.SpocWeb.root.maths.pga.ga;
 /// | 39 | <see cref="Neg16"/> | Negates all sixteen components of a 16-element multivector coordinate array. |
 /// | 50 | <see cref="Dual16R"/> | ! relativistic R3+iT Poincare Dual. |
 /// | 64 | <see cref="CliffCjg16R"/> | R3+iT relativistic Clifford Conjugation |
-/// | 78 | <see cref="Involute"/> | R310. |
+/// | 78 | <see cref="Involute"/> | R310.Involute: res = a.Involute() Main involution |
 /// | 91 | <see cref="NormSqr16R310Q"/> | Norm Sqr16 R310 Q. |
 /// | 99 | <see cref="NormSqr16R310"/> | Norm Sqr16 R310. |
 /// | 111 | <see cref="Times16R"/> | * Mul/Times relativistic geometric product. |

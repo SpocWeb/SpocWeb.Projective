@@ -12,15 +12,15 @@ namespace org.SpocWeb.root.maths.pga.ga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 84 | <see cref="R110"/> | Initializes a new instance of R110 with the specified f and idx. |
-/// | 91 | <see cref="R110"/> | Initializes a new instance of R110 with the specified values. |
-/// | 107 | <see cref="R110"/> | Initializes a new instance of R110 with the specified values. |
-/// | 122 | <see cref="New"/> | Creates a new R110 G(1,1,0) multivector from the given component array. |
-/// | 171 | <see cref="Scalar"/> | Gets the scalar. |
-/// | 174 | <see cref="e1"/> | Gets the e1. |
-/// | 177 | <see cref="e2"/> | Gets the e2. |
-/// | 180 | <see cref="e12"/> | Gets the e12. |
-/// | 198 | <see cref="Blades"/> | Gets the blades. |
+/// | 95 | <see cref="R110"/> | Initializes a new instance of R110 with the specified f and idx. Initializes a new instance of R110 with the specified f and idx. |
+/// | 102 | <see cref="R110"/> | Initializes a new instance of R110 with the specified values. |
+/// | 118 | <see cref="R110"/> | Initializes a new instance of R110 with the specified values. |
+/// | 133 | <see cref="New"/> | Creates a new R110 G(1,1,0) multivector from the given component array. |
+/// | 182 | <see cref="Scalar"/> | Gets the scalar. |
+/// | 185 | <see cref="e1"/> | Gets the e1. |
+/// | 188 | <see cref="e2"/> | Gets the e2. |
+/// | 191 | <see cref="e12"/> | Gets the e12. |
+/// | 209 | <see cref="Blades"/> | Gets the blades. |
 ///
 /// ## Collaborators
 ///
@@ -54,6 +54,17 @@ public class R110 : AGeoGebra4<R110>
 	public override R110 Self() => this;
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 66 | <see cref="_1_"/> | [0] Scalar Part |
+	/// | 69 | <see cref="re"/> | [1] AKA e1; real Part re� = 1 |
+	/// | 72 | <see cref="im"/> | [2] AKA i, e1; imaginary Part im� = -1 |
+	/// | 75 | <see cref="e12"/> | [3] e12 is the Pseudo-Scalar: e12� = -1 |
+	/// | 78 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:42Z", Digest = "26503888b6121e5e4ed37e13956351fa0ad87252f10d3ec1dc8b6374e004fd4b", Stale = false, Path = "ga/R110.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
 	[Tags("code/enum", "code/clifford_algebra")]

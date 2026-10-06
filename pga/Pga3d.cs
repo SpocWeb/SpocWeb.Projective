@@ -396,6 +396,29 @@ public class Pga3D : AGeoGebra16<Pga3D>
 			, 0};
 
 	/// <summary> Bits for each non-zero Component of a Multi-Vector </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 409 | <see cref="_1_"/> | Represents 1. |
+	/// | 412 | <see cref="e0"/> | Represents e0. |
+	/// | 415 | <see cref="e1"/> | Represents e1. |
+	/// | 418 | <see cref="e2"/> | Represents e2. |
+	/// | 421 | <see cref="e3"/> | Represents e3. |
+	/// | 424 | <see cref="e01"/> | Represents e01. |
+	/// | 427 | <see cref="e02"/> | Represents e02. |
+	/// | 430 | <see cref="e03"/> | Represents e03. |
+	/// | 433 | <see cref="e12"/> | Represents e12. |
+	/// | 436 | <see cref="e31"/> | Represents e31. |
+	/// | 439 | <see cref="e23"/> | Represents e23. |
+	/// | 442 | <see cref="e021"/> | Represents e021. |
+	/// | 445 | <see cref="e013"/> | Represents e013. |
+	/// | 448 | <see cref="e032"/> | Represents e032. |
+	/// | 451 | <see cref="e123"/> | Represents e123. |
+	/// | 461 | <see cref="e0123"/> | Represents e0123. |
+	/// | 464 | <see cref="_0"/> | Represents 0. |
+	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T10:09:57Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
 	[Tags("code/enum", "code/projective_geometric_algebra")]
@@ -499,6 +522,21 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	}
 
 	/// <summary> <see cref="Components"/> Types </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 512 | <see cref="Scalar"/> | Scale-Factor, used in Combination with Motor and Rotor where it is Cos |
+	/// | 518 | <see cref="Distance"/> | Distance of the Plane from the Origin (scaled by the Plane-Coordinates) |
+	/// | 522 | <see cref="Plane"/> | Planess are 1st Grade Elements in PGA |
+	/// | 534 | <see cref="Rotor"/> | AxisRot are Rotation Axes |
+	/// | 537 | <see cref="Motor"/> | AxisTrans are ideal Translation Axes |
+	/// | 540 | <see cref="Line"/> | A Rotor combined with a Motor component; represents a projective line. |
+	/// | 543 | <see cref="Vector"/> | Pointss can be 'real' or 'ideal' (a Vector |
+	/// | 546 | <see cref="Point"/> | Pointss are Vectors with a nonzero Origin Component |
+	/// | 557 | <see cref="All"/> | Specifies all values. |
+	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "43f079111c5074cb136e7ba4735b701c7d2017de7aa8b2aad15aa393767bfdca", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
@@ -561,8 +599,32 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	}
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
 	///
-	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "66c81b8887d2ade3e64165ed3108c573db02f55a87f9e79187aa38293cf828b5", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 577 | <see cref="_1_"/> | [0] AKA e,S; Scalar e.g. Dot Product |
+	/// | 588 | <see cref="e0"/> | [1] = e0 => € == 0 Plane/Sphere/Sky at Infinity; Projective with e0² = 0 |
+	/// | 592 | <see cref="e1"/> | [2] = e1 => X==0 YZ-Plane E1; e1² = 1 |
+	/// | 596 | <see cref="e2"/> | [3] = e2 => Y==0 ZX-Plane E2; e2² = 1 |
+	/// | 600 | <see cref="e3"/> | [4] = e3 => Z==0 XY-Plane E3; e3² = 1 |
+	/// | 624 | <see cref="e01"/> | [5] = e01 = Meridian, X-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with YZ-Plane; |
+	/// | 644 | <see cref="e02"/> | [6] = e02 = PrimeVertical, Y-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with ZX |
+	/// | 664 | <see cref="e03"/> | [7] = e03 = Horizon, Z-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with XY |
+	/// | 676 | <see cref="e12"/> | [8] = e12 => x == 0 == y; Z-Axis/E12 resp. xy-Plane; e12² = k² = -1 |
+	/// | 684 | <see cref="e31"/> | [9] = e31 => x == 0 == z; Y-Axis/E31 resp. zx-Plane; e13² = j² = -1 |
+	/// | 692 | <see cref="e23"/> | [10] = e23 => z == 0 == y; X-Axis/E23 resp. yz-Plane; e23² = i² = -1 |
+	/// | 703 | <see cref="e021"/> | [11] = Z-Point / E021 |
+	/// | 710 | <see cref="e013"/> | [12] Y-Point /E013 |
+	/// | 717 | <see cref="e032"/> | [13] X-Point / E032 |
+	/// | 732 | <see cref="e123"/> | [14] = e123 = O/W/Origin for the Observer; Distance of Projection Plane from the Origin, the Intersection of all 3 x,y,z Coordinate-Hyper-Planes [6] O/W/Origin; 1 for Points, 0 for Vectors Represents i. |
+	/// | 738 | <see cref="e0123"/> | [15] = e0123 = Oriented Volume, a Pseudo-Scalar Represents i. |
+	/// | 740 | <see cref="I"/> | Represents i. |
+	/// | 743 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
+	///
+	[DocState(Pass = 2, MTime = "2026-10-06T10:57:12Z", Digest = "ea8d55fb7e25a70bb7161f0b210024e1d04be9f4480986f5d99f78856689fbc2", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
 	[Tags("code/enum", "code/projective_geometric_algebra")]
 	[System.ComponentModel.Description("Base-Blades in 3D, usable as Indices for Components")]
@@ -1034,6 +1096,17 @@ public class Pga3D : AGeoGebra16<Pga3D>
 		, E0123 }; //Grade4
 
 	/// <summary> Grade 1: Static Planes </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 1047 | <see cref="Dist"/> | Represents dist. |
+	/// | 1050 | <see cref="Sky"/> | Represents sky. |
+	/// | 1053 | <see cref="YZ"/> | Represents yz. |
+	/// | 1056 | <see cref="ZX"/> | Represents zx. |
+	/// | 1059 | <see cref="XY"/> | Represents xy. |
+	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "d631a2f3cb68a3f0224854188cb6c35044c110ab3581aab400be911a771c557d", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
@@ -1065,17 +1138,17 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1089 | <see cref="Sky"/> | Represents sky. |
-	/// | 1092 | <see cref="Origin"/> | current Position of the Observer |
-	/// | 1095 | <see cref="Meridian"/> | Represents meridian. |
-	/// | 1098 | <see cref="PrimeVertical"/> | Represents prime Vertical. |
-	/// | 1101 | <see cref="Horizon"/> | Represents horizon. |
-	/// | 1114 | <see cref="Zenith"/> | Represents zenith. |
-	/// | 1117 | <see cref="Nadir"/> | Represents nadir. |
-	/// | 1120 | <see cref="West"/> | Represents west. |
-	/// | 1130 | <see cref="East"/> | Represents east. |
-	/// | 1133 | <see cref="North"/> | Represents north. |
-	/// | 1143 | <see cref="South"/> | Represents south. |
+	/// | 1162 | <see cref="Sky"/> | Represents sky. |
+	/// | 1165 | <see cref="Origin"/> | current Position of the Observer |
+	/// | 1168 | <see cref="Meridian"/> | Represents meridian. |
+	/// | 1171 | <see cref="PrimeVertical"/> | Represents prime Vertical. |
+	/// | 1174 | <see cref="Horizon"/> | Represents horizon. |
+	/// | 1187 | <see cref="Zenith"/> | Represents zenith. |
+	/// | 1190 | <see cref="Nadir"/> | Represents nadir. |
+	/// | 1193 | <see cref="West"/> | Represents west. |
+	/// | 1203 | <see cref="East"/> | Represents east. |
+	/// | 1206 | <see cref="North"/> | Represents north. |
+	/// | 1216 | <see cref="South"/> | Represents south. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "29c9f3a451af85939d573e784c285baa9191ad285ee19927efe6c2601e336a65", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
@@ -1176,10 +1249,10 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1193 | <see cref="X"/> | Represents x. |
-	/// | 1196 | <see cref="Y"/> | Represents y. |
-	/// | 1199 | <see cref="Z"/> | Represents z. |
-	/// | 1202 | <see cref="_1_"/> | Represents 1. |
+	/// | 1266 | <see cref="X"/> | Represents x. |
+	/// | 1269 | <see cref="Y"/> | Represents y. |
+	/// | 1272 | <see cref="Z"/> | Represents z. |
+	/// | 1275 | <see cref="_1_"/> | Represents 1. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
@@ -1208,11 +1281,11 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1226 | <see cref="Origin"/> | Represents origin. |
-	/// | 1229 | <see cref="Dist"/> | Represents dist. |
-	/// | 1232 | <see cref="Z"/> | Represents z. |
-	/// | 1235 | <see cref="Y"/> | Represents y. |
-	/// | 1238 | <see cref="X"/> | Represents x. |
+	/// | 1299 | <see cref="Origin"/> | Represents origin. |
+	/// | 1302 | <see cref="Dist"/> | Represents dist. |
+	/// | 1305 | <see cref="Z"/> | Represents z. |
+	/// | 1308 | <see cref="Y"/> | Represents y. |
+	/// | 1311 | <see cref="X"/> | Represents x. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
@@ -1594,33 +1667,33 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1653 | <see cref="Point"/> | Point given by Coordinates x, y and z |
-	/// | 1665 | <see cref="Vector"/> | Point given by Coordinates x, y and z |
-	/// | 1693 | <see cref="Rotor"/> | Rotor around euclidean axisRot |
-	/// | 1704 | <see cref="Rot"/> | Constructs a rotor that rotates by angle a (radians) around the given axisRot. |
-	/// | 1725 | <see cref="Translator"/> |  |
-	/// | 1737 | <see cref="Motor"/> | AKA Translator(double,Pga3D); translates dist along the axisTrans/Vector when using the Sandwich Product |
-	/// | 1758 | <see cref="Line"/> | Line given by slope and intersect |
-	/// | 1792 | <see cref="Plane"/> | Plane given by slope and intersect |
-	/// | 1821 | <see cref="Circle"/> | Returns a motor that places a point at radius along the X-axis after rotating by t full turns around line. |
-	/// | 1832 | <see cref="IdealLine"/> | Ideal Line. |
-	/// | 1857 | <see cref="Lathe"/> | Constructs 3D Bodies around a Rotation Axis like a Lathe |
-	/// | 1883 | <see cref="SqRtTwo"/> | Square root of 2, used as a scaling factor for cube spine heights. |
-	/// | 1885 | <see cref="SqRtHalf"/> | Square root of 0. |
-	/// | 1890 | <see cref="TestDual"/> | Test Dual. |
-	/// | 1902 | <see cref="Cylinder"/> | Generates the outer Cylinder Mesh; degenerates to a Cube for numSegments = 4 |
-	/// | 1913 | <see cref="CubeSpineCoords"/> | Spines of a Cube with Height = √2, not its Sides! |
-	/// | 1925 | <see cref="CubeSpineCoords2"/> | Spines of a Cube with Height = 1 rotated around the X-Axis from 0 to +1, (not its Sides!) |
-	/// | 1935 | <see cref="TestCubeSpineCoords"/> | NUnit test-case source providing expected CubeSpineCoords2 for CubePoints. |
-	/// | 1947 | <see cref="CubePoints"/> | Cube Points. |
-	/// | 1965 | <see cref="Cube"/> | Generates the 4 'Spines' of a Cube, around the X-Symmetry-Axis. |
-	/// | 1974 | <see cref="Torus"/> | Generates a Torus Mesh; degenerates to a solid Polygon Line for small numLargeToroidal |
-	/// | 1987 | <see cref="Sphere"/> | Generates a Sphere Mesh; degenerates to a double Pyramid for numMeridian = 2 |
-	/// | 1998 | <see cref="Cone"/> | Generates a Cone/Pyramid Mesh; degenerates to a Tetrahedron for numSegments = 3 |
-	/// | 2007 | <see cref="Tetrahedron"/> | Generates a regular Tetrahedron mesh with circumradius r as a degenerate 3-segment Cone. |
-	/// | 2015 | <see cref="Arrow"/> | Generates an Arrow mesh composed of a cone tip, an inverted cone base, and a cylinder shaft. |
-	/// | 2038 | <see cref="Planets"/> | Planet Name, Mass, Position and Speed from https://ssd. |
-	/// | 2048 | <see cref="G"/> | Gravity Constant |
+	/// | 1726 | <see cref="Point"/> | Point given by Coordinates x, y and z |
+	/// | 1738 | <see cref="Vector"/> | Point given by Coordinates x, y and z |
+	/// | 1766 | <see cref="Rotor"/> | Rotor around euclidean axisRot |
+	/// | 1777 | <see cref="Rot"/> | Constructs a rotor that rotates by angle a (radians) around the given axisRot. |
+	/// | 1798 | <see cref="Translator"/> |  |
+	/// | 1810 | <see cref="Motor"/> | AKA Translator(double, Pga3D); translates dist along the axisTrans/Vector when using the Sandwich Product |
+	/// | 1831 | <see cref="Line"/> | Line given by slope and intersect |
+	/// | 1865 | <see cref="Plane"/> | Plane given by slope and intersect |
+	/// | 1894 | <see cref="Circle"/> | Returns a motor that places a point at radius along the X-axis after rotating by t full turns around line. |
+	/// | 1905 | <see cref="IdealLine"/> | Ideal Line. |
+	/// | 1930 | <see cref="Lathe"/> | Constructs 3D Bodies around a Rotation Axis like a Lathe |
+	/// | 1956 | <see cref="SqRtTwo"/> | Square root of 2, used as a scaling factor for cube spine heights. |
+	/// | 1958 | <see cref="SqRtHalf"/> | Square root of 0.5 (= 1/√2), used as a scaling factor for cube spine coordinates. |
+	/// | 1963 | <see cref="TestDual"/> | Test Dual. |
+	/// | 1975 | <see cref="Cylinder"/> | Generates the outer Cylinder Mesh; degenerates to a Cube for numSegments = 4 |
+	/// | 1986 | <see cref="CubeSpineCoords"/> | Spines of a Cube with Height = √2, not its Sides! |
+	/// | 1998 | <see cref="CubeSpineCoords2"/> | Spines of a Cube with Height = 1 rotated around the X-Axis from 0 to +1, (not its Sides!) |
+	/// | 2008 | <see cref="TestCubeSpineCoords"/> | NUnit test-case source providing expected CubeSpineCoords2 for CubePoints. |
+	/// | 2020 | <see cref="CubePoints"/> | Cube Points. |
+	/// | 2038 | <see cref="Cube"/> | Generates the 4 'Spines' of a Cube, around the X-Symmetry-Axis. |
+	/// | 2047 | <see cref="Torus"/> | Generates a Torus Mesh; degenerates to a solid Polygon Line for small numLargeToroidal |
+	/// | 2060 | <see cref="Sphere"/> | Generates a Sphere Mesh; degenerates to a double Pyramid for numMeridian = 2 |
+	/// | 2071 | <see cref="Cone"/> | Generates a Cone/Pyramid Mesh; degenerates to a Tetrahedron for numSegments = 3 |
+	/// | 2080 | <see cref="Tetrahedron"/> | Generates a regular Tetrahedron mesh with circumradius r as a degenerate 3-segment Cone. |
+	/// | 2088 | <see cref="Arrow"/> | Generates an Arrow mesh composed of a cone tip, an inverted cone base, and a cylinder shaft. |
+	/// | 2111 | <see cref="Planets"/> | Planet Name, Mass, Position and Speed from https://ssd.jpl.nasa.gov/horizons.cgi on 2018-01-16T00:00:00 = 1516057200s Unix Time, units KM/S |
+	/// | 2121 | <see cref="G"/> | Gravity Constant |
 	///
 	/// ## Collaborators
 	///
@@ -1628,7 +1701,7 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	/// |---|---|
 	/// | <see cref="Pga3D"/> | Returned by a method. |
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-06-17T10:09:57Z", Digest = "6348caa1d98860fe344ead8a0f783fd3f3662b556b89b29766fee2bc3df0b98e", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
+	[DocState(Pass = 2, MTime = "2026-10-06T10:57:12Z", Digest = "028e4c4e974b47156cbcc5346215d35b29359031fdbf1471b16c0e938a725c12", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "partial", Complexity = 2)]
 	[Tags("code/factory", "code/projective_geometric_algebra")]
 	[System.ComponentModel.Description("Static Factory Methods")]

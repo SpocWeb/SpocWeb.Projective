@@ -34,6 +34,15 @@ public class R010 : AGeoGebra2<R010>
 	public override R010 Self() => this;
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 46 | <see cref="_1_"/> | [0] Scalar Part |
+	/// | 49 | <see cref="i"/> | [1] AKA e1; imaginary Part i� = -1 |
+	/// | 52 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:36Z", Digest = "a5994f6a714f629b603fb9f06fd798b84e11b88cb796c044f93b42fd776480c5", Stale = false, Path = "ga/R010.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
 	[Tags("code/enum", "code/clifford_algebra")]

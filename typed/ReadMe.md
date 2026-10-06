@@ -10,35 +10,35 @@ description: "Strongly-typed, hardware-accelerated geometric primitives for 2D a
 digest:
   local-classes:
     BiVector3D:
-      mtime: "2026-08-09T13:51:45Z"
-      digest: "7d8d59be706a6aa66c8958fe87b3dfbc3e1c05098c03222c134ef291c4e0e89d"
+      mtime: "2026-10-06T10:57:19Z"
+      digest: "d62224abb1fdefbf87d269e67b2f2bd638d1da4c4a64ee9862b33335b05cb847"
     BiVector4D:
-      mtime: "2026-08-09T13:51:45Z"
-      digest: "ed0000b54ba502bedc65d5522712f1a5e2523e59c2368659ac5c7bbf29233b2b"
+      mtime: "2026-10-06T11:08:57Z"
+      digest: "4978d999b4b3565a5438537eb827da872f660631229a6a947112b63cb9420a40"
     Point2D:
-      mtime: "2026-08-09T13:51:45Z"
-      digest: "1829923865bd072fe762298ab3f3163320a5edac2971d514c0a2f7648d0a9eaf"
+      mtime: "2026-10-06T11:08:58Z"
+      digest: "45dfe294652032a800df2d168f03696930a308929023ab7840b7fe2600cd2cc3"
     Point3D:
-      mtime: "2026-08-09T13:51:45Z"
-      digest: "056d6422db22c33aed5ed349caa3fc60f3c5edc612f08da2939c75f54d880756"
+      mtime: "2026-10-06T11:08:58Z"
+      digest: "c67006e522c51fe4e192ebb384ff0ccbb3bd097f6ab08a0b6913bdcd1ff768a6"
     TriVector4D:
-      mtime: "2026-07-07T17:54:25Z"
-      digest: "d35f606502ff3fd5b80173c72ad61b9416e8d3cd04fed390c04286d8e3d0e51b"
+      mtime: "2026-10-06T10:57:20Z"
+      digest: "83369c305b449318903d911cf21a38ebe40afebff113f3d007cdeda63275bf46"
     Vector2D:
-      mtime: "2026-08-09T13:51:45Z"
-      digest: "b9aed8b92012a6eaed128137c1d6a11032d3182a25f10aa8089b22ee3444c079"
+      mtime: "2026-10-06T11:08:58Z"
+      digest: "0da81f3edacab246e9009bcd38de6c530ff9bffb5d8386fc5870b29e3bc9f5bb"
     Vector3D:
-      mtime: "2026-08-09T13:51:45Z"
-      digest: "85988c4fe1b7ee7c8904d2fdbba48ba3823bb919360556cbdc22bc3d50ab0921"
+      mtime: "2026-10-06T11:08:58Z"
+      digest: "1f6e3ce7b150be66688fb0d0e14ea43dbb05aee539ba41baf5e90f3f1b8c7192"
     Vector4D:
-      mtime: "2026-07-07T17:54:25Z"
-      digest: "85afa6bce2ea414aa2267ffc8e9661e1259e19342c4e46615371804d2bf203ee"
+      mtime: "2026-10-06T10:57:22Z"
+      digest: "8dac1d0ea6917dd16c9e77a09b23116ea052517968eb65257fb6b56760d49945"
     XBiVector3D:
       mtime: "2026-08-09T13:51:45Z"
       digest: "926e1307e16bff028084bde87c32ed6b996fa0e178f14547b813049091df8346"
     XBiVector4D:
-      mtime: "2026-08-09T13:51:45Z"
-      digest: "bb130c65ab37711ab1c62db2fa5791601d5cc3ea2ab0c6d48eeaff413eb531f8"
+      mtime: "2026-10-06T11:08:57Z"
+      digest: "8431e0f46cb89ce6da929586f5f67cdf43f49a973307705fdbbd137c8ce272e9"
     XVector2:
       mtime: "2026-08-09T13:51:45Z"
       digest: "9b1e17dd8d922bb8cd498f75da9fc1f5ba40d88d35129375aba5cb50b26bfb1a"
@@ -115,12 +115,12 @@ plain vectors, encoding the PGA grade structure directly in the C# type system.
 | [BiVector3D](BiVector3D.cs) | three floating-point components named x, y, and z of the Cross-Product |
 | [XBiVector3D](BiVector3D.cs) | Extension methods for BiVector3D and related vector types. |
 | [XBiVector4D](BiVector4D.cs) | Static factory methods constructing BiVector4D lines via wedge products of homogeneous 3D points and direction vectors. |
-| [BiVector4D](BiVector4D.cs) | Represents a line in 3D projective space via six Plücker coordinates:  a Direction (vector part) and a Moment (bivector part). |
-| [Point2D](Point2D.cs) | Vector2-backed immutable 2D affine point with homogeneous W = 1,  supporting addition/subtraction with Vector2D and wedge products that produce lines. |
+| [BiVector4D](BiVector4D.cs) | Represents a line in 3D projective space via six Plücker coordinates: a Direction (vector part) and a Moment (bivector part). |
+| [Point2D](Point2D.cs) | Vector2-backed immutable 2D affine point with homogeneous W = 1, supporting addition/subtraction with Vector2D and wedge products that produce lines. |
 | [Point3D](Point3D.cs) | 3D Point accelerated by Vector3 |
 | [TriVector4D](TriVector4D.cs) | 4D tri-vector having floating-point components x, y, z, and w. |
 | [XVector2](Vector2D.cs) | Provides extension methods for Complex. |
-| [Vector2D](Vector2D.cs) | Vector2-backed struct impl. |
+| [Vector2D](Vector2D.cs) | Vector2-backed struct impl. up to IVector4D |
 | [Vector3D](Vector3D.cs) | Vector3-backed immutable 3D direction vector that implements IVector4D with W = 0, supporting rotations, projection, rejection, and standard arithmetic. |
 | [Vector4D](Vector4D.cs) | single-precision Point-/Place-Vector in 3D, used for (Position-)Vectors in homogeneous Coordinates |
 

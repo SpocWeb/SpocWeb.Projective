@@ -2,6 +2,14 @@ using org.SpocWeb.root.Attributes;
 namespace org.SpocWeb.root.maths.pga;
 
 /// <summary> Component-wise Comparison of float Multivectors with an explicit Tolerance. </summary>
+/// <remarks>
+/// ## Public Methods
+///
+/// | Line | Method | Description |
+/// |--:|---|---|
+/// | 22 | <see cref="AreClose"/> | Asserts that all Components differ by at most tolerance * max(1, |expected|). |
+/// </remarks>
+[DocState(Pass = 2, MTime = "2026-10-06T10:57:00Z", Digest = "9c5947d037dd231cae90a225bb186c60f38637996cc3dd1ac6e9345acb4763f6", Stale = false, Path = "PgaAssert.cs", Since = "2026-10-06")]
 [Facets(Layer = "test", Status = "stable", Complexity = 1)]
 [Tags("code/assertion", "code/test_helper", "code/nunit")]
 [System.ComponentModel.Description("Component-wise Comparison of float Multivectors with an explicit Tolerance.")]

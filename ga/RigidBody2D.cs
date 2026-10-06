@@ -6,6 +6,13 @@ namespace org.SpocWeb.root.maths.pga.ga;
 
 /// <summary> A <see cref="RigidBody2D"/> that carries a typed identity payload <typeparamref name="T"/>
 /// for association with a game object or scene node. </summary>
+/// <remarks>
+/// ## Public Methods
+///
+/// | Line | Method | Description |
+/// |--:|---|---|
+/// | 21 | <see cref="RigidBody2D"/> | Initializes a new instance of RigidBody2D with the specified identity, mass and extension. |
+/// </remarks>
 ///
 [DocState(Pass = 2, MTime = "2026-05-24T15:40:19Z", Digest = "41f5c10232c5e6b8e4e1bf9d7471d17e16f338f2cb51ba68fd5a13bc986a02c7", Stale = false, Path = "ga/RigidBody2D.cs", Since = "2026-10-06")]
 [Facets(Layer = "domain", Status = "stable", Complexity = 1)]

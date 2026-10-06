@@ -35,7 +35,7 @@ namespace org.SpocWeb.root.maths.pga;
 /// | 496 | <see cref="Plus16"/> | + Add; MultiVector addition |
 /// | 527 | <see cref="Minus16"/> | - Minus, SUB; MultiVector Subtraction |
 /// | 552 | <see cref="Times16"/> | * mulS = scalar * multiVector multiplication |
-/// | 570 | <see cref="MinusR16"/> | Returns a new 16-element array with the scalar component set to  a - b[0]  and all remaining components negated. |
+/// | 570 | <see cref="MinusR16"/> | Returns a new 16-element array with the scalar component set to a - b[0] and all remaining components negated. |
 /// | 607 | <see cref="Dot16P"/> | | Dot = inner / scalar product. |
 /// | 647 | <see cref="Join16P"/> | &amp; (JOIN): Vee AKA regressive product; symmetric |
 /// | 701 | <see cref="Meet16P"/> | ^ Cross-/ outer Product / MEET / Intersect / Wedge; antisymmetric 'Grassmann' product. |
@@ -52,7 +52,7 @@ namespace org.SpocWeb.root.maths.pga;
 /// | 846 | <see cref="IsOdd"/> | Determines whether odd. |
 /// | 855 | <see cref="Grade"/> | Returns the grade (0–4) of the given basis blade value. |
 /// | 884 | <see cref="TestJoinMeetAbs"/> | Test Join Meet Abs. |
-/// | 899 | <see cref="ProductOuterSampleVectorPairs"/> | Generates all Test Cases for product from  Pairs of Pga3D Elements |
+/// | 899 | <see cref="ProductOuterSampleVectorPairs"/> | Generates all Test Cases for product from Pairs of Pga3D Elements |
 /// | 927 | <see cref="BaseVectorPairs"/> | Generates all Pairs of Pga3D Base Vectors Elements |
 /// | 941 | <see cref="TestAllProducts"/> | Test All Products. |
 /// | 953 | <see cref="CreateVectorPairs"/> | Builds a triple of float arrays representing two input basis blades and their expected product result from the given Cayley products table. |

@@ -43,6 +43,29 @@ public class R310 : AGeoGebra16<R310>
 	public override R310 Self() => this;
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 55 | <see cref="_1_"/> | [0] Scalar e.g. Dot Product or oriented Volume |
+	/// | 59 | <see cref="e1"/> | [1] X-Direction (polar) / yz-Mirror e1� = 1 [2] Y-Direction (polar) / zx-Mirror e2� = 1 |
+	/// | 61 | <see cref="e2"/> | Represents e2. |
+	/// | 63 | <see cref="e3"/> | [3] Z-Direction (polar) / xy-Mirror e3� = 1 |
+	/// | 65 | <see cref="e4"/> | [4] T-Direction (polar) / xy-Mirror e4� = -1 |
+	/// | 69 | <see cref="e12"/> | [5] axial X-BiVector [6] axial Y-BiVector |
+	/// | 71 | <see cref="e13"/> | Represents e13. |
+	/// | 73 | <see cref="e14"/> | [7] -BiVector |
+	/// | 75 | <see cref="e23"/> | [8] -BiVector |
+	/// | 77 | <see cref="e24"/> | [9] -BiVector |
+	/// | 79 | <see cref="e34"/> | [10] -BiVector |
+	/// | 83 | <see cref="e123"/> | [11] TriVector [12] TriVector |
+	/// | 85 | <see cref="e124"/> | Represents e124. |
+	/// | 87 | <see cref="e134"/> | [13] TriVector |
+	/// | 89 | <see cref="e234"/> | [14] TriVector |
+	/// | 92 | <see cref="e1234"/> | [15] TriVector |
+	/// | 95 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:47Z", Digest = "0468984f7c2e23d3b138fad394112200b60502b6844b19f136a91ee26852ec32", Stale = false, Path = "ga/R310.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
 	[Tags("code/enum", "code/clifford_algebra")]

@@ -14,50 +14,50 @@ namespace org.SpocWeb.root.maths.pga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 444 | <see cref="ProductOuter"/> | ^ Meet/Outer/Wedge Product: Intersection |
-/// | 633 | <see cref="ProductGeometric"/> | * Full Geometric Product |
-/// | 822 | <see cref="ProductDot"/> | Dot/Inner/Scalar Product |
-/// | 827 | <see cref="Products"/> | Public read-only view of all three product Cayley tables indexed by product type. |
-/// | 834 | <see cref="_1_"/> | Gets the 1. |
-/// | 836 | <see cref="e0"/> | Gets the e0. |
-/// | 838 | <see cref="e1"/> | Gets the e1. |
-/// | 840 | <see cref="e2"/> | Gets the e2. |
-/// | 842 | <see cref="e3"/> | Gets the e3. |
-/// | 844 | <see cref="eN"/> | Gets the e N. |
-/// | 846 | <see cref="e01"/> | Gets the e01. |
-/// | 848 | <see cref="e02"/> | Gets the e02. |
-/// | 850 | <see cref="e03"/> | Gets the e03. |
-/// | 852 | <see cref="e0N"/> | Gets the e0 N. |
-/// | 854 | <see cref="e12"/> | Gets the e12. |
-/// | 856 | <see cref="e13"/> | Gets the e13. |
-/// | 858 | <see cref="e1N"/> | Gets the e1 N. |
-/// | 860 | <see cref="e23"/> | Gets the e23. |
-/// | 862 | <see cref="e2N"/> | Gets the e2 N. |
-/// | 864 | <see cref="e3N"/> | Gets the e3 N. |
-/// | 867 | <see cref="e012"/> | Gets the e012. |
-/// | 869 | <see cref="e013"/> | Gets the e013. |
-/// | 871 | <see cref="e01N"/> | Gets the e01 N. |
-/// | 873 | <see cref="e023"/> | Gets the e023. |
-/// | 875 | <see cref="e02N"/> | Gets the e02 N. |
-/// | 877 | <see cref="e03N"/> | Gets the e03 N. |
-/// | 880 | <see cref="e123"/> | Gets the e123. |
-/// | 882 | <see cref="e23N"/> | Gets the e23 N. |
-/// | 884 | <see cref="e13N"/> | Gets the e13 N. |
-/// | 886 | <see cref="e12N"/> | Gets the e12 N. |
-/// | 889 | <see cref="e0123"/> | Gets the e0123. |
-/// | 891 | <see cref="e012N"/> | Gets the e012 N. |
-/// | 893 | <see cref="e013N"/> | Gets the e013 N. |
-/// | 895 | <see cref="e023N"/> | Gets the e023 N. |
-/// | 897 | <see cref="e123N"/> | Gets the e123 N. |
-/// | 900 | <see cref="e0123N"/> | Gets the e0123 N. |
-/// | 919 | <see cref="New"/> | Creates a new R311 from the supplied component array, checking the length. |
-/// | 933 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
-/// | 949 | <see cref="R311"/> | Initializes a new instance of R311 with the specified f and idx. |
-/// | 956 | <see cref="R311"/> | Initializes a new instance of R311 with the specified f and idx. |
-/// | 963 | <see cref="R311"/> | Initializes a new instance of R311 with the specified values. |
-/// | 970 | <see cref="R311"/> | Initializes a new instance of R311 with the specified values. |
-/// | 978 | <see cref="AsMultiVector"/> | Converts an array of weighted Base blades into a flat float component array of length NUM_COORDS. |
-/// | 995 | <see cref="R311"/> | Checked Constructor |
+/// | 483 | <see cref="ProductOuter"/> | ^ Meet/Outer/Wedge Product: Intersection |
+/// | 672 | <see cref="ProductGeometric"/> | * Full Geometric Product |
+/// | 861 | <see cref="ProductDot"/> | Dot/Inner/Scalar Product |
+/// | 866 | <see cref="Products"/> | Public read-only view of all three product Cayley tables indexed by product type. |
+/// | 873 | <see cref="_1_"/> | Gets the 1. |
+/// | 875 | <see cref="e0"/> | Gets the e0. |
+/// | 877 | <see cref="e1"/> | Gets the e1. |
+/// | 879 | <see cref="e2"/> | Gets the e2. |
+/// | 881 | <see cref="e3"/> | Gets the e3. |
+/// | 883 | <see cref="eN"/> | Gets the e N. |
+/// | 885 | <see cref="e01"/> | Gets the e01. |
+/// | 887 | <see cref="e02"/> | Gets the e02. |
+/// | 889 | <see cref="e03"/> | Gets the e03. |
+/// | 891 | <see cref="e0N"/> | Gets the e0 N. |
+/// | 893 | <see cref="e12"/> | Gets the e12. |
+/// | 895 | <see cref="e13"/> | Gets the e13. |
+/// | 897 | <see cref="e1N"/> | Gets the e1 N. |
+/// | 899 | <see cref="e23"/> | Gets the e23. |
+/// | 901 | <see cref="e2N"/> | Gets the e2 N. |
+/// | 903 | <see cref="e3N"/> | Gets the e3 N. |
+/// | 906 | <see cref="e012"/> | Gets the e012. |
+/// | 908 | <see cref="e013"/> | Gets the e013. |
+/// | 910 | <see cref="e01N"/> | Gets the e01 N. |
+/// | 912 | <see cref="e023"/> | Gets the e023. |
+/// | 914 | <see cref="e02N"/> | Gets the e02 N. |
+/// | 916 | <see cref="e03N"/> | Gets the e03 N. |
+/// | 919 | <see cref="e123"/> | Gets the e123. |
+/// | 921 | <see cref="e23N"/> | Gets the e23 N. |
+/// | 923 | <see cref="e13N"/> | Gets the e13 N. |
+/// | 925 | <see cref="e12N"/> | Gets the e12 N. |
+/// | 928 | <see cref="e0123"/> | Gets the e0123. |
+/// | 930 | <see cref="e012N"/> | Gets the e012 N. |
+/// | 932 | <see cref="e013N"/> | Gets the e013 N. |
+/// | 934 | <see cref="e023N"/> | Gets the e023 N. |
+/// | 936 | <see cref="e123N"/> | Gets the e123 N. |
+/// | 939 | <see cref="e0123N"/> | Gets the e0123 N. |
+/// | 958 | <see cref="New"/> | Creates a new R311 from the supplied component array, checking the length. |
+/// | 972 | <see cref="this[]"/> | Gets or sets the element at the specified index. |
+/// | 988 | <see cref="R311"/> | Initializes a new instance of R311 with the specified f and idx. Initializes a new instance of R311 with the specified f and idx. |
+/// | 995 | <see cref="R311"/> | Initializes a new instance of R311 with the specified f and idx. |
+/// | 1002 | <see cref="R311"/> | Initializes a new instance of R311 with the specified values. |
+/// | 1009 | <see cref="R311"/> | Initializes a new instance of R311 with the specified values. |
+/// | 1017 | <see cref="AsMultiVector"/> | Converts an array of weighted Base blades into a flat float component array of length NUM_COORDS. |
+/// | 1034 | <see cref="R311"/> | Checked Constructor |
 ///
 /// ## Collaborators
 ///
@@ -162,6 +162,45 @@ public class R311 : AGeoGebra32<R311>
 	public override R311 Self() => this;
 
 	/// <summary> Base-Blades in 3D, usable as Indices for Components </summary>
+	/// <remarks>
+	/// ## Public Methods
+	///
+	/// | Line | Method | Description |
+	/// |--:|---|---|
+	/// | 175 | <see cref="_1_"/> | [00] Scalar e.g. Dot Product or oriented Volume |
+	/// | 178 | <see cref="e0"/> | [01] homogeneous Component e0� = 0, usually 1 for Points and 0 for Vectors/Origin Vectors |
+	/// | 181 | <see cref="e1"/> | [02] X-Direction (polar) / yz-Mirror e1� = 1 |
+	/// | 184 | <see cref="e2"/> | [03] Y-Direction (polar) / zx-Mirror e2� = 1 |
+	/// | 187 | <see cref="e3"/> | [04] Z-Direction (polar) / xy-Mirror e3� = 1 |
+	/// | 190 | <see cref="eN"/> | [05] Infinity-Direction (polar) / xy-Mirror eN� = -1 |
+	/// | 193 | <see cref="e01"/> | [06] BiVector formed by the wedge of e0 and e1 basis blades. |
+	/// | 195 | <see cref="e02"/> | [07] BiVector formed by the wedge of e0 and e2 basis blades. |
+	/// | 197 | <see cref="e03"/> | [08] BiVector |
+	/// | 199 | <see cref="e0N"/> | [09] BiVector |
+	/// | 202 | <see cref="e12"/> | [10] BiVector |
+	/// | 205 | <see cref="e13"/> | [11] axial Y-BiVector |
+	/// | 208 | <see cref="e1N"/> | [12] axial Y-BiVector |
+	/// | 211 | <see cref="e23"/> | [13] axial Z-BiVector |
+	/// | 214 | <see cref="e2N"/> | [14] axial Z-BiVector |
+	/// | 217 | <see cref="e3N"/> | [15] axial Z-BiVector |
+	/// | 220 | <see cref="e012"/> | [16] TriVector (negative orientation) formed by the wedge of e0, e1 and e2. |
+	/// | 222 | <see cref="e013"/> | [17] TriVector (negative orientation) formed by the wedge of e0, e1 and e3. |
+	/// | 224 | <see cref="e01N"/> | [18] -TriVector |
+	/// | 226 | <see cref="e023"/> | [19] -TriVector |
+	/// | 228 | <see cref="e02N"/> | [20] -TriVector |
+	/// | 230 | <see cref="e03N"/> | [21] -TriVector |
+	/// | 233 | <see cref="e123"/> | [22] Oriented TriVector-Volume |
+	/// | 236 | <see cref="e12N"/> | [23] Oriented TriVector-Volume |
+	/// | 239 | <see cref="e13N"/> | [24] Oriented TriVector-Volume |
+	/// | 242 | <see cref="e23N"/> | [25] Oriented TriVector-Volume |
+	/// | 245 | <see cref="e0123"/> | [26] QuadVector hyper-volume formed by e0, e1, e2 and e3. |
+	/// | 247 | <see cref="e012N"/> | [27] QuadVector hyper-volume formed by e0, e1, e2 and eN. |
+	/// | 249 | <see cref="e013N"/> | [28] QuadVector-HyperVolume |
+	/// | 251 | <see cref="e023N"/> | [29] QuadVector-HyperVolume |
+	/// | 253 | <see cref="e123N"/> | [30] QuadVector-HyperVolume |
+	/// | 256 | <see cref="e0123N"/> | [31] Oriented Hyper-Volume, a Pseudo-Scalar |
+	/// | 259 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:07Z", Digest = "fbc0add112ebc325e336691922492318288602332913b718d69c2f0ed689a384", Stale = false, Path = "pga/R311.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]

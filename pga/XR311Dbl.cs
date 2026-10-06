@@ -26,7 +26,7 @@ namespace org.SpocWeb.root.maths.pga;
 /// | 166 | <see cref="Times32"/> | *; geometric product. |
 /// | 325 | <see cref="Times32C"/> | *; conformal geometric product. |
 /// | 366 | <see cref="Wedge32"/> | ^; MEET/outer product |
-/// | 407 | <see cref="Join32"/> | v, &amp;; regressive product. |
+/// | 407 | <see cref="Join32"/> | v, &amp;; regressive product. (JOIN) |
 /// | 491 | <see cref="Join32C"/> | Conformal outer (join/wedge) product of two 32-component R311 double-precision multi-vectors. |
 /// | 532 | <see cref="Dot32"/> | | Dot/ inner product. |
 /// | 608 | <see cref="Dot32C"/> | Conformal inner (dot) product of two 32-component R311 double-precision multi-vectors. |
@@ -36,7 +36,7 @@ namespace org.SpocWeb.root.maths.pga;
 /// | 795 | <see cref="Neg32"/> | -; scalar - multi-Vector subtraction |
 /// | 817 | <see cref="Plus"/> | Returns a copy of a with the component at basis incremented by value. |
 /// | 829 | <see cref="Minus"/> | Returns a copy of a with the component at basis decremented by value. |
-/// | 841 | <see cref="MinusR"/> | Returns the negation of b with the component at basis set to  value - b[basis] . |
+/// | 841 | <see cref="MinusR"/> | Returns the negation of b with the component at basis set to value - b[basis]. |
 /// </remarks>
 ///
 [DocState(Pass = 2, MTime = "2026-05-24T15:36:37Z", Digest = "66e537f90ca89fd99991c2e15310971933b6822db4e7b0b2f0b935636a68180d", Stale = false, Path = "pga/XR311Dbl.cs", Since = "2026-10-06")]

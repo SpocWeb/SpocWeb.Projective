@@ -22,7 +22,7 @@ namespace org.SpocWeb.root.maths.pga;
 /// | 152 | <see cref="Sandwich"/> | &lt; AKA Map, 'Sandwich' Product: ~this * trafo * this |
 /// | 165 | <see cref="SandwichBy"/> | > AKA Map, 'Sandwich' Product: ~motor * this * motor |
 /// | 178 | <see cref="op_RightShift"/> | self >> that applies that to self |
-/// | 185 | <see cref="op_LeftShift"/> | Applies the sandwich product  ~self * that * self  to transform the reflector. |
+/// | 185 | <see cref="op_LeftShift"/> | Applies the sandwich product ~self * that * self to transform the reflector. |
 /// | 198 | <see cref="AsPga2D"/> | Embeds this Motor2P into the full Pga2D multi-vector by placing its four even-grade components at their canonical positions. |
 /// | 211 | <see cref="AsMotor2P"/> | Extracts the even-grade components of self as a Motor2P, throwing if the odd-grade components are non-negligible. |
 /// | 225 | <see cref="AsReflector2P"/> | Extracts the odd-grade components of self as a Reflector2P, throwing if the even-grade components are non-negligible. |
