@@ -100,7 +100,7 @@ public static class XVector2
 [Facets(Layer = "domain", Status = "stable", Complexity = 3)]
 [Tags("code/value_object", "code/vector_math")]
 [System.ComponentModel.Description("Vector2-backed struct impl. up to IVector4D")]
-[Replaces("../../_org.structs/maths/scalars/Vector2D.cs")]
+[Replaces("../../SpocWeb.Maths.Geometry/java/legacy/Vector2D.cs")]
 [Concept("Mathematics\\Geometry\\Vector.md")]
 public readonly struct Vector2D : IVector2D, IVector3D, IVector4D
 {

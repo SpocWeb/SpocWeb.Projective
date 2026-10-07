@@ -18,7 +18,7 @@ namespace org.SpocWeb.root.interfaces.converters {
 	[Facets(Layer = "test", Status = "stable", Complexity = 2)]
 	[Tags("code/unit_test", "code/perspective_transform")]
 	[System.ComponentModel.Description("Tests for perspective Transform.")]
-	[Replaces("../IMathsImpl/Interfaces/Converters/PerspectiveTransformTests.cs")]
+	[Replaces("../../../../_std/IMathsImpl/Interfaces/Converters/PerspectiveTransformTests.cs")]
 	[TestFixture]
 	[Concept("Mathematics\\Geometry.md")]
 	public static class PerspectiveTransformTests {

@@ -23,7 +23,7 @@ namespace org.SpocWeb.root.interfaces.converters {
 	[Facets(Layer = "graphics", Status = "stable", Complexity = 3)]
 	[Tags("code/perspective_transform", "code/computational_geometry")]
 	[System.ComponentModel.Description("Given four source and four destination points, it will compute the transformation implied between them.")]
-	[Replaces("../IMathsImpl/Interfaces/Converters/PerspectiveTransform.cs")]
+	[Replaces("../../../../_std/IMathsImpl/Interfaces/Converters/PerspectiveTransform.cs")]
 	[Concept("Mathematics\\Geometry.md")]
 	public sealed class PerspectiveTransform {
 
