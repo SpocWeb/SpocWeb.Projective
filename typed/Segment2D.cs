@@ -108,7 +108,7 @@ public readonly struct Segment2D<T> : ISlice<Point2D<T>, Vector2D<T>> {
 	[Concept("Mathematics\\Geometry.md")]
 	[Concept("line_segment")]
 	public int CompareTo(IRange<Point2D<T>>? that) 
-		=> CompareTo(that.StartPos) + CompareTo(that.StoppPos);
+		=> that is null ? 1 : CompareTo(that.StartPos) + CompareTo(that.StoppPos);
 
 	/// <summary>Determines whether <paramref name="left"/> equals <paramref name="right"/>.</summary>
 	public static bool operator ==(Segment2D<T> left, Segment2D<T> right) => left.Equals(right); 

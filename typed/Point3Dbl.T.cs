@@ -141,7 +141,7 @@ public readonly struct Point3Dbl<T> : IEquatable<Point3Dbl<T>>, IReadOnlyList<do
 	[Concept("Mathematics\\Geometry\\Vector.md")]
 	[Concept("typed_geometric_primitives")]
 	public bool Equals(Point3Dbl<T> that)
-		=> X.IsCloseToOrNaN(that.X) && Y.IsCloseToOrNaN(that.Y) && Z.IsCloseToOrNaN(that.Z);
+		=> X.IsCloseToOrNaN(that.X, Comparers.RelAccuracy) && Y.IsCloseToOrNaN(that.Y, Comparers.RelAccuracy) && Z.IsCloseToOrNaN(that.Z, Comparers.RelAccuracy);
 
 	/// <inheritdoc />
 	public override bool Equals(object? that) => that is Point3Dbl<T> position && Equals(position);

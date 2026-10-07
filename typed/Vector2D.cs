@@ -45,6 +45,17 @@ public static class XVector2
 		(float) (vector.X * scaleRot.Real - scaleRot.Imaginary * vector.Y),
 		(float) (vector.Y * scaleRot.Real + scaleRot.Imaginary * vector.X));
 
+	/// <summary> Rotates and Scales the <paramref name="vector"/> by <paramref name="scaleRot"/> from the Right </summary>
+	/// <remarks>Ported from the former XPoint2Dbl (single precision like the left-hand overload);
+	/// for double precision use <see cref="XSize2Dbl.Times(Size2Dbl, Complex)"/> .</remarks>
+	[Facets(Layer = "domain", Status = "stable", Complexity = 2)]
+	[Tags("code/extension_method", "code/vector_rotation", "code/complex_math")]
+	[System.ComponentModel.Description("Rotates and Scales the vector by scaleRot from the Right")]
+	[Concept("Mathematics\\Geometry\\Vector.md")]
+	public static Vector2 Times(this Vector2 vector, Complex scaleRot) => new(
+		(float) (vector.X * scaleRot.Real + scaleRot.Imaginary * vector.Y),
+		(float) (vector.Y * scaleRot.Real - scaleRot.Imaginary * vector.X));
+
 }
 
 /// <summary> <see cref="Vector2"/>-backed struct impl. up to <see cref="IVector4D"/> </summary>

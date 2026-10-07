@@ -66,7 +66,7 @@ public static class XPoint2DList {
 			sw2.Stop();
 			var timeRecursive = sw2.Elapsed.TotalMilliseconds;
 			Trace.WriteLine($"Time used (Divide & Conquer): {timeRecursive} ms");
-			resultRecursive.Length.Norm.ShouldBeApprox(resultByForce.Length.Norm);
+			resultRecursive.Length.Norm.ShouldBeApprox(resultByForce.Length.Norm, XDouble.ACCURACY);
 			//resultRecursive.StartPos.ShouldBeCloseTo(resultByForce.StartPos);
 			//resultRecursive.ShouldBe(resultByForce);
 			_ = timeRecursive.ShouldBeLessThan(timeByForce);
@@ -146,7 +146,7 @@ public static class XPoint2DList {
 	[System.ComponentModel.Description("Finds the closest Pair by sorting points")]
 	[Concept("Mathematics\\Geometry.md")]
 	[Concept("closest_pair")]
-	public static Segment2D<T> Closest<T>(List<Point2D<T>> points) {
+	public static Segment2D<T> Closest<T>(this List<Point2D<T>> points) {
 			int count = points.Count;
 			points.Sort((lhs, rhs) => lhs.X.CompareTo(rhs.X));
 
@@ -348,9 +348,9 @@ public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, ICompar
 	public bool Equals(Point2D<T> that) => Vector.IsCloseToOrNaN(that.Vector);
 
 	/// <inheritdoc cref="Equals(Point2D{T})"/>
-	public bool Equals(IPoint2D<T> that) => that is not null
-	&& Vector.X.IsCloseToOrNaN(that.X)
-	&& Vector.Y.IsCloseToOrNaN(that.Y);
+	public bool Equals(IPoint2D<T>? that) => that is not null
+	&& Vector.X.IsCloseToOrNaN(that.X, XDouble.ACCURACY)
+	&& Vector.Y.IsCloseToOrNaN(that.Y, XDouble.ACCURACY);
 
 	/// <summary> Explicitly converts to the untyped <see cref="Point2D"/>. </summary>
 	public static explicit operator Point2D(Point2D<T> self) => new(self.Vector);
