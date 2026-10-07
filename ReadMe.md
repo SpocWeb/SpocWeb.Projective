@@ -50,24 +50,28 @@ related:
 dv_has_:
   sub_:
     folders: 3
-    files: 144
-    units: 113
+    files: 166
+    units: 137
     facet_:
       layer_:
-        domain: 103
-        test: 6
-        presentation: 2
+        domain: 110
+        structures: 14
+        test: 7
+        presentation: 3
         foundation: 1
+        graphics: 1
         scaffold: 1
       status_:
-        stable: 102
-        buggy: 5
+        stable: 109
+        legacy: 11
+        buggy: 6
+        broken: 5
         partial: 5
         stub: 1
       complexity_:
-        "1": 44
-        "2": 43
-        "3": 23
+        "1": 52
+        "2": 56
+        "3": 26
         "4": 3
     tag_:
       code_:
@@ -75,57 +79,63 @@ dv_has_:
         clifford_algebra: 30
         rigid_body_physics: 12
         conformal_geometric_algebra: 11
-        geometric_algebra: 5
-        vector_math: 7
+        geometric_algebra: 8
+        geometry: 15
+        computational_geometry: 7
         polar_coordinates: 3
-        computational_geometry: 4
-        factory: 5
-        mass_distribution: 2
+        vector_math: 8
+        value_object: 20
     concept_:
       "Mathematics\\Geometry\\Geometric_Algebra.md": 87
+      typed_geometric_primitives: 8
       physics_simulation: 10
-      "Mathematics\\Geometry\\Vector.md": 11
-      projective_geometric_algebra: 2
+      "Mathematics\\Geometry\\Vector.md": 22
+      "Mathematics\\Geometry.md": 9
+      polygon: 3
+      projective_geometric_algebra: 3
+      line_segment: 2
+      closest_pair: 1
       float_tolerance_comparison: 1
-      multivector_components: 1
-      numerical_tolerance: 1
-      reproducible_test_seed: 1
-      "Mathematics\\Statistics\\Combinatorics.md": 1
 has_sub_folders: 3
-has_sub_files: 144
-has_sub_units: 113
-has_sub_facet_layer_domain: 103
-has_sub_facet_layer_test: 6
-has_sub_facet_layer_presentation: 2
+has_sub_files: 166
+has_sub_units: 137
+has_sub_facet_layer_domain: 110
+has_sub_facet_layer_structures: 14
+has_sub_facet_layer_test: 7
+has_sub_facet_layer_presentation: 3
 has_sub_facet_layer_foundation: 1
+has_sub_facet_layer_graphics: 1
 has_sub_facet_layer_scaffold: 1
-has_sub_facet_status_stable: 102
-has_sub_facet_status_buggy: 5
+has_sub_facet_status_stable: 109
+has_sub_facet_status_legacy: 11
+has_sub_facet_status_buggy: 6
+has_sub_facet_status_broken: 5
 has_sub_facet_status_partial: 5
 has_sub_facet_status_stub: 1
-has_sub_facet_complexity_1: 44
-has_sub_facet_complexity_2: 43
-has_sub_facet_complexity_3: 23
+has_sub_facet_complexity_1: 52
+has_sub_facet_complexity_2: 56
+has_sub_facet_complexity_3: 26
 has_sub_facet_complexity_4: 3
 has_sub_tag_code_projective_geometric_algebra: 39
 has_sub_tag_code_clifford_algebra: 30
 has_sub_tag_code_rigid_body_physics: 12
 has_sub_tag_code_conformal_geometric_algebra: 11
-has_sub_tag_code_geometric_algebra: 5
-has_sub_tag_code_vector_math: 7
+has_sub_tag_code_geometric_algebra: 8
+has_sub_tag_code_geometry: 15
+has_sub_tag_code_computational_geometry: 7
 has_sub_tag_code_polar_coordinates: 3
-has_sub_tag_code_computational_geometry: 4
-has_sub_tag_code_factory: 5
-has_sub_tag_code_mass_distribution: 2
+has_sub_tag_code_vector_math: 8
+has_sub_tag_code_value_object: 20
 has_sub_concept_mathematics_geometry_geometric_algebra_md: 87
+has_sub_concept_typed_geometric_primitives: 8
 has_sub_concept_physics_simulation: 10
-has_sub_concept_mathematics_geometry_vector_md: 11
-has_sub_concept_projective_geometric_algebra: 2
+has_sub_concept_mathematics_geometry_vector_md: 22
+has_sub_concept_mathematics_geometry_md: 9
+has_sub_concept_polygon: 3
+has_sub_concept_projective_geometric_algebra: 3
+has_sub_concept_line_segment: 2
+has_sub_concept_closest_pair: 1
 has_sub_concept_float_tolerance_comparison: 1
-has_sub_concept_multivector_components: 1
-has_sub_concept_numerical_tolerance: 1
-has_sub_concept_reproducible_test_seed: 1
-has_sub_concept_mathematics_statistics_combinatorics_md: 1
 ---
 # maths.pga
 

@@ -101,48 +101,74 @@ related:
 dv_has_:
   sub_:
     folders: 0
-    files: 16
-    units: 11
+    files: 36
+    units: 31
     facet_:
       layer_:
-        domain: 11
+        domain: 15
+        structures: 14
+        graphics: 1
+        test: 1
       status_:
-        stable: 8
-        buggy: 3
+        legacy: 11
+        stable: 11
+        broken: 5
+        buggy: 4
       complexity_:
-        "2": 3
-        "3": 8
+        "1": 8
+        "2": 13
+        "3": 10
     tag_:
       code_:
-        vector_math: 6
-        value_object: 8
+        geometry: 15
+        vector_math: 7
+        value_object: 18
+        perspective_transform: 2
+        computational_geometry: 3
+        data_structure: 4
         plucker_coordinates: 1
-        affine_geometry: 1
         simd: 1
-        homogeneous_coordinates: 1
-        complex_math: 1
-        factory: 1
-        extension_method: 2
+        affine_geometry: 1
+        extension_method: 5
     concept_:
-      "Mathematics\\Geometry\\Vector.md": 11
+      typed_geometric_primitives: 7
+      "Mathematics\\Geometry\\Vector.md": 22
+      "Mathematics\\Geometry.md": 9
+      polygon: 3
+      line_segment: 2
+      closest_pair: 1
+      triangle_strip: 1
 has_sub_folders: 0
-has_sub_files: 16
-has_sub_units: 11
-has_sub_facet_layer_domain: 11
-has_sub_facet_status_stable: 8
-has_sub_facet_status_buggy: 3
-has_sub_facet_complexity_2: 3
-has_sub_facet_complexity_3: 8
-has_sub_tag_code_vector_math: 6
-has_sub_tag_code_value_object: 8
+has_sub_files: 36
+has_sub_units: 31
+has_sub_facet_layer_domain: 15
+has_sub_facet_layer_structures: 14
+has_sub_facet_layer_graphics: 1
+has_sub_facet_layer_test: 1
+has_sub_facet_status_legacy: 11
+has_sub_facet_status_stable: 11
+has_sub_facet_status_broken: 5
+has_sub_facet_status_buggy: 4
+has_sub_facet_complexity_1: 8
+has_sub_facet_complexity_2: 13
+has_sub_facet_complexity_3: 10
+has_sub_tag_code_geometry: 15
+has_sub_tag_code_vector_math: 7
+has_sub_tag_code_value_object: 18
+has_sub_tag_code_perspective_transform: 2
+has_sub_tag_code_computational_geometry: 3
+has_sub_tag_code_data_structure: 4
 has_sub_tag_code_plucker_coordinates: 1
-has_sub_tag_code_affine_geometry: 1
 has_sub_tag_code_simd: 1
-has_sub_tag_code_homogeneous_coordinates: 1
-has_sub_tag_code_complex_math: 1
-has_sub_tag_code_factory: 1
-has_sub_tag_code_extension_method: 2
-has_sub_concept_mathematics_geometry_vector_md: 11
+has_sub_tag_code_affine_geometry: 1
+has_sub_tag_code_extension_method: 5
+has_sub_concept_typed_geometric_primitives: 7
+has_sub_concept_mathematics_geometry_vector_md: 22
+has_sub_concept_mathematics_geometry_md: 9
+has_sub_concept_polygon: 3
+has_sub_concept_line_segment: 2
+has_sub_concept_closest_pair: 1
+has_sub_concept_triangle_strip: 1
 ---
 # typed
 
