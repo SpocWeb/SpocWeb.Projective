@@ -13,15 +13,7 @@ digest:
       mtime: "2026-06-14T07:04:41Z"
       digest: "068bb55f06d5a2b719500a378ba08755b2d2bbdbe62c7bddcbecbeba3456c437"
   folders: {}
-related:
-  - path: ../_Matthias/Code/NET/Parkettierung
-    shared-tags: [code/wpf_application]
-  - path: ../_Matthias/Code/NET/_core/Maths.Wpf
-    shared-tags: [code/wpf_application]
-  - path: ../_Matthias/Code/NET/_core/Maths.Wpf3D
-    shared-tags: [code/wpf_application]
-  - path: ../_Matthias/Code/NET/KnowledgeWeb
-    shared-tags: [code/wpf_application]
+related: []
 ---
 # PgaGui
 
