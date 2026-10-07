@@ -11,7 +11,7 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// <see cref="Vector4"/> and <see cref="Vector4Dbl{T}"/>
 /// </remarks>
 //[Obsolete("Rather use Vector2, which is hardware-accelerated, but not enumerable")]
-[DocState(Pass = 2, MTime = "2026-07-14T17:11:43Z", Digest = "3798f14f760016f74c980cf38989bb805ac8da7d7ab598aa5c4b5c9cae7e0a1f", Stale = false, Path = "typed/Point2Dbl.cs", Since = "2026-10-06")]
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:31Z", Digest = "ff37cfb8701b4c95e960b1c4b31a492faf79b321c1c12064ac0b0dcc4c84ab1c", Stale = false, Path = "typed/Point2Dbl.cs", Since = "2026-10-06")]
 [Facets(Layer = "structures", Status = "broken", Complexity = 2)]
 [Tags("code/value_object", "code/geometry")]
 [System.ComponentModel.Description("AKA Vector2Dbl; 2D double-Precision, Platform-neutral Pendant to Size; this is a Vector like the hardware-accelerated Vector")]
@@ -374,6 +374,13 @@ public readonly struct Size2Dbl : IVector2D, IEquatable<Size2Dbl> {
 }
 
 /// <summary> Extension Methods with <see cref="Size2Dbl"/> </summary>
+/// <remarks>
+/// ## Public Methods
+///
+/// | Line | Method | Description |
+/// |--:|---|---|
+/// | 386 | <see cref="Times"/> | Scalar multiplication (commutative scalar on left). |
+/// </remarks>
 ///
 [DocState(Pass = 2, MTime = "2026-07-14T17:11:43Z", Digest = "8fd461b1ea8a329ac42ce8da44eedb8622e33262c8b75778d545b7a6c770ba43", Stale = false, Path = "typed/Point2Dbl.cs", Since = "2026-10-06")]
 [Facets(Layer = "domain", Status = "broken", Complexity = 1)]
@@ -442,7 +449,7 @@ public static class XSize2Dbl {
 /// <see cref="Point4Dbl{M}"/>
 /// <see cref="ValueTuple"/> is a good alternative, because it supports (De-)Construction.
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-07-14T17:11:43Z", Digest = "0976fdd6c502b37fb2a6bcba3ca5a084ad78463a6d3bf78b5ef9e39dc88747c5", Stale = false, Path = "typed/Point2Dbl.cs", Since = "2026-10-06")]
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:31Z", Digest = "4544b5ef6486423ecd53884dcc011092bc354cf75cd595d6a742704503592e33", Stale = false, Path = "typed/Point2Dbl.cs", Since = "2026-10-06")]
 [Facets(Layer = "structures", Status = "broken", Complexity = 2)]
 [Tags("code/value_object", "code/geometry")]
 [System.ComponentModel.Description("Immutable, lightweight, single-Precision Pendant to System.Drawing.Point and Vector2")]
@@ -745,6 +752,17 @@ public readonly struct Point2Dbl : IPoint2D {
 }
 
 /// <summary> Platform-neutral Pendant to System.Drawing.Rectangle </summary>
+/// <remarks>
+/// ## Public Methods
+///
+/// | Line | Method | Description |
+/// |--:|---|---|
+/// | 765 | <see cref="Rect2Dbl"/> | Constructs a rectangle from a point (top-left) and a size. |
+/// | 780 | <see cref="X"/> | Left edge (X coordinate of Point). |
+/// | 787 | <see cref="Y"/> | Top edge (Y coordinate of Point). |
+/// | 795 | <see cref="Width"/> | Horizontal extent (Length component of Size). |
+/// | 802 | <see cref="Height"/> | Vertical extent (Width component of Size). |
+/// </remarks>
 ///
 [DocState(Pass = 2, MTime = "2026-07-14T17:11:43Z", Digest = "808f9374941495308286bf85e83b76f00c6c2bb40d0819ff9ec7ec05abe100aa", Stale = false, Path = "typed/Point2Dbl.cs", Since = "2026-10-06")]
 [Facets(Layer = "structures", Status = "broken", Complexity = 2)]
@@ -810,6 +828,17 @@ public readonly struct Rect2Dbl {
 }
 
 /// <summary> Extension methods for <see cref="Point2Dbl"/> and related 2D types. </summary>
+/// <remarks>
+/// ## Public Methods
+///
+/// | Line | Method | Description |
+/// |--:|---|---|
+/// | 825 | <see cref="IsCloseTo"/> | when the distance between arg1 and arg2 is within Accuracy. |
+/// | 842 | <see cref="Times"/> | Rotates and Scales the vector by scaleRot |
+/// | 877 | <see cref="TestBruteForceAgainstRecursion"/> | Verifies that the divide-and-conquer closest-pair result matches brute force and is faster. |
+/// | 906 | <see cref="ClosestPair"/> | Searches for the closest Pair in points |
+/// | 968 | <see cref="Closest"/> | Finds the closest Pair by sorting points |
+/// </remarks>
 ///
 [DocState(Pass = 2, MTime = "2026-07-14T17:11:43Z", Digest = "7e4fa29226f76a97516c1b395958f6c948f99769087d42d63b0075274bd27436", Stale = false, Path = "typed/Point2Dbl.cs", Since = "2026-10-06")]
 [Facets(Layer = "domain", Status = "broken", Complexity = 2)]

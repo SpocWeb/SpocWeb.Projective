@@ -48,9 +48,9 @@ public class R001 : AGeoGebra2<R001>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 55 | <see cref="_1_"/> | [0] Scalar e.g. Dot Product or oriented Volume |
-	/// | 58 | <see cref="d"/> | [1] Homogenous Component e0� = 0 |
-	/// | 61 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// | 64 | <see cref="_1_"/> | [0] Scalar e.g. Dot Product or oriented Volume |
+	/// | 67 | <see cref="d"/> | [1] Homogenous Component e0� = 0 |
+	/// | 70 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
 	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:35Z", Digest = "19d8b601c33170797e5751504b527742b91970eda8a24342edc1ea4f3c6686aa", Stale = false, Path = "ga/R001.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]

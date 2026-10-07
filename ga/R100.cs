@@ -59,9 +59,9 @@ public class R100 : AGeoGebra2<R100>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 66 | <see cref="_1_"/> | [0] Scalar Part |
-	/// | 69 | <see cref="h"/> | [1] h-Direction h� = 1 |
-	/// | 72 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// | 75 | <see cref="_1_"/> | [0] Scalar Part |
+	/// | 78 | <see cref="h"/> | [1] h-Direction h� = 1 |
+	/// | 81 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
 	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:40Z", Digest = "2f457a885fc8a8285b2147e0690a162e33cae42bff4b56ee9bc524abbeeca7a4", Stale = false, Path = "ga/R100.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]

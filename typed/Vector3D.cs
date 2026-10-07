@@ -43,12 +43,12 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// | 361 | <see cref="Complement"/> | Returns the Hodge complement (dual) of this vector as a BiVector3D. |
 /// | 370 | <see cref="Neg"/> | Additive inverse of this vector. |
 /// | 377 | <see cref="Normalized"/> | Gets the normalized. |
-/// | 378 | <see cref="Plus"/> | Translates that by this direction vector. |
-/// | 389 | <see cref="Minus"/> | Returns the component-wise difference of this vector minus that. |
+/// | 385 | <see cref="Plus"/> | Translates that by this direction vector. |
+/// | 396 | <see cref="Minus"/> | Returns the component-wise difference of this vector minus that. |
 /// | 406 | <see cref="Per"/> | Scales this vector by 1/scalar. |
-/// | 407 | <see cref="Times"/> | Scales all components by scalar. |
+/// | 414 | <see cref="Times"/> | Scales all components by scalar. |
 /// | 430 | <see cref="Cross"/> | AKA AntiWedge; anti-symmetric Cross Product |
-/// | 433 | <see cref="Dot"/> | symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of that |
+/// | 440 | <see cref="Dot"/> | symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of that |
 /// | 463 | <see cref="ProjectOn"/> | Non-normalized Projection in that Direction |
 /// | 474 | <see cref="RejectFrom"/> | Non-normalized Rejection from that Direction |
 /// | 482 | <see cref="Floor"/> | Component-wise floor toward negative infinity. |

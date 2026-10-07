@@ -11,7 +11,7 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 /// structs are faster, because allocated on the Stack, but only up to 24 Bytes (3 doubles). 
 /// Names are consistent with <see cref="Vector3"/> but uses double Precision
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-09-22T07:27:58Z", Digest = "78b866b6c545ceb7063f5a9fb1b0220dc01de3a05a8b7e1490237ab551516c44", Stale = false, Path = "typed/Point3D.T.cs", Since = "2026-10-06")]
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:31Z", Digest = "8f0a324c2f1150a91667b59501145b4a744d00d5654023d2081ca65c1c7b7e88", Stale = false, Path = "typed/Point3D.T.cs", Since = "2026-10-06")]
 [Facets(Layer = "structures", Status = "buggy", Complexity = 3)]
 [Tags("code/value_object", "code/vector_math")]
 [System.ComponentModel.Description("Typed Position3D Vector3D to avoid accidental Type Mix")]
@@ -266,7 +266,7 @@ public class TriangleStrip3D<T> : Point3DList<T>;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 287 | <see cref="Add"/> | Adds x to this instance. |
+/// | 288 | <see cref="Add"/> | Adds x to this instance. |
 /// </remarks>
 /// <example><code lang="C#">
 /// new Point3DList{
@@ -276,6 +276,7 @@ public class TriangleStrip3D<T> : Point3DList<T>;
 /// }
 /// </code></example>
 /// <see cref="NaturalLang.NumbersAsWords.TupleList"/>
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:31Z", Digest = "58c9303ca71f9a5e025e3a8b6ef409c49f98dbdfe82cfc23e5e5137071be9a58", Stale = false, Path = "typed/Point3D.T.cs", Since = "2026-10-07")]
 [Facets(Layer = "structures", Status = "legacy", Complexity = 1)]
 [Tags("code/data_structure", "code/geometry")]
 [System.ComponentModel.Description("Allows for comfortable Declaration of ordered Lists and Polygons")]

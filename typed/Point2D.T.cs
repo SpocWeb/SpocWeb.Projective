@@ -10,9 +10,9 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 34 | <see cref="TestBruteForceAgainstRecursion"/> | Verifies that the divide-and-conquer closest-pair result matches brute force and is faster on 1 000 random points. |
-/// | 56 | <see cref="ClosestPair"/> | Searches for the closest Pair in points |
-/// | 114 | <see cref="Closest"/> | Finds the closest Pair by sorting points |
+/// | 51 | <see cref="TestBruteForceAgainstRecursion"/> | Test Brute Force Against Recursion. |
+/// | 76 | <see cref="ClosestPair"/> | Searches for the closest Pair in points |
+/// | 144 | <see cref="Closest"/> | Finds the closest Pair by sorting points |
 ///
 /// ## Collaborators
 ///
@@ -25,7 +25,7 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 [Facets(Layer = "domain", Status = "legacy", Complexity = 2)]
 [Tags("code/computational_geometry", "code/extension_method")]
 [System.ComponentModel.Description("Closest-pair algorithms and utility extensions for Point2D lists.")]
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "322008dd702ded147496b9e7abe1209f63cc2d8a6462b05b895cfa7c93fce2ec", Stale = false, Path = "typed/Point2D.T.cs", Since = "2026-08-23")]
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:30Z", Digest = "619ca7c653a4674f9c76776683be59142735caac4210ed11c1e8c79ecbda8047", Stale = false, Path = "typed/Point2D.T.cs", Since = "2026-08-23")]
 [Concept("Mathematics\\Geometry.md")]
 [Concept("closest_pair")]
 public static class XPoint2DList {
@@ -190,7 +190,7 @@ public static class XPoint2DList {
 [Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
 [Tags("code/value_object", "code/geometry")]
 [System.ComponentModel.Description("AKA Position2D; Immutable, lightweight, double-Precision, typed Position2D to avoid accidental Type Mix in Arithmetic")]
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "d64395aefaebccf87c37fd2c9d8dd6c7d9cddf462d6bbc15daf5fa5bf0388b20", Stale = false, Path = "typed/Point2D.T.cs", Since = "2026-08-23")]
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:30Z", Digest = "a66fe89b9b20cfd5a3ce51b2ac7a1908b61137f695b5f0f85a2488c42d6e75b4", Stale = false, Path = "typed/Point2D.T.cs", Since = "2026-08-23")]
 [Concept("Mathematics\\Geometry\\Vector.md")]
 [Concept("typed_geometric_primitives")]
 public readonly struct Point2D<T> : IPoint2D<T>, IEquatable<Point2D<T>>, IComparable<Point2D<T>> {
@@ -407,7 +407,7 @@ public class TriangleStrip2D<T> : Point2DList<T>;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 310 | <see cref="Add"/> | Adds a new Point2D constructed from x and y. |
+/// | 428 | <see cref="Add"/> | Adds a new Point2D constructed from x and y. |
 /// </remarks>
 /// <example><code lang="C#">
 /// new Point2DList{

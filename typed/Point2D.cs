@@ -18,7 +18,7 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// |--:|---|---|
 /// | 127 | <see cref="Point2D"/> | Initializes a new instance of Point2D with the specified v. |
 /// | 134 | <see cref="operator *"/> | Multiplies scalar by point2D. |
-/// | 145 | <see cref="Minus"/> | Subtracts that displacement from this point. |
+/// | 138 | <see cref="Minus"/> | Subtracts that displacement from this point. |
 /// | 145 | <see cref="Plus"/> | Adds that displacement to this point. |
 /// | 226 | <see cref="operator ^"/> | Returns the wedge product of the 2D points p and q. The z coordinates of p and q are assumed to be 1. |
 /// | 233 | <see cref="operator ^"/> | Returns the wedge product of the 2D point p and the 2D vector v. The z coordinate of p is assumed to be 1. |

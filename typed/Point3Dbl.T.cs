@@ -12,7 +12,7 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 [Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
 [Tags("code/value_object", "code/geometry")]
 [System.ComponentModel.Description("AKA Position/Location; Typed, double-precision Position3D Vector3D to avoid accidental Type Mix")]
-[DocState(Pass = 2, MTime = "2026-07-29T18:02:50Z", Digest = "647cafde8fecafbec8f23304d0d232f2e71d0fd2acb85ebacb75fd7a54caec52", Stale = false, Path = "typed/Point3Dbl.T.cs", Since = "2026-08-23")]
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:31Z", Digest = "461c50db8dbfefa494d623f1cb1f2efc09984f7290d3133d5c7a68a5d340da5c", Stale = false, Path = "typed/Point3Dbl.T.cs", Since = "2026-08-23")]
 [Concept("Mathematics\\Geometry\\Vector.md")]
 [Concept("typed_geometric_primitives")]
 public readonly struct Point3Dbl<T> : IEquatable<Point3Dbl<T>>, IReadOnlyList<double> {

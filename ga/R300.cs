@@ -57,15 +57,15 @@ public class R300 : AGeoGebra8<R300>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 64 | <see cref="_1_"/> | [0] Scalar e.g. Dot Product or oriented Volume |
-	/// | 67 | <see cref="e1"/> | [1] X-Direction (polar) / yz-Mirror e1� = 1 |
-	/// | 70 | <see cref="e2"/> | [2] Y-Direction (polar) / zx-Mirror e2� = 1 |
-	/// | 73 | <see cref="e3"/> | [3] Z-Direction (polar) / xy-Mirror e3� = 1 |
-	/// | 78 | <see cref="e12"/> | [4] axial/dual Z-BiVector; X-Y-Plane-Unit; e12� = k� = -1 [5] axial Y-BiVector; X-Z-Plane-Unit; e13� = j� = -1 |
-	/// | 80 | <see cref="e13"/> | Represents e13. |
-	/// | 83 | <see cref="e23"/> | [6] axial X-BiVector; Y-Z-Plane-Unit; e23� = i� = -1 |
-	/// | 86 | <see cref="e123"/> | [7] Oriented Volume, a Pseudo-Scalar; e123� = I� = -1 |
-	/// | 89 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// | 79 | <see cref="_1_"/> | [0] Scalar e.g. Dot Product or oriented Volume |
+	/// | 82 | <see cref="e1"/> | [1] X-Direction (polar) / yz-Mirror e1� = 1 |
+	/// | 85 | <see cref="e2"/> | [2] Y-Direction (polar) / zx-Mirror e2� = 1 |
+	/// | 88 | <see cref="e3"/> | [3] Z-Direction (polar) / xy-Mirror e3� = 1 |
+	/// | 93 | <see cref="e12"/> | [4] axial/dual Z-BiVector; X-Y-Plane-Unit; e12� = k� = -1 [5] axial Y-BiVector; X-Z-Plane-Unit; e13� = j� = -1 |
+	/// | 95 | <see cref="e13"/> | Represents e13. |
+	/// | 98 | <see cref="e23"/> | [6] axial X-BiVector; Y-Z-Plane-Unit; e23� = i� = -1 |
+	/// | 101 | <see cref="e123"/> | [7] Oriented Volume, a Pseudo-Scalar; e123� = I� = -1 |
+	/// | 104 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
 	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:45Z", Digest = "e86c2fda6a58a142d27b566d8f9a88bc30c03e8a4df2deccc8a528e49437ad79", Stale = false, Path = "ga/R300.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]

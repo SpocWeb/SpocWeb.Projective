@@ -11,7 +11,7 @@ namespace org.SpocWeb.root.interfaces.Vectors;
 [Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
 [Tags("code/value_object", "code/geometry")]
 [System.ComponentModel.Description("Typed Position2D Vector2D to avoid accidental Type Mix")]
-[DocState(Pass = 2, MTime = "2026-07-29T18:02:50Z", Digest = "44704a11085368b4b112624e4b249c2f6a6d68d05d7169dc76667470672638b2", Stale = false, Path = "typed/Point4Dbl.T.cs", Since = "2026-08-23")]
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:31Z", Digest = "2d4704fd701caa11bbef67d3fd8e84f6636d0697dbc991739aff735c4d632ae9", Stale = false, Path = "typed/Point4Dbl.T.cs", Since = "2026-08-23")]
 [Concept("Mathematics\\Geometry\\Vector.md")]
 [Concept("typed_geometric_primitives")]
 public readonly struct Point4Dbl<T> : IEquatable<Point4Dbl<T>>, IReadOnlyList<double> {

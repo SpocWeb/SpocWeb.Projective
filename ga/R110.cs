@@ -59,11 +59,11 @@ public class R110 : AGeoGebra4<R110>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 66 | <see cref="_1_"/> | [0] Scalar Part |
-	/// | 69 | <see cref="re"/> | [1] AKA e1; real Part re� = 1 |
-	/// | 72 | <see cref="im"/> | [2] AKA i, e1; imaginary Part im� = -1 |
-	/// | 75 | <see cref="e12"/> | [3] e12 is the Pseudo-Scalar: e12� = -1 |
-	/// | 78 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// | 77 | <see cref="_1_"/> | [0] Scalar Part |
+	/// | 80 | <see cref="re"/> | [1] AKA e1; real Part re� = 1 |
+	/// | 83 | <see cref="im"/> | [2] AKA i, e1; imaginary Part im� = -1 |
+	/// | 86 | <see cref="e12"/> | [3] e12 is the Pseudo-Scalar: e12� = -1 |
+	/// | 89 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
 	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T05:58:42Z", Digest = "26503888b6121e5e4ed37e13956351fa0ad87252f10d3ec1dc8b6374e004fd4b", Stale = false, Path = "ga/R110.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]

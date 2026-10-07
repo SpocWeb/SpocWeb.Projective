@@ -115,11 +115,11 @@ public class R011 : AGeoGebra4<R011>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 123 | <see cref="_1_"/> | [0] Scalar / X-Coordinate e.g. Dot Product / oriented Area/Volume Dual |
-	/// | 126 | <see cref="x"/> | [1] AKA e0, �; X-Translation Coordinate; Projective/homogeneous |
-	/// | 134 | <see cref="i"/> | [2] AKA e1; Vector/Line Y-Coordinate; yz-Dual |
-	/// | 137 | <see cref="y"/> | [3] AKA �i, e12 y Y-Translation Coordinate: y� = 0 |
-	/// | 140 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// | 134 | <see cref="_1_"/> | [0] Scalar / X-Coordinate e.g. Dot Product / oriented Area/Volume Dual |
+	/// | 137 | <see cref="x"/> | [1] AKA e0, �; X-Translation Coordinate; Projective/homogeneous |
+	/// | 145 | <see cref="i"/> | [2] AKA e1; Vector/Line Y-Coordinate; yz-Dual |
+	/// | 148 | <see cref="y"/> | [3] AKA �i, e12 y Y-Translation Coordinate: y� = 0 |
+	/// | 151 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:03Z", Digest = "e623cdcf2368a93a5472af0294edc62890a0dc2c2873a8f98be4d1d19e9eb044", Stale = false, Path = "ga/R011.cs", Since = "2026-10-06")]

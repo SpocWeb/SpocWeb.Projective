@@ -53,36 +53,36 @@ public static class XVector2
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 65 | <see cref="Vector2D"/> | Initializes a new instance of Vector2D with the specified x and y. Initializes a new instance of Vector2D with the specified v. |
-/// | 72 | <see cref="Vector2D"/> | Initializes a new instance of Vector2D with the specified x and y. |
-/// | 79 | <see cref="Vector2D"/> | Initializes a new instance of Vector2D with the specified v. |
-/// | 120 | <see cref="operator -"/> | Negates v. |
-/// | 123 | <see cref="operator ~"/> | returns the boolean Complement 1-this or the complex Conjugate/Transpose |
-/// | 128 | <see cref="operator *"/> | Multiplies v by p. Multiplies v by p. |
-/// | 130 | <see cref="operator *"/> | Multiplies v by scalar. |
-/// | 134 | <see cref="operator *"/> | Multiplies v by scalar. Divides v by scalar. |
-/// | 136 | <see cref="operator *"/> | Multiplies v by scalar. |
-/// | 138 | <see cref="operator /"/> | Divides v by scalar. |
-/// | 142 | <see cref="operator +"/> | Adds v and p. Adds v and p. |
-/// | 144 | <see cref="operator +"/> | Adds v and p. |
-/// | 147 | <see cref="operator +"/> | Adds p and v. |
-/// | 155 | <see cref="operator ^"/> | Wedge/Meet/Cross/outer Product Multiplies a by b. Multiplies a by b. |
-/// | 157 | <see cref="operator *"/> | Multiplies a by b. |
-/// | 180 | <see cref="Normalized"/> | Gets the normalized. |
-/// | 218 | <see cref="Cjg"/> | Returns the complex conjugate of this 2D vector (negates the Y component). |
-/// | 226 | <see cref="Neg"/> | Returns the additive inverse of this vector. |
-/// | 233 | <see cref="Plus"/> |  |
-/// | 239 | <see cref="Per"/> | Divides all components by scalar. |
-/// | 247 | <see cref="Times"/> | Scales all components by scalar. |
-/// | 273 | <see cref="Cross"/> | AKA AntiWedge; anti-symmetric Cross Product |
-/// | 283 | <see cref="Dot"/> | symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of that |
-/// | 298 | <see cref="ProjectOn"/> | Non-normalized Projection in normed Direction |
-/// | 309 | <see cref="RejectFrom"/> | Non-normalized Rejection from normed Direction |
-/// | 324 | <see cref="ReflectAt"/> | Reflects this at normed |
-/// | 334 | <see cref="Floor"/> | Component-wise floor toward negative infinity. |
-/// | 342 | <see cref="Ceil"/> | Component-wise ceiling toward positive infinity. |
-/// | 350 | <see cref="CosSin"/> | Returns a unit vector whose X = cos(angle) and Y = sin(angle). |
-/// | 362 | <see cref="RotateBy"/> | Rotates this vector counter-clockwise by angle radians around the origin. |
+/// | 101 | <see cref="Vector2D"/> | Initializes a new instance of Vector2D with the specified x and y. Initializes a new instance of Vector2D with the specified v. |
+/// | 108 | <see cref="Vector2D"/> | Initializes a new instance of Vector2D with the specified x and y. |
+/// | 115 | <see cref="Vector2D"/> | Initializes a new instance of Vector2D with the specified v. |
+/// | 156 | <see cref="operator -"/> | Negates v. |
+/// | 159 | <see cref="operator ~"/> | returns the boolean Complement 1-this or the complex Conjugate/Transpose |
+/// | 164 | <see cref="operator *"/> | Multiplies v by p. Multiplies v by p. |
+/// | 166 | <see cref="operator *"/> | Multiplies v by scalar. |
+/// | 170 | <see cref="operator *"/> | Multiplies v by scalar. Divides v by scalar. |
+/// | 172 | <see cref="operator *"/> | Multiplies v by scalar. |
+/// | 174 | <see cref="operator /"/> | Divides v by scalar. |
+/// | 178 | <see cref="operator +"/> | Adds v and p. Adds v and p. |
+/// | 180 | <see cref="operator +"/> | Adds v and p. |
+/// | 183 | <see cref="operator +"/> | Adds p and v. |
+/// | 191 | <see cref="operator ^"/> | Wedge/Meet/Cross/outer Product Multiplies a by b. Multiplies a by b. |
+/// | 193 | <see cref="operator *"/> | Multiplies a by b. |
+/// | 216 | <see cref="Normalized"/> | Gets the normalized. |
+/// | 254 | <see cref="Cjg"/> | Returns the complex conjugate of this 2D vector (negates the Y component). |
+/// | 262 | <see cref="Neg"/> | Returns the additive inverse of this vector. |
+/// | 269 | <see cref="Plus"/> |  |
+/// | 275 | <see cref="Per"/> | Divides all components by scalar. |
+/// | 283 | <see cref="Times"/> | Scales all components by scalar. |
+/// | 309 | <see cref="Cross"/> | AKA AntiWedge; anti-symmetric Cross Product |
+/// | 319 | <see cref="Dot"/> | symmetric Dot Product, actually a geometric Wedge-Product with the Anti-Vector of that |
+/// | 334 | <see cref="ProjectOn"/> | Non-normalized Projection in normed Direction |
+/// | 345 | <see cref="RejectFrom"/> | Non-normalized Rejection from normed Direction |
+/// | 360 | <see cref="ReflectAt"/> | Reflects this at normed |
+/// | 370 | <see cref="Floor"/> | Component-wise floor toward negative infinity. |
+/// | 378 | <see cref="Ceil"/> | Component-wise ceiling toward positive infinity. |
+/// | 386 | <see cref="CosSin"/> | Returns a unit vector whose X = cos(angle) and Y = sin(angle). |
+/// | 398 | <see cref="RotateBy"/> | Rotates this vector counter-clockwise by angle radians around the origin. |
 /// </remarks>
 ///
 [DocState(Pass = 2, MTime = "2026-06-17T05:57:36Z", Digest = "0da81f3edacab246e9009bcd38de6c530ff9bffb5d8386fc5870b29e3bc9f5bb", Stale = false, Path = "typed/Vector2D.cs", Since = "2026-10-06")]

@@ -401,23 +401,23 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 409 | <see cref="_1_"/> | Represents 1. |
-	/// | 412 | <see cref="e0"/> | Represents e0. |
-	/// | 415 | <see cref="e1"/> | Represents e1. |
-	/// | 418 | <see cref="e2"/> | Represents e2. |
-	/// | 421 | <see cref="e3"/> | Represents e3. |
-	/// | 424 | <see cref="e01"/> | Represents e01. |
-	/// | 427 | <see cref="e02"/> | Represents e02. |
-	/// | 430 | <see cref="e03"/> | Represents e03. |
-	/// | 433 | <see cref="e12"/> | Represents e12. |
-	/// | 436 | <see cref="e31"/> | Represents e31. |
-	/// | 439 | <see cref="e23"/> | Represents e23. |
-	/// | 442 | <see cref="e021"/> | Represents e021. |
-	/// | 445 | <see cref="e013"/> | Represents e013. |
-	/// | 448 | <see cref="e032"/> | Represents e032. |
-	/// | 451 | <see cref="e123"/> | Represents e123. |
-	/// | 461 | <see cref="e0123"/> | Represents e0123. |
-	/// | 464 | <see cref="_0"/> | Represents 0. |
+	/// | 432 | <see cref="_1_"/> | Represents 1. |
+	/// | 435 | <see cref="e0"/> | Represents e0. |
+	/// | 438 | <see cref="e1"/> | Represents e1. |
+	/// | 441 | <see cref="e2"/> | Represents e2. |
+	/// | 444 | <see cref="e3"/> | Represents e3. |
+	/// | 447 | <see cref="e01"/> | Represents e01. |
+	/// | 450 | <see cref="e02"/> | Represents e02. |
+	/// | 453 | <see cref="e03"/> | Represents e03. |
+	/// | 456 | <see cref="e12"/> | Represents e12. |
+	/// | 459 | <see cref="e31"/> | Represents e31. |
+	/// | 462 | <see cref="e23"/> | Represents e23. |
+	/// | 465 | <see cref="e021"/> | Represents e021. |
+	/// | 468 | <see cref="e013"/> | Represents e013. |
+	/// | 471 | <see cref="e032"/> | Represents e032. |
+	/// | 474 | <see cref="e123"/> | Represents e123. |
+	/// | 484 | <see cref="e0123"/> | Represents e0123. |
+	/// | 487 | <see cref="_0"/> | Represents 0. |
 	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-06-17T10:09:57Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
@@ -527,15 +527,15 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 512 | <see cref="Scalar"/> | Scale-Factor, used in Combination with Motor and Rotor where it is Cos |
-	/// | 518 | <see cref="Distance"/> | Distance of the Plane from the Origin (scaled by the Plane-Coordinates) |
-	/// | 522 | <see cref="Plane"/> | Planess are 1st Grade Elements in PGA |
-	/// | 534 | <see cref="Rotor"/> | AxisRot are Rotation Axes |
-	/// | 537 | <see cref="Motor"/> | AxisTrans are ideal Translation Axes |
-	/// | 540 | <see cref="Line"/> | A Rotor combined with a Motor component; represents a projective line. |
-	/// | 543 | <see cref="Vector"/> | Pointss can be 'real' or 'ideal' (a Vector |
-	/// | 546 | <see cref="Point"/> | Pointss are Vectors with a nonzero Origin Component |
-	/// | 557 | <see cref="All"/> | Specifies all values. |
+	/// | 550 | <see cref="Scalar"/> | Scale-Factor, used in Combination with Motor and Rotor where it is Cos |
+	/// | 556 | <see cref="Distance"/> | Distance of the Plane from the Origin (scaled by the Plane-Coordinates) |
+	/// | 560 | <see cref="Plane"/> | Planess are 1st Grade Elements in PGA |
+	/// | 572 | <see cref="Rotor"/> | AxisRot are Rotation Axes |
+	/// | 575 | <see cref="Motor"/> | AxisTrans are ideal Translation Axes |
+	/// | 578 | <see cref="Line"/> | A Rotor combined with a Motor component; represents a projective line. |
+	/// | 581 | <see cref="Vector"/> | Pointss can be 'real' or 'ideal' (a Vector |
+	/// | 584 | <see cref="Point"/> | Pointss are Vectors with a nonzero Origin Component |
+	/// | 595 | <see cref="All"/> | Specifies all values. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "43f079111c5074cb136e7ba4735b701c7d2017de7aa8b2aad15aa393767bfdca", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
@@ -604,24 +604,24 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 577 | <see cref="_1_"/> | [0] AKA e,S; Scalar e.g. Dot Product |
-	/// | 588 | <see cref="e0"/> | [1] = e0 => € == 0 Plane/Sphere/Sky at Infinity; Projective with e0² = 0 |
-	/// | 592 | <see cref="e1"/> | [2] = e1 => X==0 YZ-Plane E1; e1² = 1 |
-	/// | 596 | <see cref="e2"/> | [3] = e2 => Y==0 ZX-Plane E2; e2² = 1 |
-	/// | 600 | <see cref="e3"/> | [4] = e3 => Z==0 XY-Plane E3; e3² = 1 |
-	/// | 624 | <see cref="e01"/> | [5] = e01 = Meridian, X-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with YZ-Plane; |
-	/// | 644 | <see cref="e02"/> | [6] = e02 = PrimeVertical, Y-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with ZX |
-	/// | 664 | <see cref="e03"/> | [7] = e03 = Horizon, Z-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with XY |
-	/// | 676 | <see cref="e12"/> | [8] = e12 => x == 0 == y; Z-Axis/E12 resp. xy-Plane; e12² = k² = -1 |
-	/// | 684 | <see cref="e31"/> | [9] = e31 => x == 0 == z; Y-Axis/E31 resp. zx-Plane; e13² = j² = -1 |
-	/// | 692 | <see cref="e23"/> | [10] = e23 => z == 0 == y; X-Axis/E23 resp. yz-Plane; e23² = i² = -1 |
-	/// | 703 | <see cref="e021"/> | [11] = Z-Point / E021 |
-	/// | 710 | <see cref="e013"/> | [12] Y-Point /E013 |
-	/// | 717 | <see cref="e032"/> | [13] X-Point / E032 |
-	/// | 732 | <see cref="e123"/> | [14] = e123 = O/W/Origin for the Observer; Distance of Projection Plane from the Origin, the Intersection of all 3 x,y,z Coordinate-Hyper-Planes [6] O/W/Origin; 1 for Points, 0 for Vectors Represents i. |
-	/// | 738 | <see cref="e0123"/> | [15] = e0123 = Oriented Volume, a Pseudo-Scalar Represents i. |
-	/// | 740 | <see cref="I"/> | Represents i. |
-	/// | 743 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// | 639 | <see cref="_1_"/> | [0] AKA e,S; Scalar e.g. Dot Product |
+	/// | 650 | <see cref="e0"/> | [1] = e0 => € == 0 Plane/Sphere/Sky at Infinity; Projective with e0² = 0 |
+	/// | 654 | <see cref="e1"/> | [2] = e1 => X==0 YZ-Plane E1; e1² = 1 |
+	/// | 658 | <see cref="e2"/> | [3] = e2 => Y==0 ZX-Plane E2; e2² = 1 |
+	/// | 662 | <see cref="e3"/> | [4] = e3 => Z==0 XY-Plane E3; e3² = 1 |
+	/// | 686 | <see cref="e01"/> | [5] = e01 = Meridian, X-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with YZ-Plane; |
+	/// | 706 | <see cref="e02"/> | [6] = e02 = PrimeVertical, Y-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with ZX |
+	/// | 726 | <see cref="e03"/> | [7] = e03 = Horizon, Z-Make.Translator(double, Pga3D); Geodetic Line on 'celestial' Sphere at Infinity, intersected with XY |
+	/// | 738 | <see cref="e12"/> | [8] = e12 => x == 0 == y; Z-Axis/E12 resp. xy-Plane; e12² = k² = -1 |
+	/// | 746 | <see cref="e31"/> | [9] = e31 => x == 0 == z; Y-Axis/E31 resp. zx-Plane; e13² = j² = -1 |
+	/// | 754 | <see cref="e23"/> | [10] = e23 => z == 0 == y; X-Axis/E23 resp. yz-Plane; e23² = i² = -1 |
+	/// | 765 | <see cref="e021"/> | [11] = Z-Point / E021 |
+	/// | 772 | <see cref="e013"/> | [12] Y-Point /E013 |
+	/// | 779 | <see cref="e032"/> | [13] X-Point / E032 |
+	/// | 794 | <see cref="e123"/> | [14] = e123 = O/W/Origin for the Observer; Distance of Projection Plane from the Origin, the Intersection of all 3 x,y,z Coordinate-Hyper-Planes [6] O/W/Origin; 1 for Points, 0 for Vectors Represents i. |
+	/// | 800 | <see cref="e0123"/> | [15] = e0123 = Oriented Volume, a Pseudo-Scalar Represents i. |
+	/// | 802 | <see cref="I"/> | Represents i. |
+	/// | 805 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-10-06T10:57:12Z", Digest = "ea8d55fb7e25a70bb7161f0b210024e1d04be9f4480986f5d99f78856689fbc2", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]
@@ -1101,11 +1101,11 @@ public class Pga3D : AGeoGebra16<Pga3D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 1047 | <see cref="Dist"/> | Represents dist. |
-	/// | 1050 | <see cref="Sky"/> | Represents sky. |
-	/// | 1053 | <see cref="YZ"/> | Represents yz. |
-	/// | 1056 | <see cref="ZX"/> | Represents zx. |
-	/// | 1059 | <see cref="XY"/> | Represents xy. |
+	/// | 1120 | <see cref="Dist"/> | Represents dist. |
+	/// | 1123 | <see cref="Sky"/> | Represents sky. |
+	/// | 1126 | <see cref="YZ"/> | Represents yz. |
+	/// | 1129 | <see cref="ZX"/> | Represents zx. |
+	/// | 1132 | <see cref="XY"/> | Represents xy. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:06Z", Digest = "d631a2f3cb68a3f0224854188cb6c35044c110ab3581aab400be911a771c557d", Stale = false, Path = "pga/Pga3d.cs", Since = "2026-10-06")]

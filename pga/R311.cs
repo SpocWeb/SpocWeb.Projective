@@ -167,39 +167,39 @@ public class R311 : AGeoGebra32<R311>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 175 | <see cref="_1_"/> | [00] Scalar e.g. Dot Product or oriented Volume |
-	/// | 178 | <see cref="e0"/> | [01] homogeneous Component e0� = 0, usually 1 for Points and 0 for Vectors/Origin Vectors |
-	/// | 181 | <see cref="e1"/> | [02] X-Direction (polar) / yz-Mirror e1� = 1 |
-	/// | 184 | <see cref="e2"/> | [03] Y-Direction (polar) / zx-Mirror e2� = 1 |
-	/// | 187 | <see cref="e3"/> | [04] Z-Direction (polar) / xy-Mirror e3� = 1 |
-	/// | 190 | <see cref="eN"/> | [05] Infinity-Direction (polar) / xy-Mirror eN� = -1 |
-	/// | 193 | <see cref="e01"/> | [06] BiVector formed by the wedge of e0 and e1 basis blades. |
-	/// | 195 | <see cref="e02"/> | [07] BiVector formed by the wedge of e0 and e2 basis blades. |
-	/// | 197 | <see cref="e03"/> | [08] BiVector |
-	/// | 199 | <see cref="e0N"/> | [09] BiVector |
-	/// | 202 | <see cref="e12"/> | [10] BiVector |
-	/// | 205 | <see cref="e13"/> | [11] axial Y-BiVector |
-	/// | 208 | <see cref="e1N"/> | [12] axial Y-BiVector |
-	/// | 211 | <see cref="e23"/> | [13] axial Z-BiVector |
-	/// | 214 | <see cref="e2N"/> | [14] axial Z-BiVector |
-	/// | 217 | <see cref="e3N"/> | [15] axial Z-BiVector |
-	/// | 220 | <see cref="e012"/> | [16] TriVector (negative orientation) formed by the wedge of e0, e1 and e2. |
-	/// | 222 | <see cref="e013"/> | [17] TriVector (negative orientation) formed by the wedge of e0, e1 and e3. |
-	/// | 224 | <see cref="e01N"/> | [18] -TriVector |
-	/// | 226 | <see cref="e023"/> | [19] -TriVector |
-	/// | 228 | <see cref="e02N"/> | [20] -TriVector |
-	/// | 230 | <see cref="e03N"/> | [21] -TriVector |
-	/// | 233 | <see cref="e123"/> | [22] Oriented TriVector-Volume |
-	/// | 236 | <see cref="e12N"/> | [23] Oriented TriVector-Volume |
-	/// | 239 | <see cref="e13N"/> | [24] Oriented TriVector-Volume |
-	/// | 242 | <see cref="e23N"/> | [25] Oriented TriVector-Volume |
-	/// | 245 | <see cref="e0123"/> | [26] QuadVector hyper-volume formed by e0, e1, e2 and e3. |
-	/// | 247 | <see cref="e012N"/> | [27] QuadVector hyper-volume formed by e0, e1, e2 and eN. |
-	/// | 249 | <see cref="e013N"/> | [28] QuadVector-HyperVolume |
-	/// | 251 | <see cref="e023N"/> | [29] QuadVector-HyperVolume |
-	/// | 253 | <see cref="e123N"/> | [30] QuadVector-HyperVolume |
-	/// | 256 | <see cref="e0123N"/> | [31] Oriented Hyper-Volume, a Pseudo-Scalar |
-	/// | 259 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// | 214 | <see cref="_1_"/> | [00] Scalar e.g. Dot Product or oriented Volume |
+	/// | 217 | <see cref="e0"/> | [01] homogeneous Component e0� = 0, usually 1 for Points and 0 for Vectors/Origin Vectors |
+	/// | 220 | <see cref="e1"/> | [02] X-Direction (polar) / yz-Mirror e1� = 1 |
+	/// | 223 | <see cref="e2"/> | [03] Y-Direction (polar) / zx-Mirror e2� = 1 |
+	/// | 226 | <see cref="e3"/> | [04] Z-Direction (polar) / xy-Mirror e3� = 1 |
+	/// | 229 | <see cref="eN"/> | [05] Infinity-Direction (polar) / xy-Mirror eN� = -1 |
+	/// | 232 | <see cref="e01"/> | [06] BiVector formed by the wedge of e0 and e1 basis blades. |
+	/// | 234 | <see cref="e02"/> | [07] BiVector formed by the wedge of e0 and e2 basis blades. |
+	/// | 236 | <see cref="e03"/> | [08] BiVector |
+	/// | 238 | <see cref="e0N"/> | [09] BiVector |
+	/// | 241 | <see cref="e12"/> | [10] BiVector |
+	/// | 244 | <see cref="e13"/> | [11] axial Y-BiVector |
+	/// | 247 | <see cref="e1N"/> | [12] axial Y-BiVector |
+	/// | 250 | <see cref="e23"/> | [13] axial Z-BiVector |
+	/// | 253 | <see cref="e2N"/> | [14] axial Z-BiVector |
+	/// | 256 | <see cref="e3N"/> | [15] axial Z-BiVector |
+	/// | 259 | <see cref="e012"/> | [16] TriVector (negative orientation) formed by the wedge of e0, e1 and e2. |
+	/// | 261 | <see cref="e013"/> | [17] TriVector (negative orientation) formed by the wedge of e0, e1 and e3. |
+	/// | 263 | <see cref="e01N"/> | [18] -TriVector |
+	/// | 265 | <see cref="e023"/> | [19] -TriVector |
+	/// | 267 | <see cref="e02N"/> | [20] -TriVector |
+	/// | 269 | <see cref="e03N"/> | [21] -TriVector |
+	/// | 272 | <see cref="e123"/> | [22] Oriented TriVector-Volume |
+	/// | 275 | <see cref="e12N"/> | [23] Oriented TriVector-Volume |
+	/// | 278 | <see cref="e13N"/> | [24] Oriented TriVector-Volume |
+	/// | 281 | <see cref="e23N"/> | [25] Oriented TriVector-Volume |
+	/// | 284 | <see cref="e0123"/> | [26] QuadVector hyper-volume formed by e0, e1, e2 and e3. |
+	/// | 286 | <see cref="e012N"/> | [27] QuadVector hyper-volume formed by e0, e1, e2 and eN. |
+	/// | 288 | <see cref="e013N"/> | [28] QuadVector-HyperVolume |
+	/// | 290 | <see cref="e023N"/> | [29] QuadVector-HyperVolume |
+	/// | 292 | <see cref="e123N"/> | [30] QuadVector-HyperVolume |
+	/// | 295 | <see cref="e0123N"/> | [31] Oriented Hyper-Volume, a Pseudo-Scalar |
+	/// | 298 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:42:07Z", Digest = "fbc0add112ebc325e336691922492318288602332913b718d69c2f0ed689a384", Stale = false, Path = "pga/R311.cs", Since = "2026-10-06")]

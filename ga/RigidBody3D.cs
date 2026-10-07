@@ -13,7 +13,7 @@ namespace org.SpocWeb.root.maths.pga.ga;
 ///
 /// | Line | Method | Description |
 /// |--:|---|---|
-/// | 23 | <see cref="RigidBody3D"/> | Initializes a new instance of RigidBody3D with the specified identity, mass and extension. |
+/// | 30 | <see cref="RigidBody3D"/> | Initializes a new instance of RigidBody3D with the specified identity, mass and extension. |
 /// </remarks>
 ///
 [DocState(Pass = 2, MTime = "2026-05-24T15:40:19Z", Digest = "84411742196ceb35fb33cda2e959c60220bde7f002219dd59a490eb1b45e28ca", Stale = false, Path = "ga/RigidBody3D.cs", Since = "2026-10-06")]

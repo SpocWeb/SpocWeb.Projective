@@ -18,8 +18,8 @@ namespace org.SpocWeb.root.maths.pga.typed;
 /// | 111 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified v. |
 /// | 120 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. Initializes a new instance of Point3D with the specified x, y and z. |
 /// | 127 | <see cref="Point3D"/> | Initializes a new instance of Point3D with the specified x, y and z. |
-/// | 142 | <see cref="Minus"/> | Subtracts that displacement from this point. |
-/// | 151 | <see cref="Plus"/> | Adds that displacement to this point. |
+/// | 135 | <see cref="Minus"/> | Subtracts that displacement from this point. |
+/// | 144 | <see cref="Plus"/> | Adds that displacement to this point. |
 /// | 161 | <see cref="Wedge"/> |  |
 /// | 249 | <see cref="operator =="/> | Determines whether a equals b. Determines whether a does not equal b. |
 /// | 251 | <see cref="operator !="/> | Determines whether a does not equal b. |

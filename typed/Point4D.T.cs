@@ -48,7 +48,7 @@ public class Point4DList<T> : List<Point4D<T>> {
 [Facets(Layer = "structures", Status = "legacy", Complexity = 2)]
 [Tags("code/value_object", "code/geometry")]
 [System.ComponentModel.Description("Typed Position3D Vector4D to avoid accidental Type Mix")]
-[DocState(Pass = 2, MTime = "2026-08-10T16:36:39Z", Digest = "89cc566cff2e454ccb3318cffe214c4e3bc618f4f6f666ec066f3c7022455a38", Stale = false, Path = "typed/Point4D.T.cs", Since = "2026-08-23")]
+[DocState(Pass = 2, MTime = "2026-10-06T19:01:31Z", Digest = "4205bf9219dd75c82ff04f01938e7130ad7a447b1b44bde7a0b3f8bc5288051a", Stale = false, Path = "typed/Point4D.T.cs", Since = "2026-08-23")]
 [Concept("Mathematics\\Geometry\\Vector.md")]
 [Concept("typed_geometric_primitives")]
 public readonly struct Point4D<T> : IPoint4D<T>, IEquatable<Point4D<T>>//, IPoint4D

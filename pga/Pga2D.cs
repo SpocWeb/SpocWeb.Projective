@@ -282,16 +282,16 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 290 | <see cref="_1_"/> | [0] Scalar e.g. Dot Product / oriented Area/Volume Dual |
-	/// | 293 | <see cref="e0"/> | [1] Horizon-Line; €-Coordinate; Projective/homogeneous |
-	/// | 301 | <see cref="e1"/> | [2] X-Line X-Coordinate |
-	/// | 304 | <see cref="e2"/> | [3] Y-Line Y-Coordinate |
-	/// | 307 | <see cref="e01"/> | [4] Y-Point-Coordinate |
-	/// | 310 | <see cref="e20"/> | [5] X-Point-Coordinate |
-	/// | 317 | <see cref="e12"/> | [6] O/W/Origin; 1 for Points, 0 for Vectors; Distance of Projection Plane from the Origin |
-	/// | 320 | <see cref="e012"/> | [7] e012² = 0 |
-	/// | 323 | <see cref="i"/> | Represents i. |
-	/// | 333 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
+	/// | 306 | <see cref="_1_"/> | [0] Scalar e.g. Dot Product / oriented Area/Volume Dual |
+	/// | 309 | <see cref="e0"/> | [1] Horizon-Line; €-Coordinate; Projective/homogeneous |
+	/// | 317 | <see cref="e1"/> | [2] X-Line X-Coordinate |
+	/// | 320 | <see cref="e2"/> | [3] Y-Line Y-Coordinate |
+	/// | 323 | <see cref="e01"/> | [4] Y-Point-Coordinate |
+	/// | 326 | <see cref="e20"/> | [5] X-Point-Coordinate |
+	/// | 333 | <see cref="e12"/> | [6] O/W/Origin; 1 for Points, 0 for Vectors; Distance of Projection Plane from the Origin |
+	/// | 336 | <see cref="e012"/> | [7] e012² = 0 |
+	/// | 339 | <see cref="i"/> | Represents i. |
+	/// | 349 | <see cref="_0"/> | No Component; signals both the End of Components and 0-Elements in the Cayley Tables below |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "7bf53ac29a107a7b351a128bf2cab339e4db73166d5dd075c48ee93ffa9a9203", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
@@ -466,15 +466,15 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 458 | <see cref="_1_"/> | Represents 1. |
-	/// | 461 | <see cref="e0"/> | Represents e0. |
-	/// | 464 | <see cref="e1"/> | Represents e1. |
-	/// | 467 | <see cref="e2"/> | Represents e2. |
-	/// | 470 | <see cref="e01"/> | Represents e01. |
-	/// | 473 | <see cref="e20"/> | Represents e20. |
-	/// | 483 | <see cref="e12"/> | Represents e12. |
-	/// | 486 | <see cref="e012"/> | Represents e012. |
-	/// | 489 | <see cref="_0"/> | Represents 0. |
+	/// | 489 | <see cref="_1_"/> | Represents 1. |
+	/// | 492 | <see cref="e0"/> | Represents e0. |
+	/// | 495 | <see cref="e1"/> | Represents e1. |
+	/// | 498 | <see cref="e2"/> | Represents e2. |
+	/// | 501 | <see cref="e01"/> | Represents e01. |
+	/// | 504 | <see cref="e20"/> | Represents e20. |
+	/// | 514 | <see cref="e12"/> | Represents e12. |
+	/// | 517 | <see cref="e012"/> | Represents e012. |
+	/// | 520 | <see cref="_0"/> | Represents 0. |
 	/// </remarks>
 	[DocState(Pass = 2, MTime = "2026-05-24T16:42:31Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
 	[Facets(Layer = "domain", Status = "stable", Complexity = 1)]
@@ -568,13 +568,13 @@ public class Pga2D : AGeoGebra8<Pga2D>
 	///
 	/// | Line | Method | Description |
 	/// |--:|---|---|
-	/// | 545 | <see cref="Scalar"/> | Scale-Factor, used in Combination with Motor and Rotor where it is Cos |
-	/// | 551 | <see cref="Distance"/> | Distance of the Plane from the Origin (scaled by the Plane-Coordinates) |
-	/// | 555 | <see cref="Rotor"/> | AxisRot are Rotation Axes |
-	/// | 558 | <see cref="Motor"/> | AxisTrans are ideal Translation Axes |
-	/// | 561 | <see cref="Vector"/> | Pointss can be 'real' or 'ideal' (a Vector |
-	/// | 564 | <see cref="Point"/> | Pointss are Vectors with a nonzero O Component |
-	/// | 567 | <see cref="All"/> | Specifies all values. |
+	/// | 589 | <see cref="Scalar"/> | Scale-Factor, used in Combination with Motor and Rotor where it is Cos |
+	/// | 595 | <see cref="Distance"/> | Distance of the Plane from the Origin (scaled by the Plane-Coordinates) |
+	/// | 599 | <see cref="Rotor"/> | AxisRot are Rotation Axes |
+	/// | 602 | <see cref="Motor"/> | AxisTrans are ideal Translation Axes |
+	/// | 605 | <see cref="Vector"/> | Pointss can be 'real' or 'ideal' (a Vector |
+	/// | 608 | <see cref="Point"/> | Pointss are Vectors with a nonzero O Component |
+	/// | 611 | <see cref="All"/> | Specifies all values. |
 	/// </remarks>
 	///
 	[DocState(Pass = 2, MTime = "2026-07-07T17:48:22Z", Digest = "ef32482bcb087cf925ddce47224a4c1e96e209a559f012636bff778498fb1887", Stale = false, Path = "pga/Pga2D.cs", Since = "2026-10-06")]
